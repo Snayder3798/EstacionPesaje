@@ -1,6 +1,7 @@
 #pragma once
 
 #include "frmAgregarTarjeta.h"
+#include "frmEditarTarjeta.h"
 
 namespace EstacionPesajeView {
 
@@ -107,6 +108,7 @@ namespace EstacionPesajeView {
 			this->button3->TabIndex = 19;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &frmMantenimientoTarjeta::button3_Click);
 			// 
 			// button2
 			// 
@@ -264,5 +266,18 @@ namespace EstacionPesajeView {
 		MessageBox::Show("La Tarjeta ha sido eliminada con éxito");
 	}
 
+
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+
+		String^ NroTarjetaEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+
+		TarjetaController^ objtTarjetaController = gcnew TarjetaController();
+
+		Tarjeta^ objTarjeta = objtTarjetaController->buscarTarjetaxNumero(NroTarjetaEditar);
+
+		frmEditarTarjeta^ ventanaEditartarjeta = gcnew frmEditarTarjeta(objTarjeta);
+		ventanaEditartarjeta->ShowDialog();
+	}
 };
 }

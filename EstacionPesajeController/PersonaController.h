@@ -17,6 +17,9 @@ namespace EstacionPesajeController {
 		void escribirArchivo(List <Persona^>^ listaPersonas);
 		void eliminarPersonaFisico(String^ dni);
 		void agregarPersona(Persona^ objPersona);
+
+		Persona^ buscarPersonaxDni(String^ dni);
+		void actualizarPersona(Persona^ objPersona);
 	};
 
 

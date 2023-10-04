@@ -88,3 +88,48 @@ void EstacionController::agregarEstacion(EstacionPesaje^ objEstacionPesaje) {
 	listaEstaciones->Add(objEstacionPesaje);
 	escribirArchivo(listaEstaciones);
 }
+
+EstacionPesaje^ EstacionController::buscarEstacionxUbicacion(String^ ubicacion) {
+	List <EstacionPesaje^>^ listaEstaciones = buscarAll();
+	for (int i = 0; i < listaEstaciones->Count; i++) {
+		if (listaEstaciones[i]->getUbicacion() == ubicacion) {
+			return listaEstaciones[i];
+		}
+	}
+}
+
+void EstacionController::actualizarEstacion(EstacionPesaje^ objEstacionPesaje) {
+	List <EstacionPesaje^>^ listaEstaciones = buscarAll();
+	for (int i = 0; i < listaEstaciones->Count; i++) {
+		if (listaEstaciones[i]->getUbicacion() == objEstacionPesaje->getUbicacion()) {
+			/*Actualizaremos cada dato*/
+			listaEstaciones[i]->setCodigo(objEstacionPesaje->getCodigo());
+			listaEstaciones[i]->setUbicacion(objEstacionPesaje->getUbicacion());
+			listaEstaciones[i]->setLatitud(objEstacionPesaje->getLatitud());
+			listaEstaciones[i]->setLongitud(objEstacionPesaje->getLongitud());
+			break;
+		}
+	}
+	escribirArchivo(listaEstaciones);
+}
+
+
+List <String^>^ EstacionController::obtenerUbicaciones() {
+	List <EstacionPesaje^>^ listaEstaciones = buscarAll();
+	List<String^>^ listaUbicaciones = gcnew List<String^>();
+	for (int i = 0; i < listaEstaciones->Count; i++) {
+		/*Aqui se busca cada Ubicacion si es que ya se encuentra en la lista de ubicaciones*/
+		String^ ubicacion = listaEstaciones[i]->getUbicacion();
+		/*Voy a buscarlo en la listaDepartamentos*/
+		int existe = 0;
+		for (int j = 0; j < listaUbicaciones->Count; j++) {
+			if (listaUbicaciones[j]->Contains(ubicacion)) {
+				existe = 1;
+			}
+		}
+		if (existe == 0) {
+			listaUbicaciones->Add(ubicacion);
+		}
+	}
+	return listaUbicaciones;
+}

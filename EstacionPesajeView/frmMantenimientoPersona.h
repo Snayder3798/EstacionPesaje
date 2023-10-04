@@ -1,6 +1,7 @@
 #pragma once
 
 #include "frmAgregarPersona.h"
+#include "frmEditarPersona.h"
 
 namespace EstacionPesajeView {
 
@@ -113,6 +114,7 @@ namespace EstacionPesajeView {
 			this->button3->TabIndex = 19;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &frmMantenimientoPersona::button3_Click);
 			// 
 			// button2
 			// 
@@ -267,6 +269,11 @@ namespace EstacionPesajeView {
 
 		}
 #pragma endregion
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		frmAgregarPersona^ ventanaAgregarPersona = gcnew frmAgregarPersona();
 		/*ventanaAgregarPropietario->MdiParent = this; */
@@ -323,9 +330,17 @@ namespace EstacionPesajeView {
 
 	}
 
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+
+		String^ DniPersonaEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+
+		PersonaController^ objPersonaController = gcnew PersonaController();
+
+		Persona^ objPersona = objPersonaController->buscarPersonaxDni(DniPersonaEditar);
+
+		frmEditarPersona^ ventanaEditarPersona = gcnew frmEditarPersona(objPersona);
+		ventanaEditarPersona->ShowDialog();
 	}
 };
 }

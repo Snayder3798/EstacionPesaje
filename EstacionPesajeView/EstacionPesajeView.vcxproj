@@ -118,6 +118,10 @@
     <ClCompile Include="frmAgregarPersona.cpp" />
     <ClCompile Include="frmAgregarTarjeta.cpp" />
     <ClCompile Include="frmAgregarVehiculo.cpp" />
+    <ClCompile Include="frmEditarEstacionPesaje.cpp" />
+    <ClCompile Include="frmEditarPersona.cpp" />
+    <ClCompile Include="frmEditarTarjeta.cpp" />
+    <ClCompile Include="frmEditarVehiculo.cpp" />
     <ClCompile Include="frmMantenimientoEstacionPesaje.cpp" />
     <ClCompile Include="frmMantenimientoPersona.cpp" />
     <ClCompile Include="frmMantenimientoTarjeta.cpp" />
@@ -144,6 +148,18 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmAgregarVehiculo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmEditarEstacionPesaje.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmEditarPersona.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmEditarTarjeta.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmEditarVehiculo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmMantenimientoEstacionPesaje.h">
@@ -174,6 +190,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarVehiculo.resx">
       <DependentUpon>frmAgregarVehiculo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarEstacionPesaje.resx">
+      <DependentUpon>frmEditarEstacionPesaje.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarPersona.resx">
+      <DependentUpon>frmEditarPersona.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarTarjeta.resx">
+      <DependentUpon>frmEditarTarjeta.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarVehiculo.resx">
+      <DependentUpon>frmEditarVehiculo.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoEstacionPesaje.resx">
       <DependentUpon>frmMantenimientoEstacionPesaje.h</DependentUpon>
