@@ -20,12 +20,6 @@ namespace EstacionPesajeModel {
         int getCodigo();
         void setCodigo(int pesoSinCarga);
 
-        String^ getPlaca();
-        void setPlaca(String^ placa);
-
-        String^ getTipoVehiculo();
-        void setTipoVehiculo(String^ tipoVehiculo);
-
         int getPesoSinCarga();
         void setPesoSinCarga(int pesoSinCarga);
 
@@ -34,6 +28,12 @@ namespace EstacionPesajeModel {
 
         int getPesoActual();
         void setPesoActual(int pesoConCarga);
+
+        String^ getPlaca();
+        void setPlaca(String^ placa);
+
+        String^ getTipoVehiculo();
+        void setTipoVehiculo(String^ tipoVehiculo);
         
 
     };

@@ -10,6 +10,12 @@ namespace EstacionPesajeController {
 	public:
 		TarjetaController();
 		List<Tarjeta^>^ buscarTarjeta(String^ numeroTarjeta);
+
+		/*Metodos utiles*/
+		List <Tarjeta^>^ buscarAll();
+		void escribirArchivo(List <Tarjeta^>^ listaTarjetas);
+		void eliminarTarjetaFisico(String^ numeroTarjeta);
+		void agregarTarjeta(Tarjeta^ objTarjeta);
 	};
 
 

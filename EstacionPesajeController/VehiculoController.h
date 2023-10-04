@@ -11,6 +11,12 @@ namespace EstacionPesajeController {
 	public:
 		VehiculoController();
 		List<Vehiculo^>^ buscarVehiculo(String^ placa);
+		
+		/*Metodos utiles*/
+		List <Vehiculo^>^ buscarAll();
+		void escribirArchivo(List <Vehiculo^>^ listaVehiculos);
+		void eliminarVehiculoFisico(String^ placa);
+		void agregarVehiculo(Vehiculo^ objVehiculo);
 	};
 
 
