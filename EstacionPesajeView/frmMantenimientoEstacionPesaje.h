@@ -79,8 +79,8 @@ namespace EstacionPesajeView {
 			this->Latitud = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
@@ -94,6 +94,7 @@ namespace EstacionPesajeView {
 			this->button4->TabIndex = 25;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::button4_Click);
 			// 
 			// button3
 			// 
@@ -177,16 +178,6 @@ namespace EstacionPesajeView {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::button1_Click);
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(29, 52);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(71, 16);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Ubicación:";
-			// 
 			// textBox1
 			// 
 			this->textBox1->BackColor = System::Drawing::SystemColors::Window;
@@ -196,6 +187,16 @@ namespace EstacionPesajeView {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(215, 22);
 			this->textBox1->TabIndex = 6;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(29, 52);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(71, 16);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Ubicación:";
 			// 
 			// frmMantenimientoEstacionPesaje
 			// 
@@ -250,6 +251,19 @@ namespace EstacionPesajeView {
 
 		}
 	} 
+
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		EstacionController^ objeto;
+
+		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+
+		String^ PersonaEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+
+		objeto->eliminarEstacionFisico(PersonaEliminar);
+
+		MessageBox::Show("La Estacion ha sido eliminado con éxito");
+	}
 
 };
 }

@@ -9,7 +9,14 @@ namespace EstacionPesajeController {
 	public ref class PersonaController {
 	public:
 		PersonaController();
-		List<Persona^>^ buscarPersona(String^ dni);
+		List<Persona^>^ buscarPersonaDNI(String^ dni);
+		List<Persona^>^ buscarPersonaApellido(String^ apellidoPaterno);
+
+		/*Metodos utiles*/
+		List <Persona^>^ buscarAll();
+		void escribirArchivo(List <Persona^>^ listaPersonas);
+		void eliminarPersonaFisico(String^ dni);
+		void agregarPersona(Persona^ objPersona);
 	};
 
 

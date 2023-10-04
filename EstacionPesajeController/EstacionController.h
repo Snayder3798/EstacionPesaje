@@ -10,6 +10,12 @@ namespace EstacionPesajeController {
 	public:
 		EstacionController();
 		List<EstacionPesaje^>^ buscarEstacionPesaje(String^ ubicacion);
+
+		/*Metodos utiles*/
+		List <EstacionPesaje^>^ buscarAll();
+		void escribirArchivo(List <EstacionPesaje^>^ listaEstaciones);
+		void eliminarEstacionFisico(String^ ubicacion);
+		void agregarEstacion(EstacionPesaje^ objEstacionPesaje);
 	};
 
 }
