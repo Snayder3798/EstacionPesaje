@@ -16,6 +16,9 @@ namespace EstacionPesajeController {
 		void escribirArchivo(List <Tarjeta^>^ listaTarjetas);
 		void eliminarTarjetaFisico(String^ numeroTarjeta);
 		void agregarTarjeta(Tarjeta^ objTarjeta);
+
+		Tarjeta^ buscarTarjetaxNumero(String^ numeroTarjeta);
+		void actualizarTarjeta(Tarjeta^ objTarjeta);
 	};
 
 

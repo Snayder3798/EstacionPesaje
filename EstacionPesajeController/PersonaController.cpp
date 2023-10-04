@@ -121,3 +121,29 @@ void PersonaController::agregarPersona(Persona^ objPersona) {
 	listaPersonas->Add(objPersona);
 	escribirArchivo(listaPersonas);
 }
+
+Persona^ PersonaController::buscarPersonaxDni(String^ dni) {
+	List <Persona^>^ listaPersonas = buscarAll();
+	for (int i = 0; i < listaPersonas->Count; i++) {
+		if (listaPersonas[i]->getDni() == dni) {
+			return listaPersonas[i];
+		}
+	}
+}
+
+
+void PersonaController::actualizarPersona(Persona^ objPersona) {
+	List <Persona^>^ listaPersonas = buscarAll();
+	for (int i = 0; i < listaPersonas->Count; i++) {
+		if (listaPersonas[i]->getDni() == objPersona->getDni()) {
+			/*Actualizaremos cada dato*/
+			listaPersonas[i]->setCodigo(objPersona->getCodigo());
+			listaPersonas[i]->setNombre(objPersona->getNombre());
+			listaPersonas[i]->setApellidoPaterno(objPersona->getApellidoPaterno());
+			listaPersonas[i]->setApellidoMaterno(objPersona->getApellidoMaterno());
+			listaPersonas[i]->setDni(objPersona->getDni());
+			break;
+		}
+	}
+	escribirArchivo(listaPersonas);
+}

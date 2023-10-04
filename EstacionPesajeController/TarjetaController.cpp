@@ -84,3 +84,25 @@ void TarjetaController::agregarTarjeta(Tarjeta^ objTarjeta) {
 	listaTarjetas->Add(objTarjeta);
 	escribirArchivo(listaTarjetas);
 }
+
+
+Tarjeta^ TarjetaController::buscarTarjetaxNumero(String^ numeroTarjeta) {
+	List <Tarjeta^>^ listaTarjetas = buscarAll();
+	for (int i = 0; i < listaTarjetas->Count; i++) {
+		if (listaTarjetas[i]->getNumeroTarjeta() == numeroTarjeta) {
+			return listaTarjetas[i];
+		}
+	}
+}
+
+
+void TarjetaController::actualizarTarjeta(Tarjeta^ objTarjeta) {
+	List <Tarjeta^>^ listaTarjetas = buscarAll();
+	for (int i = 0; i < listaTarjetas->Count; i++) {
+		if (listaTarjetas[i]->getNumeroTarjeta() == objTarjeta->getNumeroTarjeta()) {
+			listaTarjetas[i]->setCodigo(objTarjeta->getCodigo());
+			listaTarjetas[i]->setEstado(objTarjeta->getEstado());
+			listaTarjetas[i]->setNumeroTarjeta(objTarjeta->getNumeroTarjeta());
+		}
+	}
+}

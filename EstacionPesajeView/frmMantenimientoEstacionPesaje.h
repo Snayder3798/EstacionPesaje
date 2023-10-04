@@ -1,6 +1,7 @@
 #pragma once
 
 #include "frmAgregarEstacionPesaje.h"
+#include "frmEditarEstacionPesaje.h"
 
 namespace EstacionPesajeView {
 
@@ -55,7 +56,8 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ubicacion;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Longitud;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Latitud;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
+	private: System::Windows::Forms::ComboBox^ comboBox1;
 
 	private:
 		/// <summary>
@@ -78,8 +80,8 @@ namespace EstacionPesajeView {
 			this->Longitud = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Latitud = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -105,6 +107,7 @@ namespace EstacionPesajeView {
 			this->button3->TabIndex = 24;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::button3_Click);
 			// 
 			// button2
 			// 
@@ -155,8 +158,8 @@ namespace EstacionPesajeView {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->comboBox1);
 			this->groupBox1->Controls->Add(this->button1);
-			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->Location = System::Drawing::Point(23, 27);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
@@ -166,6 +169,14 @@ namespace EstacionPesajeView {
 			this->groupBox1->TabIndex = 21;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Criterios de Búsqueda";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(120, 49);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(215, 24);
+			this->comboBox1->TabIndex = 7;
 			// 
 			// button1
 			// 
@@ -177,16 +188,6 @@ namespace EstacionPesajeView {
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::button1_Click);
-			// 
-			// textBox1
-			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::Window;
-			this->textBox1->ForeColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox1->Location = System::Drawing::Point(120, 49);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(215, 22);
-			this->textBox1->TabIndex = 6;
 			// 
 			// label1
 			// 
@@ -210,6 +211,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmMantenimientoEstacionPesaje";
 			this->Text = L"Mantenimiento de Estación Pesaje";
+			this->Load += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::frmMantenimientoEstacionPesaje_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -226,7 +228,7 @@ namespace EstacionPesajeView {
 		ventanaAgregarEstacionPesaje->ShowDialog();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ ubicacion = this->textBox1->Text;
+		String^ ubicacion = this->comboBox1->Text;
 		EstacionController^ objEstacionController = gcnew EstacionController();
 		List <EstacionPesaje^>^ listaEstaciones = objEstacionController ->buscarEstacionPesaje(ubicacion);
 		mostrarGrilla(listaEstaciones); 
@@ -263,6 +265,29 @@ namespace EstacionPesajeView {
 		objeto->eliminarEstacionFisico(PersonaEliminar);
 
 		MessageBox::Show("La Estacion ha sido eliminado con éxito");
+	}
+
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+
+		String^ UbicacionEstacionEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+
+		EstacionController^ objEstacionController = gcnew EstacionController();
+
+		EstacionPesaje^ objEstacion = objEstacionController->buscarEstacionxUbicacion(UbicacionEstacionEditar);
+
+		frmEditarEstacionPesaje^ ventanaEditarEstacionPesaje = gcnew frmEditarEstacionPesaje(objEstacion);
+		ventanaEditarEstacionPesaje->ShowDialog();
+	}
+
+	private: System::Void frmMantenimientoEstacionPesaje_Load(System::Object^ sender, System::EventArgs^ e) {
+		EstacionController^ objEstacionController = gcnew EstacionController();
+		List <String^>^ listaUbicaciones = objEstacionController->obtenerUbicaciones();
+		this->comboBox1->Items->Clear();
+		for (int i = 0; i < listaUbicaciones->Count; i++) {
+			this->comboBox1->Items->Add(listaUbicaciones[i]);
+		}
 	}
 
 };

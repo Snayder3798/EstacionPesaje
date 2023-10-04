@@ -16,6 +16,12 @@ namespace EstacionPesajeController {
 		void escribirArchivo(List <EstacionPesaje^>^ listaEstaciones);
 		void eliminarEstacionFisico(String^ ubicacion);
 		void agregarEstacion(EstacionPesaje^ objEstacionPesaje);
+
+		EstacionPesaje^ buscarEstacionxUbicacion(String^ ubicacion);
+		void actualizarEstacion(EstacionPesaje^ objEstacionPesaje);
+
+		/*Obtener lista de Ubicaciones para ponerlos en el filtro de Ubicaciones*/
+		List <String^>^ obtenerUbicaciones();
 	};
 
 }

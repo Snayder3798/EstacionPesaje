@@ -17,6 +17,9 @@ namespace EstacionPesajeController {
 		void escribirArchivo(List <Vehiculo^>^ listaVehiculos);
 		void eliminarVehiculoFisico(String^ placa);
 		void agregarVehiculo(Vehiculo^ objVehiculo);
+
+		Vehiculo^ buscarVehiculoxPlaca(String^ placa);
+		void actualizarVehiculo(Vehiculo^ objVehiculo);
 	};
 
 
