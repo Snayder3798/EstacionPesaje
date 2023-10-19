@@ -157,6 +157,7 @@ namespace EstacionPesajeView {
 			this->boxOpcionesMantenimiento->Name = L"boxOpcionesMantenimiento";
 			this->boxOpcionesMantenimiento->Size = System::Drawing::Size(142, 21);
 			this->boxOpcionesMantenimiento->TabIndex = 5;
+			this->boxOpcionesMantenimiento->Text = L"Seleccione una opcion";
 			this->boxOpcionesMantenimiento->SelectedIndexChanged += gcnew System::EventHandler(this, &frmPrincipal::boxOpcionesMantenimiento_SelectedIndexChanged);
 			// 
 			// btnSiguiente
