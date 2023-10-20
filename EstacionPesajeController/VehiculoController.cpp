@@ -107,13 +107,16 @@ Vehiculo^ VehiculoController::buscarVehiculoxPlaca(String^ placa) {
 void VehiculoController::actualizarVehiculo(Vehiculo^ objVehiculo) {
 	List <Vehiculo^>^ listaVehiculos = buscarAll();
 	for (int i = 0; listaVehiculos->Count; i++) {
-		listaVehiculos[i]->setCodigo(objVehiculo->getCodigo());
-		listaVehiculos[i]->setPesoSinCarga(objVehiculo->getPesoSinCarga());
-		listaVehiculos[i]->setPesoConCarga(objVehiculo->getPesoConCarga());
-		listaVehiculos[i]->setPesoActual(objVehiculo->getPesoActual());
-		listaVehiculos[i]->setPlaca(objVehiculo->getPlaca());
-		listaVehiculos[i]->setTipoVehiculo(objVehiculo->getTipoVehiculo());
-		break;
+		if (listaVehiculos[i]->getCodigo() == objVehiculo->getCodigo()) {
+			listaVehiculos[i]->setCodigo(objVehiculo->getCodigo());
+			listaVehiculos[i]->setPesoSinCarga(objVehiculo->getPesoSinCarga());
+			listaVehiculos[i]->setPesoConCarga(objVehiculo->getPesoConCarga());
+			listaVehiculos[i]->setPesoActual(objVehiculo->getPesoActual());
+			listaVehiculos[i]->setPlaca(objVehiculo->getPlaca());
+			listaVehiculos[i]->setTipoVehiculo(objVehiculo->getTipoVehiculo());
+			break;
+		}
+
 	}
 	escribirArchivo(listaVehiculos);
 }

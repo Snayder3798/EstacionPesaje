@@ -99,10 +99,11 @@ Tarjeta^ TarjetaController::buscarTarjetaxNumero(String^ numeroTarjeta) {
 void TarjetaController::actualizarTarjeta(Tarjeta^ objTarjeta) {
 	List <Tarjeta^>^ listaTarjetas = buscarAll();
 	for (int i = 0; i < listaTarjetas->Count; i++) {
-		if (listaTarjetas[i]->getNumeroTarjeta() == objTarjeta->getNumeroTarjeta()) {
+		if (listaTarjetas[i]->getCodigo() == objTarjeta->getCodigo()) {
 			listaTarjetas[i]->setCodigo(objTarjeta->getCodigo());
 			listaTarjetas[i]->setEstado(objTarjeta->getEstado());
 			listaTarjetas[i]->setNumeroTarjeta(objTarjeta->getNumeroTarjeta());
+			break;
 		}
 	}
 }
