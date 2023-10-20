@@ -101,7 +101,7 @@ EstacionPesaje^ EstacionController::buscarEstacionxUbicacion(String^ ubicacion) 
 void EstacionController::actualizarEstacion(EstacionPesaje^ objEstacionPesaje) {
 	List <EstacionPesaje^>^ listaEstaciones = buscarAll();
 	for (int i = 0; i < listaEstaciones->Count; i++) {
-		if (listaEstaciones[i]->getUbicacion() == objEstacionPesaje->getUbicacion()) {
+		if (listaEstaciones[i]->getCodigo() == objEstacionPesaje->getCodigo()) {
 			/*Actualizaremos cada dato*/
 			listaEstaciones[i]->setCodigo(objEstacionPesaje->getCodigo());
 			listaEstaciones[i]->setUbicacion(objEstacionPesaje->getUbicacion());

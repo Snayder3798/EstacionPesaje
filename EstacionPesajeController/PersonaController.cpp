@@ -135,7 +135,7 @@ Persona^ PersonaController::buscarPersonaxDni(String^ dni) {
 void PersonaController::actualizarPersona(Persona^ objPersona) {
 	List <Persona^>^ listaPersonas = buscarAll();
 	for (int i = 0; i < listaPersonas->Count; i++) {
-		if (listaPersonas[i]->getDni() == objPersona->getDni()) {
+		if (listaPersonas[i]->getCodigo() == objPersona->getCodigo()) {
 			/*Actualizaremos cada dato*/
 			listaPersonas[i]->setCodigo(objPersona->getCodigo());
 			listaPersonas[i]->setNombre(objPersona->getNombre());
