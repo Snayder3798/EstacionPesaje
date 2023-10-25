@@ -166,13 +166,14 @@ namespace EstacionPesajeView {
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(90, 40);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(162, 21);
+			this->comboBox1->Sorted = true;
 			this->comboBox1->TabIndex = 7;
-			this->comboBox1->Text = L"Seleccione un Departamento";
 			// 
 			// button1
 			// 
@@ -225,7 +226,13 @@ namespace EstacionPesajeView {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ ubicacion = this->comboBox1->Text;
 		EstacionController^ objEstacionController = gcnew EstacionController();
-		List <EstacionPesaje^>^ listaEstaciones = objEstacionController ->buscarEstacionPesaje(ubicacion);
+		List <EstacionPesaje^>^ listaEstaciones = gcnew List <EstacionPesaje^>();
+		if (ubicacion == "Todos") {
+			listaEstaciones = objEstacionController->buscarAll();
+		}
+		else {
+			listaEstaciones = objEstacionController->buscarEstacionPesaje(ubicacion);
+		}
 		mostrarGrilla(listaEstaciones); 
 	}
 
@@ -280,9 +287,12 @@ namespace EstacionPesajeView {
 		EstacionController^ objEstacionController = gcnew EstacionController();
 		List <String^>^ listaUbicaciones = objEstacionController->obtenerUbicaciones();
 		this->comboBox1->Items->Clear();
+		this->comboBox1->Items->Add("Todos");
 		for (int i = 0; i < listaUbicaciones->Count; i++) {
 			this->comboBox1->Items->Add(listaUbicaciones[i]);
-		}
+		}	
+		List <EstacionPesaje^>^ listaEstaciones = objEstacionController->buscarAll();
+		mostrarGrilla(listaEstaciones);
 	}
 
 };
