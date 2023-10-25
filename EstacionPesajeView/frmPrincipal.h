@@ -148,16 +148,17 @@ namespace EstacionPesajeView {
 			// 
 			// boxOpcionesMantenimiento
 			// 
+			this->boxOpcionesMantenimiento->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->boxOpcionesMantenimiento->FormattingEnabled = true;
 			this->boxOpcionesMantenimiento->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
-				L"Persona", L"Tarjeta", L"Vehiculo",
-					L"Estacion Pesaje"
+				L"Estacion Pesaje", L"Persona",
+					L"Tarjeta", L"Vehiculo"
 			});
 			this->boxOpcionesMantenimiento->Location = System::Drawing::Point(183, 242);
 			this->boxOpcionesMantenimiento->Name = L"boxOpcionesMantenimiento";
 			this->boxOpcionesMantenimiento->Size = System::Drawing::Size(142, 21);
+			this->boxOpcionesMantenimiento->Sorted = true;
 			this->boxOpcionesMantenimiento->TabIndex = 5;
-			this->boxOpcionesMantenimiento->Text = L"Persona";
 			this->boxOpcionesMantenimiento->SelectedIndexChanged += gcnew System::EventHandler(this, &frmPrincipal::boxOpcionesMantenimiento_SelectedIndexChanged);
 			// 
 			// btnSiguiente
@@ -266,6 +267,9 @@ namespace EstacionPesajeView {
 			frmMantenimientoEstacionPesaje^ ventanaMantEstacionPesaje = gcnew frmMantenimientoEstacionPesaje();
 			ventanaMantEstacionPesaje->Show();
 
+		}
+		else{
+			MessageBox::Show("Por favor, seleccione una opcion.");
 		}
 	}
 private: System::Void boxOpcionesMantenimiento_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
