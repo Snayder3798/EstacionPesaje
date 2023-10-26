@@ -127,6 +127,7 @@
     <ClCompile Include="frmMantenimientoTarjeta.cpp" />
     <ClCompile Include="frmMantenimientoVehiculo.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
+    <ClCompile Include="frmVerEstacionPesaje.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +178,9 @@
     <ClInclude Include="frmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmVerEstacionPesaje.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAgregarEstacionPesaje.resx">
@@ -217,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerEstacionPesaje.resx">
+      <DependentUpon>frmVerEstacionPesaje.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,7 @@
 
 #include "frmAgregarEstacionPesaje.h"
 #include "frmEditarEstacionPesaje.h"
+#include "frmVerEstacionPesaje.h"
 
 namespace EstacionPesajeView {
 
@@ -58,6 +59,7 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Latitud;
 
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Button^ button5;
 
 	private:
 		/// <summary>
@@ -83,6 +85,7 @@ namespace EstacionPesajeView {
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
@@ -124,10 +127,10 @@ namespace EstacionPesajeView {
 				this->Ubicacion,
 					this->Longitud, this->Latitud
 			});
-			this->dataGridView1->Location = System::Drawing::Point(17, 134);
+			this->dataGridView1->Location = System::Drawing::Point(33, 128);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(375, 157);
+			this->dataGridView1->Size = System::Drawing::Size(454, 157);
 			this->dataGridView1->TabIndex = 22;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmMantenimientoEstacionPesaje::dataGridView1_CellContentClick);
 			// 
@@ -157,7 +160,7 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->comboBox1);
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(17, 22);
+			this->groupBox1->Location = System::Drawing::Point(76, 23);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(375, 89);
 			this->groupBox1->TabIndex = 21;
@@ -194,11 +197,22 @@ namespace EstacionPesajeView {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Ubicación:";
 			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(412, 316);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(75, 23);
+			this->button5->TabIndex = 26;
+			this->button5->Text = L"Ver";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::button5_Click);
+			// 
 			// frmMantenimientoEstacionPesaje
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(422, 367);
+			this->ClientSize = System::Drawing::Size(517, 367);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -295,5 +309,13 @@ namespace EstacionPesajeView {
 		mostrarGrilla(listaEstaciones);
 	}
 
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+		String^ UbicacionEstacionVer = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+		EstacionController^ objEstacionController = gcnew EstacionController();
+		EstacionPesaje^ objEstacion = objEstacionController->buscarEstacionxUbicacion(UbicacionEstacionVer);
+		frmVerEstacionPesaje^ ventanaVerEstacionPesaje = gcnew frmVerEstacionPesaje(objEstacion);
+		ventanaVerEstacionPesaje->ShowDialog();
+	}
 };
 }
