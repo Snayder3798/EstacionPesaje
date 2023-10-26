@@ -211,7 +211,7 @@ namespace EstacionPesajeView {
 			// 
 			this->radioButton2->AutoSize = true;
 			this->radioButton2->Location = System::Drawing::Point(190, 37);
-			this->radioButton2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->radioButton2->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(102, 17);
 			this->radioButton2->TabIndex = 10;
@@ -224,7 +224,7 @@ namespace EstacionPesajeView {
 			this->radioButton1->AutoSize = true;
 			this->radioButton1->Checked = true;
 			this->radioButton1->Location = System::Drawing::Point(117, 37);
-			this->radioButton1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->radioButton1->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton1->Name = L"radioButton1";
 			this->radioButton1->Size = System::Drawing::Size(44, 17);
 			this->radioButton1->TabIndex = 9;
@@ -273,9 +273,10 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"frmMantenimientoPersona";
 			this->Text = L"Mantenimiento de Persona";
+			this->Load += gcnew System::EventHandler(this, &frmMantenimientoPersona::frmMantenimientoPersona_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -298,7 +299,7 @@ namespace EstacionPesajeView {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ informacion = this->textBox1->Text;
 		PersonaController^ objPersonaController = gcnew PersonaController();
-		List <Persona^>^ listaPersonas;
+		List <Persona^>^ listaPersonas = gcnew List <Persona^>();
 		if (radioButton1 -> Checked) {
 			listaPersonas = objPersonaController->buscarPersonaDNI(informacion);
 		}
@@ -357,5 +358,10 @@ namespace EstacionPesajeView {
 		frmEditarPersona^ ventanaEditarPersona = gcnew frmEditarPersona(objPersona);
 		ventanaEditarPersona->ShowDialog();
 	}
+private: System::Void frmMantenimientoPersona_Load(System::Object^ sender, System::EventArgs^ e) {
+	PersonaController^ objPersonaController = gcnew PersonaController();
+	List <Persona^>^ listaPersonas = objPersonaController->buscarAll();
+	mostrarGrilla(listaPersonas);
+}
 };
 }
