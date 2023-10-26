@@ -152,7 +152,6 @@ namespace EstacionPesajeView {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Enabled = false;
 			this->textBox6->Location = System::Drawing::Point(125, 221);
 			this->textBox6->Multiline = true;
 			this->textBox6->Name = L"textBox6";

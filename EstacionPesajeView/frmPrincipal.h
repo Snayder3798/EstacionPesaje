@@ -259,7 +259,7 @@ namespace EstacionPesajeView {
 
 	private: System::Void tarjetaToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		frmMantenimientoTarjeta^ ventanaMantTarjeta = gcnew frmMantenimientoTarjeta();
-		;
+		ventanaMantTarjeta->Show();
 	}
 
 	private: System::Void estaciónPesajeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {

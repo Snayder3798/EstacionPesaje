@@ -213,9 +213,10 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"frmMantenimientoTarjeta";
 			this->Text = L"Mantenimiento de Tarjeta";
+			this->Load += gcnew System::EventHandler(this, &frmMantenimientoTarjeta::frmMantenimientoTarjeta_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -264,7 +265,7 @@ namespace EstacionPesajeView {
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		
-		TarjetaController^ objeto;
+		TarjetaController^ objeto = gcnew TarjetaController();
 
 		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
 
@@ -289,6 +290,11 @@ namespace EstacionPesajeView {
 		ventanaEditartarjeta->ShowDialog();
 	}
 private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void frmMantenimientoTarjeta_Load(System::Object^ sender, System::EventArgs^ e) {
+	TarjetaController^ objTarjetaController = gcnew TarjetaController();
+	List <Tarjeta^>^ listaTarjetas = objTarjetaController->buscarAll();
+	mostrarGrilla(listaTarjetas);
 }
 };
 }

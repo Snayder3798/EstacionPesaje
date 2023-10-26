@@ -91,12 +91,12 @@ namespace EstacionPesajeView {
 		}
 #pragma endregion
 	private: System::Void frmReporteMultasxTipoVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
-		VehiculoController^ objVehiculoController;
+		VehiculoController^ objVehiculoController = gcnew VehiculoController();
 		List <String^>^ listaTiposVehiculos = objVehiculoController->getTiposVehiculos();
 		List <String^>^ listaMultas = objVehiculoController->getMultas(listaTiposVehiculos);
 		for (int i = 0; i < listaTiposVehiculos->Count; i++) {
-			this->chart1->Series["Series1"]->Points->Add(Convert::ToInt32(listaMultas[i]));
-			this->chart1->Series["Series1"]->Points[i]->AxisLabel = listaTiposVehiculos[i];
+			this->chart1->Series["Series1"]->Points->Add(Convert::ToInt32(listaMultas[i])); // Se necesita un int
+			this->chart1->Series["Series1"]->Points[i]->AxisLabel = listaTiposVehiculos[i]; // este y los sgts se necesitan string
 			this->chart1->Series["Series1"]->Points[i]->LegendText = listaTiposVehiculos[i];
 			this->chart1->Series["Series1"]->Points[i]->Label = listaMultas[i];
 		}
