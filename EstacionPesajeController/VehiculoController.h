@@ -14,12 +14,15 @@ namespace EstacionPesajeController {
 		
 		/*Metodos utiles*/
 		List <Vehiculo^>^ buscarAll();
+		List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo);
 		void escribirArchivo(List <Vehiculo^>^ listaVehiculos);
 		void eliminarVehiculoFisico(String^ placa);
 		void agregarVehiculo(Vehiculo^ objVehiculo);
 
 		Vehiculo^ buscarVehiculoxPlaca(String^ placa);
 		void actualizarVehiculo(Vehiculo^ objVehiculo);
+		List <String^>^ getTiposVehiculos();
+		List <String^>^ getMultas(List <String^>^ listaTipoVehiculos);
 	};
 
 

@@ -64,6 +64,8 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Label^ label3;
 
 	private: Vehiculo^ objVehiculo;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::TextBox^ textBox7;
 
 	private:
 		/// <summary>
@@ -81,6 +83,8 @@ namespace EstacionPesajeView {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->Propietario = (gcnew System::Windows::Forms::GroupBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -98,8 +102,8 @@ namespace EstacionPesajeView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(249, 319);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->Location = System::Drawing::Point(248, 336);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(68, 23);
 			this->button2->TabIndex = 23;
@@ -109,7 +113,7 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(138, 319);
+			this->button1->Location = System::Drawing::Point(137, 336);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 22;
@@ -119,6 +123,8 @@ namespace EstacionPesajeView {
 			// 
 			// Propietario
 			// 
+			this->Propietario->Controls->Add(this->label7);
+			this->Propietario->Controls->Add(this->textBox7);
 			this->Propietario->Controls->Add(this->textBox5);
 			this->Propietario->Controls->Add(this->textBox6);
 			this->Propietario->Controls->Add(this->label1);
@@ -133,14 +139,31 @@ namespace EstacionPesajeView {
 			this->Propietario->Controls->Add(this->label3);
 			this->Propietario->Location = System::Drawing::Point(29, 23);
 			this->Propietario->Name = L"Propietario";
-			this->Propietario->Size = System::Drawing::Size(384, 281);
+			this->Propietario->Size = System::Drawing::Size(384, 307);
 			this->Propietario->TabIndex = 21;
 			this->Propietario->TabStop = false;
 			this->Propietario->Text = L"Datos del Vehiculo:";
 			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(15, 185);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(101, 13);
+			this->label7->TabIndex = 25;
+			this->label7->Text = L"Cantidad de Multas:";
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(125, 182);
+			this->textBox7->Multiline = true;
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(192, 20);
+			this->textBox7->TabIndex = 24;
+			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(125, 249);
+			this->textBox5->Location = System::Drawing::Point(125, 261);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(192, 20);
 			this->textBox5->TabIndex = 12;
@@ -148,16 +171,17 @@ namespace EstacionPesajeView {
 			// textBox6
 			// 
 			this->textBox6->Enabled = false;
-			this->textBox6->Location = System::Drawing::Point(125, 210);
+			this->textBox6->Location = System::Drawing::Point(125, 219);
 			this->textBox6->Multiline = true;
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(192, 20);
 			this->textBox6->TabIndex = 11;
+			this->textBox6->TextChanged += gcnew System::EventHandler(this, &frmEditarVehiculo::textBox6_TextChanged);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(15, 251);
+			this->label1->Location = System::Drawing::Point(15, 263);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(75, 13);
 			this->label1->TabIndex = 10;
@@ -166,11 +190,12 @@ namespace EstacionPesajeView {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(15, 213);
+			this->label6->Location = System::Drawing::Point(15, 222);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(43, 13);
 			this->label6->TabIndex = 9;
 			this->label6->Text = L"Código:";
+			this->label6->Click += gcnew System::EventHandler(this, &frmEditarVehiculo::label6_Click);
 			// 
 			// textBox4
 			// 
@@ -247,7 +272,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Propietario);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"frmEditarVehiculo";
 			this->Text = L"frmEditarVehiculo";
 			this->Load += gcnew System::EventHandler(this, &frmEditarVehiculo::frmEditarVehiculo_Load);
@@ -264,6 +289,7 @@ namespace EstacionPesajeView {
 		this->textBox3->Text = Convert::ToString(this->objVehiculo->getPesoSinCarga());
 		this->textBox4->Text = Convert::ToString(this->objVehiculo->getPesoConCarga());
 		this->textBox5->Text = Convert::ToString(this->objVehiculo->getPesoActual());
+		this->textBox7->Text = Convert::ToString(this->objVehiculo->getCantMultas());
 	}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -273,7 +299,8 @@ namespace EstacionPesajeView {
 		int pesoActual = Convert::ToInt32(this->textBox5->Text);
 		String^ placa = this->textBox1->Text;
 		String^ tipoVehiculo = this->textBox2->Text;
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo);
+		int cantMultas = Convert::ToInt32(this->textBox7->Text);
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas);
 
 		VehiculoController^ objVehiculoController = gcnew VehiculoController();
 		objVehiculoController->actualizarVehiculo(objVehiculo);
@@ -284,5 +311,9 @@ namespace EstacionPesajeView {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

@@ -2,6 +2,7 @@
 #include "VehiculoController.h"
 
 using namespace EstacionPesajeController;
+using namespace System::Collections::Generic;
 using namespace System::IO; /*Este espacio de nombres sirve para manejar los archivos de texto*/
 
 
@@ -26,9 +27,10 @@ List<Vehiculo^>^ VehiculoController::buscarVehiculo(String^ placa) {
 		int pesoActualVehiculo = Convert::ToInt32(datos[3]);
 		String^ placaVehiculo = datos[4];
 		String^ tipoVehiculoVehiculo = datos[5];
+		int cantMultas = Convert::ToInt32(datos[6]);
 
 		if (placaVehiculo->Contains(placa)) {
-			Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo);
+			Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas);
 			listaVehiculosEncontrados->Add(objVehiculo);
 		}
 	}
@@ -36,7 +38,7 @@ List<Vehiculo^>^ VehiculoController::buscarVehiculo(String^ placa) {
 }
 
 
-List <Vehiculo^>^ VehiculoController::buscarAll() {
+List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo) {
 	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
 	List<Vehiculo^>^ listaVehiculosEncontrados = gcnew List<Vehiculo^>();
 	array<String^>^ lineas = File::ReadAllLines("vehiculo.txt");
@@ -53,10 +55,37 @@ List <Vehiculo^>^ VehiculoController::buscarAll() {
 		int pesoActualVehiculo = Convert::ToInt32(datos[3]);
 		String^ placaVehiculo = datos[4];
 		String^ tipoVehiculoVehiculo = datos[5];
+		int cantMultas = Convert::ToInt32(datos[6]);
+		if (tipoVehiculoVehiculo == TipoVehiculo) {
+			Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas);
+			listaVehiculosEncontrados->Add(objVehiculo);
+		}		
+	}
+	return listaVehiculosEncontrados;
+}
 
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo);
+List <Vehiculo^>^ VehiculoController::buscarAll() {
+	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
+	List<Vehiculo^>^ listaVehiculosEncontrados = gcnew List<Vehiculo^>();
+	array<String^>^ lineas = File::ReadAllLines("vehiculo.txt");
+
+	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
+	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
+	for each (String ^ linea in lineas) {
+		/*Voy a separar cada elemento del String por ; con el split*/
+		array<String^>^ datos = linea->Split(separadores->ToCharArray());
+
+		int codigoVehiculo = Convert::ToInt32(datos[0]);
+		int pesoSinCargaVehiculo = Convert::ToInt32(datos[1]);
+		int pesoConCargaVehiculo = Convert::ToInt32(datos[2]);
+		int pesoActualVehiculo = Convert::ToInt32(datos[3]);
+		String^ placaVehiculo = datos[4];
+		String^ tipoVehiculoVehiculo = datos[5];
+		int cantMultas = Convert::ToInt32(datos[6]);
+
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas);
 		listaVehiculosEncontrados->Add(objVehiculo);
-		
+
 	}
 	return listaVehiculosEncontrados;
 }
@@ -69,7 +98,7 @@ void VehiculoController::escribirArchivo(List <Vehiculo^>^ lista) {
 
 		Vehiculo^ objeto = lista[i];
 
-		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getPesoSinCarga() + ";" + objeto->getPesoConCarga() + ";" + objeto->getPesoActual() + ";" + objeto->getPlaca() + ";" + objeto->getTipoVehiculo() + ";";
+		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getPesoSinCarga() + ";" + objeto->getPesoConCarga() + ";" + objeto->getPesoActual() + ";" + objeto->getPlaca() + ";" + objeto->getTipoVehiculo() + ";" + objeto->getCantMultas() + ";";
 	}
 
 	File::WriteAllLines("vehiculo.txt", lineasArchivo);
@@ -114,9 +143,35 @@ void VehiculoController::actualizarVehiculo(Vehiculo^ objVehiculo) {
 			listaVehiculos[i]->setPesoActual(objVehiculo->getPesoActual());
 			listaVehiculos[i]->setPlaca(objVehiculo->getPlaca());
 			listaVehiculos[i]->setTipoVehiculo(objVehiculo->getTipoVehiculo());
+			listaVehiculos[i]->setCantMultas(objVehiculo->getCantMultas());
 			break;
 		}
 
 	}
 	escribirArchivo(listaVehiculos);
+}
+
+List <String^>^ VehiculoController::getTiposVehiculos() {
+	List <Vehiculo^>^ listaVehiculos = buscarAll();
+	List <String^>^ listaTipoVehiculos = gcnew List <String^>();
+	for (int i = 0; i < listaVehiculos->Count; i++) {
+		if (!(listaTipoVehiculos->Contains(listaVehiculos[i]->getTipoVehiculo()))) {
+			listaTipoVehiculos->Add(listaVehiculos[i]->getTipoVehiculo());
+		}
+	}
+	return listaTipoVehiculos;
+}
+
+List <String^>^ VehiculoController::getMultas(List <String^>^ listaTipoVehiculos) {
+	
+	List <String^>^ listaMultas = gcnew List <String^>();
+	for (int i = 0; i < listaTipoVehiculos->Count; i++) {
+		List <Vehiculo^>^ listaVehiculos = buscarxTipoVehiculo(listaTipoVehiculos[i]);
+		int cantidad = 0;
+		for (int i = 0; i < listaVehiculos->Count; i++) {
+			cantidad = cantidad + listaVehiculos[i]->getCantMultas();
+		}
+		listaMultas->Add(Convert::ToString(cantidad));
+	}
+	return listaMultas;
 }
