@@ -127,6 +127,8 @@
     <ClCompile Include="frmMantenimientoTarjeta.cpp" />
     <ClCompile Include="frmMantenimientoVehiculo.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
+    <ClCompile Include="frmReporteMultasxTipoVehiculo.cpp" />
+    <ClCompile Include="frmVerEstacionPesaje.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +137,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +180,12 @@
     <ClInclude Include="frmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmReporteMultasxTipoVehiculo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmVerEstacionPesaje.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAgregarEstacionPesaje.resx">
@@ -217,6 +226,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteMultasxTipoVehiculo.resx">
+      <DependentUpon>frmReporteMultasxTipoVehiculo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerEstacionPesaje.resx">
+      <DependentUpon>frmVerEstacionPesaje.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -8,16 +8,17 @@ namespace EstacionPesajeView {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
 	using namespace EstacionPesajeModel;
 	using namespace EstacionPesajeController;
+
+
 	/// <summary>
-	/// Resumen de frmEditarEstacionPesaje
+	/// Resumen de frmVerEstacionPesaje
 	/// </summary>
-	public ref class frmEditarEstacionPesaje : public System::Windows::Forms::Form
+	public ref class frmVerEstacionPesaje : public System::Windows::Forms::Form
 	{
 	public:
-		frmEditarEstacionPesaje(void)
+		frmVerEstacionPesaje(void)
 		{
 			InitializeComponent();
 			//
@@ -25,10 +26,12 @@ namespace EstacionPesajeView {
 			//
 		}
 
-		frmEditarEstacionPesaje(EstacionPesaje^ objEstacion)
+		frmVerEstacionPesaje(EstacionPesaje^ objEstacion)
 		{
 			InitializeComponent();
+
 			this->objEstacion = objEstacion;
+
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -38,27 +41,24 @@ namespace EstacionPesajeView {
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
 		/// </summary>
-		~frmEditarEstacionPesaje()
+		~frmVerEstacionPesaje()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox1;
-	protected:
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
+	protected:
+	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
-
-	private: EstacionPesaje^ objEstacion; /*Este atributo lo agregamos porque necesitamos manejar la informacion de la Estacion a editar*/
+	private: EstacionPesaje^ objEstacion;
 
 	private:
 		/// <summary>
@@ -73,58 +73,17 @@ namespace EstacionPesajeView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// textBox1
-			// 
-			this->textBox1->Enabled = false;
-			this->textBox1->Location = System::Drawing::Point(125, 145);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(192, 20);
-			this->textBox1->TabIndex = 26;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(250, 229);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(68, 23);
-			this->button1->TabIndex = 24;
-			this->button1->Text = L"Cancelar";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &frmEditarEstacionPesaje::button1_Click);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(15, 148);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(43, 13);
-			this->label1->TabIndex = 25;
-			this->label1->Text = L"Código:";
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(125, 229);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 23;
-			this->button2->Text = L"Guardar";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &frmEditarEstacionPesaje::button2_Click);
 			// 
 			// groupBox1
 			// 
@@ -136,16 +95,24 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Controls->Add(this->label8);
-			this->groupBox1->Location = System::Drawing::Point(28, 28);
+			this->groupBox1->Location = System::Drawing::Point(12, 29);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(384, 184);
-			this->groupBox1->TabIndex = 22;
+			this->groupBox1->Size = System::Drawing::Size(334, 184);
+			this->groupBox1->TabIndex = 23;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos de la Estación Pesaje:";
 			// 
+			// textBox1
+			// 
+			this->textBox1->Enabled = false;
+			this->textBox1->Location = System::Drawing::Point(125, 145);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(192, 20);
+			this->textBox1->TabIndex = 26;
+			// 
 			// textBox6
 			// 
-			this->textBox6->Enabled = false;
 			this->textBox6->Location = System::Drawing::Point(125, 106);
 			this->textBox6->Multiline = true;
 			this->textBox6->Name = L"textBox6";
@@ -154,16 +121,23 @@ namespace EstacionPesajeView {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Enabled = false;
 			this->textBox7->Location = System::Drawing::Point(125, 70);
 			this->textBox7->Multiline = true;
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(192, 20);
 			this->textBox7->TabIndex = 6;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(15, 148);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(43, 13);
+			this->label1->TabIndex = 25;
+			this->label1->Text = L"Código:";
+			// 
 			// textBox8
 			// 
-			this->textBox8->Enabled = false;
 			this->textBox8->Location = System::Drawing::Point(125, 30);
 			this->textBox8->Multiline = true;
 			this->textBox8->Name = L"textBox8";
@@ -197,50 +171,26 @@ namespace EstacionPesajeView {
 			this->label8->TabIndex = 2;
 			this->label8->Text = L"Latitud:";
 			// 
-			// frmEditarEstacionPesaje
+			// frmVerEstacionPesaje
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(446, 276);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->button2);
+			this->ClientSize = System::Drawing::Size(383, 262);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->Name = L"frmEditarEstacionPesaje";
-			this->Text = L"Editar Estacion Pesaje";
-			this->Load += gcnew System::EventHandler(this, &frmEditarEstacionPesaje::frmEditarEstacionPesaje_Load);
+			this->Name = L"frmVerEstacionPesaje";
+			this->Text = L"Ver Estaction Pensaje";
+			this->Load += gcnew System::EventHandler(this, &frmVerEstacionPesaje::frmVerEstacionPesaje_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void frmEditarEstacionPesaje_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->textBox1->Text = Convert::ToString(this->objEstacion->getCodigo());
+	private: System::Void frmVerEstacionPesaje_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->textBox8->Text = this->objEstacion->getUbicacion();
-		this->textBox7->Text = Convert::ToString(this->objEstacion->getLongitud());
-		this->textBox6->Text = Convert::ToString(this->objEstacion->getLatitud());
+		this->textBox7->Text = Convert::ToString(this->objEstacion->getLatitud());
+		this->textBox6->Text = Convert::ToString(this->objEstacion->getLongitud());
+		this->textBox1->Text = Convert::ToString(this->objEstacion->getCodigo());
 	}
-
-
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		int codigoEstacionPesaje = Convert::ToInt32(this->textBox1->Text);
-		String^ ubicacion = this->textBox8->Text;
-		double latitud = Convert::ToDouble(this->textBox7->Text);
-		double longitud = Convert::ToDouble(this->textBox6->Text);
-		EstacionPesaje^ objEstacionPesaje = gcnew EstacionPesaje(codigoEstacionPesaje, ubicacion, latitud, longitud);
-
-		EstacionController^ objEstacioncontroller = gcnew EstacionController();
-		objEstacioncontroller->actualizarEstacion(objEstacionPesaje);
-		MessageBox::Show("La Estación fue actualizada correctamente");
-		this->Close();
-	}
-
-
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
-
-
 };
 }
