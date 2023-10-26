@@ -116,8 +116,10 @@
   <ItemGroup>
     <ClCompile Include="frmAgregarEstacionPesaje.cpp" />
     <ClCompile Include="frmAgregarPersona.cpp" />
+    <ClCompile Include="frmAgregarPropietarioVehiculo.cpp" />
     <ClCompile Include="frmAgregarTarjeta.cpp" />
     <ClCompile Include="frmAgregarVehiculo.cpp" />
+    <ClCompile Include="frmBuscarPersona.cpp" />
     <ClCompile Include="frmEditarEstacionPesaje.cpp" />
     <ClCompile Include="frmEditarPersona.cpp" />
     <ClCompile Include="frmEditarTarjeta.cpp" />
@@ -126,6 +128,7 @@
     <ClCompile Include="frmMantenimientoPersona.cpp" />
     <ClCompile Include="frmMantenimientoTarjeta.cpp" />
     <ClCompile Include="frmMantenimientoVehiculo.cpp" />
+    <ClCompile Include="frmNuevoVehiculo.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -144,10 +147,16 @@
     <ClInclude Include="frmAgregarPersona.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmAgregarPropietarioVehiculo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmAgregarTarjeta.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmAgregarVehiculo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmBuscarPersona.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmEditarEstacionPesaje.h">
@@ -174,6 +183,9 @@
     <ClInclude Include="frmMantenimientoVehiculo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmNuevoVehiculo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -185,11 +197,17 @@
     <EmbeddedResource Include="frmAgregarPersona.resx">
       <DependentUpon>frmAgregarPersona.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarPropietarioVehiculo.resx">
+      <DependentUpon>frmAgregarPropietarioVehiculo.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarTarjeta.resx">
       <DependentUpon>frmAgregarTarjeta.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarVehiculo.resx">
       <DependentUpon>frmAgregarVehiculo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarPersona.resx">
+      <DependentUpon>frmBuscarPersona.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarEstacionPesaje.resx">
       <DependentUpon>frmEditarEstacionPesaje.h</DependentUpon>
@@ -214,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoVehiculo.resx">
       <DependentUpon>frmMantenimientoVehiculo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoVehiculo.resx">
+      <DependentUpon>frmNuevoVehiculo.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>
