@@ -128,6 +128,7 @@
     <ClCompile Include="frmMantenimientoVehiculo.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
     <ClCompile Include="frmReporteMultasxTipoVehiculo.cpp" />
+    <ClCompile Include="frmReporteNroMultasxEstacionPesaje.cpp" />
     <ClCompile Include="frmVerEstacionPesaje.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -183,6 +184,9 @@
     <ClInclude Include="frmReporteMultasxTipoVehiculo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmReporteNroMultasxEstacionPesaje.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmVerEstacionPesaje.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -229,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteMultasxTipoVehiculo.resx">
       <DependentUpon>frmReporteMultasxTipoVehiculo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteNroMultasxEstacionPesaje.resx">
+      <DependentUpon>frmReporteNroMultasxEstacionPesaje.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerEstacionPesaje.resx">
       <DependentUpon>frmVerEstacionPesaje.h</DependentUpon>

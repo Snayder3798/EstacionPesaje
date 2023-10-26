@@ -24,9 +24,10 @@ List<EstacionPesaje^>^ EstacionController::buscarEstacionPesaje(String^ ubicacio
 		String^ ubicacionEstacionPesaje = datos[1];
 		double latitudEstacionPesaje = Convert::ToDouble(datos[2]);
 		double longitudEstacionPesaje = Convert::ToDouble(datos[3]);
+		int nroMultasEstacionPesaje = Convert::ToInt32(datos[4]);
 
 		if (ubicacionEstacionPesaje->Contains(ubicacion)) {
-			EstacionPesaje^ objEstacionPesaje = gcnew EstacionPesaje(codigoEstacionPesaje, ubicacionEstacionPesaje, latitudEstacionPesaje, longitudEstacionPesaje);
+			EstacionPesaje^ objEstacionPesaje = gcnew EstacionPesaje(codigoEstacionPesaje, ubicacionEstacionPesaje, latitudEstacionPesaje, longitudEstacionPesaje, nroMultasEstacionPesaje);
 			listaEstacionPesajeEncontrados->Add(objEstacionPesaje);
 		}
 	}
@@ -49,9 +50,9 @@ List<EstacionPesaje^>^ EstacionController::buscarAll() {
 		String^ ubicacionEstacionPesaje = datos[1];
 		double latitudEstacionPesaje = Convert::ToDouble(datos[2]);
 		double longitudEstacionPesaje = Convert::ToDouble(datos[3]);
-
+		int nroMultasEstacionPesaje = Convert::ToInt32(datos[4]);
 	
-		EstacionPesaje^ objEstacionPesaje = gcnew EstacionPesaje(codigoEstacionPesaje, ubicacionEstacionPesaje, latitudEstacionPesaje, longitudEstacionPesaje);
+		EstacionPesaje^ objEstacionPesaje = gcnew EstacionPesaje(codigoEstacionPesaje, ubicacionEstacionPesaje, latitudEstacionPesaje, longitudEstacionPesaje, nroMultasEstacionPesaje);
 		listaEstacionPesajeEncontrados->Add(objEstacionPesaje);
 		
 	}
@@ -66,7 +67,7 @@ void EstacionController::escribirArchivo(List <EstacionPesaje^>^ lista) {
 
 		EstacionPesaje^ objeto = lista[i];
 
-		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getUbicacion() + ";" + objeto->getLatitud() + ";" + objeto->getLongitud();
+		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getUbicacion() + ";" + objeto->getLatitud() + ";" + objeto->getLongitud() + ";" + objeto->getNroMultas();
 	}
 
 	File::WriteAllLines("EstacionPesaje.txt", lineasArchivo);
@@ -107,6 +108,7 @@ void EstacionController::actualizarEstacion(EstacionPesaje^ objEstacionPesaje) {
 			listaEstaciones[i]->setUbicacion(objEstacionPesaje->getUbicacion());
 			listaEstaciones[i]->setLatitud(objEstacionPesaje->getLatitud());
 			listaEstaciones[i]->setLongitud(objEstacionPesaje->getLongitud());
+			listaEstaciones[i]->setNroMultas(objEstacionPesaje->getNroMultas());
 			break;
 		}
 	}
