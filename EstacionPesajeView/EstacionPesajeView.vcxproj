@@ -116,8 +116,10 @@
   <ItemGroup>
     <ClCompile Include="frmAgregarEstacionPesaje.cpp" />
     <ClCompile Include="frmAgregarPersona.cpp" />
+    <ClCompile Include="frmAgregarPropietarioVehiculo.cpp" />
     <ClCompile Include="frmAgregarTarjeta.cpp" />
     <ClCompile Include="frmAgregarVehiculo.cpp" />
+    <ClCompile Include="frmBuscarPersona.cpp" />
     <ClCompile Include="frmEditarEstacionPesaje.cpp" />
     <ClCompile Include="frmEditarPersona.cpp" />
     <ClCompile Include="frmEditarTarjeta.cpp" />
@@ -148,10 +150,16 @@
     <ClInclude Include="frmAgregarPersona.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmAgregarPropietarioVehiculo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmAgregarTarjeta.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmAgregarVehiculo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmBuscarPersona.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmEditarEstacionPesaje.h">
@@ -198,11 +206,17 @@
     <EmbeddedResource Include="frmAgregarPersona.resx">
       <DependentUpon>frmAgregarPersona.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarPropietarioVehiculo.resx">
+      <DependentUpon>frmAgregarPropietarioVehiculo.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarTarjeta.resx">
       <DependentUpon>frmAgregarTarjeta.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarVehiculo.resx">
       <DependentUpon>frmAgregarVehiculo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarPersona.resx">
+      <DependentUpon>frmBuscarPersona.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarEstacionPesaje.resx">
       <DependentUpon>frmEditarEstacionPesaje.h</DependentUpon>
