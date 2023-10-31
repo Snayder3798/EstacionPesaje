@@ -121,27 +121,31 @@ namespace EstacionPesajeView {
 			this->groupBox3->Controls->Add(this->textBox10);
 			this->groupBox3->Controls->Add(this->label10);
 			this->groupBox3->Controls->Add(this->label9);
-			this->groupBox3->Location = System::Drawing::Point(11, 152);
+			this->groupBox3->Location = System::Drawing::Point(26, 195);
+			this->groupBox3->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(392, 186);
-			this->groupBox3->TabIndex = 28;
+			this->groupBox3->Padding = System::Windows::Forms::Padding(4);
+			this->groupBox3->Size = System::Drawing::Size(523, 229);
+			this->groupBox3->TabIndex = 23;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Datos de Vehículo";
 			// 
 			// textBox6
 			// 
 			this->textBox6->Enabled = false;
-			this->textBox6->Location = System::Drawing::Point(122, 147);
+			this->textBox6->Location = System::Drawing::Point(163, 181);
+			this->textBox6->Margin = System::Windows::Forms::Padding(4);
 			this->textBox6->Multiline = true;
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(117, 20);
+			this->textBox6->Size = System::Drawing::Size(155, 24);
 			this->textBox6->TabIndex = 30;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(283, 70);
+			this->button2->Location = System::Drawing::Point(377, 86);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 43);
+			this->button2->Size = System::Drawing::Size(100, 53);
 			this->button2->TabIndex = 7;
 			this->button2->Text = L"Añadir Vehículo";
 			this->button2->UseVisualStyleBackColor = true;
@@ -149,81 +153,90 @@ namespace EstacionPesajeView {
 			// textBox7
 			// 
 			this->textBox7->Enabled = false;
-			this->textBox7->Location = System::Drawing::Point(122, 27);
+			this->textBox7->Location = System::Drawing::Point(163, 33);
+			this->textBox7->Margin = System::Windows::Forms::Padding(4);
 			this->textBox7->Multiline = true;
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(117, 20);
+			this->textBox7->Size = System::Drawing::Size(155, 24);
 			this->textBox7->TabIndex = 29;
 			// 
 			// textBox11
 			// 
 			this->textBox11->Enabled = false;
-			this->textBox11->Location = System::Drawing::Point(122, 55);
+			this->textBox11->Location = System::Drawing::Point(163, 68);
+			this->textBox11->Margin = System::Windows::Forms::Padding(4);
 			this->textBox11->Multiline = true;
 			this->textBox11->Name = L"textBox11";
-			this->textBox11->Size = System::Drawing::Size(117, 20);
+			this->textBox11->Size = System::Drawing::Size(155, 24);
 			this->textBox11->TabIndex = 23;
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(36, 30);
+			this->label8->Location = System::Drawing::Point(48, 37);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(43, 13);
+			this->label8->Size = System::Drawing::Size(54, 16);
 			this->label8->TabIndex = 27;
 			this->label8->Text = L"Código:";
 			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(36, 85);
+			this->label12->Location = System::Drawing::Point(48, 105);
+			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(31, 13);
+			this->label12->Size = System::Drawing::Size(38, 16);
 			this->label12->TabIndex = 20;
 			this->label12->Text = L"Tipo:";
 			// 
 			// textBox9
 			// 
 			this->textBox9->Enabled = false;
-			this->textBox9->Location = System::Drawing::Point(122, 116);
+			this->textBox9->Location = System::Drawing::Point(163, 143);
+			this->textBox9->Margin = System::Windows::Forms::Padding(4);
 			this->textBox9->Multiline = true;
 			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(117, 20);
+			this->textBox9->Size = System::Drawing::Size(155, 24);
 			this->textBox9->TabIndex = 25;
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(36, 119);
+			this->label11->Location = System::Drawing::Point(48, 146);
+			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(60, 13);
+			this->label11->Size = System::Drawing::Size(74, 16);
 			this->label11->TabIndex = 21;
 			this->label11->Text = L"Peso Neto:";
 			// 
 			// textBox10
 			// 
 			this->textBox10->Enabled = false;
-			this->textBox10->Location = System::Drawing::Point(122, 89);
+			this->textBox10->Location = System::Drawing::Point(163, 110);
+			this->textBox10->Margin = System::Windows::Forms::Padding(4);
 			this->textBox10->Multiline = true;
 			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(117, 20);
+			this->textBox10->Size = System::Drawing::Size(155, 24);
 			this->textBox10->TabIndex = 24;
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(36, 58);
+			this->label10->Location = System::Drawing::Point(48, 71);
+			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(40, 13);
+			this->label10->Size = System::Drawing::Size(48, 16);
 			this->label10->TabIndex = 19;
 			this->label10->Text = L"Placa: ";
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(36, 147);
+			this->label9->Location = System::Drawing::Point(48, 181);
+			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(62, 13);
+			this->label9->Size = System::Drawing::Size(76, 16);
 			this->label9->TabIndex = 22;
 			this->label9->Text = L"Peso Bruto:";
 			// 
@@ -236,38 +249,41 @@ namespace EstacionPesajeView {
 			this->groupBox2->Controls->Add(this->label3);
 			this->groupBox2->Controls->Add(this->button1);
 			this->groupBox2->Controls->Add(this->textBox3);
-			this->groupBox2->Location = System::Drawing::Point(11, 11);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox2->Location = System::Drawing::Point(26, 22);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox2->Size = System::Drawing::Size(392, 126);
-			this->groupBox2->TabIndex = 27;
+			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Size = System::Drawing::Size(523, 155);
+			this->groupBox2->TabIndex = 22;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Datos de Persona";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(38, 38);
+			this->label1->Location = System::Drawing::Point(51, 47);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(47, 13);
+			this->label1->Size = System::Drawing::Size(59, 16);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Nombre:";
 			// 
 			// textBox1
 			// 
 			this->textBox1->Enabled = false;
-			this->textBox1->Location = System::Drawing::Point(122, 35);
+			this->textBox1->Location = System::Drawing::Point(163, 43);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(117, 20);
+			this->textBox1->Size = System::Drawing::Size(155, 22);
 			this->textBox1->TabIndex = 1;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(38, 64);
+			this->label2->Location = System::Drawing::Point(51, 79);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(47, 13);
+			this->label2->Size = System::Drawing::Size(60, 16);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Apellido:";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -275,25 +291,28 @@ namespace EstacionPesajeView {
 			// textBox2
 			// 
 			this->textBox2->Enabled = false;
-			this->textBox2->Location = System::Drawing::Point(122, 61);
+			this->textBox2->Location = System::Drawing::Point(163, 75);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(117, 20);
+			this->textBox2->Size = System::Drawing::Size(155, 22);
 			this->textBox2->TabIndex = 3;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(38, 90);
+			this->label3->Location = System::Drawing::Point(51, 111);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(29, 13);
+			this->label3->Size = System::Drawing::Size(33, 16);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"DNI:";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(283, 49);
+			this->button1->Location = System::Drawing::Point(377, 60);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 43);
+			this->button1->Size = System::Drawing::Size(100, 53);
 			this->button1->TabIndex = 6;
 			this->button1->Text = L"Buscar persona";
 			this->button1->UseVisualStyleBackColor = true;
@@ -301,26 +320,29 @@ namespace EstacionPesajeView {
 			// textBox3
 			// 
 			this->textBox3->Enabled = false;
-			this->textBox3->Location = System::Drawing::Point(122, 87);
+			this->textBox3->Location = System::Drawing::Point(163, 107);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(117, 20);
+			this->textBox3->Size = System::Drawing::Size(155, 22);
 			this->textBox3->TabIndex = 5;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(227, 464);
+			this->button4->Location = System::Drawing::Point(314, 579);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 23);
-			this->button4->TabIndex = 26;
+			this->button4->Size = System::Drawing::Size(100, 28);
+			this->button4->TabIndex = 21;
 			this->button4->Text = L"Cancelar";
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(95, 464);
+			this->button3->Location = System::Drawing::Point(138, 579);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
-			this->button3->TabIndex = 25;
+			this->button3->Size = System::Drawing::Size(100, 28);
+			this->button3->TabIndex = 20;
 			this->button3->Text = L"Guardar";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
@@ -330,57 +352,60 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->label4);
 			this->groupBox1->Controls->Add(this->label5);
 			this->groupBox1->Controls->Add(this->textBox5);
-			this->groupBox1->Location = System::Drawing::Point(12, 344);
+			this->groupBox1->Location = System::Drawing::Point(27, 431);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(391, 114);
-			this->groupBox1->TabIndex = 24;
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
+			this->groupBox1->Size = System::Drawing::Size(521, 140);
+			this->groupBox1->TabIndex = 19;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos del Propietario del Vehículo";
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(138, 27);
+			this->textBox4->Location = System::Drawing::Point(184, 33);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 20);
+			this->textBox4->Size = System::Drawing::Size(132, 22);
 			this->textBox4->TabIndex = 11;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(35, 27);
+			this->label4->Location = System::Drawing::Point(47, 33);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(101, 13);
+			this->label4->Size = System::Drawing::Size(126, 16);
 			this->label4->TabIndex = 10;
 			this->label4->Text = L"Multas acumuladas:";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(35, 60);
+			this->label5->Location = System::Drawing::Point(47, 74);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(68, 13);
+			this->label5->Size = System::Drawing::Size(81, 16);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Multa actual:";
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(138, 57);
+			this->textBox5->Location = System::Drawing::Point(184, 70);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 20);
+			this->textBox5->Size = System::Drawing::Size(132, 22);
 			this->textBox5->TabIndex = 9;
 			// 
 			// frmAgregarPropietarioVehiculo
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(421, 502);
+			this->ClientSize = System::Drawing::Size(590, 621);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmAgregarPropietarioVehiculo";
-			this->Text = L"frmAgregarPropietarioVehiculo";
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
