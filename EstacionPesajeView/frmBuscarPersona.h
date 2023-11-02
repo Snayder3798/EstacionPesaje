@@ -147,6 +147,7 @@ namespace EstacionPesajeView {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(132, 22);
 			this->textBox1->TabIndex = 3;
+			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmBuscarPersona::textBox1_KeyPress);
 			// 
 			// button1
 			// 
@@ -186,6 +187,22 @@ namespace EstacionPesajeView {
 		}
 #pragma endregion
 	private: System::Void frmBuscarPersona_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+	private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si el carácter presionado es un numero o borrar
+		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
+
+			String^ TextoIngresado = textBox1->Text;
+
+			// Si longitud del texto actual es menor a 9, permite más entrada
+			if (TextoIngresado->Length < 9) {
+				e->Handled = false;
+			}
+			else {
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
+			}
+		}
 	}
 };
 }

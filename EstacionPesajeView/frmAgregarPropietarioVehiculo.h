@@ -368,6 +368,7 @@ namespace EstacionPesajeView {
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(132, 22);
 			this->textBox4->TabIndex = 11;
+			this->textBox4->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPropietarioVehiculo::textBox4_KeyPress);
 			// 
 			// label4
 			// 
@@ -396,6 +397,7 @@ namespace EstacionPesajeView {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(132, 22);
 			this->textBox5->TabIndex = 9;
+			this->textBox5->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPropietarioVehiculo::textBox5_KeyPress);
 			// 
 			// frmAgregarPropietarioVehiculo
 			// 
@@ -416,5 +418,36 @@ namespace EstacionPesajeView {
 
 		}
 #pragma endregion
-	};
+	private: System::Void textBox4_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si el carácter presionado es un numero o borrar
+		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
+
+			String^ TextoIngresado = textBox1->Text;
+
+			// Si longitud del texto actual es menor a 9, permite más entrada
+			if (TextoIngresado->Length < 9) {
+				e->Handled = false;
+			}
+			else {
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
+			}
+		}
+	}
+
+	private: System::Void textBox5_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si el carácter presionado es un numero o borrar
+		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
+
+			String^ TextoIngresado = textBox1->Text;
+
+			// Si longitud del texto actual es menor a 9, permite más entrada
+			if (TextoIngresado->Length < 9) {
+				e->Handled = false;
+			}
+			else {
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
+			}
+		}
+	}
+};
 }
