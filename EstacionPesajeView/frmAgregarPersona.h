@@ -118,6 +118,7 @@ namespace EstacionPesajeView {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(255, 22);
 			this->textBox5->TabIndex = 8;
+			this->textBox5->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPersona::textBox5_KeyPress);
 			// 
 			// textBox6
 			// 
@@ -127,6 +128,7 @@ namespace EstacionPesajeView {
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(255, 24);
 			this->textBox6->TabIndex = 7;
+			this->textBox6->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPersona::textBox6_KeyPress);
 			// 
 			// textBox7
 			// 
@@ -136,6 +138,7 @@ namespace EstacionPesajeView {
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(255, 24);
 			this->textBox7->TabIndex = 6;
+			this->textBox7->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPersona::textBox7_KeyPress);
 			// 
 			// textBox8
 			// 
@@ -145,6 +148,7 @@ namespace EstacionPesajeView {
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(255, 24);
 			this->textBox8->TabIndex = 5;
+			this->textBox8->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPersona::textBox8_KeyPress);
 			// 
 			// label1
 			// 
@@ -226,6 +230,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmAgregarPersona";
 			this->Text = L"Agregar Persona";
+			this->Load += gcnew System::EventHandler(this, &frmAgregarPersona::frmAgregarPersona_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
@@ -253,5 +258,53 @@ namespace EstacionPesajeView {
 		this->Close();
 	}
 
+	private: System::Void textBox8_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		e->Handled = true; // Suprime cualquier carácter
+
+		// Verifica si el carácter presionado es una letra (mayúscula o minúscula) o un espacio en blanco
+		if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
+			e->Handled = false;  //Anula supresión si es letra, espacio o borrar
+		}
+	}
+
+	private: System::Void textBox7_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		e->Handled = true; // Suprime cualquier carácter
+
+		// Verifica si el carácter presionado es una letra (mayúscula o minúscula) o un espacio en blanco
+		if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
+			e->Handled = false;  //Anula supresión si es letra, espacio o borrar
+		}
+	}
+
+
+	private: System::Void textBox6_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		e->Handled = true; // Suprime cualquier carácter
+
+		// Verifica si el carácter presionado es una letra (mayúscula o minúscula) o un espacio en blanco
+		if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
+			e->Handled = false;  //Anula supresión si es letra, espacio o borrar
+		}
+	}
+
+	private: System::Void textBox5_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		
+		// Verifica si el carácter presionado es un numero o borrar
+		if (Char::IsNumber(e->KeyChar) || e->KeyChar==8) {
+
+			String^ TextoIngresado = textBox1->Text;
+
+			// Si longitud del texto actual es menor a 9, permite más entrada
+			if (TextoIngresado->Length < 9) {
+				e->Handled = false;
+			}
+			else {
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
+			}
+		}
+	}
+
+
+private: System::Void frmAgregarPersona_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
