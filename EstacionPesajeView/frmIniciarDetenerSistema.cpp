@@ -1,0 +1,2 @@
+#include "frmIniciarDetenerSistema.h"
+
