@@ -95,9 +95,10 @@ namespace EstacionPesajeView {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(315, 344);
+			this->button4->Location = System::Drawing::Point(420, 423);
+			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->Size = System::Drawing::Size(100, 28);
 			this->button4->TabIndex = 20;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
@@ -105,9 +106,10 @@ namespace EstacionPesajeView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(180, 344);
+			this->button3->Location = System::Drawing::Point(240, 423);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->Size = System::Drawing::Size(100, 28);
 			this->button3->TabIndex = 19;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
@@ -115,9 +117,10 @@ namespace EstacionPesajeView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(49, 344);
+			this->button2->Location = System::Drawing::Point(65, 423);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(100, 28);
 			this->button2->TabIndex = 18;
 			this->button2->Text = L"Agregar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -130,10 +133,11 @@ namespace EstacionPesajeView {
 				this->NroTarjeta,
 					this->Estado
 			});
-			this->dataGridView1->Location = System::Drawing::Point(34, 165);
+			this->dataGridView1->Location = System::Drawing::Point(45, 203);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(356, 145);
+			this->dataGridView1->Size = System::Drawing::Size(475, 178);
 			this->dataGridView1->TabIndex = 17;
 			// 
 			// NroTarjeta
@@ -155,9 +159,11 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(12, 40);
+			this->groupBox1->Location = System::Drawing::Point(16, 49);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(391, 108);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Size = System::Drawing::Size(521, 133);
 			this->groupBox1->TabIndex = 16;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Criterios de busqueda:";
@@ -165,9 +171,10 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(281, 68);
+			this->button1->Location = System::Drawing::Point(375, 84);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(100, 28);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -177,17 +184,20 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox1->BackColor = System::Drawing::SystemColors::Window;
 			this->textBox1->ForeColor = System::Drawing::SystemColors::InfoText;
-			this->textBox1->Location = System::Drawing::Point(90, 71);
+			this->textBox1->Location = System::Drawing::Point(120, 87);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(170, 20);
+			this->textBox1->Size = System::Drawing::Size(225, 22);
 			this->textBox1->TabIndex = 6;
+			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmMantenimientoTarjeta::textBox1_KeyPress);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(15, 74);
+			this->label1->Location = System::Drawing::Point(20, 91);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(69, 13);
+			this->label1->Size = System::Drawing::Size(83, 16);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"N° de tarjeta:";
 			this->label1->Click += gcnew System::EventHandler(this, &frmMantenimientoTarjeta::label1_Click);
@@ -195,25 +205,26 @@ namespace EstacionPesajeView {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(189, 12);
+			this->pictureBox1->Location = System::Drawing::Point(252, 15);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(160, 86);
+			this->pictureBox1->Size = System::Drawing::Size(213, 106);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 21;
 			this->pictureBox1->TabStop = false;
 			// 
 			// frmMantenimientoTarjeta
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(428, 390);
+			this->ClientSize = System::Drawing::Size(571, 480);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmMantenimientoTarjeta";
 			this->Text = L"Mantenimiento de Tarjeta";
 			this->Load += gcnew System::EventHandler(this, &frmMantenimientoTarjeta::frmMantenimientoTarjeta_Load);
@@ -289,12 +300,30 @@ namespace EstacionPesajeView {
 		frmEditarTarjeta^ ventanaEditartarjeta = gcnew frmEditarTarjeta(objTarjeta);
 		ventanaEditartarjeta->ShowDialog();
 	}
-private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+	}
+	
 private: System::Void frmMantenimientoTarjeta_Load(System::Object^ sender, System::EventArgs^ e) {
-	TarjetaController^ objTarjetaController = gcnew TarjetaController();
-	List <Tarjeta^>^ listaTarjetas = objTarjetaController->buscarAll();
-	mostrarGrilla(listaTarjetas);
-}
+		TarjetaController^ objTarjetaController = gcnew TarjetaController();
+		List <Tarjeta^>^ listaTarjetas = objTarjetaController->buscarAll();
+		mostrarGrilla(listaTarjetas);
+	}
+
+	private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+		// Verifica si el carácter presionado es un numero o borrar
+		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
+
+			String^ TextoIngresado = textBox1->Text;
+
+			// Si longitud del texto actual es menor a 9, permite más entrada
+			if (TextoIngresado->Length < 16) {
+				e->Handled = false;
+			}
+			else {
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
+			}
+		}
+	}
 };
 }

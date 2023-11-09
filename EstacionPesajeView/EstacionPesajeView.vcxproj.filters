@@ -134,5 +134,6 @@
     <ClInclude Include="frmPanelControlSistema.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+
   </ItemGroup>
 </Project>

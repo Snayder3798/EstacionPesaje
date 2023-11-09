@@ -72,7 +72,7 @@ namespace EstacionPesajeView {
 			series1->Legend = L"Legend1";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(1047, 580);
+			this->chart1->Size = System::Drawing::Size(1513, 580);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
 			// 
@@ -80,7 +80,7 @@ namespace EstacionPesajeView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1100, 627);
+			this->ClientSize = System::Drawing::Size(1566, 627);
 			this->Controls->Add(this->chart1);
 			this->Name = L"frmReporteNroMultasxEstacionPesaje";
 			this->Text = L"frmReporteNroMultasxEstacionPesaje";

@@ -28,13 +28,13 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~frmPrincipal()
 		{
@@ -49,7 +49,7 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::ToolStripMenuItem^ propietariosToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ vToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ tarjetaToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ estaciónPesajeToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ estaciÃ³nPesajeToolStripMenuItem;
 	private: System::Windows::Forms::PictureBox^ pbEstactionPesaje;
 
 	private: System::Windows::Forms::PictureBox^ pbEstacionPesaje;
@@ -66,14 +66,14 @@ namespace EstacionPesajeView {
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -83,7 +83,7 @@ namespace EstacionPesajeView {
 			this->propietariosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->vToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tarjetaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->estaciónPesajeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->estaciÃ³nPesajeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->reportesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->multasXTipoDeVehiculoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->multasRegistradasXEstacionToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -93,6 +93,7 @@ namespace EstacionPesajeView {
 			this->Titulo = (gcnew System::Windows::Forms::Label());
 			this->Seleccion = (gcnew System::Windows::Forms::Label());
 			this->iniciarDetenerSistemaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbEstactionPesaje))->BeginInit();
 			this->SuspendLayout();
@@ -108,6 +109,7 @@ namespace EstacionPesajeView {
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
 			this->menuStrip1->Size = System::Drawing::Size(488, 24);
+
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -115,7 +117,7 @@ namespace EstacionPesajeView {
 			// 
 			this->mantenimientoToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->propietariosToolStripMenuItem,
-					this->vToolStripMenuItem, this->tarjetaToolStripMenuItem, this->estaciónPesajeToolStripMenuItem
+					this->vToolStripMenuItem, this->tarjetaToolStripMenuItem, this->estaciÃ³nPesajeToolStripMenuItem
 			});
 			this->mantenimientoToolStripMenuItem->Name = L"mantenimientoToolStripMenuItem";
 			this->mantenimientoToolStripMenuItem->Size = System::Drawing::Size(101, 20);
@@ -132,7 +134,7 @@ namespace EstacionPesajeView {
 			// 
 			this->vToolStripMenuItem->Name = L"vToolStripMenuItem";
 			this->vToolStripMenuItem->Size = System::Drawing::Size(154, 22);
-			this->vToolStripMenuItem->Text = L"Vehículo";
+			this->vToolStripMenuItem->Text = L"VehÃ­culo";
 			this->vToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::vToolStripMenuItem_Click);
 			// 
 			// tarjetaToolStripMenuItem
@@ -142,12 +144,12 @@ namespace EstacionPesajeView {
 			this->tarjetaToolStripMenuItem->Text = L"Tarjeta";
 			this->tarjetaToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::tarjetaToolStripMenuItem_Click);
 			// 
-			// estaciónPesajeToolStripMenuItem
+			// estaciÃ³nPesajeToolStripMenuItem
 			// 
-			this->estaciónPesajeToolStripMenuItem->Name = L"estaciónPesajeToolStripMenuItem";
-			this->estaciónPesajeToolStripMenuItem->Size = System::Drawing::Size(154, 22);
-			this->estaciónPesajeToolStripMenuItem->Text = L"Estación Pesaje";
-			this->estaciónPesajeToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::estaciónPesajeToolStripMenuItem_Click);
+			this->estaciÃ³nPesajeToolStripMenuItem->Name = L"estaciÃ³nPesajeToolStripMenuItem";
+			this->estaciÃ³nPesajeToolStripMenuItem->Size = System::Drawing::Size(154, 22);
+			this->estaciÃ³nPesajeToolStripMenuItem->Text = L"EstaciÃ³n Pesaje";
+			this->estaciÃ³nPesajeToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::estaciÃ³nPesajeToolStripMenuItem_Click);
 			// 
 			// reportesToolStripMenuItem
 			// 
@@ -170,6 +172,7 @@ namespace EstacionPesajeView {
 			// 
 			this->multasRegistradasXEstacionToolStripMenuItem->Name = L"multasRegistradasXEstacionToolStripMenuItem";
 			this->multasRegistradasXEstacionToolStripMenuItem->Size = System::Drawing::Size(232, 22);
+
 			this->multasRegistradasXEstacionToolStripMenuItem->Text = L"Multas Registradas x Estacion ";
 			this->multasRegistradasXEstacionToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::multasRegistradasXEstacionToolStripMenuItem_Click);
 			// 
@@ -177,8 +180,10 @@ namespace EstacionPesajeView {
 			// 
 			this->pbEstactionPesaje->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbEstactionPesaje.Image")));
 			this->pbEstactionPesaje->Location = System::Drawing::Point(0, 27);
+      this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->pbEstactionPesaje->Name = L"pbEstactionPesaje";
 			this->pbEstactionPesaje->Size = System::Drawing::Size(488, 366);
+
 			this->pbEstactionPesaje->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pbEstactionPesaje->TabIndex = 3;
 			this->pbEstactionPesaje->TabStop = false;
@@ -192,7 +197,9 @@ namespace EstacionPesajeView {
 				L"Estacion Pesaje", L"Persona",
 					L"Tarjeta", L"Vehiculo"
 			});
+
 			this->boxOpcionesMantenimiento->Location = System::Drawing::Point(183, 242);
+      this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->boxOpcionesMantenimiento->Name = L"boxOpcionesMantenimiento";
 			this->boxOpcionesMantenimiento->Size = System::Drawing::Size(142, 21);
 			this->boxOpcionesMantenimiento->Sorted = true;
@@ -202,6 +209,8 @@ namespace EstacionPesajeView {
 			// btnSiguiente
 			// 
 			this->btnSiguiente->Location = System::Drawing::Point(209, 280);
+      this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+
 			this->btnSiguiente->Name = L"btnSiguiente";
 			this->btnSiguiente->Size = System::Drawing::Size(82, 27);
 			this->btnSiguiente->TabIndex = 7;
@@ -216,11 +225,16 @@ namespace EstacionPesajeView {
 			this->Titulo->Font = (gcnew System::Drawing::Font(L"Times New Roman", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Titulo->ForeColor = System::Drawing::SystemColors::MenuHighlight;
+
 			this->Titulo->Location = System::Drawing::Point(39, 89);
+      this->Titulo->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+      
+
 			this->Titulo->Name = L"Titulo";
 			this->Titulo->Size = System::Drawing::Size(411, 33);
 			this->Titulo->TabIndex = 9;
 			this->Titulo->Text = L"PANEL DE MANTENIMIENTO";
+			this->Titulo->Click += gcnew System::EventHandler(this, &frmPrincipal::Titulo_Click);
 			// 
 			// Seleccion
 			// 
@@ -228,11 +242,15 @@ namespace EstacionPesajeView {
 			this->Seleccion->BackColor = System::Drawing::Color::Transparent;
 			this->Seleccion->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+
 			this->Seleccion->Location = System::Drawing::Point(112, 204);
+      this->Titulo->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->Seleccion->Name = L"Seleccion";
 			this->Seleccion->Size = System::Drawing::Size(273, 24);
 			this->Seleccion->TabIndex = 10;
 			this->Seleccion->Text = L"Seleccione la opcion deseada:";
+      
+      this->Seleccion->Click += gcnew System::EventHandler(this, &frmPrincipal::Seleccion_Click);
 			// 
 			// iniciarDetenerSistemaToolStripMenuItem
 			// 
@@ -240,12 +258,14 @@ namespace EstacionPesajeView {
 			this->iniciarDetenerSistemaToolStripMenuItem->Size = System::Drawing::Size(141, 20);
 			this->iniciarDetenerSistemaToolStripMenuItem->Text = L"Iniciar/Detener Sistema";
 			this->iniciarDetenerSistemaToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::iniciarDetenerSistemaToolStripMenuItem_Click);
+
 			// 
 			// frmPrincipal
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(488, 396);
+
 			this->Controls->Add(this->Seleccion);
 			this->Controls->Add(this->Titulo);
 			this->Controls->Add(this->btnSiguiente);
@@ -285,7 +305,7 @@ namespace EstacionPesajeView {
 		ventanaMantTarjeta->Show();
 	}
 
-	private: System::Void estaciónPesajeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void estaciÃ³nPesajeToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		frmMantenimientoEstacionPesaje^ ventanaMantEstacionPesaje = gcnew frmMantenimientoEstacionPesaje();
 		ventanaMantEstacionPesaje->Show();
 	}
@@ -328,9 +348,16 @@ namespace EstacionPesajeView {
 		frmReporteNroMultasxEstacionPesaje^ ventReporte = gcnew frmReporteNroMultasxEstacionPesaje();
 		ventReporte->Show();
 	}
+
 	private: System::Void iniciarDetenerSistemaToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		frmPanelControlSistema^ ventajaPanelControl = gcnew frmPanelControlSistema();
 		ventajaPanelControl->Show();
 	}
+
+private: System::Void Titulo_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Seleccion_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
 };
 }
