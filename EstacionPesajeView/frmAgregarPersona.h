@@ -256,7 +256,7 @@ namespace EstacionPesajeView {
 		
 		String^ Texto = textBox5->Text;
 		if (Texto->Length != 8) {
-			MessageBox::Show("Se ingresó un DNI inválido");
+			MessageBox::Show("Por favor, ingrese un DNI válido.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 		else {
 			PersonaController^ objPersonaController = gcnew PersonaController();
@@ -307,7 +307,7 @@ namespace EstacionPesajeView {
 				e->Handled = false;
 			}
 			else {
-				e->Handled = true;
+				e->Handled = true; //borra
 				if (e->KeyChar == 8) { //distinto a la tecla borrar
 					e->Handled = false;  // Tiene una longitud de 8 caracteres, no permite más entrada
 				}

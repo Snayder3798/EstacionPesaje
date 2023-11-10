@@ -306,31 +306,39 @@ namespace EstacionPesajeView {
 
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			VehiculoController^ objeto = gcnew VehiculoController();
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			String^ codigoVehiculoEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			objeto->eliminarVehiculoFisico(codigoVehiculoEliminar);
+
+			MessageBox::Show("El Vehiculo ha sido eliminado con éxito");
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 		
-		VehiculoController^ objeto = gcnew VehiculoController();
-
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-
-		String^ codigoVehiculoEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
-
-		objeto -> eliminarVehiculoFisico(codigoVehiculoEliminar);
-
-		MessageBox::Show("El Vehiculo ha sido eliminado con éxito");
 
 	}
 
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
 
-		String^ PlacaVehiculoEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			String^ PlacaVehiculoEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 
-		VehiculoController^ objVehiculoController = gcnew VehiculoController();
+			VehiculoController^ objVehiculoController = gcnew VehiculoController();
 
-		Vehiculo^ objVehiculo = objVehiculoController->buscarVehiculoxPlaca(PlacaVehiculoEditar);
+			Vehiculo^ objVehiculo = objVehiculoController->buscarVehiculoxPlaca(PlacaVehiculoEditar);
 
-		frmEditarVehiculo^ ventanaEditarVehiculo = gcnew frmEditarVehiculo(objVehiculo);
-		ventanaEditarVehiculo->ShowDialog();
+			frmEditarVehiculo^ ventanaEditarVehiculo = gcnew frmEditarVehiculo(objVehiculo);
+			ventanaEditarVehiculo->ShowDialog();
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 
 	private: System::Void frmMantenimientoVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {

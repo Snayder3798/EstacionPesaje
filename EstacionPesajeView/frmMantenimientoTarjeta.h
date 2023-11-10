@@ -275,30 +275,40 @@ namespace EstacionPesajeView {
 
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-		TarjetaController^ objeto = gcnew TarjetaController();
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			TarjetaController^ objeto = gcnew TarjetaController();
 
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
 
-		String^ TarjetaEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			String^ TarjetaEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 
-		objeto->eliminarTarjetaFisico(TarjetaEliminar);
+			objeto->eliminarTarjetaFisico(TarjetaEliminar);
 
-		MessageBox::Show("La Tarjeta ha sido eliminada con éxito");
+			MessageBox::Show("La Tarjeta ha sido eliminada con éxito");
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+
 	}
 
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
 
-		String^ NroTarjetaEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			String^ NroTarjetaEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 
-		TarjetaController^ objtTarjetaController = gcnew TarjetaController();
+			TarjetaController^ objtTarjetaController = gcnew TarjetaController();
 
-		Tarjeta^ objTarjeta = objtTarjetaController->buscarTarjetaxNumero(NroTarjetaEditar);
+			Tarjeta^ objTarjeta = objtTarjetaController->buscarTarjetaxNumero(NroTarjetaEditar);
 
-		frmEditarTarjeta^ ventanaEditartarjeta = gcnew frmEditarTarjeta(objTarjeta);
-		ventanaEditartarjeta->ShowDialog();
+			frmEditarTarjeta^ ventanaEditartarjeta = gcnew frmEditarTarjeta(objTarjeta);
+			ventanaEditartarjeta->ShowDialog();
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}

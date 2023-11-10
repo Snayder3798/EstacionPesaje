@@ -271,30 +271,34 @@ namespace EstacionPesajeView {
 	} 
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			EstacionController^ objeto;
 
-		EstacionController^ objeto;
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
 
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			String^ PersonaEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 
-		String^ PersonaEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			objeto->eliminarEstacionFisico(PersonaEliminar);
 
-		objeto->eliminarEstacionFisico(PersonaEliminar);
-
-		MessageBox::Show("La Estacion ha sido eliminado con éxito");
+			MessageBox::Show("La Estacion ha sido eliminado con éxito");
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-
-		String^ UbicacionEstacionEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
-
-		EstacionController^ objEstacionController = gcnew EstacionController();
-
-		EstacionPesaje^ objEstacion = objEstacionController->buscarEstacionxUbicacion(UbicacionEstacionEditar);
-
-		frmEditarEstacionPesaje^ ventanaEditarEstacionPesaje = gcnew frmEditarEstacionPesaje(objEstacion);
-		ventanaEditarEstacionPesaje->ShowDialog();
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			String^ UbicacionEstacionEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			EstacionController^ objEstacionController = gcnew EstacionController();
+			EstacionPesaje^ objEstacion = objEstacionController->buscarEstacionxUbicacion(UbicacionEstacionEditar);
+			frmEditarEstacionPesaje^ ventanaEditarEstacionPesaje = gcnew frmEditarEstacionPesaje(objEstacion);
+			ventanaEditarEstacionPesaje->ShowDialog();
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
 	private: System::Void frmMantenimientoEstacionPesaje_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -310,12 +314,17 @@ namespace EstacionPesajeView {
 	}
 
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-		String^ UbicacionEstacionVer = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
-		EstacionController^ objEstacionController = gcnew EstacionController();
-		EstacionPesaje^ objEstacion = objEstacionController->buscarEstacionxUbicacion(UbicacionEstacionVer);
-		frmVerEstacionPesaje^ ventanaVerEstacionPesaje = gcnew frmVerEstacionPesaje(objEstacion);
-		ventanaVerEstacionPesaje->ShowDialog();
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			String^ UbicacionEstacionVer = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			EstacionController^ objEstacionController = gcnew EstacionController();
+			EstacionPesaje^ objEstacion = objEstacionController->buscarEstacionxUbicacion(UbicacionEstacionVer);
+			frmVerEstacionPesaje^ ventanaVerEstacionPesaje = gcnew frmVerEstacionPesaje(objEstacion);
+			ventanaVerEstacionPesaje->ShowDialog();
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}	
 	}
 };
 }

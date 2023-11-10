@@ -342,29 +342,35 @@ namespace EstacionPesajeView {
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		PersonaController^ objeto;
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			PersonaController^ objeto;
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			String^ EstacionEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			objeto->eliminarPersonaFisico(EstacionEliminar);
 
-		String^ EstacionEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
-
-		objeto ->eliminarPersonaFisico(EstacionEliminar);
-
-		MessageBox::Show("La Persona ha sido eliminado con éxito");
-
+			MessageBox::Show("La Persona ha sido eliminado con éxito");
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+		
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;//Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0
+			String^ DniPersonaEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			PersonaController^ objPersonaController = gcnew PersonaController();
+			Persona^ objPersona = objPersonaController->buscarPersonaxDni(DniPersonaEditar);
 
-		String^ DniPersonaEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			frmEditarPersona^ ventanaEditarPersona = gcnew frmEditarPersona(objPersona);
 
-		PersonaController^ objPersonaController = gcnew PersonaController();
-
-		Persona^ objPersona = objPersonaController->buscarPersonaxDni(DniPersonaEditar);
-
-		frmEditarPersona^ ventanaEditarPersona = gcnew frmEditarPersona(objPersona);
-		ventanaEditarPersona->ShowDialog();
+			ventanaEditarPersona->ShowDialog();
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
 	private: System::Void frmMantenimientoPersona_Load(System::Object^ sender, System::EventArgs^ e) {
