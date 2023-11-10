@@ -135,3 +135,16 @@ List <String^>^ EstacionController::obtenerUbicaciones() {
 	}
 	return listaUbicaciones;
 }
+
+List <String^>^ EstacionController::getMultas(List <String^>^ listaUbicaciones) {
+	List <String^>^ listaMultas = gcnew List <String^>();
+	for (int i = 0; i < listaUbicaciones->Count; i++) {
+		List <EstacionPesaje^>^ listaEstacion = buscarEstacionPesaje(listaUbicaciones[i]);
+		int cantidad = 0;
+		for (int i = 0; i < listaEstacion->Count; i++) {
+			cantidad = cantidad + listaEstacion[i]->getNroMultas();
+		}
+		listaMultas->Add(Convert::ToString(cantidad));
+	}
+	return listaMultas;
+}
