@@ -91,14 +91,14 @@ namespace EstacionPesajeView {
 		}
 #pragma endregion
 		private: System::Void frmReporteNroMultasxEstacionPesaje_Load(System::Object^ sender, System::EventArgs^ e) {
-			EstacionController^ objEstacionController = gcnew EstacionController();
-			List<EstacionPesaje^>^ listaEstacionPesaje = objEstacionController->buscarAll();
-			this->chart1->Series["Series1"]->Points->Clear();
-			for (int i = 0; i < listaEstacionPesaje->Count; i++) {
-				this->chart1->Series["Series1"]->Points->Add(listaEstacionPesaje[i]->getNroMultas());
-				this->chart1->Series["Series1"]->Points[i]->AxisLabel = listaEstacionPesaje[i]->getUbicacion();
-				this->chart1->Series["Series1"]->Points[i]->LegendText = listaEstacionPesaje[i]->getUbicacion();
-				this->chart1->Series["Series1"]->Points[i]->Label = Convert::ToString(listaEstacionPesaje[i]->getNroMultas());
+			EstacionController^ objVehiculoController = gcnew EstacionController();
+			List <String^>^ listaTiposVehiculos = objVehiculoController->obtenerUbicaciones();
+			List <String^>^ listaMultas = objVehiculoController->getMultas(listaTiposVehiculos);
+			for (int i = 0; i < listaTiposVehiculos->Count; i++) {
+				this->chart1->Series["Series1"]->Points->Add(Convert::ToInt32(listaMultas[i])); // Se necesita un int
+				this->chart1->Series["Series1"]->Points[i]->AxisLabel = listaTiposVehiculos[i]; // este y los sgts se necesitan string
+				this->chart1->Series["Series1"]->Points[i]->LegendText = listaTiposVehiculos[i];
+				this->chart1->Series["Series1"]->Points[i]->Label = listaMultas[i];
 			}
 		}
 	};

@@ -26,13 +26,13 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estÈn usando.
+		/// Limpiar los recursos que se est√©n usando.
 		/// </summary>
 		~frmMantenimientoPersona()
 		{
@@ -67,14 +67,14 @@ namespace EstacionPesajeView {
 
 	private:
 		/// <summary>
-		/// Variable del diseÒador necesaria.
+		/// Variable del dise√±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// MÈtodo necesario para admitir el DiseÒador. No se puede modificar
-		/// el contenido de este mÈtodo con el editor de cÛdigo.
+		/// M√©todo necesario para admitir el Dise√±ador. No se puede modificar
+		/// el contenido de este m√©todo con el editor de c√≥digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -190,7 +190,7 @@ namespace EstacionPesajeView {
 			this->groupBox1->Size = System::Drawing::Size(479, 207);
 			this->groupBox1->TabIndex = 16;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Criterios de B˙squeda";
+			this->groupBox1->Text = L"Criterios de B√∫squeda";
 			// 
 			// label2
 			// 
@@ -199,7 +199,7 @@ namespace EstacionPesajeView {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(79, 16);
 			this->label2->TabIndex = 12;
-			this->label2->Text = L"InformaciÛn:";
+			this->label2->Text = L"Informaci√≥n:";
 			this->label2->Click += gcnew System::EventHandler(this, &frmMantenimientoPersona::label2_Click);
 			// 
 			// label1
@@ -350,7 +350,7 @@ namespace EstacionPesajeView {
 
 		objeto ->eliminarPersonaFisico(EstacionEliminar);
 
-		MessageBox::Show("La Persona ha sido eliminado con Èxito");
+		MessageBox::Show("La Persona ha sido eliminado con √©xito");
 
 	}
 
@@ -377,35 +377,36 @@ namespace EstacionPesajeView {
 		
 		if (radioButton1->Checked) {
 
-			// Verifica si el car·cter presionado es un numero o borrar
+			// Verifica si el car√°cter presionado es un numero o borrar
 			if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
 
 				String^ TextoIngresado = textBox1->Text;
 
-				// Si longitud del texto actual es menor a 9, permite m·s entrada
+				// Si longitud del texto actual es menor a 9, permite m√°s entrada
 				if (TextoIngresado->Length < 8) {
 					e->Handled = false;
 				}
 				else {
 					e->Handled = true;
 					if (e->KeyChar == 8) { //distinto a la tecla borrar
-						e->Handled = false;  // Tiene una longitud de 8 caracteres, no permite m·s entrada
+						e->Handled = false;  // Tiene una longitud de 8 caracteres, no permite m√°s entrada
 					}
 				}
 			}
 
-			// Verifica si el car·cter presionado es distinto a numero o borrar o un espacio en blanco
+			// Verifica si el car√°cter presionado es distinto a numero o borrar o un espacio en blanco
 			if (!(Char::IsNumber(e->KeyChar) || e->KeyChar == 8) || e->KeyChar == ' ') {
-				e->Handled = true;  //Anula supresiÛn si distinto de numero o espacio
+				e->Handled = true;  //Anula supresi√≥n si distinto de numero o espacio
 			}
+
 		}
 		
 		if (radioButton2->Checked) {
-			e->Handled = true; // Suprime cualquier car·cter
+			e->Handled = true; // Suprime cualquier car√°cter
 
-			// Verifica si el car·cter presionado es una letra (may˙scula o min˙scula) o un espacio en blanco
+			// Verifica si el car√°cter presionado es una letra (may√∫scula o min√∫scula) o un espacio en blanco
 			if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
-				e->Handled = false;  //Anula supresiÛn si es letra, espacio o borrar
+				e->Handled = false;  //Anula supresi√≥n si es letra, espacio o borrar
 			}
 		}
 

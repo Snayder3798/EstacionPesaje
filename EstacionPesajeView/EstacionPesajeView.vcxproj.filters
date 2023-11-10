@@ -66,6 +66,15 @@
     <ClCompile Include="frmReporteNroMultasxEstacionPesaje.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
+    <ClCompile Include="frmAgregarPropietarioVehiculo.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmPanelControlSistema.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmBuscarPersona.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="frmPrincipal.h">
@@ -116,5 +125,15 @@
     <ClInclude Include="frmReporteNroMultasxEstacionPesaje.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="frmAgregarPropietarioVehiculo.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmBuscarPersona.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmPanelControlSistema.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+
   </ItemGroup>
 </Project>

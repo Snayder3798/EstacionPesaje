@@ -22,13 +22,13 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estÈn usando.
+		/// Limpiar los recursos que se est√©n usando.
 		/// </summary>
 		~frmAgregarPersona()
 		{
@@ -54,14 +54,14 @@ namespace EstacionPesajeView {
 
 	private:
 		/// <summary>
-		/// Variable del diseÒador necesaria.
+		/// Variable del dise√±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// MÈtodo necesario para admitir el DiseÒador. No se puede modificar
-		/// el contenido de este mÈtodo con el editor de cÛdigo.
+		/// M√©todo necesario para admitir el Dise√±ador. No se puede modificar
+		/// el contenido de este m√©todo con el editor de c√≥digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -217,7 +217,7 @@ namespace EstacionPesajeView {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(63, 20);
 			this->label2->TabIndex = 9;
-			this->label2->Text = L"CÛdigo:";
+			this->label2->Text = L"C√≥digo:";
 			// 
 			// frmAgregarPersona
 			// 
@@ -232,6 +232,7 @@ namespace EstacionPesajeView {
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"frmAgregarPersona";
 			this->Text = L"Agregar Persona";
+			this->Load += gcnew System::EventHandler(this, &frmAgregarPersona::frmAgregarPersona_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
@@ -260,56 +261,58 @@ namespace EstacionPesajeView {
 	}
 
 	private: System::Void textBox8_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		e->Handled = true; // Suprime cualquier car·cter
+		e->Handled = true; // Suprime cualquier car√°cter
 
-		// Verifica si el car·cter presionado es una letra (may˙scula o min˙scula) o un espacio en blanco
+		// Verifica si el car√°cter presionado es una letra (may√∫scula o min√∫scula) o un espacio en blanco
 		if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
-			e->Handled = false;  //Anula supresiÛn si es letra, espacio o borrar
+			e->Handled = false;  //Anula supresi√≥n si es letra, espacio o borrar
 		}
 	}
 
 	private: System::Void textBox7_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		e->Handled = true; // Suprime cualquier car·cter
+		e->Handled = true; // Suprime cualquier car√°cter
 
-		// Verifica si el car·cter presionado es una letra (may˙scula o min˙scula) o un espacio en blanco
+		// Verifica si el car√°cter presionado es una letra (may√∫scula o min√∫scula) o un espacio en blanco
 		if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
-			e->Handled = false;  //Anula supresiÛn si es letra, espacio o borrar
+			e->Handled = false;  //Anula supresi√≥n si es letra, espacio o borrar
 		}
 	}
 
 
 	private: System::Void textBox6_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		e->Handled = true; // Suprime cualquier car·cter
+		e->Handled = true; // Suprime cualquier car√°cter
 
-		// Verifica si el car·cter presionado es una letra (may˙scula o min˙scula) o un espacio en blanco
+		// Verifica si el car√°cter presionado es una letra (may√∫scula o min√∫scula) o un espacio en blanco
 		if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
-			e->Handled = false;  //Anula supresiÛn si es letra, espacio o borrar
+			e->Handled = false;  //Anula supresi√≥n si es letra, espacio o borrar
 		}
 	}
 
 	private: System::Void textBox5_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 
-		// Verifica si el car·cter presionado es un numero o borrar
+
+		// Verifica si el car√°cter presionado es un numero o borrar
 		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
 
 			String^ TextoIngresado = textBox5->Text;
 
-			// Si longitud del texto actual es menor a 9, permite m·s entrada
+			// Si longitud del texto actual es menor a 9, permite m√°s entrada
 			if (TextoIngresado->Length < 8) {
 				e->Handled = false;
 			}
 			else {
 				e->Handled = true;
 				if (e->KeyChar == 8) { //distinto a la tecla borrar
-					e->Handled = false;  // Tiene una longitud de 8 caracteres, no permite m·s entrada
+					e->Handled = false;  // Tiene una longitud de 8 caracteres, no permite m√°s entrada
 				}
 			}
 		}
 
-		// Verifica si el car·cter presionado es distinto a numero o borrar o un espacio en blanco
+		// Verifica si el car√°cter presionado es distinto a numero o borrar o un espacio en blanco
 		if (!(Char::IsNumber(e->KeyChar) || e->KeyChar == 8) || e->KeyChar == ' ') {
-			e->Handled = true;  //Anula supresiÛn si distinto de numero o espacio
+			e->Handled = true;  //Anula supresi√≥n si distinto de numero o espacio
 		}
+
 	}
 
 
