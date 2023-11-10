@@ -21,7 +21,7 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
 
@@ -30,13 +30,13 @@ namespace EstacionPesajeView {
 			InitializeComponent();
 			this->objPersona = objPersona;
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estÈn usando.
+		/// Limpiar los recursos que se est√©n usando.
 		/// </summary>
 		~frmEditarPersona()
 		{
@@ -64,14 +64,14 @@ namespace EstacionPesajeView {
 
 	private:
 		/// <summary>
-		/// Variable del diseÒador necesaria.
+		/// Variable del dise√±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// MÈtodo necesario para admitir el DiseÒador. No se puede modificar
-		/// el contenido de este mÈtodo con el editor de cÛdigo.
+		/// M√©todo necesario para admitir el Dise√±ador. No se puede modificar
+		/// el contenido de este m√©todo con el editor de c√≥digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -94,18 +94,22 @@ namespace EstacionPesajeView {
 			// textBox1
 			// 
 			this->textBox1->Enabled = false;
+
 			this->textBox1->Location = System::Drawing::Point(167, 225);
 			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(255, 22);
+
 			this->textBox1->TabIndex = 22;
 			// 
 			// button1
 			// 
+
 			this->button1->Location = System::Drawing::Point(364, 324);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(91, 28);
+
 			this->button1->TabIndex = 25;
 			this->button1->Text = L"Cancelar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -115,15 +119,17 @@ namespace EstacionPesajeView {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Enabled = false;
+
 			this->label2->Location = System::Drawing::Point(20, 229);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(54, 16);
 			this->label2->TabIndex = 21;
-			this->label2->Text = L"CÛdigo:";
+			this->label2->Text = L"C√≥digo:";
 			// 
 			// button2
 			// 
+
 			this->button2->Location = System::Drawing::Point(199, 324);
 			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
@@ -145,6 +151,7 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Controls->Add(this->label8);
+
 			this->groupBox1->Location = System::Drawing::Point(32, 34);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBox1->Name = L"groupBox1";
@@ -156,11 +163,13 @@ namespace EstacionPesajeView {
 			// 
 			// textBox5
 			// 
+
 			this->textBox5->Location = System::Drawing::Point(167, 177);
 			this->textBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(255, 22);
 			this->textBox5->TabIndex = 8;
+			this->textBox5->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarPersona::textBox5_KeyPress);
 			// 
 			// textBox6
 			// 
@@ -170,6 +179,7 @@ namespace EstacionPesajeView {
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(255, 24);
 			this->textBox6->TabIndex = 7;
+			this->textBox6->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarPersona::textBox6_KeyPress);
 			// 
 			// textBox7
 			// 
@@ -178,7 +188,9 @@ namespace EstacionPesajeView {
 			this->textBox7->Multiline = true;
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(255, 24);
+
 			this->textBox7->TabIndex = 6;
+			this->textBox7->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarPersona::textBox7_KeyPress);
 			// 
 			// textBox8
 			// 
@@ -275,47 +287,55 @@ namespace EstacionPesajeView {
 	}
 
 	private: System::Void textBox8_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		e->Handled = true; // Suprime cualquier car·cter
+		e->Handled = true; // Suprime cualquier car√°cter
 
-		// Verifica si el car·cter presionado es una letra (may˙scula o min˙scula) o un espacio en blanco
+		// Verifica si el car√°cter presionado es una letra (may√∫scula o min√∫scula) o un espacio en blanco
 		if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
-			e->Handled = false;  //Anula supresiÛn si es letra, espacio o borrar
+			e->Handled = false;  //Anula supresi√≥n si es letra, espacio o borrar
 		}
 	}
 
 	private: System::Void textBox7_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		e->Handled = true; // Suprime cualquier car·cter
+		e->Handled = true; // Suprime cualquier car√°cter
 
-		// Verifica si el car·cter presionado es una letra (may˙scula o min˙scula) o un espacio en blanco
+		// Verifica si el car√°cter presionado es una letra (may√∫scula o min√∫scula) o un espacio en blanco
 		if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
-			e->Handled = false;  //Anula supresiÛn si es letra, espacio o borrar
+			e->Handled = false;  //Anula supresi√≥n si es letra, espacio o borrar
 		}
 	}
 
 
 	private: System::Void textBox6_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		e->Handled = true; // Suprime cualquier car·cter
+		e->Handled = true; // Suprime cualquier car√°cter
 
-		// Verifica si el car·cter presionado es una letra (may˙scula o min˙scula) o un espacio en blanco
+		// Verifica si el car√°cter presionado es una letra (may√∫scula o min√∫scula) o un espacio en blanco
 		if (Char::IsLetter(e->KeyChar) || e->KeyChar == ' ' || e->KeyChar == 8) {
-			e->Handled = false;  //Anula supresiÛn si es letra, espacio o borrar
+			e->Handled = false;  //Anula supresi√≥n si es letra, espacio o borrar
 		}
 	}
 
 	private: System::Void textBox5_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 
-		// Verifica si el car·cter presionado es un numero o borrar
+		// Verifica si el car√°cter presionado es un numero o borrar
 		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
 
-			String^ TextoIngresado = textBox1->Text;
+			String^ TextoIngresado = textBox5->Text;
 
-			// Si longitud del texto actual es menor a 9, permite m·s entrada
-			if (TextoIngresado->Length < 9) {
+			// Si longitud del texto actual es menor a 9, permite m√°s entrada
+			if (TextoIngresado->Length < 8) {
 				e->Handled = false;
 			}
 			else {
-				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite m·s entrada
+				e->Handled = true;
+				if (e->KeyChar == 8) { //distinto a la tecla borrar
+					e->Handled = false;  // Tiene una longitud de 8 caracteres, no permite m√°s entrada
+				}
 			}
+		}
+
+		// Verifica si el car√°cter presionado es distinto a numero o borrar o un espacio en blanco
+		if (!(Char::IsNumber(e->KeyChar) || e->KeyChar == 8) || e->KeyChar == ' ') {
+			e->Handled = true;  //Anula supresi√≥n si distinto de numero o espacio
 		}
 	}
 
