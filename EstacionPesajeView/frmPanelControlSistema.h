@@ -246,6 +246,10 @@ namespace EstacionPesajeView {
 		array<Byte>^ miBuffer = Encoding::ASCII->GetBytes("  "+ Convert::ToString(pesoRegistrado)+"             ");
 		serialPort1->Write(miBuffer, 0, miBuffer->Length);
 	}
+	private: void MandarMultaLCD(int multaTotal) {
+		array<Byte>^ miBuffer = Encoding::ASCII->GetBytes(" " + Convert::ToString(multaTotal) + "             ");
+		serialPort1->Write(miBuffer, 0, miBuffer->Length);
+	}
 	//Para el Bluetooth
 	private: String^ SolicitarPlaca_Tarjeta(void) {
 		array<Byte>^ miBuffer = Encoding::ASCII->GetBytes("Escanear_Bluetooth");
@@ -284,15 +288,35 @@ namespace EstacionPesajeView {
 			VehiculoController^ objVehiculoController = gcnew VehiculoController();
 			Vehiculo^ VehiculoRegistrado = objVehiculoController->buscarVehiculoxPlaca(placaRegistrada->Remove(placaRegistrada->Length - 1));
 			int PesoLimite = VehiculoRegistrado->getPesoConCarga();
-
+			int multasAcumuladas = VehiculoRegistrado->getCantMultas();
 			if (PesoLimite > pesoRegistrado) {
-				ActivarDesactivarServo(true);
-				Sleep(1000);
-				ActivarDesactivarServo(false);
-				Sleep(1000);
+				if (multasAcumuladas == 0) {
+					ActivarDesactivarServo(true);
+					Sleep(1000);
+					ActivarDesactivarServo(false);
+					Sleep(1000);
+				}
+				else {
+					MandarMultaLCD(multasAcumuladas);
+					Sleep(3000);
+					TarjetaController^ objTarjetaController = gcnew TarjetaController();
+					bool EstadoTargeta = false;
+					do {
+						dataRecibida = SolicitarPlaca_Tarjeta();
+						Sleep(1000);
+						if (dataRecibida != "No_hay_codigo\r") {
+							Tarjeta^ TarjetaRegistrada = objTarjetaController->buscarTarjetaxNumero(dataRecibida->Remove(dataRecibida->Length - 1));
+							EstadoTargeta = TarjetaRegistrada->getEstado();
+						}
+					} while (EstadoTargeta == false);
+					ActivarDesactivarServo(true);
+					Sleep(1000);
+					ActivarDesactivarServo(false);
+					Sleep(1000);
+				}
 			}
 			else {
-				MandarMensajeLCD("Mensaje_Multa");
+				MandarMultaLCD(multasAcumuladas+1);
 				Sleep(3000);
 				TarjetaController^ objTarjetaController = gcnew TarjetaController();
 				bool EstadoTargeta=false;
@@ -309,6 +333,8 @@ namespace EstacionPesajeView {
 				ActivarDesactivarServo(false);
 				Sleep(1000);
 			}
+			MandarMensajeLCD("Limpiar");
+			Sleep(1000);
 			this->textBox1->Text = placaRegistrada;
 			this->textBox2->Text = Convert::ToString(pesoRegistrado);
 		}

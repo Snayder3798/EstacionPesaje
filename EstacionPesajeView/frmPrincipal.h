@@ -50,17 +50,21 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::ToolStripMenuItem^ vToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ tarjetaToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ estaciónPesajeToolStripMenuItem;
-	private: System::Windows::Forms::PictureBox^ pbEstactionPesaje;
+
 
 	private: System::Windows::Forms::PictureBox^ pbEstacionPesaje;
-	private: System::Windows::Forms::ComboBox^ boxOpcionesMantenimiento;
+
 	private: System::Windows::Forms::Button^ btnSiguiente;
-	private: System::Windows::Forms::Label^ Titulo;
-	private: System::Windows::Forms::Label^ Seleccion;
+
+
 	private: System::Windows::Forms::ToolStripMenuItem^ reportesToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ multasXTipoDeVehiculoToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ multasRegistradasXEstacionToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ iniciarDetenerSistemaToolStripMenuItem;
+	private: System::Windows::Forms::Label^ Titulo;
+	private: System::Windows::Forms::PictureBox^ pbEstactionPesaje;
+
+
+
 
 
 
@@ -87,13 +91,9 @@ namespace EstacionPesajeView {
 			this->reportesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->multasXTipoDeVehiculoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->multasRegistradasXEstacionToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->pbEstactionPesaje = (gcnew System::Windows::Forms::PictureBox());
-			this->boxOpcionesMantenimiento = (gcnew System::Windows::Forms::ComboBox());
 			this->btnSiguiente = (gcnew System::Windows::Forms::Button());
 			this->Titulo = (gcnew System::Windows::Forms::Label());
-			this->Seleccion = (gcnew System::Windows::Forms::Label());
-			this->iniciarDetenerSistemaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-
+			this->pbEstactionPesaje = (gcnew System::Windows::Forms::PictureBox());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbEstactionPesaje))->BeginInit();
 			this->SuspendLayout();
@@ -101,15 +101,14 @@ namespace EstacionPesajeView {
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->mantenimientoToolStripMenuItem,
-					this->reportesToolStripMenuItem, this->iniciarDetenerSistemaToolStripMenuItem
+					this->reportesToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
 			this->menuStrip1->Size = System::Drawing::Size(488, 24);
-
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -172,109 +171,58 @@ namespace EstacionPesajeView {
 			// 
 			this->multasRegistradasXEstacionToolStripMenuItem->Name = L"multasRegistradasXEstacionToolStripMenuItem";
 			this->multasRegistradasXEstacionToolStripMenuItem->Size = System::Drawing::Size(232, 22);
-
 			this->multasRegistradasXEstacionToolStripMenuItem->Text = L"Multas Registradas x Estacion ";
 			this->multasRegistradasXEstacionToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::multasRegistradasXEstacionToolStripMenuItem_Click);
 			// 
-			// pbEstactionPesaje
-			// 
-			this->pbEstactionPesaje->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbEstactionPesaje.Image")));
-			this->pbEstactionPesaje->Location = System::Drawing::Point(0, 27);
-      this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->pbEstactionPesaje->Name = L"pbEstactionPesaje";
-			this->pbEstactionPesaje->Size = System::Drawing::Size(488, 366);
-
-			this->pbEstactionPesaje->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pbEstactionPesaje->TabIndex = 3;
-			this->pbEstactionPesaje->TabStop = false;
-			this->pbEstactionPesaje->Click += gcnew System::EventHandler(this, &frmPrincipal::pictureBox1_Click);
-			// 
-			// boxOpcionesMantenimiento
-			// 
-			this->boxOpcionesMantenimiento->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->boxOpcionesMantenimiento->FormattingEnabled = true;
-			this->boxOpcionesMantenimiento->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
-				L"Estacion Pesaje", L"Persona",
-					L"Tarjeta", L"Vehiculo"
-			});
-
-			this->boxOpcionesMantenimiento->Location = System::Drawing::Point(183, 242);
-      this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->boxOpcionesMantenimiento->Name = L"boxOpcionesMantenimiento";
-			this->boxOpcionesMantenimiento->Size = System::Drawing::Size(142, 21);
-			this->boxOpcionesMantenimiento->Sorted = true;
-			this->boxOpcionesMantenimiento->TabIndex = 5;
-			this->boxOpcionesMantenimiento->SelectedIndexChanged += gcnew System::EventHandler(this, &frmPrincipal::boxOpcionesMantenimiento_SelectedIndexChanged);
-			// 
 			// btnSiguiente
 			// 
-			this->btnSiguiente->Location = System::Drawing::Point(209, 280);
-      this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-
+			this->btnSiguiente->Location = System::Drawing::Point(195, 208);
 			this->btnSiguiente->Name = L"btnSiguiente";
-			this->btnSiguiente->Size = System::Drawing::Size(82, 27);
+			this->btnSiguiente->Size = System::Drawing::Size(79, 23);
 			this->btnSiguiente->TabIndex = 7;
-			this->btnSiguiente->Text = L"Abrir";
+			this->btnSiguiente->Text = L"Iniciar";
 			this->btnSiguiente->UseVisualStyleBackColor = true;
 			this->btnSiguiente->Click += gcnew System::EventHandler(this, &frmPrincipal::btnSiguiente_Click);
 			// 
 			// Titulo
 			// 
 			this->Titulo->AutoSize = true;
-			this->Titulo->BackColor = System::Drawing::Color::Transparent;
+			this->Titulo->BackColor = System::Drawing::Color::PaleTurquoise;
 			this->Titulo->Font = (gcnew System::Drawing::Font(L"Times New Roman", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Titulo->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-
-			this->Titulo->Location = System::Drawing::Point(39, 89);
-      this->Titulo->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-      
-
+			this->Titulo->Location = System::Drawing::Point(44, 136);
+			this->Titulo->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->Titulo->Name = L"Titulo";
-			this->Titulo->Size = System::Drawing::Size(411, 33);
+			this->Titulo->Size = System::Drawing::Size(400, 33);
 			this->Titulo->TabIndex = 9;
-			this->Titulo->Text = L"PANEL DE MANTENIMIENTO";
+			this->Titulo->Text = L"SISTEMA ESTACION PESAJE";
 			this->Titulo->Click += gcnew System::EventHandler(this, &frmPrincipal::Titulo_Click);
 			// 
-			// Seleccion
+			// pbEstactionPesaje
 			// 
-			this->Seleccion->AutoSize = true;
-			this->Seleccion->BackColor = System::Drawing::Color::Transparent;
-			this->Seleccion->Font = (gcnew System::Drawing::Font(L"Times New Roman", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-
-			this->Seleccion->Location = System::Drawing::Point(112, 204);
-      this->Titulo->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->Seleccion->Name = L"Seleccion";
-			this->Seleccion->Size = System::Drawing::Size(273, 24);
-			this->Seleccion->TabIndex = 10;
-			this->Seleccion->Text = L"Seleccione la opcion deseada:";
-      
-      this->Seleccion->Click += gcnew System::EventHandler(this, &frmPrincipal::Seleccion_Click);
-			// 
-			// iniciarDetenerSistemaToolStripMenuItem
-			// 
-			this->iniciarDetenerSistemaToolStripMenuItem->Name = L"iniciarDetenerSistemaToolStripMenuItem";
-			this->iniciarDetenerSistemaToolStripMenuItem->Size = System::Drawing::Size(141, 20);
-			this->iniciarDetenerSistemaToolStripMenuItem->Text = L"Iniciar/Detener Sistema";
-			this->iniciarDetenerSistemaToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::iniciarDetenerSistemaToolStripMenuItem_Click);
-
+			this->pbEstactionPesaje->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbEstactionPesaje.Image")));
+			this->pbEstactionPesaje->Location = System::Drawing::Point(0, 16);
+			this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->pbEstactionPesaje->Name = L"pbEstactionPesaje";
+			this->pbEstactionPesaje->Size = System::Drawing::Size(488, 387);
+			this->pbEstactionPesaje->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pbEstactionPesaje->TabIndex = 3;
+			this->pbEstactionPesaje->TabStop = false;
+			this->pbEstactionPesaje->Click += gcnew System::EventHandler(this, &frmPrincipal::pictureBox1_Click);
 			// 
 			// frmPrincipal
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(488, 396);
-
-			this->Controls->Add(this->Seleccion);
 			this->Controls->Add(this->Titulo);
 			this->Controls->Add(this->btnSiguiente);
-			this->Controls->Add(this->boxOpcionesMantenimiento);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->pbEstactionPesaje);
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"frmPrincipal";
 			this->Text = L"Panel Principal Mantenimiento";
 			this->Load += gcnew System::EventHandler(this, &frmPrincipal::frmPrincipal_Load);
@@ -313,29 +261,14 @@ namespace EstacionPesajeView {
 		
 	}
 	private: System::Void btnSiguiente_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ MantenimientoSeleccionado = Convert::ToString(boxOpcionesMantenimiento->SelectedItem);
-		// Falta relacionarlo con el comboBox
-
-		if (MantenimientoSeleccionado == "Persona") {
-			frmMantenimientoPersona^ ventanaMantPersona = gcnew frmMantenimientoPersona();
-			ventanaMantPersona->Show();
-		}
-		else if (MantenimientoSeleccionado == "Tarjeta") {
-			frmMantenimientoTarjeta^ ventanaMantTarjeta = gcnew frmMantenimientoTarjeta();
-			ventanaMantTarjeta->Show();
-		}
-		else if (MantenimientoSeleccionado == "Vehiculo") {
-			frmMantenimientoVehiculo^ ventanaMantVehiculo = gcnew frmMantenimientoVehiculo();
-			ventanaMantVehiculo->Show();
-		}
-		else if (MantenimientoSeleccionado == "Estacion Pesaje") {
-			frmMantenimientoEstacionPesaje^ ventanaMantEstacionPesaje = gcnew frmMantenimientoEstacionPesaje();
-			ventanaMantEstacionPesaje->Show();
-
-		}
-		else{
-			MessageBox::Show("Por favor, seleccione una opcion.");
-		}
+		this->btnSiguiente->Visible = false;
+		this->Titulo->Visible = false;
+		this->pbEstactionPesaje->Visible = false;
+		frmPanelControlSistema^ ventanaPanelControl = gcnew frmPanelControlSistema();
+		ventanaPanelControl->MdiParent = this;
+		ventanaPanelControl->Show();
+		
+		//this->pbEstacionPesaje->Visible = false;
 	}
 	private: System::Void boxOpcionesMantenimiento_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 
