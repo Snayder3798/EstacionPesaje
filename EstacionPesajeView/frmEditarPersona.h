@@ -274,12 +274,19 @@ namespace EstacionPesajeView {
 		String^ apellidoPaternoPersona = this->textBox7->Text;
 		String^ apellidoMaternoPersona = this->textBox6->Text;
 		String^ dniPersona = this->textBox5->Text;
+		
 		Persona^ objPersona = gcnew Persona(codigoPersona, nombrePersona, apellidoPaternoPersona, apellidoMaternoPersona, dniPersona);
 
-		PersonaController^ objPersonaController = gcnew PersonaController();
-		objPersonaController->actualizarPersona(objPersona);
-		MessageBox::Show("La Persona fue actualizada correctamente");
-		this->Close();
+		String^ Texto = textBox5->Text;
+		if (Texto->Length != 8) {
+			MessageBox::Show("Se ingresó un DNI inválido");
+		}
+		else {
+			PersonaController^ objPersonaController = gcnew PersonaController();
+			objPersonaController->actualizarPersona(objPersona);
+			MessageBox::Show("La Persona fue actualizada correctamente");
+			this->Close();
+		}
 	}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {

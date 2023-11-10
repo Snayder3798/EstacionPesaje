@@ -254,10 +254,16 @@ namespace EstacionPesajeView {
 
 		Persona^ objPersona = gcnew Persona(codigoPersona, nombrePersona, apellidoPaternoPersona, apellidoMaternoPersona, dniPersona);
 		
-		PersonaController^ objPersonaController = gcnew PersonaController();
-		objPersonaController->agregarPersona(objPersona);
-		MessageBox::Show("La Persona se ha agregado correctamente");
-		this->Close();
+		String^ Texto = textBox5->Text;
+		if (Texto->Length != 8) {
+			MessageBox::Show("Se ingresó un DNI inválido");
+		}
+		else {
+			PersonaController^ objPersonaController = gcnew PersonaController();
+			objPersonaController->agregarPersona(objPersona);
+			MessageBox::Show("La Persona se ha agregado correctamente");
+			this->Close();
+		}
 	}
 
 	private: System::Void textBox8_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
