@@ -72,7 +72,7 @@ namespace EstacionPesajeView {
 			series1->Legend = L"Legend1";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(1513, 580);
+			this->chart1->Size = System::Drawing::Size(1192, 512);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
 			// 
@@ -94,11 +94,35 @@ namespace EstacionPesajeView {
 			EstacionController^ objVehiculoController = gcnew EstacionController();
 			List <String^>^ listaTiposVehiculos = objVehiculoController->obtenerUbicaciones();
 			List <String^>^ listaMultas = objVehiculoController->getMultas(listaTiposVehiculos);
+			
+			//cambia el tipo de gráfico a circular
+			this->chart1->Series["Series1"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+
 			for (int i = 0; i < listaTiposVehiculos->Count; i++) {
 				this->chart1->Series["Series1"]->Points->Add(Convert::ToInt32(listaMultas[i])); // Se necesita un int
 				this->chart1->Series["Series1"]->Points[i]->AxisLabel = listaTiposVehiculos[i]; // este y los sgts se necesitan string
 				this->chart1->Series["Series1"]->Points[i]->LegendText = listaTiposVehiculos[i];
 				this->chart1->Series["Series1"]->Points[i]->Label = listaMultas[i];
+			}
+
+			// Personalización necesaria para el gráfico
+			this->chart1->Legends["Legend1"]->Enabled = true; // Asegúrate de que la leyenda esté habilitada si es necesario
+			
+			// Personalizar el título del gráfico
+			this->chart1->Titles->Add("Gráfico de número de multas por Estación de Pesaje");
+			this->chart1->Titles[0]->Font = gcnew System::Drawing::Font("Arial", 15, FontStyle::Bold);
+			this->chart1->Titles[0]->ForeColor = System::Drawing::Color::Red;
+
+			// Personalizar la leyenda del gráfico
+			this->chart1->Legends["Legend1"]->Enabled = true;
+			this->chart1->Legends["Legend1"]->Title = "Leyenda";
+			this->chart1->Legends["Legend1"]->TitleFont = gcnew System::Drawing::Font("Arial", 12, FontStyle::Bold);
+			this->chart1->Legends["Legend1"]->BackColor = System::Drawing::Color::LightYellow;
+
+			// Personalizar el texto en los sectores del gráfico circular
+			for (int i = 0; i < listaTiposVehiculos->Count; i++) {
+				this->chart1->Series["Series1"]->Points[i]->Label = listaTiposVehiculos[i] + ": " + listaMultas[i];
+				this->chart1->Series["Series1"]->Points[i]->Font = gcnew System::Drawing::Font("Arial", 12, FontStyle::Regular);
 			}
 		}
 	};
