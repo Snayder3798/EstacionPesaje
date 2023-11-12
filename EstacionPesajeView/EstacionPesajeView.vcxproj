@@ -120,12 +120,14 @@
     <ClCompile Include="frmAgregarTarjeta.cpp" />
     <ClCompile Include="frmAgregarVehiculo.cpp" />
     <ClCompile Include="frmBuscarPersona.cpp" />
+    <ClCompile Include="frmBuscarVehiculo.cpp" />
     <ClCompile Include="frmEditarEstacionPesaje.cpp" />
     <ClCompile Include="frmEditarPersona.cpp" />
     <ClCompile Include="frmEditarTarjeta.cpp" />
     <ClCompile Include="frmEditarVehiculo.cpp" />
     <ClCompile Include="frmMantenimientoEstacionPesaje.cpp" />
     <ClCompile Include="frmMantenimientoPersona.cpp" />
+    <ClCompile Include="frmMantenimientoPropietarioVehiculo.cpp" />
     <ClCompile Include="frmMantenimientoTarjeta.cpp" />
     <ClCompile Include="frmMantenimientoVehiculo.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
@@ -162,6 +164,9 @@
     <ClInclude Include="frmBuscarPersona.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmBuscarVehiculo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmEditarEstacionPesaje.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -178,6 +183,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmMantenimientoPersona.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmMantenimientoPropietarioVehiculo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmMantenimientoTarjeta.h">
@@ -235,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoPersona.resx">
       <DependentUpon>frmMantenimientoPersona.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoPropietarioVehiculo.resx">
+      <DependentUpon>frmMantenimientoPropietarioVehiculo.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoTarjeta.resx">
       <DependentUpon>frmMantenimientoTarjeta.h</DependentUpon>

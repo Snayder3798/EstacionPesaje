@@ -5,13 +5,22 @@ using namespace System;
 using namespace System::Collections::Generic;
 using namespace EstacionPesajeModel;
 
+
+using namespace System::Data::SqlClient;
+
+
 namespace EstacionPesajeController {
 
 	public ref class VehiculoController {
+
+	private:
+		SqlConnection^ objConexion;		/*Atributo que permite hacer la conexion a la base de datos*/
+
+
 	public:
 		VehiculoController();
 		List<Vehiculo^>^ buscarVehiculo(String^ placa);
-		
+
 		/*Metodos utiles*/
 		List <Vehiculo^>^ buscarAll();
 		List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo);
@@ -23,7 +32,19 @@ namespace EstacionPesajeController {
 		void actualizarVehiculo(Vehiculo^ objVehiculo);
 		List <String^>^ getTiposVehiculos();
 		List <String^>^ getMultas(List <String^>^ listaTipoVehiculos);
-	};
 
+		/////////////////////////////////////////////////////
+		/*Metodos propios del manejo de Base de Datos*/
+		void abrirConexionBD();
+		void cerrarConexionBD();
+
+		void AgregarVehiculoSQL(int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo);
+		void eliminarVehiculoSQL(String^ placa);
+		List<Vehiculo^>^ buscarVehiculosxPlacaSQL(String^ placa);
+		List<Vehiculo^>^ buscarVehiculosxCodigoSQL(int codigo);
+		Vehiculo^ objbuscarVehiculoxPlacaSQL(String^ placa);
+		Vehiculo^ objbuscarVehiculoxCodigoSQL(int codigo);
+		void actualizarVehiculoSQL(int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas);
+	};
 
 }

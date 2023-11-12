@@ -7,7 +7,7 @@ using namespace System::IO; /*Este espacio de nombres sirve para manejar los arc
 
 
 VehiculoController::VehiculoController() {
-
+	this->objConexion = gcnew SqlConnection();
 }
 
 List<Vehiculo^>^ VehiculoController::buscarVehiculo(String^ placa) {
@@ -28,9 +28,10 @@ List<Vehiculo^>^ VehiculoController::buscarVehiculo(String^ placa) {
 		String^ placaVehiculo = datos[4];
 		String^ tipoVehiculoVehiculo = datos[5];
 		int cantMultas = Convert::ToInt32(datos[6]);
+		int codigoPropietarioVehiculo = Convert::ToInt32(datos[7]);
 
 		if (placaVehiculo->Contains(placa)) {
-			Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas);
+			Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas,codigoPropietarioVehiculo);
 			listaVehiculosEncontrados->Add(objVehiculo);
 		}
 	}
@@ -42,13 +43,11 @@ List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo) 
 	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
 	List<Vehiculo^>^ listaVehiculosEncontrados = gcnew List<Vehiculo^>();
 	array<String^>^ lineas = File::ReadAllLines("vehiculo.txt");
-
 	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
 	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
 	for each (String^ linea in lineas) {
 		/*Voy a separar cada elemento del String por ; con el split*/
 		array<String^>^ datos = linea->Split(separadores->ToCharArray());
-
 		int codigoVehiculo = Convert::ToInt32(datos[0]);
 		int pesoSinCargaVehiculo = Convert::ToInt32(datos[1]);
 		int pesoConCargaVehiculo = Convert::ToInt32(datos[2]);
@@ -56,8 +55,9 @@ List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo) 
 		String^ placaVehiculo = datos[4];
 		String^ tipoVehiculoVehiculo = datos[5];
 		int cantMultas = Convert::ToInt32(datos[6]);
+		int codigoPropietarioVehiculo = Convert::ToInt32(datos[7]);
 		if (tipoVehiculoVehiculo == TipoVehiculo) {
-			Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas);
+			Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas,codigoPropietarioVehiculo);
 			listaVehiculosEncontrados->Add(objVehiculo);
 		}		
 	}
@@ -68,7 +68,6 @@ List <Vehiculo^>^ VehiculoController::buscarAll() {
 	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
 	List<Vehiculo^>^ listaVehiculosEncontrados = gcnew List<Vehiculo^>();
 	array<String^>^ lineas = File::ReadAllLines("vehiculo.txt");
-
 	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
 	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
 	for each (String ^ linea in lineas) {
@@ -82,13 +81,13 @@ List <Vehiculo^>^ VehiculoController::buscarAll() {
 		String^ placaVehiculo = datos[4];
 		String^ tipoVehiculoVehiculo = datos[5];
 		int cantMultas = Convert::ToInt32(datos[6]);
+		int codigoPropietarioVehiculo = Convert::ToInt32(datos[7]);
 
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas);
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas,codigoPropietarioVehiculo);
 		listaVehiculosEncontrados->Add(objVehiculo);
-
 	}
 	return listaVehiculosEncontrados;
-}
+ }
 
 
 void VehiculoController::escribirArchivo(List <Vehiculo^>^ lista) {
@@ -98,7 +97,7 @@ void VehiculoController::escribirArchivo(List <Vehiculo^>^ lista) {
 
 		Vehiculo^ objeto = lista[i];
 
-		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getPesoSinCarga() + ";" + objeto->getPesoConCarga() + ";" + objeto->getPesoActual() + ";" + objeto->getPlaca() + ";" + objeto->getTipoVehiculo() + ";" + objeto->getCantMultas() + ";";
+		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getPesoSinCarga() + ";" + objeto->getPesoConCarga() + ";" + objeto->getPesoActual() + ";" + objeto->getPlaca() + ";" + objeto->getTipoVehiculo() + ";" + objeto->getCantMultas() + ";"+ objeto->getcodigoPropietarioVehiculo() + ";";
 	}
 
 	File::WriteAllLines("vehiculo.txt", lineasArchivo);
@@ -144,6 +143,7 @@ void VehiculoController::actualizarVehiculo(Vehiculo^ objVehiculo) {
 			listaVehiculos[i]->setPlaca(objVehiculo->getPlaca());
 			listaVehiculos[i]->setTipoVehiculo(objVehiculo->getTipoVehiculo());
 			listaVehiculos[i]->setCantMultas(objVehiculo->getCantMultas());
+			listaVehiculos[i]->setcodigoPropietarioVehiculo(objVehiculo->getcodigoPropietarioVehiculo());
 			break;
 		}
 
@@ -174,4 +174,166 @@ List <String^>^ VehiculoController::getMultas(List <String^>^ listaTipoVehiculos
 		listaMultas->Add(Convert::ToString(cantidad));
 	}
 	return listaMultas;
+}
+
+/////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+/*Metodos propios del manejo de Base de Datos*/
+void  VehiculoController::abrirConexionBD() {
+	/*Cadena de conexion: Servidor de BD, nombre de la BD, usuario de BD, password BD*/
+	this->objConexion->ConnectionString = "Server=200.16.7.140;DataBase=a20213798;User Id=a20213798;Password=HHnALnyd";
+	this->objConexion->Open(); /*Apertura de la conexion a BD*/
+}
+
+void  VehiculoController::cerrarConexionBD() {
+	this->objConexion->Close();
+}
+
+
+void VehiculoController::AgregarVehiculoSQL(int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo) {
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "insert into Vehiculo(pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo) values (" + pesoSinCarga + "," + pesoConCarga + "," + pesoActual + ",'" + placa + "','" + tipoVehiculo + "'," + cantMultas + ","+codigoPropietarioVehiculo+")";
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
+}
+
+void VehiculoController::eliminarVehiculoSQL(String^ placa) {
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "delete Vehiculo where placa= '" + placa +"'";
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
+}
+
+List <Vehiculo^>^ VehiculoController::buscarVehiculosxPlacaSQL(String^ placa) {
+	List<Vehiculo^>^ listaVehiculo = gcnew List<Vehiculo^>();
+	abrirConexionBD();
+	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
+	objSentencia->Connection = this->objConexion;
+	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
+	objSentencia->CommandText = "select * from Vehiculo where placa= '" + placa + "'";
+	/*Aqui ejecuto la sentencia en la Base de Datos*/
+	/*Para Select siempre sera ExecuteReader*/
+	/*Para select siempre va a devolver un SqlDataReader*/
+	SqlDataReader^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		int pesoSinCarga = safe_cast<int>(objData[1]);
+		int pesoConCarga = safe_cast<int>(objData[2]);
+		int pesoActual = safe_cast<int>(objData[3]);
+		String^ placa = safe_cast<String^>(objData[4]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
+		int cantMultas = safe_cast<int>(objData[6]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
+
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+		listaVehiculo->Add(objVehiculo);
+	}
+	cerrarConexionBD();
+	return listaVehiculo;
+}
+
+
+List <Vehiculo^>^ VehiculoController::buscarVehiculosxCodigoSQL(int codigo) {
+	List<Vehiculo^>^ listaVehiculo = gcnew List<Vehiculo^>();
+	abrirConexionBD();
+	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
+	objSentencia->Connection = this->objConexion;
+	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
+	objSentencia->CommandText = "select * from Vehiculo where codigo= " + codigo;
+	/*Aqui ejecuto la sentencia en la Base de Datos*/
+	/*Para Select siempre sera ExecuteReader*/
+	/*Para select siempre va a devolver un SqlDataReader*/
+	SqlDataReader^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		int pesoSinCarga = safe_cast<int>(objData[1]);
+		int pesoConCarga = safe_cast<int>(objData[2]);
+		int pesoActual = safe_cast<int>(objData[3]);
+		String^ placa = safe_cast<String^>(objData[4]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
+		int cantMultas = safe_cast<int>(objData[6]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
+
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+		listaVehiculo->Add(objVehiculo);
+	}
+	cerrarConexionBD();
+	return listaVehiculo;
+}
+
+Vehiculo^ VehiculoController::objbuscarVehiculoxPlacaSQL(String^ placa) {
+	Vehiculo^ objVehiculo;
+	abrirConexionBD();
+	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
+	objSentencia->Connection = this->objConexion;
+	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
+	objSentencia->CommandText = "select * from Vehiculo where placa= '" + placa + "'";
+	/*Aqui ejecuto la sentencia en la Base de Datos*/
+	/*Para Select siempre sera ExecuteReader*/
+	/*Para select siempre va a devolver un SqlDataReader*/
+	SqlDataReader^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		int pesoSinCarga = safe_cast<int>(objData[1]);
+		int pesoConCarga = safe_cast<int>(objData[2]);
+		int pesoActual = safe_cast<int>(objData[3]);
+		String^ placa = safe_cast<String^>(objData[4]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
+		int cantMultas = safe_cast<int>(objData[6]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
+
+		objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+	}
+	cerrarConexionBD();
+	return objVehiculo;
+}
+
+Vehiculo^ VehiculoController::objbuscarVehiculoxCodigoSQL(int codigo) {
+	Vehiculo^ objVehiculo;
+	abrirConexionBD();
+	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
+	objSentencia->Connection = this->objConexion;
+	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
+	objSentencia->CommandText = "select * from Vehiculo where codigo=" + codigo;
+	/*Aqui ejecuto la sentencia en la Base de Datos*/
+	/*Para Select siempre sera ExecuteReader*/
+	/*Para select siempre va a devolver un SqlDataReader*/
+	SqlDataReader^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		int pesoSinCarga = safe_cast<int>(objData[1]);
+		int pesoConCarga = safe_cast<int>(objData[2]);
+		int pesoActual = safe_cast<int>(objData[3]);
+		String^ placa = safe_cast<String^>(objData[4]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
+		int cantMultas = safe_cast<int>(objData[6]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
+
+		objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+	}
+	cerrarConexionBD();
+	return objVehiculo;
+}
+
+void VehiculoController::actualizarVehiculoSQL(int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas) {
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "update Vehiculo set pesoSinCarga='" + pesoSinCarga + "', pesoConCarga='" + pesoConCarga + "', pesoActual='" + pesoActual + "', placa='" + placa + "', tipoVehiculo=" + tipoVehiculo + ", cantMultas='" + cantMultas;
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
 }

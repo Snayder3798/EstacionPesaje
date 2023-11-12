@@ -13,10 +13,11 @@ namespace EstacionPesajeModel {
         String^ placa;
         String^ tipoVehiculo;
         int cantMultas;
+        int codigoPropietarioVehiculo;
 
     public:
         Vehiculo();
-        Vehiculo(int codigo, int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas);
+        Vehiculo(int codigo, int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo);
 
         int getCodigo();
         void setCodigo(int pesoSinCarga);
@@ -39,5 +40,7 @@ namespace EstacionPesajeModel {
         int getCantMultas();
         void setCantMultas(int cantMultas);
 
+        int getcodigoPropietarioVehiculo();
+        void setcodigoPropietarioVehiculo(int codigoPropietarioVehiculo);
     };
 }

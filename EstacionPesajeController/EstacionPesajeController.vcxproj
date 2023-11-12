@@ -114,12 +114,14 @@
   <ItemGroup>
     <ClCompile Include="EstacionController.cpp" />
     <ClCompile Include="PersonaController.cpp" />
+    <ClCompile Include="PropietarioVehiculoController.cpp" />
     <ClCompile Include="TarjetaController.cpp" />
     <ClCompile Include="VehiculoController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EstacionController.h" />
     <ClInclude Include="PersonaController.h" />
+    <ClInclude Include="PropietarioVehiculoController.h" />
     <ClInclude Include="TarjetaController.h" />
     <ClInclude Include="VehiculoController.h" />
   </ItemGroup>
@@ -127,6 +129,10 @@
     <ProjectReference Include="..\EstacionPesajeModel\EstacionPesajeModel.vcxproj">
       <Project>{b8defc48-df75-4095-b061-a8e0604ce6af}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
