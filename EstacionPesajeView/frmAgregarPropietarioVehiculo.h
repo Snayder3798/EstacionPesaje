@@ -22,13 +22,13 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estÈn usando.
+		/// Limpiar los recursos que se est√©n usando.
 		/// </summary>
 		~frmAgregarPropietarioVehiculo()
 		{
@@ -70,14 +70,14 @@ namespace EstacionPesajeView {
 
 	private:
 		/// <summary>
-		/// Variable del diseÒador necesaria.
+		/// Variable del dise√±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// MÈtodo necesario para admitir el DiseÒador. No se puede modificar
-		/// el contenido de este mÈtodo con el editor de cÛdigo.
+		/// M√©todo necesario para admitir el Dise√±ador. No se puede modificar
+		/// el contenido de este m√©todo con el editor de c√≥digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -134,7 +134,7 @@ namespace EstacionPesajeView {
 			this->groupBox3->Size = System::Drawing::Size(523, 229);
 			this->groupBox3->TabIndex = 23;
 			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"Datos de VehÌculo";
+			this->groupBox3->Text = L"Datos de Veh√≠culo";
 			// 
 			// textBox6
 			// 
@@ -153,7 +153,7 @@ namespace EstacionPesajeView {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(100, 53);
 			this->button2->TabIndex = 7;
-			this->button2->Text = L"AÒadir VehÌculo";
+			this->button2->Text = L"A√±adir Veh√≠culo";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &frmAgregarPropietarioVehiculo::button2_Click);
 			// 
@@ -185,7 +185,7 @@ namespace EstacionPesajeView {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(54, 16);
 			this->label8->TabIndex = 27;
-			this->label8->Text = L"CÛdigo:";
+			this->label8->Text = L"C√≥digo:";
 			// 
 			// label12
 			// 
@@ -315,7 +315,6 @@ namespace EstacionPesajeView {
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Apellido Paterno:";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->label2->Click += gcnew System::EventHandler(this, &frmAgregarPropietarioVehiculo::label2_Click);
 			// 
 			// textBox2
 			// 
@@ -380,7 +379,7 @@ namespace EstacionPesajeView {
 			this->groupBox1->Size = System::Drawing::Size(521, 140);
 			this->groupBox1->TabIndex = 19;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Datos del Propietario del VehÌculo";
+			this->groupBox1->Text = L"Datos del Propietario del Veh√≠culo";
 			// 
 			// textBox4
 			// 
@@ -389,6 +388,7 @@ namespace EstacionPesajeView {
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(132, 22);
 			this->textBox4->TabIndex = 11;
+			this->textBox4->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPropietarioVehiculo::textBox4_KeyPress);
 			// 
 			// label4
 			// 
@@ -417,6 +417,7 @@ namespace EstacionPesajeView {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(132, 22);
 			this->textBox5->TabIndex = 9;
+			this->textBox5->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPropietarioVehiculo::textBox5_KeyPress);
 			// 
 			// frmAgregarPropietarioVehiculo
 			// 
@@ -437,11 +438,10 @@ namespace EstacionPesajeView {
 
 		}
 #pragma endregion
+
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-
-
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		PropietarioVehiculoController^ objPropietarioVehiculo = gcnew PropietarioVehiculoController();
@@ -457,10 +457,38 @@ namespace EstacionPesajeView {
 		this->Close();
 	}
 
-	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+  }
+
+	private: System::Void textBox4_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si el car√°cter presionado es un numero o borrar
+		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
+
+			String^ TextoIngresado = textBox1->Text;
+
+			// Si longitud del texto actual es menor a 9, permite m√°s entrada
+			if (TextoIngresado->Length < 9) {
+				e->Handled = false;
+			}
+			else {
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite m√°s entrada
+			}
+		}
+	}
+	private: System::Void textBox5_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si el car√°cter presionado es un numero o borrar
+		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
+
+			String^ TextoIngresado = textBox1->Text;
+
+			// Si longitud del texto actual es menor a 9, permite m√°s entrada
+			if (TextoIngresado->Length < 9) {
+				e->Handled = false;
+			}
+			else {
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite m√°s entrada
+			}
+		}
 
 	}
 };

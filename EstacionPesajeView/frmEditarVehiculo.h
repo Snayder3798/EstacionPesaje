@@ -13,8 +13,6 @@ namespace EstacionPesajeView {
 	using namespace System::Collections::Generic;
 	using namespace EstacionPesajeModel;
 
-
-
 	/// <summary>
 	/// Resumen de frmEditarVehiculo
 	/// </summary>
@@ -25,7 +23,7 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar c�digo de constructor aqu�
+			//TODO: agregar código de constructor aquí
 			//
 		}
 
@@ -34,7 +32,7 @@ namespace EstacionPesajeView {
 			InitializeComponent();
 			this->PlacaVehiculoEditar = PlacaVehiculoEditar;
 			//
-			//TODO: agregar c�digo de constructor aqu�
+			//TODO: agregar código de constructor aquí
 			//
 		}*/
 
@@ -43,12 +41,12 @@ namespace EstacionPesajeView {
 			InitializeComponent();
 			this->CodigoVehiculoEditar = CodigoVehiculoEditar;
 			//
-			//TODO: agregar c�digo de constructor aqu�
+			//TODO: agregar código de constructor aquí
 			//
 		}
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se est�n usando.
+		/// Limpiar los recursos que se estén usando.
 		/// </summary>
 		~frmEditarVehiculo()
 		{
@@ -56,7 +54,7 @@ namespace EstacionPesajeView {
 			{
 				delete components;
 			}
-		}
+ 		}
 	private: System::Windows::Forms::Button^ button2;
 	protected:
 	private: System::Windows::Forms::Button^ button1;
@@ -67,38 +65,38 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
+  private: System::Windows::Forms::ComboBox^ comboBox1;
 
 
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: String^ PlacaVehiculoEditar;
 	private: int CodigoVehiculoEditar;
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::Label^ 
 	private: System::Windows::Forms::Label^ label8;
 
 	private:
 		/// <summary>
-		/// Variable del dise�ador necesaria.
+		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// M�todo necesario para admitir el Dise�ador. No se puede modificar
-		/// el contenido de este m�todo con el editor de c�digo.
+		/// Método necesario para admitir el Diseñador. No se puede modificar
+		/// el contenido de este método con el editor de código.
 		/// </summary>
 		void InitializeComponent(void)
 		{
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->Propietario = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
@@ -107,7 +105,6 @@ namespace EstacionPesajeView {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -146,6 +143,7 @@ namespace EstacionPesajeView {
 			this->Propietario->Controls->Add(this->label9);
 			this->Propietario->Controls->Add(this->textBox8);
 			this->Propietario->Controls->Add(this->label8);
+			this->Propietario->Controls->Add(this->comboBox1);
 			this->Propietario->Controls->Add(this->label7);
 			this->Propietario->Controls->Add(this->textBox7);
 			this->Propietario->Controls->Add(this->textBox5);
@@ -154,7 +152,6 @@ namespace EstacionPesajeView {
 			this->Propietario->Controls->Add(this->label6);
 			this->Propietario->Controls->Add(this->textBox4);
 			this->Propietario->Controls->Add(this->textBox3);
-			this->Propietario->Controls->Add(this->textBox2);
 			this->Propietario->Controls->Add(this->textBox1);
 			this->Propietario->Controls->Add(this->label5);
 			this->Propietario->Controls->Add(this->label2);
@@ -168,7 +165,16 @@ namespace EstacionPesajeView {
 			this->Propietario->TabIndex = 21;
 			this->Propietario->TabStop = false;
 			this->Propietario->Text = L"Datos del Vehiculo:";
-			this->Propietario->Enter += gcnew System::EventHandler(this, &frmEditarVehiculo::Propietario_Enter);
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Automóvil", L"Camioneta", L"Camión", L"Motocicleta" });
+			this->comboBox1->Location = System::Drawing::Point(167, 81);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(255, 24);
+			this->comboBox1->TabIndex = 26;
 			// 
 			// label7
 			// 
@@ -206,7 +212,6 @@ namespace EstacionPesajeView {
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(255, 24);
 			this->textBox6->TabIndex = 11;
-			this->textBox6->TextChanged += gcnew System::EventHandler(this, &frmEditarVehiculo::textBox6_TextChanged);
 			// 
 			// label1
 			// 
@@ -226,7 +231,6 @@ namespace EstacionPesajeView {
 			this->label6->Size = System::Drawing::Size(92, 16);
 			this->label6->TabIndex = 9;
 			this->label6->Text = L"*Peso Actual*:";
-			this->label6->Click += gcnew System::EventHandler(this, &frmEditarVehiculo::label6_Click);
 			// 
 			// textBox4
 			// 
@@ -244,16 +248,6 @@ namespace EstacionPesajeView {
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(255, 24);
 			this->textBox3->TabIndex = 7;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(167, 81);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(255, 24);
-			this->textBox2->TabIndex = 6;
-			// 
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(167, 37);
@@ -297,6 +291,7 @@ namespace EstacionPesajeView {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(20, 85);
+
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(38, 16);
@@ -319,7 +314,7 @@ namespace EstacionPesajeView {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(123, 16);
 			this->label8->TabIndex = 26;
-			this->label8->Text = L"C�digo Propietario:";
+			this->label8->Text = L"Código Propietario:";
 			// 
 			// label9
 			// 
@@ -329,7 +324,8 @@ namespace EstacionPesajeView {
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(54, 16);
 			this->label9->TabIndex = 28;
-			this->label9->Text = L"C�digo:";
+			this->label9->Text = L"Código:";
+
 			// 
 			// frmEditarVehiculo
 			// 
@@ -341,7 +337,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->Propietario);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmEditarVehiculo";
-			this->Text = L"frmEditarVehiculo";
+			this->Text = L"Editar Vehiculo";
 			this->Load += gcnew System::EventHandler(this, &frmEditarVehiculo::frmEditarVehiculo_Load);
 			this->Propietario->ResumeLayout(false);
 			this->Propietario->PerformLayout();
@@ -355,7 +351,7 @@ namespace EstacionPesajeView {
 		Vehiculo^ objVehiculo;
 		objVehiculo = objVehiculoController->objbuscarVehiculoxCodigoSQL(this->CodigoVehiculoEditar);	
 		this->textBox1->Text = objVehiculo->getPlaca();
-		this->textBox2->Text = objVehiculo->getTipoVehiculo();
+		this->comboBox1->Text = objVehiculo->getTipoVehiculo();
 		this->textBox3->Text = Convert::ToString(objVehiculo->getPesoSinCarga());
 		this->textBox4->Text = Convert::ToString(objVehiculo->getPesoConCarga());
 		this->textBox6->Text = Convert::ToString(objVehiculo->getPesoActual());	
@@ -370,7 +366,7 @@ namespace EstacionPesajeView {
 		int pesoConCarga = Convert::ToInt32(this->textBox4->Text);
 		int pesoActual = Convert::ToInt32(this->textBox5->Text);
 		String^ placa = this->textBox1->Text;
-		String^ tipoVehiculo = this->textBox2->Text;
+		String^ tipoVehiculo = this->comboBox1->Text;
 		int cantMultas = Convert::ToInt32(this->textBox7->Text);
 		
 		//Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas);
@@ -385,11 +381,65 @@ namespace EstacionPesajeView {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void Propietario_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
+
+	private: System::Void textBox3_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si la tecla presionada es un número o borrar
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8) {
+			// Si no es un número ni una tecla de control, suprime la tecla presionada
+			e->Handled = true;
+		}
+	}
+
+	private: System::Void textBox4_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si la tecla presionada es un número o borrar
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8) {
+			// Si no es un número ni una tecla de control, suprime la tecla presionada
+			e->Handled = true;
+		}
+	}
+	private: System::Void textBox7_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si la tecla presionada es un número o borrar
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8) {
+			// Si no es un número ni una tecla de control, suprime la tecla presionada
+			e->Handled = true;
+		}
+	}
+
+	private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+
+		// Verifica si la tecla presionada es un dígito o una letra mayúscula
+		if (Char::IsDigit(e->KeyChar) || (e->KeyChar >= 'A' && e->KeyChar <= 'Z') || e->KeyChar == '-') {
+			// Obtiene el texto actual del TextBox
+			String^ TextoIngresado = textBox1->Text;
+
+			// Verifica la longitud del texto actual
+			if (TextoIngresado->Length < 7) {
+				// Verifica si se ha ingresado el guion en la posición 3
+				if (TextoIngresado->Length == 3) {
+					// Solo permite el guion en la posición 3
+					e->Handled = true;
+					if (e->KeyChar == '-') {
+						e->Handled = false;
+					}
+				}
+				else {
+					e->Handled = false;  // Permite letras y números en las posiciones 0, 1, 2, 4, 5, 6
+				}
+			}
+			else {
+				e->Handled = true;  // La placa tiene una longitud de 6 caracteres, no permite más entrada
+			}
+
+		}
+		else if (e->KeyChar == 8) {
+			// Permite la tecla borrar 
+			e->Handled = false;
+		}
+		else {
+			e->Handled = true;  // Suprime cualquier otro carácter
+		}
+
+	}
+
 };
 }

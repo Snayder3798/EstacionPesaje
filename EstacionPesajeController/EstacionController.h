@@ -22,6 +22,7 @@ namespace EstacionPesajeController {
 
 		/*Obtener lista de Ubicaciones para ponerlos en el filtro de Ubicaciones*/
 		List <String^>^ obtenerUbicaciones();
+		List <String^>^ getMultas(List <String^>^ listaUbicaciones);
 	};
 
 }

@@ -26,13 +26,13 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estÈn usando.
+		/// Limpiar los recursos que se est√©n usando.
 		/// </summary>
 		~frmMantenimientoVehiculo()
 		{
@@ -52,29 +52,24 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label1;
 
-
-
-
 	private: System::Windows::Forms::PictureBox^ boxVehiculo;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Codigo;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Placa;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Tipo;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ pesoSinCarga;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ pesoConCarga;
-
-
-
+	private: System::Windows::Forms::Label^ label8;
 
 	private:
 		/// <summary>
-		/// Variable del diseÒador necesaria.
+		/// Variable del dise√±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// MÈtodo necesario para admitir el DiseÒador. No se puede modificar
-		/// el contenido de este mÈtodo con el editor de cÛdigo.
+		/// M√©todo necesario para admitir el Dise√±ador. No se puede modificar
+		/// el contenido de este m√©todo con el editor de c√≥digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -93,6 +88,7 @@ namespace EstacionPesajeView {
 			this->Tipo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->pesoSinCarga = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->pesoConCarga = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->boxVehiculo))->BeginInit();
@@ -100,10 +96,10 @@ namespace EstacionPesajeView {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(427, 439);
+			this->button4->Location = System::Drawing::Point(427, 428);
 			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(100, 30);
+			this->button4->Size = System::Drawing::Size(100, 53);
 			this->button4->TabIndex = 15;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
@@ -111,10 +107,10 @@ namespace EstacionPesajeView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(245, 439);
+			this->button3->Location = System::Drawing::Point(245, 428);
 			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(100, 30);
+			this->button3->Size = System::Drawing::Size(100, 53);
 			this->button3->TabIndex = 14;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
@@ -122,10 +118,10 @@ namespace EstacionPesajeView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(71, 439);
+			this->button2->Location = System::Drawing::Point(71, 428);
 			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 30);
+			this->button2->Size = System::Drawing::Size(100, 53);
 			this->button2->TabIndex = 13;
 			this->button2->Text = L"Agregar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -148,6 +144,7 @@ namespace EstacionPesajeView {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->label8);
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->label1);
@@ -158,7 +155,7 @@ namespace EstacionPesajeView {
 			this->groupBox1->Size = System::Drawing::Size(521, 143);
 			this->groupBox1->TabIndex = 11;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Criterios de B˙squeda:";
+			this->groupBox1->Text = L"Criterios de B√∫squeda:";
 			// 
 			// button1
 			// 
@@ -181,6 +178,7 @@ namespace EstacionPesajeView {
 			this->textBox1->Size = System::Drawing::Size(225, 22);
 			this->textBox1->TabIndex = 6;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &frmMantenimientoVehiculo::textBox1_TextChanged);
+			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmMantenimientoVehiculo::textBox1_KeyPress);
 			// 
 			// label1
 			// 
@@ -237,6 +235,16 @@ namespace EstacionPesajeView {
 			this->pesoConCarga->MinimumWidth = 6;
 			this->pesoConCarga->Name = L"pesoConCarga";
 			this->pesoConCarga->Width = 125;
+      //
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label8->Location = System::Drawing::Point(20, 117);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(115, 16);
+			this->label8->TabIndex = 22;
+			this->label8->Text = L"(formato A1B-2C3)";
 			// 
 			// frmMantenimientoVehiculo
 			// 
@@ -307,27 +315,44 @@ namespace EstacionPesajeView {
 
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-		
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-		String^ codigoVehiculoEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+		  String^ codigoVehiculoEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 
-		VehiculoController^ objeto = gcnew VehiculoController();
-		objeto -> eliminarVehiculoFisico(codigoVehiculoEliminar);
-		objeto->eliminarVehiculoSQL(codigoVehiculoEliminar); /*SQL*/
-		MessageBox::Show("El Vehiculo ha sido eliminado con Èxito");
-
+		  VehiculoController^ objeto = gcnew VehiculoController();
+		  objeto -> eliminarVehiculoFisico(codigoVehiculoEliminar);
+		  objeto->eliminarVehiculoSQL(codigoVehiculoEliminar); /*SQL*/
+			MessageBox::Show("El Vehiculo ha sido eliminado con √©xito");
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-		int CodigoVehiculoEditar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
-	//	String^ PlacaVehiculoEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+    
+      //Codigo carlos
+      int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+      int CodigoVehiculoEditar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+      //	String^ PlacaVehiculoEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 
-		VehiculoController^ objVehiculoController = gcnew VehiculoController();
-		frmEditarVehiculo^ ventanaEditarVehiculo = gcnew frmEditarVehiculo(CodigoVehiculoEditar);
-		ventanaEditarVehiculo->ShowDialog();
+      VehiculoController^ objVehiculoController = gcnew VehiculoController();
+      frmEditarVehiculo^ ventanaEditarVehiculo = gcnew frmEditarVehiculo(CodigoVehiculoEditar);
+      ventanaEditarVehiculo->ShowDialog();
+    
+      //Codigo master
+			/*int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; //Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0
+			String^ PlacaVehiculoEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			VehiculoController^ objVehiculoController = gcnew VehiculoController();
+			Vehiculo^ objVehiculo = objVehiculoController->buscarVehiculoxPlaca(PlacaVehiculoEditar);
+			frmEditarVehiculo^ ventanaEditarVehiculo = gcnew frmEditarVehiculo(objVehiculo);
+			ventanaEditarVehiculo->ShowDialog();*/
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
 	private: System::Void frmMantenimientoVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -335,5 +360,40 @@ namespace EstacionPesajeView {
 		List <Vehiculo^>^ listaVehiculos = objVehiculoController->buscarAll();
 		mostrarGrilla(listaVehiculos);
 	}
+
+	private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si la tecla presionada es un d√≠gito o una letra may√∫scula
+		if (Char::IsDigit(e->KeyChar) || (e->KeyChar >= 'A' && e->KeyChar <= 'Z') || e->KeyChar == '-') {
+			// Obtiene el texto actual del TextBox
+			String^ TextoIngresado = textBox1->Text;
+
+			// Verifica la longitud del texto actual
+			if (TextoIngresado->Length < 7) {
+				// Verifica si se ha ingresado el guion en la posici√≥n 3
+				if (TextoIngresado->Length == 3) {
+					// Solo permite el guion en la posici√≥n 3
+					e->Handled = true;
+					if (e->KeyChar == '-') {
+						e->Handled = false;
+					}
+				}
+				else {
+					e->Handled = false;  // Permite letras y n√∫meros en las posiciones 0, 1, 2, 4, 5, 6
+				}
+			}
+			else {
+				e->Handled = true;  // La placa tiene una longitud de 6 caracteres, no permite m√°s entrada
+			}
+
+		}
+		else if (e->KeyChar == 8) {
+			// Permite la tecla borrar 
+			e->Handled = false;
+		}
+		else {
+			e->Handled = true;  // Suprime cualquier otro car√°cter
+		}
+	}
+
 };
 }

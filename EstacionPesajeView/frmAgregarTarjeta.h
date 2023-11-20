@@ -118,6 +118,7 @@ namespace EstacionPesajeView {
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(255, 24);
 			this->textBox8->TabIndex = 5;
+			this->textBox8->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarTarjeta::textBox8_KeyPress);
 			// 
 			// label6
 			// 
@@ -209,5 +210,21 @@ namespace EstacionPesajeView {
 	}
 
 
+	private: System::Void textBox8_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	
+		// Verifica si el carácter presionado es un numero o borrar
+		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
+
+			String^ TextoIngresado = textBox1->Text;
+
+			// Si longitud del texto actual es menor a 9, permite más entrada
+			if (TextoIngresado->Length < 16) {
+				e->Handled = false;
+			}
+			else {
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
+			}
+		}
+	}
 };
 }
