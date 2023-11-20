@@ -10,6 +10,7 @@ namespace EstacionPesajeView {
 	using namespace System::Drawing;
 
 	using namespace EstacionPesajeController;
+	using namespace System::Collections::Generic;
 	using namespace EstacionPesajeModel;
 
 	/// <summary>
@@ -22,22 +23,30 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
 
-		frmEditarVehiculo(Vehiculo^ objVehiculo)
+	/*frmEditarVehiculo(String^ PlacaVehiculoEditar)
 		{
 			InitializeComponent();
-			this->objVehiculo = objVehiculo;
+			this->PlacaVehiculoEditar = PlacaVehiculoEditar;
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
+			//
+		}*/
+
+		frmEditarVehiculo(int CodigoVehiculoEditar)
+		{
+			InitializeComponent();
+			this->CodigoVehiculoEditar = CodigoVehiculoEditar;
+			//
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
-
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estÈn usando.
+		/// Limpiar los recursos que se est√©n usando.
 		/// </summary>
 		~frmEditarVehiculo()
 		{
@@ -45,7 +54,7 @@ namespace EstacionPesajeView {
 			{
 				delete components;
 			}
-		}
+ 		}
 	private: System::Windows::Forms::Button^ button2;
 	protected:
 	private: System::Windows::Forms::Button^ button1;
@@ -56,29 +65,31 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::TextBox^ textBox3;
-
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
+  private: System::Windows::Forms::ComboBox^ comboBox1;
 
-	private: Vehiculo^ objVehiculo;
+
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::TextBox^ textBox7;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: String^ PlacaVehiculoEditar;
+	private: int CodigoVehiculoEditar;
+	private: System::Windows::Forms::Label^ 
 	private: System::Windows::Forms::Label^ label8;
 
 	private:
 		/// <summary>
-		/// Variable del diseÒador necesaria.
+		/// Variable del dise√±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// MÈtodo necesario para admitir el DiseÒador. No se puede modificar
-		/// el contenido de este mÈtodo con el editor de cÛdigo.
+		/// M√©todo necesario para admitir el Dise√±ador. No se puede modificar
+		/// el contenido de este m√©todo con el editor de c√≥digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -99,13 +110,15 @@ namespace EstacionPesajeView {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->Propietario->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(331, 414);
+			this->button2->Location = System::Drawing::Point(315, 459);
 			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(91, 28);
@@ -116,7 +129,7 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(183, 414);
+			this->button1->Location = System::Drawing::Point(167, 459);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 28);
@@ -127,6 +140,8 @@ namespace EstacionPesajeView {
 			// 
 			// Propietario
 			// 
+			this->Propietario->Controls->Add(this->label9);
+			this->Propietario->Controls->Add(this->textBox8);
 			this->Propietario->Controls->Add(this->label8);
 			this->Propietario->Controls->Add(this->comboBox1);
 			this->Propietario->Controls->Add(this->label7);
@@ -146,7 +161,7 @@ namespace EstacionPesajeView {
 			this->Propietario->Margin = System::Windows::Forms::Padding(4);
 			this->Propietario->Name = L"Propietario";
 			this->Propietario->Padding = System::Windows::Forms::Padding(4);
-			this->Propietario->Size = System::Drawing::Size(512, 378);
+			this->Propietario->Size = System::Drawing::Size(512, 405);
 			this->Propietario->TabIndex = 21;
 			this->Propietario->TabStop = false;
 			this->Propietario->Text = L"Datos del Vehiculo:";
@@ -155,10 +170,10 @@ namespace EstacionPesajeView {
 			// 
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"AutomÛvil", L"Camioneta", L"CamiÛn", L"Motocicleta" });
-			this->comboBox1->Location = System::Drawing::Point(168, 87);
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Autom√≥vil", L"Camioneta", L"Cami√≥n", L"Motocicleta" });
+			this->comboBox1->Location = System::Drawing::Point(167, 81);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(254, 24);
+			this->comboBox1->Size = System::Drawing::Size(255, 24);
 			this->comboBox1->TabIndex = 26;
 			// 
 			// label7
@@ -197,7 +212,6 @@ namespace EstacionPesajeView {
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(255, 24);
 			this->textBox6->TabIndex = 11;
-			this->textBox6->TextChanged += gcnew System::EventHandler(this, &frmEditarVehiculo::textBox6_TextChanged);
 			// 
 			// label1
 			// 
@@ -205,9 +219,8 @@ namespace EstacionPesajeView {
 			this->label1->Location = System::Drawing::Point(20, 324);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(92, 16);
+			this->label1->Size = System::Drawing::Size(0, 16);
 			this->label1->TabIndex = 10;
-			this->label1->Text = L"*Peso Actual*:";
 			// 
 			// label6
 			// 
@@ -215,10 +228,9 @@ namespace EstacionPesajeView {
 			this->label6->Location = System::Drawing::Point(20, 273);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(54, 16);
+			this->label6->Size = System::Drawing::Size(92, 16);
 			this->label6->TabIndex = 9;
-			this->label6->Text = L"CÛdigo:";
-			this->label6->Click += gcnew System::EventHandler(this, &frmEditarVehiculo::label6_Click);
+			this->label6->Text = L"*Peso Actual*:";
 			// 
 			// textBox4
 			// 
@@ -236,7 +248,6 @@ namespace EstacionPesajeView {
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(255, 24);
 			this->textBox3->TabIndex = 7;
-			// 
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(167, 37);
@@ -279,28 +290,48 @@ namespace EstacionPesajeView {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(20, 90);
+			this->label3->Location = System::Drawing::Point(20, 85);
+
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(38, 16);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Tipo:";
 			// 
+			// textBox8
+			// 
+			this->textBox8->Location = System::Drawing::Point(167, 366);
+			this->textBox8->Margin = System::Windows::Forms::Padding(4);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(255, 22);
+			this->textBox8->TabIndex = 27;
+			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label8->Location = System::Drawing::Point(20, 57);
+			this->label8->Location = System::Drawing::Point(20, 369);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(115, 16);
-			this->label8->TabIndex = 24;
-			this->label8->Text = L"(formato A1B-2C3)";
+			this->label8->Size = System::Drawing::Size(123, 16);
+			this->label8->TabIndex = 26;
+			this->label8->Text = L"C√≥digo Propietario:";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(20, 327);
+			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(54, 16);
+			this->label9->TabIndex = 28;
+			this->label9->Text = L"C√≥digo:";
+
 			// 
 			// frmEditarVehiculo
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(581, 455);
+			this->ClientSize = System::Drawing::Size(581, 510);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Propietario);
@@ -315,27 +346,34 @@ namespace EstacionPesajeView {
 		}
 #pragma endregion
 	private: System::Void frmEditarVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->textBox6->Text = Convert::ToString(this->objVehiculo->getCodigo());
-		this->textBox1->Text = this->objVehiculo->getPlaca();
-		this->comboBox1->Text = this->objVehiculo->getTipoVehiculo();
-		this->textBox3->Text = Convert::ToString(this->objVehiculo->getPesoSinCarga());
-		this->textBox4->Text = Convert::ToString(this->objVehiculo->getPesoConCarga());
-		this->textBox5->Text = Convert::ToString(this->objVehiculo->getPesoActual());
-		this->textBox7->Text = Convert::ToString(this->objVehiculo->getCantMultas());
+		
+		VehiculoController^ objVehiculoController = gcnew VehiculoController();
+		Vehiculo^ objVehiculo;
+		objVehiculo = objVehiculoController->objbuscarVehiculoxCodigoSQL(this->CodigoVehiculoEditar);	
+		this->textBox1->Text = objVehiculo->getPlaca();
+		this->comboBox1->Text = objVehiculo->getTipoVehiculo();
+		this->textBox3->Text = Convert::ToString(objVehiculo->getPesoSinCarga());
+		this->textBox4->Text = Convert::ToString(objVehiculo->getPesoConCarga());
+		this->textBox6->Text = Convert::ToString(objVehiculo->getPesoActual());	
+		this->textBox7->Text = Convert::ToString(objVehiculo->getCantMultas());
+		this->textBox5->Text = Convert::ToString(objVehiculo->getCodigo());
+		this->textBox8->Text = Convert::ToString(objVehiculo->getcodigoPropietarioVehiculo());
 	}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		int codigoVehiculo = Convert::ToInt32(this->textBox6->Text);
+		//int codigoVehiculo = Convert::ToInt32(this->textBox6->Text);
 		int pesoSinCarga = Convert::ToInt32(this->textBox3->Text);
 		int pesoConCarga = Convert::ToInt32(this->textBox4->Text);
 		int pesoActual = Convert::ToInt32(this->textBox5->Text);
 		String^ placa = this->textBox1->Text;
 		String^ tipoVehiculo = this->comboBox1->Text;
 		int cantMultas = Convert::ToInt32(this->textBox7->Text);
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas);
+		
+		//Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas);
 
 		VehiculoController^ objVehiculoController = gcnew VehiculoController();
-		objVehiculoController->actualizarVehiculo(objVehiculo);
+		//objVehiculoController->actualizarVehiculo(objVehiculo);
+		objVehiculoController->actualizarVehiculoSQL(pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas);
 		MessageBox::Show("El Vehiculo fue actualizado correctamente");
 		this->Close();
 	}
@@ -343,58 +381,53 @@ namespace EstacionPesajeView {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-
 
 	private: System::Void textBox3_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		// Verifica si la tecla presionada es un n˙mero o borrar
+		// Verifica si la tecla presionada es un n√∫mero o borrar
 		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8) {
-			// Si no es un n˙mero ni una tecla de control, suprime la tecla presionada
+			// Si no es un n√∫mero ni una tecla de control, suprime la tecla presionada
 			e->Handled = true;
 		}
 	}
 
 	private: System::Void textBox4_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		// Verifica si la tecla presionada es un n˙mero o borrar
+		// Verifica si la tecla presionada es un n√∫mero o borrar
 		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8) {
-			// Si no es un n˙mero ni una tecla de control, suprime la tecla presionada
+			// Si no es un n√∫mero ni una tecla de control, suprime la tecla presionada
 			e->Handled = true;
 		}
 	}
 	private: System::Void textBox7_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		// Verifica si la tecla presionada es un n˙mero o borrar
+		// Verifica si la tecla presionada es un n√∫mero o borrar
 		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8) {
-			// Si no es un n˙mero ni una tecla de control, suprime la tecla presionada
+			// Si no es un n√∫mero ni una tecla de control, suprime la tecla presionada
 			e->Handled = true;
 		}
 	}
 
 	private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 
-		// Verifica si la tecla presionada es un dÌgito o una letra may˙scula
+		// Verifica si la tecla presionada es un d√≠gito o una letra may√∫scula
 		if (Char::IsDigit(e->KeyChar) || (e->KeyChar >= 'A' && e->KeyChar <= 'Z') || e->KeyChar == '-') {
 			// Obtiene el texto actual del TextBox
 			String^ TextoIngresado = textBox1->Text;
 
 			// Verifica la longitud del texto actual
 			if (TextoIngresado->Length < 7) {
-				// Verifica si se ha ingresado el guion en la posiciÛn 3
+				// Verifica si se ha ingresado el guion en la posici√≥n 3
 				if (TextoIngresado->Length == 3) {
-					// Solo permite el guion en la posiciÛn 3
+					// Solo permite el guion en la posici√≥n 3
 					e->Handled = true;
 					if (e->KeyChar == '-') {
 						e->Handled = false;
 					}
 				}
 				else {
-					e->Handled = false;  // Permite letras y n˙meros en las posiciones 0, 1, 2, 4, 5, 6
+					e->Handled = false;  // Permite letras y n√∫meros en las posiciones 0, 1, 2, 4, 5, 6
 				}
 			}
 			else {
-				e->Handled = true;  // La placa tiene una longitud de 6 caracteres, no permite m·s entrada
+				e->Handled = true;  // La placa tiene una longitud de 6 caracteres, no permite m√°s entrada
 			}
 
 		}
@@ -403,7 +436,7 @@ namespace EstacionPesajeView {
 			e->Handled = false;
 		}
 		else {
-			e->Handled = true;  // Suprime cualquier otro car·cter
+			e->Handled = true;  // Suprime cualquier otro car√°cter
 		}
 
 	}

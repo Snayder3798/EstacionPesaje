@@ -26,13 +26,13 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estÈn usando.
+		/// Limpiar los recursos que se est√©n usando.
 		/// </summary>
 		~frmMantenimientoVehiculo()
 		{
@@ -51,26 +51,25 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label1;
+
+	private: System::Windows::Forms::PictureBox^ boxVehiculo;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Codigo;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Placa;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Tipo;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ pesoSinCarga;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ pesoConCarga;
-	private: System::Windows::Forms::PictureBox^ boxVehiculo;
 	private: System::Windows::Forms::Label^ label8;
-
-
-
 
 	private:
 		/// <summary>
-		/// Variable del diseÒador necesaria.
+		/// Variable del dise√±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// MÈtodo necesario para admitir el DiseÒador. No se puede modificar
-		/// el contenido de este mÈtodo con el editor de cÛdigo.
+		/// M√©todo necesario para admitir el Dise√±ador. No se puede modificar
+		/// el contenido de este m√©todo con el editor de c√≥digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -79,15 +78,16 @@ namespace EstacionPesajeView {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->Placa = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Tipo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->pesoSinCarga = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->pesoConCarga = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->boxVehiculo = (gcnew System::Windows::Forms::PictureBox());
+			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Placa = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Tipo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->pesoSinCarga = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->pesoConCarga = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -130,9 +130,9 @@ namespace EstacionPesajeView {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
-				this->Placa,
-					this->Tipo, this->pesoSinCarga, this->pesoConCarga
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->Codigo,
+					this->Placa, this->Tipo, this->pesoSinCarga, this->pesoConCarga
 			});
 			this->dataGridView1->Location = System::Drawing::Point(39, 214);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
@@ -141,34 +141,6 @@ namespace EstacionPesajeView {
 			this->dataGridView1->Size = System::Drawing::Size(553, 182);
 			this->dataGridView1->TabIndex = 12;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmMantenimientoVehiculo::dataGridView1_CellContentClick);
-			// 
-			// Placa
-			// 
-			this->Placa->HeaderText = L"Placa:";
-			this->Placa->MinimumWidth = 6;
-			this->Placa->Name = L"Placa";
-			this->Placa->Width = 125;
-			// 
-			// Tipo
-			// 
-			this->Tipo->HeaderText = L"Tipo:";
-			this->Tipo->MinimumWidth = 6;
-			this->Tipo->Name = L"Tipo";
-			this->Tipo->Width = 125;
-			// 
-			// pesoSinCarga
-			// 
-			this->pesoSinCarga->HeaderText = L"Peso Neto:";
-			this->pesoSinCarga->MinimumWidth = 6;
-			this->pesoSinCarga->Name = L"pesoSinCarga";
-			this->pesoSinCarga->Width = 125;
-			// 
-			// pesoConCarga
-			// 
-			this->pesoConCarga->HeaderText = L"Peso Bruto:";
-			this->pesoConCarga->MinimumWidth = 6;
-			this->pesoConCarga->Name = L"pesoConCarga";
-			this->pesoConCarga->Width = 125;
 			// 
 			// groupBox1
 			// 
@@ -183,7 +155,7 @@ namespace EstacionPesajeView {
 			this->groupBox1->Size = System::Drawing::Size(521, 143);
 			this->groupBox1->TabIndex = 11;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Criterios de B˙squeda:";
+			this->groupBox1->Text = L"Criterios de B√∫squeda:";
 			// 
 			// button1
 			// 
@@ -229,6 +201,41 @@ namespace EstacionPesajeView {
 			this->boxVehiculo->TabIndex = 16;
 			this->boxVehiculo->TabStop = false;
 			// 
+			// Codigo
+			// 
+			this->Codigo->HeaderText = L"Codigo:";
+			this->Codigo->MinimumWidth = 6;
+			this->Codigo->Name = L"Codigo";
+			this->Codigo->Width = 125;
+			// 
+			// Placa
+			// 
+			this->Placa->HeaderText = L"Placa:";
+			this->Placa->MinimumWidth = 6;
+			this->Placa->Name = L"Placa";
+			this->Placa->Width = 125;
+			// 
+			// Tipo
+			// 
+			this->Tipo->HeaderText = L"Tipo:";
+			this->Tipo->MinimumWidth = 6;
+			this->Tipo->Name = L"Tipo";
+			this->Tipo->Width = 125;
+			// 
+			// pesoSinCarga
+			// 
+			this->pesoSinCarga->HeaderText = L"Peso Neto:";
+			this->pesoSinCarga->MinimumWidth = 6;
+			this->pesoSinCarga->Name = L"pesoSinCarga";
+			this->pesoSinCarga->Width = 125;
+			// 
+			// pesoConCarga
+			// 
+			this->pesoConCarga->HeaderText = L"Peso Bruto:";
+			this->pesoConCarga->MinimumWidth = 6;
+			this->pesoConCarga->Name = L"pesoConCarga";
+			this->pesoConCarga->Width = 125;
+      //
 			// label8
 			// 
 			this->label8->AutoSize = true;
@@ -273,8 +280,8 @@ namespace EstacionPesajeView {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ placa = this->textBox1->Text;
 		VehiculoController^ objVehiculoController = gcnew VehiculoController();
-		List <Vehiculo^>^ listaVehiculos = objVehiculoController-> buscarVehiculo(placa);
-		mostrarGrilla(listaVehiculos);
+		List <Vehiculo^>^ listaVehiculosSQL = objVehiculoController->buscarVehiculosxPlacaSQL(placa);
+		mostrarGrilla(listaVehiculosSQL);
 	}
 
 	private: void mostrarGrilla(List<Vehiculo^>^ listaVehiculos) {
@@ -284,15 +291,17 @@ namespace EstacionPesajeView {
 
 			Vehiculo^ objVehiculo = listaVehiculos[i];
 
-			array<String^>^ filaGrilla = gcnew array<String^>(6);
+			array<String^>^ filaGrilla = gcnew array<String^>(5);
 
-			filaGrilla[0] = objVehiculo->getPlaca();
+			filaGrilla[0] = Convert::ToString(objVehiculo->getCodigo());
 
-			filaGrilla[1] = objVehiculo->getTipoVehiculo();
+			filaGrilla[1] = objVehiculo->getPlaca();
 
-			filaGrilla[2] = Convert::ToString(objVehiculo->getPesoSinCarga());
+			filaGrilla[2] = objVehiculo->getTipoVehiculo();
 
-			filaGrilla[3] = Convert::ToString(objVehiculo->getPesoConCarga());
+			filaGrilla[3] = Convert::ToString(objVehiculo->getPesoSinCarga());
+
+			filaGrilla[4] = Convert::ToString(objVehiculo->getPesoConCarga());
 
 			this->dataGridView1->Rows->Add(filaGrilla);
 
@@ -307,38 +316,43 @@ namespace EstacionPesajeView {
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->dataGridView1->SelectedRows->Count > 0) {
-			VehiculoController^ objeto = gcnew VehiculoController();
 			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-			String^ codigoVehiculoEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
-			objeto->eliminarVehiculoFisico(codigoVehiculoEliminar);
+		  String^ codigoVehiculoEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 
-			MessageBox::Show("El Vehiculo ha sido eliminado con Èxito");
+		  VehiculoController^ objeto = gcnew VehiculoController();
+		  objeto -> eliminarVehiculoFisico(codigoVehiculoEliminar);
+		  objeto->eliminarVehiculoSQL(codigoVehiculoEliminar); /*SQL*/
+			MessageBox::Show("El Vehiculo ha sido eliminado con √©xito");
 		}
 		else {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
-		
-
 	}
 
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->dataGridView1->SelectedRows->Count > 0) {
-			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+    
+      //Codigo carlos
+      int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+      int CodigoVehiculoEditar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+      //	String^ PlacaVehiculoEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 
+      VehiculoController^ objVehiculoController = gcnew VehiculoController();
+      frmEditarVehiculo^ ventanaEditarVehiculo = gcnew frmEditarVehiculo(CodigoVehiculoEditar);
+      ventanaEditarVehiculo->ShowDialog();
+    
+      //Codigo master
+			/*int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; //Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0
 			String^ PlacaVehiculoEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
-
 			VehiculoController^ objVehiculoController = gcnew VehiculoController();
-
 			Vehiculo^ objVehiculo = objVehiculoController->buscarVehiculoxPlaca(PlacaVehiculoEditar);
-
 			frmEditarVehiculo^ ventanaEditarVehiculo = gcnew frmEditarVehiculo(objVehiculo);
-			ventanaEditarVehiculo->ShowDialog();
+			ventanaEditarVehiculo->ShowDialog();*/
 		}
 		else {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
-
 	}
 
 	private: System::Void frmMantenimientoVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -348,27 +362,27 @@ namespace EstacionPesajeView {
 	}
 
 	private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		// Verifica si la tecla presionada es un dÌgito o una letra may˙scula
+		// Verifica si la tecla presionada es un d√≠gito o una letra may√∫scula
 		if (Char::IsDigit(e->KeyChar) || (e->KeyChar >= 'A' && e->KeyChar <= 'Z') || e->KeyChar == '-') {
 			// Obtiene el texto actual del TextBox
 			String^ TextoIngresado = textBox1->Text;
 
 			// Verifica la longitud del texto actual
 			if (TextoIngresado->Length < 7) {
-				// Verifica si se ha ingresado el guion en la posiciÛn 3
+				// Verifica si se ha ingresado el guion en la posici√≥n 3
 				if (TextoIngresado->Length == 3) {
-					// Solo permite el guion en la posiciÛn 3
+					// Solo permite el guion en la posici√≥n 3
 					e->Handled = true;
 					if (e->KeyChar == '-') {
 						e->Handled = false;
 					}
 				}
 				else {
-					e->Handled = false;  // Permite letras y n˙meros en las posiciones 0, 1, 2, 4, 5, 6
+					e->Handled = false;  // Permite letras y n√∫meros en las posiciones 0, 1, 2, 4, 5, 6
 				}
 			}
 			else {
-				e->Handled = true;  // La placa tiene una longitud de 6 caracteres, no permite m·s entrada
+				e->Handled = true;  // La placa tiene una longitud de 6 caracteres, no permite m√°s entrada
 			}
 
 		}
@@ -377,7 +391,7 @@ namespace EstacionPesajeView {
 			e->Handled = false;
 		}
 		else {
-			e->Handled = true;  // Suprime cualquier otro car·cter
+			e->Handled = true;  // Suprime cualquier otro car√°cter
 		}
 	}
 

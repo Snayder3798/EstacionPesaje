@@ -340,13 +340,21 @@ namespace EstacionPesajeView {
 		int pesoConCargaVehiculo = Convert::ToInt32(this->textBox4->Text);
 		int pesoActualVehiculo = Convert::ToInt32(this->textBox5->Text);
 		int cantMultas = Convert::ToInt32(this->textBox7->Text);
+		int codigoPropietarioVehiculo = Convert::ToInt32(this->textBox7->Text);
 
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas);
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas, codigoPropietarioVehiculo);
 
 		VehiculoController^ objVehiculoController = gcnew VehiculoController();
 		objVehiculoController -> agregarVehiculo(objVehiculo);
+		/*SQL*/
+		objVehiculoController->AgregarVehiculoSQL(pesoSinCargaVehiculo, pesoConCargaVehiculo, pesoActualVehiculo, placaVehiculo, tipoVehiculoVehiculo, cantMultas, codigoPropietarioVehiculo);
 		MessageBox::Show("El vehiculo se ha agregado correctamente");
 		this->Close();
+
+
+
+
+
 	}
 
 
