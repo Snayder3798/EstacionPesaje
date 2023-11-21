@@ -23,10 +23,6 @@ namespace EstacionPesajeController {
 		/*Obtener lista de Ubicaciones para ponerlos en el filtro de Ubicaciones*/
 		List <String^>^ obtenerUbicaciones();
 		List <String^>^ getMultas(List <String^>^ listaUbicaciones);
-		
-		//FUNCIONES PROXIMAS A IMPLEMENTAR
-		void registrarEstacionPesaje(String^ ubicacionEstacionPesaje, double latitudEstacionPesaje, double longitudEstacionPesaje, int nroMultas);
-		void actualizarEstacion(int codigoEstacionPesaje, String^ ubicacion, String^ latitud, String^ longitud, int nroMultas)
 	};
 
 }

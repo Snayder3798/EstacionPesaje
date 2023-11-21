@@ -112,13 +112,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EstacionPesajeModel\EstacionPesajeModel.vcxproj">
-      <Project>{b8defc48-df75-4095-b061-a8e0604ce6af}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
+    <ClCompile Include="BarreraVehicularController.cpp" />
+    <ClCompile Include="EstacionController.cpp" />
+    <ClCompile Include="PersonaController.cpp" />
+    <ClCompile Include="PropietarioVehiculoController.cpp" />
+    <ClCompile Include="TarjetaController.cpp" />
+    <ClCompile Include="VehiculoController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BarreraVehicularController.h" />
@@ -129,12 +128,13 @@
     <ClInclude Include="VehiculoController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BarreraVehicularController.cpp" />
-    <ClCompile Include="EstacionController.cpp" />
-    <ClCompile Include="PersonaController.cpp" />
-    <ClCompile Include="PropietarioVehiculoController.cpp" />
-    <ClCompile Include="TarjetaController.cpp" />
-    <ClCompile Include="VehiculoController.cpp" />
+    <ProjectReference Include="..\EstacionPesajeModel\EstacionPesajeModel.vcxproj">
+      <Project>{b8defc48-df75-4095-b061-a8e0604ce6af}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
