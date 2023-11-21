@@ -37,6 +37,8 @@ namespace EstacionPesajeController {
 		Tarjeta^ buscarTarjetaxCodigoSQL(int codigo);
 		Tarjeta^ buscarTarjetaxNumeroSQL(String^ numeroTarjeta);
 
+		//Proximos a implementar
+		void AgregarTarjetaSQL(String^ estado, String^ numeroTarjeta);
 
 
 	};

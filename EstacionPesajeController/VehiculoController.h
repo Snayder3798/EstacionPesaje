@@ -45,6 +45,10 @@ namespace EstacionPesajeController {
 		Vehiculo^ objbuscarVehiculoxPlacaSQL(String^ placa);
 		Vehiculo^ objbuscarVehiculoxCodigoSQL(int codigo);
 		void actualizarVehiculoSQL(int codigo, int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietario);
+		
+		//Implementar prox
+		void AgregarVehiculoSQL(int pesoLimite, String^ placaVehiculo, String^ tipoVehiculoVehiculo, int cantMultas);
+	
 	};
 
 }

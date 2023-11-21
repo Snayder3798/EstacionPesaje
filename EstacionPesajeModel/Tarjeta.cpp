@@ -1,16 +1,14 @@
 #include "Tarjeta.h"
-
 using namespace EstacionPesajeModel;
 
 Tarjeta::Tarjeta() {
 
 }
 
-Tarjeta::Tarjeta(int codigo, String^ estado, String^ numeroTarjeta, int codigoPropietarioVehiculo) {
+Tarjeta::Tarjeta(int codigo, bool estado, String^ numeroTarjeta) {
 	this->codigo = codigo;
 	this->estado = estado;
 	this->numeroTarjeta = numeroTarjeta;
-	this->codigoPropietarioVehiculo = codigoPropietarioVehiculo;
 }
 
 int Tarjeta::getCodigo() {
@@ -20,10 +18,11 @@ void Tarjeta::setCodigo(int codigo) {
 	this->codigo = codigo;
 }
 
-String^ Tarjeta::getEstado() {
+
+bool Tarjeta::getEstado() {
 	return this->estado;
 }
-void Tarjeta::setEstado(String^ estado) {
+void Tarjeta::setEstado(int estado) {
 	this->estado = estado;
 }
 
@@ -33,10 +32,4 @@ String^ Tarjeta::getNumeroTarjeta() {
 }
 void Tarjeta::setNumeroTarjeta(String^ numeroTarjeta) {
 	this->numeroTarjeta = numeroTarjeta;
-}
-int Tarjeta::getCodigoPropietarioVehiculo() {
-	return this->codigoPropietarioVehiculo;
-}
-void Tarjeta::setCodigoPropietarioVehiculo(int codigoPropietarioVehiculo) {
-	this->codigoPropietarioVehiculo = codigoPropietarioVehiculo;
 }

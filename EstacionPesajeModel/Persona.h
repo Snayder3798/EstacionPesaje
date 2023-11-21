@@ -11,11 +11,12 @@ namespace EstacionPesajeModel {
         String^ apellidoPaterno;
         String^ apellidoMaterno;
         String^ dni;
+        int multasAcumuladas;
 
         /*Ahora los métodos*/
     public:
         Persona();
-        Persona(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni);
+        Persona(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas);
 
         int getCodigo();
         void setCodigo(int codigo);
@@ -32,5 +33,7 @@ namespace EstacionPesajeModel {
         String^ getDni();
         void setDni(String^ dni);
 
+        int getMultasAcumuladas();
+        void setMultasAcumuladas(int multasAcumuladas);
     };
 }
