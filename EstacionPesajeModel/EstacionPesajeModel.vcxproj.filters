@@ -15,72 +15,48 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Persona.h">
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\EstacionPesaje.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Usuario.h">
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Persona.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="PropietarioVehiculo.h">
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\PropietarioVehiculo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Vehiculo.h">
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Tarjeta.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="EstacionPesaje.h">
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Usuario.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="BarreraVehicular.h">
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Vehiculo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Tarjeta.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="PantallaLCD.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="SensorBarras.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="TipoVehiculo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Vascula.h">
+    <ClInclude Include="RegistroVehiculo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Persona.cpp">
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\EstacionPesaje.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Usuario.cpp">
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Persona.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="PropietarioVehiculo.cpp">
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\PropietarioVehiculo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Vehiculo.cpp">
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Tarjeta.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="EstacionPesaje.cpp">
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Usuario.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="BarreraVehicular.cpp">
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Vehiculo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Tarjeta.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="PantallaLCD.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="SensorBarras.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="TipoVehiculo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Vascula.cpp">
+    <ClCompile Include="RegistroVehiculo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

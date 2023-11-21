@@ -18,6 +18,24 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\EstacionPesaje.h" />
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Persona.h" />
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\PropietarioVehiculo.h" />
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Tarjeta.h" />
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Usuario.h" />
+    <ClInclude Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Vehiculo.h" />
+    <ClInclude Include="RegistroVehiculo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\EstacionPesaje.cpp" />
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Persona.cpp" />
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\PropietarioVehiculo.cpp" />
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Tarjeta.cpp" />
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Usuario.cpp" />
+    <ClCompile Include="..\..\..\..\..\Downloads\EstacionPesaje-master\EstacionPesajeModel\Vehiculo.cpp" />
+    <ClCompile Include="RegistroVehiculo.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <ProjectGuid>{B8DEFC48-DF75-4095-B061-A8E0604CE6AF}</ProjectGuid>
@@ -111,32 +129,6 @@
       <AdditionalDependencies />
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="BarreraVehicular.h" />
-    <ClInclude Include="EstacionPesaje.h" />
-    <ClInclude Include="Tarjeta.h" />
-    <ClInclude Include="PantallaLCD.h" />
-    <ClInclude Include="PropietarioVehiculo.h" />
-    <ClInclude Include="Persona.h" />
-    <ClInclude Include="SensorBarras.h" />
-    <ClInclude Include="TipoVehiculo.h" />
-    <ClInclude Include="Usuario.h" />
-    <ClInclude Include="Vascula.h" />
-    <ClInclude Include="Vehiculo.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BarreraVehicular.cpp" />
-    <ClCompile Include="EstacionPesaje.cpp" />
-    <ClCompile Include="Tarjeta.cpp" />
-    <ClCompile Include="PantallaLCD.cpp" />
-    <ClCompile Include="Persona.cpp" />
-    <ClCompile Include="PropietarioVehiculo.cpp" />
-    <ClCompile Include="SensorBarras.cpp" />
-    <ClCompile Include="TipoVehiculo.cpp" />
-    <ClCompile Include="Usuario.cpp" />
-    <ClCompile Include="Vascula.cpp" />
-    <ClCompile Include="Vehiculo.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

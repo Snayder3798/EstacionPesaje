@@ -287,7 +287,7 @@ namespace EstacionPesajeView {
 
 			VehiculoController^ objVehiculoController = gcnew VehiculoController();
 			Vehiculo^ VehiculoRegistrado = objVehiculoController->buscarVehiculoxPlaca(placaRegistrada->Remove(placaRegistrada->Length - 1));
-			int PesoLimite = VehiculoRegistrado->getPesoConCarga();
+			int PesoLimite = VehiculoRegistrado->getPesoLimite();
 			int multasAcumuladas = VehiculoRegistrado->getCantMultas();
 			if (PesoLimite > pesoRegistrado) {
 				if (multasAcumuladas == 0) {

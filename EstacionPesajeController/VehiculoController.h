@@ -38,7 +38,7 @@ namespace EstacionPesajeController {
 		void abrirConexionBD();
 		void cerrarConexionBD();
 
-		void AgregarVehiculoSQL(int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo);
+		void AgregarVehiculoSQL(int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo);
 		void eliminarVehiculoSQL(String^ placa);
 		List<Vehiculo^>^ buscarVehiculosxPlacaSQL(String^ placa);
 		List<Vehiculo^>^ buscarVehiculosxCodigoSQL(int codigo);

@@ -48,9 +48,7 @@ List<PropietarioVehiculo^>^ PropietarioVehiculoController::buscarPropietarioDNI(
 		String^ apellidoMaterno = safe_cast<String^>(objData[3]);
 		String^ dni = safe_cast<String^>(objData[4]);
 		int multasAcumuladas = safe_cast<int>(objData[5]);
-		int multaActual = safe_cast<int>(objData[6]);
-		int codigoVehiculo = safe_cast<int>(objData[6]);
-		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas, multaActual, codigoVehiculo);
+		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas);
 		listaPropietarios->Add(objPropietario);
 	}
 	cerrarConexionBD();
@@ -78,9 +76,7 @@ List<PropietarioVehiculo^>^ PropietarioVehiculoController::buscarPropietarioApel
 		String^ apellidoMaterno = safe_cast<String^>(objData[3]);
 		String^ dni = safe_cast<String^>(objData[4]);
 		int multasAcumuladas = safe_cast<int>(objData[5]);
-		int multaActual = safe_cast<int>(objData[6]);
-		int codigoVehiculo = safe_cast<int>(objData[6]);
-		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas, multaActual, codigoVehiculo);
+		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas);
 		listaPropietarios->Add(objPropietario);
 	}
 	cerrarConexionBD();
