@@ -453,7 +453,7 @@ namespace EstacionPesajeView {
 		int multaActual = Convert::ToInt32(this->textBox4->Text);
 		int multaAcumulada = Convert::ToInt32(this->textBox5->Text);
 		int codigoVehiculo = Convert::ToInt32(this->textBox7->Text);
-		objPropietarioVehiculo->AgregarPropietarioVehiculo(nombrePersona, apellidoPaternoPersona, apellidoMaternoPersona, dni, multaActual, multaAcumulada, codigoVehiculo);
+	//	objPropietarioVehiculo->AgregarPropietarioVehiculo(nombrePersona, apellidoPaternoPersona, apellidoMaternoPersona, dni, multaActual, multaAcumulada, codigoVehiculo);
 		MessageBox::Show("La Propietario del Vehiculo se ha agregado correctamente");
 		this->Close();
 	}

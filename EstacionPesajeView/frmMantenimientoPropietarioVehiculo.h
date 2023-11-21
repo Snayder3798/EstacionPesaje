@@ -265,10 +265,10 @@ namespace EstacionPesajeView {
 		PropietarioVehiculoController^ objPersonaController = gcnew PropietarioVehiculoController();
 		List <PropietarioVehiculo^>^ listaPersonas = gcnew List <PropietarioVehiculo^>();
 		if (radioButton1->Checked) {
-			listaPersonas = objPersonaController->buscarPropietarioDNI(informacion);
+	//		listaPersonas = objPersonaController->buscarPropietarioDNI(informacion);
 		}
 		if (radioButton2->Checked) {
-			listaPersonas = objPersonaController->buscarPropietarioApellido(informacion);
+	//		listaPersonas = objPersonaController->buscarPropietarioApellido(informacion);
 		}
 		mostrarGrilla(listaPersonas);
 	}
