@@ -1,50 +1,46 @@
 #pragma once
-#include "PropietarioVehiculo.h"
-#include "Usuario.h"
-#include "RegistroVehiculo.h"
+
 using namespace System;
-using namespace System::Collections::Generic;
 
 namespace EstacionPesajeModel {
 
     public ref class Vehiculo {
     private:
         int codigo;
-        int pesoLimite;
+        int pesoSinCarga;
+        int pesoConCarga;
+        int pesoActual;
         String^ placa;
         String^ tipoVehiculo;
         int cantMultas;
-
-        PropietarioVehiculo^ objPropietarioVehiculo;
-        Usuario^ objUsuario;
-        List<RegistroVehiculo^>^ listaRegistroVehiculos;
+        int codigoPropietarioVehiculo;
 
     public:
         Vehiculo();
-        Vehiculo(int codigo, int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas);
+        Vehiculo(int codigo, int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo);
 
         int getCodigo();
-        void setCodigo(int codigo);
+        void setCodigo(int pesoSinCarga);
 
-        int getPesoLimite();
-        void setPesoLimite(int pesoLimite);
+        int getPesoSinCarga();
+        void setPesoSinCarga(int pesoSinCarga);
+
+        int getPesoConCarga();
+        void setPesoConCarga(int pesoConCarga);
+
+        int getPesoActual();
+        void setPesoActual(int pesoConCarga);
 
         String^ getPlaca();
         void setPlaca(String^ placa);
 
         String^ getTipoVehiculo();
         void setTipoVehiculo(String^ tipoVehiculo);
-
+        
         int getCantMultas();
         void setCantMultas(int cantMultas);
 
-        PropietarioVehiculo^ getPropietarioVehiculo();
-        void setPropietarioVehiculo (PropietarioVehiculo^ objPropietarioVehiculo);
-
-        Usuario^ getUsuario();
-        void setUsuario(Usuario^ objUsuario);
-
-        List<RegistroVehiculo^>^ getListaRegistroVehiculos();
-        void setListaRegistroVehiculos(List<RegistroVehiculo^>^ listaRegistroVehiculos);
+        int getcodigoPropietarioVehiculo();
+        void setcodigoPropietarioVehiculo(int codigoPropietarioVehiculo);
     };
 }

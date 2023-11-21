@@ -6,13 +6,17 @@ Vehiculo::Vehiculo() {
 
 }
 
-Vehiculo::Vehiculo(int codigo, int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas) {
-    this->codigo = codigo;
-    this->pesoLimite = pesoLimite;
-    this->placa = placa;
-    this->tipoVehiculo = tipoVehiculo;
+Vehiculo::Vehiculo(int codigo, int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo) {
+	this->codigo = codigo;
+	this->pesoSinCarga = pesoSinCarga;
+	this->pesoConCarga = pesoConCarga;
+	this->pesoActual = pesoActual;
+	this->placa = placa;
+	this->tipoVehiculo = tipoVehiculo;
     this->cantMultas = cantMultas;
+    this->codigoPropietarioVehiculo = codigoPropietarioVehiculo;
 }
+
 
 int Vehiculo::getCodigo() {
     return this->codigo;
@@ -21,11 +25,25 @@ void Vehiculo::setCodigo(int codigo) {
     this->codigo = codigo;
 }
 
-int Vehiculo::getPesoLimite() {
-    return this->pesoLimite;
+int Vehiculo::getPesoSinCarga() {
+    return this->pesoSinCarga;
 }
-void Vehiculo::setPesoLimite(int pesoLimite) {
-    this->pesoLimite = pesoLimite;
+void Vehiculo::setPesoSinCarga(int pesoSinCarga) {
+    this->pesoSinCarga = pesoSinCarga;
+}
+
+int Vehiculo::getPesoConCarga() {
+    return this->pesoConCarga;
+}
+void Vehiculo::setPesoConCarga(int pesoConCarga) {
+    this->pesoConCarga = pesoConCarga;
+}
+
+int Vehiculo::getPesoActual() {
+    return this->pesoActual;
+}
+void Vehiculo::setPesoActual(int pesoActual) {
+    this->pesoActual = pesoActual;
 }
 
 String^ Vehiculo::getPlaca() {
@@ -41,7 +59,6 @@ String^ Vehiculo::getTipoVehiculo() {
 void Vehiculo::setTipoVehiculo(String^ tipoVehiculo) {
     this->tipoVehiculo = tipoVehiculo;
 }
-
 int Vehiculo::getCantMultas() {
     return this->cantMultas;
 }
@@ -49,23 +66,9 @@ void Vehiculo::setCantMultas(int cantMultas) {
     this->cantMultas = cantMultas;
 }
 
-PropietarioVehiculo^ Vehiculo::getPropietarioVehiculo() {
-    return this->objPropietarioVehiculo;
+int Vehiculo::getcodigoPropietarioVehiculo() {
+    return this->codigoPropietarioVehiculo;
 }
-void Vehiculo::setPropietarioVehiculo(PropietarioVehiculo^ objPropietarioVehiculo) {
-    this->objPropietarioVehiculo = objPropietarioVehiculo;
-}
-
-Usuario^ Vehiculo::getUsuario() {
-    return this->objUsuario;
-}
-void Vehiculo::setUsuario(Usuario^ objUsuario) {
-    this->objUsuario = objUsuario;
-}
-
-List<RegistroVehiculo^>^ Vehiculo::getListaRegistroVehiculos() {
-    return this->listaRegistroVehiculos;
-}
-void Vehiculo::setListaRegistroVehiculos(List<RegistroVehiculo^>^ listaRegistroVehiculos) {
-    this->listaRegistroVehiculos = listaRegistroVehiculos;
+void Vehiculo::setcodigoPropietarioVehiculo(int codigoPropietarioVehiculo) {
+    this->codigoPropietarioVehiculo = codigoPropietarioVehiculo;
 }

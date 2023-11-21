@@ -8,7 +8,7 @@ namespace EstacionPesajeView {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	
+
 	using namespace EstacionPesajeController;
 	using namespace EstacionPesajeModel;
 
@@ -47,8 +47,8 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Label^ label7;
 
 	private: System::Windows::Forms::Button^ button1;
-
-
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 
 	private:
@@ -71,14 +71,17 @@ namespace EstacionPesajeView {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(109, 133);
+			this->button2->Location = System::Drawing::Point(190, 281);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 34);
+			this->button2->Size = System::Drawing::Size(112, 52);
 			this->button2->TabIndex = 18;
 			this->button2->Text = L"Guardar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -86,13 +89,17 @@ namespace EstacionPesajeView {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->comboBox1);
+			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->Controls->Add(this->textBox8);
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->label7);
-			this->groupBox1->Location = System::Drawing::Point(20, 22);
+			this->groupBox1->Location = System::Drawing::Point(30, 34);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(384, 105);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->groupBox1->Size = System::Drawing::Size(576, 238);
 			this->groupBox1->TabIndex = 17;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos de Tarjeta:";
@@ -102,59 +109,81 @@ namespace EstacionPesajeView {
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Activa", L"Inactiva" });
-			this->comboBox1->Location = System::Drawing::Point(143, 70);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->comboBox1->Location = System::Drawing::Point(215, 128);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(192, 21);
+			this->comboBox1->Size = System::Drawing::Size(286, 28);
 			this->comboBox1->TabIndex = 24;
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(143, 36);
+			this->textBox8->Location = System::Drawing::Point(215, 56);
+			this->textBox8->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox8->Multiline = true;
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(192, 20);
+			this->textBox8->Size = System::Drawing::Size(286, 29);
 			this->textBox8->TabIndex = 5;
 			this->textBox8->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarTarjeta::textBox8_KeyPress);
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(15, 42);
+			this->label6->Location = System::Drawing::Point(22, 64);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(72, 13);
+			this->label6->Size = System::Drawing::Size(104, 20);
 			this->label6->TabIndex = 1;
 			this->label6->Text = L"N° de tarjeta: ";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(15, 72);
+			this->label7->Location = System::Drawing::Point(22, 131);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(43, 13);
+			this->label7->Size = System::Drawing::Size(64, 20);
 			this->label7->TabIndex = 3;
 			this->label7->Text = L"Estado:";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(235, 133);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->button1->Location = System::Drawing::Point(379, 281);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(67, 34);
+			this->button1->Size = System::Drawing::Size(101, 52);
 			this->button1->TabIndex = 20;
 			this->button1->Text = L"Cancelar";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &frmAgregarTarjeta::button1_Click);
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(215, 181);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(286, 29);
+			this->textBox1->TabIndex = 9;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(22, 187);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(165, 20);
+			this->label1->TabIndex = 8;
+			this->label1->Text = L"Codigo de Propietario:";
+			// 
 			// frmAgregarTarjeta
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(420, 187);
+			this->ClientSize = System::Drawing::Size(639, 355);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"frmAgregarTarjeta";
 			this->Text = L"Agregar Tarjeta";
 			this->groupBox1->ResumeLayout(false);
@@ -169,11 +198,16 @@ namespace EstacionPesajeView {
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		int codigoPropietario = Convert::ToInt32(this->textBox1->Text);
 		String^ numeroTarjeta = this->textBox8->Text;
 		String^ estadoTarjeta = this->comboBox1->Text;
 		TarjetaController^ objTarjetaController = gcnew TarjetaController();
 
-		objTarjetaController->AgregarTarjetaSQL(estadoTarjeta, numeroTarjeta);
+		/*TXT
+		Tarjeta^ objTarjeta = gcnew Tarjeta(codigoTarjeta, estadoTarjeta, numeroTarjeta);
+		objTarjetaController->agregarTarjeta(objTarjeta);
+		*/
+		objTarjetaController->AgregarTarjetaSQL(estadoTarjeta, numeroTarjeta, codigoPropietario);
 		Tarjeta^ objTarjeta = objTarjetaController->buscarTarjetaxNumeroSQL(numeroTarjeta);
 		MessageBox::Show("Se ha asignado el codigo '"+objTarjeta->getCodigo()+"' a la tarjeta y se ha agregado correctamente.");
 		this->Close();

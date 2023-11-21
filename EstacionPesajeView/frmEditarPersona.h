@@ -61,8 +61,6 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Label^ label8;
 
 	private: Persona^ objPersona; /*Este atributo lo agregamos porque necesitamos manejar la informacion de la Persona a editar*/
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::Label^ label3;
 
 	private:
 		/// <summary>
@@ -90,25 +88,28 @@ namespace EstacionPesajeView {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// textBox1
 			// 
 			this->textBox1->Enabled = false;
-			this->textBox1->Location = System::Drawing::Point(125, 222);
+
+			this->textBox1->Location = System::Drawing::Point(167, 225);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(192, 20);
+			this->textBox1->Size = System::Drawing::Size(255, 22);
+
 			this->textBox1->TabIndex = 22;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(232, 296);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+
+			this->button1->Location = System::Drawing::Point(364, 324);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(68, 23);
+			this->button1->Size = System::Drawing::Size(91, 28);
+
 			this->button1->TabIndex = 25;
 			this->button1->Text = L"Cancelar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -118,17 +119,21 @@ namespace EstacionPesajeView {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Enabled = false;
-			this->label2->Location = System::Drawing::Point(15, 225);
+
+			this->label2->Location = System::Drawing::Point(20, 229);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(43, 13);
+			this->label2->Size = System::Drawing::Size(54, 16);
 			this->label2->TabIndex = 21;
 			this->label2->Text = L"Código:";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(108, 296);
+
+			this->button2->Location = System::Drawing::Point(199, 324);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(100, 28);
 			this->button2->TabIndex = 24;
 			this->button2->Text = L"Guardar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -136,8 +141,6 @@ namespace EstacionPesajeView {
 			// 
 			// groupBox1
 			// 
-			this->groupBox1->Controls->Add(this->textBox2);
-			this->groupBox1->Controls->Add(this->label3);
 			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->textBox5);
 			this->groupBox1->Controls->Add(this->textBox6);
@@ -148,112 +151,106 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Controls->Add(this->label8);
-			this->groupBox1->Location = System::Drawing::Point(24, 28);
+
+			this->groupBox1->Location = System::Drawing::Point(32, 34);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(350, 248);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Size = System::Drawing::Size(512, 268);
 			this->groupBox1->TabIndex = 23;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos del Propietario:";
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(125, 144);
+
+			this->textBox5->Location = System::Drawing::Point(167, 177);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(192, 20);
+			this->textBox5->Size = System::Drawing::Size(255, 22);
 			this->textBox5->TabIndex = 8;
 			this->textBox5->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarPersona::textBox5_KeyPress);
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(125, 106);
+			this->textBox6->Location = System::Drawing::Point(167, 130);
+			this->textBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox6->Multiline = true;
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(192, 20);
+			this->textBox6->Size = System::Drawing::Size(255, 24);
 			this->textBox6->TabIndex = 7;
 			this->textBox6->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarPersona::textBox6_KeyPress);
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(125, 70);
+			this->textBox7->Location = System::Drawing::Point(167, 86);
+			this->textBox7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox7->Multiline = true;
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(192, 20);
+			this->textBox7->Size = System::Drawing::Size(255, 24);
+
 			this->textBox7->TabIndex = 6;
 			this->textBox7->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarPersona::textBox7_KeyPress);
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(125, 30);
+			this->textBox8->Location = System::Drawing::Point(167, 37);
+			this->textBox8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox8->Multiline = true;
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(192, 20);
+			this->textBox8->Size = System::Drawing::Size(255, 24);
 			this->textBox8->TabIndex = 5;
 			this->textBox8->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarPersona::textBox8_KeyPress);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(15, 147);
+			this->label1->Location = System::Drawing::Point(20, 181);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(29, 13);
+			this->label1->Size = System::Drawing::Size(33, 16);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"DNI:";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(15, 33);
+			this->label6->Location = System::Drawing::Point(20, 41);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(55, 13);
+			this->label6->Size = System::Drawing::Size(69, 16);
 			this->label6->TabIndex = 1;
 			this->label6->Text = L"Nombres: ";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(15, 109);
+			this->label7->Location = System::Drawing::Point(20, 134);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(89, 13);
+			this->label7->Size = System::Drawing::Size(112, 16);
 			this->label7->TabIndex = 3;
 			this->label7->Text = L"Apellido Materno:";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(15, 73);
+			this->label8->Location = System::Drawing::Point(20, 90);
+			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(87, 13);
+			this->label8->Size = System::Drawing::Size(110, 16);
 			this->label8->TabIndex = 2;
 			this->label8->Text = L"Apellido Paterno:";
 			// 
-			// textBox2
-			// 
-			this->textBox2->Enabled = false;
-			this->textBox2->Location = System::Drawing::Point(125, 180);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(192, 20);
-			this->textBox2->TabIndex = 24;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Enabled = false;
-			this->label3->Location = System::Drawing::Point(15, 183);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(102, 13);
-			this->label3->TabIndex = 23;
-			this->label3->Text = L"Multas Acumuladas:";
-			this->label3->Click += gcnew System::EventHandler(this, &frmEditarPersona::label3_Click);
-			// 
 			// frmEditarPersona
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(404, 348);
+			this->ClientSize = System::Drawing::Size(539, 391);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmEditarPersona";
 			this->Text = L"Editar Persona";
 			this->Load += gcnew System::EventHandler(this, &frmEditarPersona::frmEditarPersona_Load);
@@ -277,7 +274,8 @@ namespace EstacionPesajeView {
 		String^ apellidoPaternoPersona = this->textBox7->Text;
 		String^ apellidoMaternoPersona = this->textBox6->Text;
 		String^ dniPersona = this->textBox5->Text;
-		int multasAcumuladasPersona = Convert::ToInt32(this->textBox2->Text);
+		
+		Persona^ objPersona = gcnew Persona(codigoPersona, nombrePersona, apellidoPaternoPersona, apellidoMaternoPersona, dniPersona);
 
 		String^ Texto = textBox5->Text;
 		if (Texto->Length != 8) {
@@ -285,7 +283,7 @@ namespace EstacionPesajeView {
 		}
 		else {
 			PersonaController^ objPersonaController = gcnew PersonaController();
-			objPersonaController->actualizarPersona(codigoPersona, nombrePersona, apellidoPaternoPersona, apellidoMaternoPersona, dniPersona, multasAcumuladasPersona);
+			objPersonaController->actualizarPersona(objPersona);
 			MessageBox::Show("La Persona fue actualizada correctamente");
 			this->Close();
 		}
@@ -348,7 +346,5 @@ namespace EstacionPesajeView {
 		}
 	}
 
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }
