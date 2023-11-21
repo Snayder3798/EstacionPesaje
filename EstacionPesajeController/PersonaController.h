@@ -20,6 +20,14 @@ namespace EstacionPesajeController {
 
 		Persona^ buscarPersonaxDni(String^ dni);
 		void actualizarPersona(Persona^ objPersona);
+		//METODOS PROXIMOS A IMPLEMENTAR PARA SQL
+		void registrarPersona(int codigoPersona, String^ nombrePersona, String^ apellidoPaternoPersona, String^ apellidoMaternoPersona, String^ dniPersona, int multasAcumuladasPersona);
+		Persona^ buscarPersonaxCodigo(int codigo);
+		void actualizarPersona(int codigoPersona, String^ nombrePersona, String^ apellidoPaternoPersona, String^ apellidoMaternoPersona, String^ dniPersona, int multasAcumuladasPersona);
+		List <Persona^>^ buscarPersonaxDniSQL(String^ informacion);
+		List <Persona^>^ buscarPersonaxApellidoSQL(String^ informacion);
+		void eliminarVendedorSQL(int codigoEliminar);
+	
 	};
 
 
