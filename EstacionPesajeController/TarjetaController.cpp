@@ -221,8 +221,6 @@ List <Tarjeta^>^ TarjetaController::buscarAllSQL() {
 		String^ estado = safe_cast<String^>(objData[1]);
 		String^ numeroTarjeta = safe_cast<String^>(objData[2]);
 		int codigoPropietarioVehiculo = safe_cast<int>(objData[3]);
-
-
 		Tarjeta^ objTarjeta = gcnew Tarjeta(codigo,estado,numeroTarjeta,codigoPropietarioVehiculo);
 		listaTarjetas->Add(objTarjeta);
 	}
