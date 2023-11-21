@@ -329,10 +329,10 @@ Vehiculo^ VehiculoController::objbuscarVehiculoxCodigoSQL(int codigo) {
 	return objVehiculo;
 }
 
-void VehiculoController::actualizarVehiculoSQL(int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas) {
+void VehiculoController::actualizarVehiculoSQL(int codigo, int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietario) {
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "update Vehiculo set pesoSinCarga='" + pesoSinCarga + "', pesoConCarga='" + pesoConCarga + "', pesoActual='" + pesoActual + "', placa='" + placa + "', tipoVehiculo=" + tipoVehiculo + ", cantMultas='" + cantMultas;
+	objSentencia->CommandText = "update Vehiculo set pesoSinCarga=" + pesoSinCarga + ", pesoConCarga=" + pesoConCarga + ", pesoActual=" + pesoActual + ", placa='" + placa + "', tipoVehiculo='" + tipoVehiculo + "', cantMultas=" + cantMultas +", codigoPropietarioVehiculo = " + codigoPropietario + " where codigo =" + codigo;
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();

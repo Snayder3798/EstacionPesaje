@@ -183,7 +183,7 @@ namespace EstacionPesajeView {
 			this->label8->Location = System::Drawing::Point(48, 37);
 			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(54, 16);
+			this->label8->Size = System::Drawing::Size(63, 20);
 			this->label8->TabIndex = 27;
 			this->label8->Text = L"Código:";
 			// 
@@ -193,7 +193,7 @@ namespace EstacionPesajeView {
 			this->label12->Location = System::Drawing::Point(48, 105);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(38, 16);
+			this->label12->Size = System::Drawing::Size(43, 20);
 			this->label12->TabIndex = 20;
 			this->label12->Text = L"Tipo:";
 			// 
@@ -213,7 +213,7 @@ namespace EstacionPesajeView {
 			this->label11->Location = System::Drawing::Point(48, 146);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(74, 16);
+			this->label11->Size = System::Drawing::Size(87, 20);
 			this->label11->TabIndex = 21;
 			this->label11->Text = L"Peso Neto:";
 			// 
@@ -233,7 +233,7 @@ namespace EstacionPesajeView {
 			this->label10->Location = System::Drawing::Point(48, 71);
 			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(48, 16);
+			this->label10->Size = System::Drawing::Size(56, 20);
 			this->label10->TabIndex = 19;
 			this->label10->Text = L"Placa: ";
 			// 
@@ -243,7 +243,7 @@ namespace EstacionPesajeView {
 			this->label9->Location = System::Drawing::Point(48, 181);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(76, 16);
+			this->label9->Size = System::Drawing::Size(92, 20);
 			this->label9->TabIndex = 22;
 			this->label9->Text = L"Peso Bruto:";
 			// 
@@ -272,7 +272,7 @@ namespace EstacionPesajeView {
 			this->label6->Location = System::Drawing::Point(51, 111);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(112, 16);
+			this->label6->Size = System::Drawing::Size(132, 20);
 			this->label6->TabIndex = 7;
 			this->label6->Text = L"Apellido Materno:";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -283,7 +283,7 @@ namespace EstacionPesajeView {
 			this->textBox8->Location = System::Drawing::Point(176, 108);
 			this->textBox8->Margin = System::Windows::Forms::Padding(4);
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(184, 22);
+			this->textBox8->Size = System::Drawing::Size(184, 26);
 			this->textBox8->TabIndex = 8;
 			// 
 			// label1
@@ -292,7 +292,7 @@ namespace EstacionPesajeView {
 			this->label1->Location = System::Drawing::Point(51, 47);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(59, 16);
+			this->label1->Size = System::Drawing::Size(69, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Nombre:";
 			// 
@@ -302,7 +302,7 @@ namespace EstacionPesajeView {
 			this->textBox1->Location = System::Drawing::Point(176, 44);
 			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(184, 22);
+			this->textBox1->Size = System::Drawing::Size(184, 26);
 			this->textBox1->TabIndex = 1;
 			// 
 			// label2
@@ -311,7 +311,7 @@ namespace EstacionPesajeView {
 			this->label2->Location = System::Drawing::Point(51, 79);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(110, 16);
+			this->label2->Size = System::Drawing::Size(129, 20);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Apellido Paterno:";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -322,7 +322,7 @@ namespace EstacionPesajeView {
 			this->textBox2->Location = System::Drawing::Point(176, 76);
 			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(184, 22);
+			this->textBox2->Size = System::Drawing::Size(184, 26);
 			this->textBox2->TabIndex = 3;
 			// 
 			// label3
@@ -331,7 +331,7 @@ namespace EstacionPesajeView {
 			this->label3->Location = System::Drawing::Point(51, 142);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(33, 16);
+			this->label3->Size = System::Drawing::Size(41, 20);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"DNI:";
 			// 
@@ -341,7 +341,7 @@ namespace EstacionPesajeView {
 			this->textBox3->Location = System::Drawing::Point(176, 139);
 			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(184, 22);
+			this->textBox3->Size = System::Drawing::Size(184, 26);
 			this->textBox3->TabIndex = 5;
 			// 
 			// button4
@@ -383,10 +383,10 @@ namespace EstacionPesajeView {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(184, 33);
+			this->textBox4->Location = System::Drawing::Point(214, 30);
 			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(132, 22);
+			this->textBox4->Size = System::Drawing::Size(132, 26);
 			this->textBox4->TabIndex = 11;
 			this->textBox4->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPropietarioVehiculo::textBox4_KeyPress);
 			// 
@@ -396,7 +396,7 @@ namespace EstacionPesajeView {
 			this->label4->Location = System::Drawing::Point(47, 33);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(126, 16);
+			this->label4->Size = System::Drawing::Size(150, 20);
 			this->label4->TabIndex = 10;
 			this->label4->Text = L"Multas acumuladas:";
 			// 
@@ -406,16 +406,16 @@ namespace EstacionPesajeView {
 			this->label5->Location = System::Drawing::Point(47, 74);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(81, 16);
+			this->label5->Size = System::Drawing::Size(99, 20);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Multa actual:";
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(184, 70);
+			this->textBox5->Location = System::Drawing::Point(214, 71);
 			this->textBox5->Margin = System::Windows::Forms::Padding(4);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(132, 22);
+			this->textBox5->Size = System::Drawing::Size(132, 26);
 			this->textBox5->TabIndex = 9;
 			this->textBox5->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPropietarioVehiculo::textBox5_KeyPress);
 			// 
@@ -428,6 +428,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmAgregarPropietarioVehiculo";
+			this->Text = L"Agregar Propietario de Vehiculo";
 			this->groupBox3->ResumeLayout(false);
 			this->groupBox3->PerformLayout();
 			this->groupBox2->ResumeLayout(false);

@@ -3,10 +3,14 @@
 using namespace System;
 using namespace System::Collections::Generic;
 using namespace EstacionPesajeModel;
+using namespace System::Data::SqlClient;
 
 namespace EstacionPesajeController {
 
 	public ref class TarjetaController {
+	private:
+		SqlConnection^ objConexion;
+
 	public:
 		TarjetaController();
 		List<Tarjeta^>^ buscarTarjeta(String^ numeroTarjeta);
@@ -19,6 +23,19 @@ namespace EstacionPesajeController {
 
 		Tarjeta^ buscarTarjetaxNumero(String^ numeroTarjeta);
 		void actualizarTarjeta(Tarjeta^ objTarjeta);
+
+		/////////////////////////////////////////////////////
+		/*Metodos propios del manejo de Base de Datos*/
+		void abrirConexionBD();
+		void cerrarConexionBD();
+
+		void AgregarTarjetaSQL(String^ estado, String^ numeroTarjeta, int codigoPropietario);
+		void eliminarTarjetaSQLxCodigo(int codigo);
+		Tarjeta^ buscarTarjetaxCodigoSQL(int codigo);
+		Tarjeta^ buscarTarjetaxNumeroSQL(String^ numeroTarjeta);
+
+
+
 	};
 
 
