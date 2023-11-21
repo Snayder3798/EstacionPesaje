@@ -21,26 +21,46 @@ void  PropietarioVehiculoController::cerrarConexionBD() {
 	this->objConexion->Close();
 }
 
+void PropietarioVehiculoController::AgregarPropietarioSQL(String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas) {
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "insert into PropietarioVehiculo(nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas, multaActual) values ('" + nombre + "', '" + apellidoPaterno + "', '" + apellidoMaterno + "', '" + dni + "', " + multasAcumuladas +")";
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
+}
 
-List<PropietarioVehiculo^>^ PropietarioVehiculoController::buscarPropietarioDNI(String^ dni) {
+void PropietarioVehiculoController::eliminarPropietarioSQL(String^ dni) {
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "delete PropietarioVehiculo where dni like '%" + dni + "%'";
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
+}
 
+void PropietarioVehiculoController::actualizarPropietarioSQL(String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas) {
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "update PropietarioVehiculo set nombre=" + nombre + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno=" + apellidoMaterno + ", dni='" + dni + "', multasAcumuladas=" + multasAcumuladas;
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
+}
+
+List<PropietarioVehiculo^>^ PropietarioVehiculoController::buscarPropietarioxDniSQL(String^ dni) {
 	List<PropietarioVehiculo^>^ listaPropietarios = gcnew List<PropietarioVehiculo^>();
 	abrirConexionBD();
-
 	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-
 	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
 	objSentencia->Connection = this->objConexion;
-
 	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
-	objSentencia->CommandText = "select * from PropietarioVehiculo where dni like '%"+dni+"%' ";
-
+	objSentencia->CommandText = "select * from PropietarioVehiculo where dni like '%"+dni+"%'";
 	/*Aqui ejecuto la sentencia en la Base de Datos*/
 	/*Para Select siempre sera ExecuteReader*/
 	/*Para select siempre va a devolver un SqlDataReader*/
 	SqlDataReader ^ objData = objSentencia->ExecuteReader();
-
 	while (objData->Read()) {
 		int codigo = safe_cast<int>(objData[0]);
 		String^ nombre = safe_cast<String^>(objData[1]);
@@ -48,17 +68,14 @@ List<PropietarioVehiculo^>^ PropietarioVehiculoController::buscarPropietarioDNI(
 		String^ apellidoMaterno = safe_cast<String^>(objData[3]);
 		String^ dni = safe_cast<String^>(objData[4]);
 		int multasAcumuladas = safe_cast<int>(objData[5]);
-		int multaActual = safe_cast<int>(objData[6]);
-		int codigoVehiculo = safe_cast<int>(objData[6]);
-		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas, multaActual, codigoVehiculo);
+		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas);
 		listaPropietarios->Add(objPropietario);
 	}
 	cerrarConexionBD();
 	return listaPropietarios;
 }
 
-
-List<PropietarioVehiculo^>^ PropietarioVehiculoController::buscarPropietarioApellido(String^ apellido) {
+List<PropietarioVehiculo^>^ PropietarioVehiculoController::buscarPropietarioxApellidoSQL(String^ apellido) {
 	List<PropietarioVehiculo^>^ listaPropietarios = gcnew List<PropietarioVehiculo^>();
 	abrirConexionBD();
 	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
@@ -78,9 +95,7 @@ List<PropietarioVehiculo^>^ PropietarioVehiculoController::buscarPropietarioApel
 		String^ apellidoMaterno = safe_cast<String^>(objData[3]);
 		String^ dni = safe_cast<String^>(objData[4]);
 		int multasAcumuladas = safe_cast<int>(objData[5]);
-		int multaActual = safe_cast<int>(objData[6]);
-		int codigoVehiculo = safe_cast<int>(objData[6]);
-		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas, multaActual, codigoVehiculo);
+		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas);
 		listaPropietarios->Add(objPropietario);
 	}
 	cerrarConexionBD();
@@ -88,11 +103,23 @@ List<PropietarioVehiculo^>^ PropietarioVehiculoController::buscarPropietarioApel
 }
 
 
-void PropietarioVehiculoController::AgregarPropietarioVehiculo(String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas, int multaActual, int codigoVehiculo) {
+List <PropietarioVehiculo^>^ PropietarioVehiculoController::buscarAllSQL() {
+	List<PropietarioVehiculo^>^ listaPropietarios = gcnew List<PropietarioVehiculo^>();
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "insert into PropietarioVehiculo(nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas, multaActual) values ('"+nombre+"', '"+apellidoPaterno+"', '"+apellidoMaterno+"', '"+dni+"', "+multasAcumuladas+", "+multaActual+")";
 	objSentencia->Connection = this->objConexion;
-	objSentencia->ExecuteNonQuery();
+	objSentencia->CommandText = "select * from PropietarioVehiculo";
+	SqlDataReader^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		String^ nombre = safe_cast<String^>(objData[1]);
+		String^ apellidoPaterno = safe_cast<String^>(objData[2]);
+		String^ apellidoMaterno = safe_cast<String^>(objData[3]);
+		String^ dni = safe_cast<String^>(objData[4]);
+		int multasAcumuladas = safe_cast<int>(objData[5]);
+		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas);
+		listaPropietarios->Add(objPropietario);
+	}
 	cerrarConexionBD();
+	return listaPropietarios;
 }

@@ -42,6 +42,7 @@ namespace EstacionPesajeController {
 		void eliminarVehiculoSQL(String^ placa);
 		List<Vehiculo^>^ buscarVehiculosxPlacaSQL(String^ placa);
 		List<Vehiculo^>^ buscarVehiculosxCodigoSQL(int codigo);
+		List <Vehiculo^>^ buscarAllSQL();
 		Vehiculo^ objbuscarVehiculoxPlacaSQL(String^ placa);
 		Vehiculo^ objbuscarVehiculoxCodigoSQL(int codigo);
 		void actualizarVehiculoSQL(int codigo, int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietario);

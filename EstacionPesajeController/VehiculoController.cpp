@@ -38,7 +38,6 @@ List<Vehiculo^>^ VehiculoController::buscarVehiculo(String^ placa) {
 	return listaVehiculosEncontrados;
 }
 
-
 List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo) {
 	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
 	List<Vehiculo^>^ listaVehiculosEncontrados = gcnew List<Vehiculo^>();
@@ -89,7 +88,6 @@ List <Vehiculo^>^ VehiculoController::buscarAll() {
 	return listaVehiculosEncontrados;
  }
 
-
 void VehiculoController::escribirArchivo(List <Vehiculo^>^ lista) {
 	array<String^>^ lineasArchivo = gcnew array<String^>(lista->Count);
 
@@ -114,13 +112,11 @@ void VehiculoController::eliminarVehiculoFisico(String^ placa) {
 	escribirArchivo(listaVehiculos);
 }
 
-
 void VehiculoController::agregarVehiculo(Vehiculo^ objVehiculo) {
 	List <Vehiculo^>^ listaVehiculos = buscarAll();
 	listaVehiculos->Add(objVehiculo);
 	escribirArchivo(listaVehiculos);
 }
-
 
 Vehiculo^ VehiculoController::buscarVehiculoxPlaca(String^ placa) {
 	List <Vehiculo^>^ listaVehiculos = buscarAll();
@@ -130,7 +126,6 @@ Vehiculo^ VehiculoController::buscarVehiculoxPlaca(String^ placa) {
 		}
 	}
 }
-
 
 void VehiculoController::actualizarVehiculo(Vehiculo^ objVehiculo) {
 	List <Vehiculo^>^ listaVehiculos = buscarAll();
@@ -204,7 +199,7 @@ void VehiculoController::AgregarVehiculoSQL(int pesoSinCarga, int pesoConCarga, 
 void VehiculoController::eliminarVehiculoSQL(String^ placa) {
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "delete Vehiculo where placa= '" + placa +"'";
+	objSentencia->CommandText = "delete Vehiculo where placa like '%" + placa +"%'";
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
@@ -218,7 +213,7 @@ List <Vehiculo^>^ VehiculoController::buscarVehiculosxPlacaSQL(String^ placa) {
 	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
 	objSentencia->Connection = this->objConexion;
 	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
-	objSentencia->CommandText = "select * from Vehiculo where placa= '" + placa + "'";
+	objSentencia->CommandText = "select * from Vehiculo where placa like '%" + placa + "%'";
 	/*Aqui ejecuto la sentencia en la Base de Datos*/
 	/*Para Select siempre sera ExecuteReader*/
 	/*Para select siempre va a devolver un SqlDataReader*/
@@ -232,7 +227,6 @@ List <Vehiculo^>^ VehiculoController::buscarVehiculosxPlacaSQL(String^ placa) {
 		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
 		int cantMultas = safe_cast<int>(objData[6]);
 		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
-
 		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
 		listaVehiculo->Add(objVehiculo);
 	}
@@ -279,7 +273,7 @@ Vehiculo^ VehiculoController::objbuscarVehiculoxPlacaSQL(String^ placa) {
 	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
 	objSentencia->Connection = this->objConexion;
 	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
-	objSentencia->CommandText = "select * from Vehiculo where placa= '" + placa + "'";
+	objSentencia->CommandText = "select * from Vehiculo where placa like '%" + placa + "%'";
 	/*Aqui ejecuto la sentencia en la Base de Datos*/
 	/*Para Select siempre sera ExecuteReader*/
 	/*Para select siempre va a devolver un SqlDataReader*/
@@ -336,4 +330,28 @@ void VehiculoController::actualizarVehiculoSQL(int codigo, int pesoSinCarga, int
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
+}
+
+List <Vehiculo^>^ VehiculoController::buscarAllSQL() {
+	List<Vehiculo^>^ listaVehiculo = gcnew List<Vehiculo^>();
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->Connection = this->objConexion;
+	objSentencia->CommandText = "select * from Vehiculo";
+	SqlDataReader^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		int pesoSinCarga = safe_cast<int>(objData[1]);
+		int pesoConCarga = safe_cast<int>(objData[2]);
+		int pesoActual = safe_cast<int>(objData[3]);
+		String^ placa = safe_cast<String^>(objData[4]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
+		int cantMultas = safe_cast<int>(objData[6]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
+
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+		listaVehiculo->Add(objVehiculo);
+	}
+	cerrarConexionBD();
+	return listaVehiculo;
 }

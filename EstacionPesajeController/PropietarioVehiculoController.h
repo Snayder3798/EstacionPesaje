@@ -20,10 +20,13 @@ namespace EstacionPesajeController {
 		void abrirConexionBD();
 		void cerrarConexionBD();
 
-		List<PropietarioVehiculo^>^ buscarPropietarioDNI(String^ dni);
-		List<PropietarioVehiculo^>^ buscarPropietarioApellido(String^ apellido);
-
-		void AgregarPropietarioVehiculo(String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas, int multaActual, int codigoVehiculo);
+		void AgregarPropietarioSQL(String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas);
+		void eliminarPropietarioSQL(String^ dni);
+		void actualizarPropietarioSQL(String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas);
+		List<PropietarioVehiculo^>^ buscarPropietarioxDniSQL(String^ dni);
+		List<PropietarioVehiculo^>^ buscarPropietarioxApellidoSQL(String^ apellidoPaterno);
+		List <PropietarioVehiculo^>^ buscarAllSQL();
+		
 	};
 
 }

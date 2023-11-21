@@ -12,10 +12,8 @@ PropietarioVehiculo::PropietarioVehiculo(int codigo, String^ nombre, String^ ape
 	this->objVehiculo = objVehiculo;
 }
 
-PropietarioVehiculo::PropietarioVehiculo(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas, int multaActual, int codigoVehiculo) : Persona(codigo, nombre, apellidoPaterno, apellidoMaterno, dni) {
+PropietarioVehiculo::PropietarioVehiculo(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas) : Persona(codigo, nombre, apellidoPaterno, apellidoMaterno, dni) {
 	this->multasAcumuladas = multasAcumuladas;
-	this->multaActual = multaActual;
-	this->codigoVehiculo = codigoVehiculo;
 }
 
 
