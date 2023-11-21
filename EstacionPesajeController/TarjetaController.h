@@ -31,6 +31,9 @@ namespace EstacionPesajeController {
 
 		void AgregarTarjetaSQL(String^ estado, String^ numeroTarjeta, int codigoPropietario);
 		void eliminarTarjetaSQLxCodigo(int codigo);
+		void actualizarTarjetaSQL(Tarjeta^ objTarjeta);
+		List <Tarjeta^>^ buscarAllSQL();
+		List <Tarjeta^>^ buscarListaxNumeroSQL(String^ numeroTarjeta);
 		Tarjeta^ buscarTarjetaxCodigoSQL(int codigo);
 		Tarjeta^ buscarTarjetaxNumeroSQL(String^ numeroTarjeta);
 

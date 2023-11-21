@@ -63,7 +63,7 @@ void TarjetaController::escribirArchivo(List <Tarjeta^>^ lista) {
 
 		Tarjeta^ objeto = lista[i];
 
-		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getEstado() + ";" + objeto->getNumeroTarjeta();
+		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getEstado() + ";" + objeto->getNumeroTarjeta()+ ";" + objeto->getCodigoPropietarioVehiculo();
 	}
 
 	File::WriteAllLines("Tarjeta.txt", lineasArchivo);
@@ -135,7 +135,24 @@ void TarjetaController::AgregarTarjetaSQL(String^ estado, String^ numeroTarjeta,
 	cerrarConexionBD();
 }
 void TarjetaController::eliminarTarjetaSQLxCodigo(int codigo) {
-
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "delete Tarjeta where codigo="+codigo;
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
+}
+void TarjetaController::actualizarTarjetaSQL(Tarjeta^ objTarjeta) {
+	int codigo = objTarjeta->getCodigo();
+	String^ estado = objTarjeta->getEstado();
+	String^ numeroTarjeta = objTarjeta->getNumeroTarjeta();
+	int codigoPropietario = objTarjeta->getCodigoPropietarioVehiculo();
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "update Tarjeta set estado='" + estado + "', numeroTarjeta='" + numeroTarjeta + "', codigoPropietarioVehiculo=" + codigoPropietario + " where codigo=" + codigo;
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
 }
 Tarjeta^ TarjetaController::buscarTarjetaxCodigoSQL(int codigo) {
 	Tarjeta^ objTarjeta;
@@ -145,7 +162,7 @@ Tarjeta^ TarjetaController::buscarTarjetaxCodigoSQL(int codigo) {
 	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
 	objSentencia->Connection = this->objConexion;
 	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
-	objSentencia->CommandText = "select * from Vehiculo where codigo= " + codigo ;
+	objSentencia->CommandText = "select * from Tarjeta where codigo=" + codigo ;
 	/*Aqui ejecuto la sentencia en la Base de Datos*/
 	/*Para Select siempre sera ExecuteReader*/
 	/*Para select siempre va a devolver un SqlDataReader*/
@@ -169,7 +186,7 @@ Tarjeta^ TarjetaController::buscarTarjetaxNumeroSQL(String^ numeroTarjeta) {
 	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
 	objSentencia->Connection = this->objConexion;
 	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
-	objSentencia->CommandText = "select * from Vehiculo where numeroTarjeta= '"+numeroTarjeta+"'";
+	objSentencia->CommandText = "select * from Tarjeta where numeroTarjeta='"+numeroTarjeta+"'";
 	/*Aqui ejecuto la sentencia en la Base de Datos*/
 	/*Para Select siempre sera ExecuteReader*/
 	/*Para select siempre va a devolver un SqlDataReader*/
@@ -186,3 +203,55 @@ Tarjeta^ TarjetaController::buscarTarjetaxNumeroSQL(String^ numeroTarjeta) {
 	return objTarjeta;
 }
 
+List <Tarjeta^>^ TarjetaController::buscarAllSQL() {
+	List<Tarjeta^>^ listaTarjetas = gcnew List<Tarjeta^>();
+	abrirConexionBD();
+	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
+	objSentencia->Connection = this->objConexion;
+	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
+	objSentencia->CommandText = "select * from Tarjeta";
+	/*Aqui ejecuto la sentencia en la Base de Datos*/
+	/*Para Select siempre sera ExecuteReader*/
+	/*Para select siempre va a devolver un SqlDataReader*/
+	SqlDataReader^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		String^ estado = safe_cast<String^>(objData[1]);
+		String^ numeroTarjeta = safe_cast<String^>(objData[2]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[3]);
+
+
+		Tarjeta^ objTarjeta = gcnew Tarjeta(codigo,estado,numeroTarjeta,codigoPropietarioVehiculo);
+		listaTarjetas->Add(objTarjeta);
+	}
+	cerrarConexionBD();
+	return listaTarjetas;
+}
+List <Tarjeta^>^ TarjetaController::buscarListaxNumeroSQL(String^ numeroTarjeta) {
+	List<Tarjeta^>^ listaTarjetas = gcnew List<Tarjeta^>();
+	abrirConexionBD();
+	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
+	objSentencia->Connection = this->objConexion;
+	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
+	objSentencia->CommandText = "select * from Tarjeta where numeroTarjeta like '%"+numeroTarjeta+"%'";
+	/*Aqui ejecuto la sentencia en la Base de Datos*/
+	/*Para Select siempre sera ExecuteReader*/
+	/*Para select siempre va a devolver un SqlDataReader*/
+	SqlDataReader^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		String^ estado = safe_cast<String^>(objData[1]);
+		String^ numeroTarjeta = safe_cast<String^>(objData[2]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[3]);
+
+
+		Tarjeta^ objTarjeta = gcnew Tarjeta(codigo, estado, numeroTarjeta, codigoPropietarioVehiculo);
+		listaTarjetas->Add(objTarjeta);
+	}
+	cerrarConexionBD();
+	return listaTarjetas;
+}

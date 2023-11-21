@@ -300,7 +300,7 @@ namespace EstacionPesajeView {
 					MandarMultaLCD(multasAcumuladas);
 					Sleep(3000);
 					TarjetaController^ objTarjetaController = gcnew TarjetaController();
-					bool EstadoTargeta = false;
+					String^ EstadoTargeta = "Inactiva";
 					do {
 						dataRecibida = SolicitarPlaca_Tarjeta();
 						Sleep(1000);
@@ -308,7 +308,7 @@ namespace EstacionPesajeView {
 							Tarjeta^ TarjetaRegistrada = objTarjetaController->buscarTarjetaxNumero(dataRecibida->Remove(dataRecibida->Length - 1));
 							EstadoTargeta = TarjetaRegistrada->getEstado();
 						}
-					} while (EstadoTargeta == false);
+					} while (EstadoTargeta == "Inactiva");
 					ActivarDesactivarServo(true);
 					Sleep(1000);
 					ActivarDesactivarServo(false);
@@ -319,7 +319,7 @@ namespace EstacionPesajeView {
 				MandarMultaLCD(multasAcumuladas+1);
 				Sleep(3000);
 				TarjetaController^ objTarjetaController = gcnew TarjetaController();
-				bool EstadoTargeta=false;
+				String^ EstadoTargeta = "Inactiva";
 				do {
 					dataRecibida = SolicitarPlaca_Tarjeta();
 					Sleep(1000);
@@ -327,7 +327,7 @@ namespace EstacionPesajeView {
 						Tarjeta^ TarjetaRegistrada = objTarjetaController->buscarTarjetaxNumero(dataRecibida->Remove(dataRecibida->Length - 1));
 						EstadoTargeta = TarjetaRegistrada->getEstado();
 					}
-				} while (EstadoTargeta == false);
+				} while (EstadoTargeta == "Inactiva");
 				ActivarDesactivarServo(true);
 				Sleep(1000);
 				ActivarDesactivarServo(false);
