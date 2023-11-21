@@ -1,33 +1,39 @@
 #pragma once
 
 using namespace System;
+using namespace System::Data::SqlClient;
 using namespace System::Collections::Generic;
 using namespace EstacionPesajeModel;
 
 namespace EstacionPesajeController {
 
 	public ref class PersonaController {
+	private: 
+		SqlConnection^ objConexion; /*Un atributo que nos permita hacer la conexion con la Base de Datos*/
 	public:
 		PersonaController();
-		List<Persona^>^ buscarPersonaDNI(String^ dni);
-		List<Persona^>^ buscarPersonaApellido(String^ apellidoPaterno);
+		//List<Persona^>^ buscarPersonaDNI(String^ dni);
+		//List<Persona^>^ buscarPersonaApellido(String^ apellidoPaterno);
 
-		/*Metodos utiles*/
-		List <Persona^>^ buscarAll();
-		void escribirArchivo(List <Persona^>^ listaPersonas);
-		void eliminarPersonaFisico(String^ dni);
-		void agregarPersona(Persona^ objPersona);
+		///*Metodos utiles*/
+		//List <Persona^>^ buscarAll();
+		//void escribirArchivo(List <Persona^>^ listaPersonas);
+		//void eliminarPersonaFisico(String^ dni);
+		//void agregarPersona(Persona^ objPersona);
 
-		Persona^ buscarPersonaxDni(String^ dni);
-		void actualizarPersona(Persona^ objPersona);
+		//Persona^ buscarPersonaxDni(String^ dni);
+		//void actualizarPersona(Persona^ objPersona);
+
+
 		//METODOS PROXIMOS A IMPLEMENTAR PARA SQL
-		void registrarPersona(int codigoPersona, String^ nombrePersona, String^ apellidoPaternoPersona, String^ apellidoMaternoPersona, String^ dniPersona, int multasAcumuladasPersona);
-		Persona^ buscarPersonaxCodigo(int codigo);
-		void actualizarPersona(int codigoPersona, String^ nombrePersona, String^ apellidoPaternoPersona, String^ apellidoMaternoPersona, String^ dniPersona, int multasAcumuladasPersona);
+		void abrirConexionBD();
+		void cerrarConexionBD();
+		void registrarPersonaSQL(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas);
+		void eliminarPersonaSQL(int codigo);
+		void actualizarPersonaSQL(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas);
+		Persona^ buscarPersonaxCodigoSQL(int codigo);
+		List <Persona^>^ buscarPersonaxApellidoPaternoSQL(String^ informacion);
 		List <Persona^>^ buscarPersonaxDniSQL(String^ informacion);
-		List <Persona^>^ buscarPersonaxApellidoSQL(String^ informacion);
-		void eliminarVendedorSQL(int codigoEliminar);
-	
 	};
 
 
