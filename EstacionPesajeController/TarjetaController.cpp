@@ -8,25 +8,24 @@ using namespace System::IO; /*Este espacio de nombres sirve para manejar los arc
 TarjetaController::TarjetaController() {
 	this->objConexion = gcnew SqlConnection();
 }
-
+/*
 List<Tarjeta^>^ TarjetaController::buscarTarjeta(String^ numeroTarjeta) {
-	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
+	//En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto
 	List<Tarjeta^>^ listaTarjetasEncontrados = gcnew List<Tarjeta^>();
 	array<String^>^ lineas = File::ReadAllLines("Tarjeta.txt");
 
-	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
-	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
+	String^ separadores = ";"; //Aqui defino el caracter por el cual voy a separar la informacion de cada linea
+	//Esta instruccion for each nos permite ir elemento por elemento de un array
 	for each (String ^ lineaCarrera in lineas) {
-		/*Voy a separar cada elemento del String por ; con el split*/
+		//Voy a separar cada elemento del String por ; con el split
 		array<String^>^ datos = lineaCarrera->Split(separadores->ToCharArray());
 
 		int codigoTarjeta = Convert::ToInt32(datos[0]);
 		String^ estadoTarjeta = datos[1];
-		String^ numeroTarjetaTarjeta = datos[2];
-		int codigoPropietario = Convert::ToInt32(datos[3]);
+		String^ numeroTarjeta = datos[2];
 
-		if (numeroTarjetaTarjeta->Contains(numeroTarjeta)) {
-			Tarjeta^ objTarjeta = gcnew Tarjeta(codigoTarjeta, estadoTarjeta, numeroTarjetaTarjeta, codigoPropietario);
+		if (numeroTarjeta->Contains(numeroTarjeta)) {
+			Tarjeta^ objTarjeta = gcnew Tarjeta(codigoTarjeta, estadoTarjeta, numeroTarjeta);
 			listaTarjetasEncontrados->Add(objTarjeta);
 		}
 	}
@@ -35,22 +34,21 @@ List<Tarjeta^>^ TarjetaController::buscarTarjeta(String^ numeroTarjeta) {
 
 
 List<Tarjeta^>^ TarjetaController::buscarAll() {
-	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
+	//En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto
 	List<Tarjeta^>^ listaTarjetasEncontrados = gcnew List<Tarjeta^>();
 	array<String^>^ lineas = File::ReadAllLines("Tarjeta.txt");
 
-	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
-	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
+	String^ separadores = ";"; //Aqui defino el caracter por el cual voy a separar la informacion de cada linea
+	//Esta instruccion for each nos permite ir elemento por elemento de un array
 	for each (String ^ lineaCarrera in lineas) {
-		/*Voy a separar cada elemento del String por ; con el split*/
+		//Voy a separar cada elemento del String por ; con el split
 		array<String^>^ datos = lineaCarrera->Split(separadores->ToCharArray());
 
 		int codigo = Convert::ToInt32(datos[0]);
 		String^ estadoTarjeta = datos[1];
 		String^ numeroTarjeta = datos[2];
-		int codigoPropietario = Convert::ToInt32(datos[3]);
 
-		Tarjeta^ objTarjeta = gcnew Tarjeta(codigo, estadoTarjeta, numeroTarjeta, codigoPropietario);
+		Tarjeta^ objTarjeta = gcnew Tarjeta(codigo, estadoTarjeta, numeroTarjeta);
 		listaTarjetasEncontrados->Add(objTarjeta);
 	}
 	return listaTarjetasEncontrados;
@@ -63,7 +61,7 @@ void TarjetaController::escribirArchivo(List <Tarjeta^>^ lista) {
 
 		Tarjeta^ objeto = lista[i];
 
-		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getEstado() + ";" + objeto->getNumeroTarjeta()+ ";" + objeto->getCodigoPropietarioVehiculo();
+		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getEstado() + ";" + objeto->getNumeroTarjeta();
 	}
 
 	File::WriteAllLines("Tarjeta.txt", lineasArchivo);
@@ -110,10 +108,10 @@ void TarjetaController::actualizarTarjeta(Tarjeta^ objTarjeta) {
 		}
 	}
 }
-
+*/
 
 /////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////
 
 /*Metodos propios del manejo de Base de Datos*/
@@ -127,10 +125,10 @@ void  TarjetaController::cerrarConexionBD() {
 	this->objConexion->Close();
 }
 
-void TarjetaController::AgregarTarjetaSQL(String^ estado, String^ numeroTarjeta, int codigoPropietario) {
+void TarjetaController::AgregarTarjetaSQL(String^ estado, String^ numeroTarjeta) {
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "insert into Tarjeta(estado, numeroTarjeta, codigoPropietarioVehiculo) values ('" + estado+ "', '"+numeroTarjeta+"', "+codigoPropietario+")";
+	objSentencia->CommandText = "insert into Tarjeta(estado, numeroTarjeta) values ('" + estado+ "', '"+numeroTarjeta+"')";
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
@@ -147,10 +145,9 @@ void TarjetaController::actualizarTarjetaSQL(Tarjeta^ objTarjeta) {
 	int codigo = objTarjeta->getCodigo();
 	String^ estado = objTarjeta->getEstado();
 	String^ numeroTarjeta = objTarjeta->getNumeroTarjeta();
-	int codigoPropietario = objTarjeta->getCodigoPropietarioVehiculo();
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "update Tarjeta set estado='" + estado + "', numeroTarjeta='" + numeroTarjeta + "', codigoPropietarioVehiculo=" + codigoPropietario + " where codigo=" + codigo;
+	objSentencia->CommandText = "update Tarjeta set estado='" + estado + "', numeroTarjeta='" + numeroTarjeta + " where codigo=" + codigo;
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
@@ -172,9 +169,8 @@ Tarjeta^ TarjetaController::buscarTarjetaxCodigoSQL(int codigo) {
 		int codigo = safe_cast<int>(objData[0]);
 		String^ estado = safe_cast<String^>(objData[1]);
 		String^ numeroTarjeta = safe_cast<String^>(objData[2]);
-		int codigoPropietario = safe_cast<int>(objData[3]);	
 
-		objTarjeta = gcnew Tarjeta(codigo, estado, numeroTarjeta, codigoPropietario);
+		objTarjeta = gcnew Tarjeta(codigo, estado, numeroTarjeta);
 	}
 	cerrarConexionBD();
 	return objTarjeta;
@@ -196,9 +192,8 @@ Tarjeta^ TarjetaController::buscarTarjetaxNumeroSQL(String^ numeroTarjeta) {
 		int codigo = safe_cast<int>(objData[0]);
 		String^ estado = safe_cast<String^>(objData[1]);
 		String^ numeroTarjeta = safe_cast<String^>(objData[2]);
-		int codigoPropietario = safe_cast<int>(objData[3]);
 
-		objTarjeta = gcnew Tarjeta(codigo, estado, numeroTarjeta, codigoPropietario);
+		objTarjeta = gcnew Tarjeta(codigo, estado, numeroTarjeta);
 	}
 	cerrarConexionBD();
 	return objTarjeta;
@@ -221,8 +216,7 @@ List <Tarjeta^>^ TarjetaController::buscarAllSQL() {
 		int codigo = safe_cast<int>(objData[0]);
 		String^ estado = safe_cast<String^>(objData[1]);
 		String^ numeroTarjeta = safe_cast<String^>(objData[2]);
-		int codigoPropietarioVehiculo = safe_cast<int>(objData[3]);
-		Tarjeta^ objTarjeta = gcnew Tarjeta(codigo,estado,numeroTarjeta,codigoPropietarioVehiculo);
+		Tarjeta^ objTarjeta = gcnew Tarjeta(codigo,estado,numeroTarjeta);
 		listaTarjetas->Add(objTarjeta);
 	}
 	cerrarConexionBD();
@@ -245,10 +239,9 @@ List <Tarjeta^>^ TarjetaController::buscarListaxNumeroSQL(String^ numeroTarjeta)
 		int codigo = safe_cast<int>(objData[0]);
 		String^ estado = safe_cast<String^>(objData[1]);
 		String^ numeroTarjeta = safe_cast<String^>(objData[2]);
-		int codigoPropietarioVehiculo = safe_cast<int>(objData[3]);
 
 
-		Tarjeta^ objTarjeta = gcnew Tarjeta(codigo, estado, numeroTarjeta, codigoPropietarioVehiculo);
+		Tarjeta^ objTarjeta = gcnew Tarjeta(codigo, estado, numeroTarjeta);
 		listaTarjetas->Add(objTarjeta);
 	}
 	cerrarConexionBD();

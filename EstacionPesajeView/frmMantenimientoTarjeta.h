@@ -273,7 +273,6 @@ namespace EstacionPesajeView {
 			filaGrilla[0] = Convert::ToString(objTarjeta->getCodigo());
 			filaGrilla[1] = objTarjeta->getNumeroTarjeta();			
 			filaGrilla[2] = objTarjeta->getEstado();
-			filaGrilla[3] = Convert::ToString(objTarjeta->getCodigoPropietarioVehiculo());
 			
 			this->dataGridView1->Rows->Add(filaGrilla);
 

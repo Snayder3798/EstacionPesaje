@@ -305,7 +305,7 @@ namespace EstacionPesajeView {
 						dataRecibida = SolicitarPlaca_Tarjeta();
 						Sleep(1000);
 						if (dataRecibida != "No_hay_codigo\r") {
-							Tarjeta^ TarjetaRegistrada = objTarjetaController->buscarTarjetaxNumero(dataRecibida->Remove(dataRecibida->Length - 1));
+							Tarjeta^ TarjetaRegistrada = objTarjetaController->buscarTarjetaxNumeroSQL(dataRecibida->Remove(dataRecibida->Length - 1));
 							EstadoTargeta = TarjetaRegistrada->getEstado();
 						}
 					} while (EstadoTargeta == "Inactiva");
@@ -324,7 +324,7 @@ namespace EstacionPesajeView {
 					dataRecibida = SolicitarPlaca_Tarjeta();
 					Sleep(1000);
 					if (dataRecibida != "No_hay_codigo\r") {
-						Tarjeta^ TarjetaRegistrada = objTarjetaController->buscarTarjetaxNumero(dataRecibida->Remove(dataRecibida->Length - 1));
+						Tarjeta^ TarjetaRegistrada = objTarjetaController->buscarTarjetaxNumeroSQL(dataRecibida->Remove(dataRecibida->Length - 1));
 						EstadoTargeta = TarjetaRegistrada->getEstado();
 					}
 				} while (EstadoTargeta == "Inactiva");
