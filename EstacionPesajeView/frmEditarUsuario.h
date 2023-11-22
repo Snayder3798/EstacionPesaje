@@ -175,7 +175,6 @@ namespace EstacionPesajeView {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Enabled = false;
 			this->label5->Location = System::Drawing::Point(20, 359);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
@@ -186,7 +185,6 @@ namespace EstacionPesajeView {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Enabled = false;
 			this->label4->Location = System::Drawing::Point(20, 315);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
@@ -206,7 +204,6 @@ namespace EstacionPesajeView {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Enabled = false;
 			this->label3->Location = System::Drawing::Point(20, 270);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
@@ -242,7 +239,6 @@ namespace EstacionPesajeView {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Enabled = false;
 			this->label2->Location = System::Drawing::Point(20, 222);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
