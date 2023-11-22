@@ -118,6 +118,7 @@
     <ClCompile Include="frmAgregarPersona.cpp" />
     <ClCompile Include="frmAgregarPropietarioVehiculo.cpp" />
     <ClCompile Include="frmAgregarTarjeta.cpp" />
+    <ClCompile Include="frmAgregarUsuario.cpp" />
     <ClCompile Include="frmAgregarVehiculo.cpp" />
     <ClCompile Include="frmBuscarPersona.cpp" />
     <ClCompile Include="frmBuscarPropietarioVehiculo.cpp" />
@@ -161,6 +162,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmAgregarTarjeta.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmAgregarUsuario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmAgregarVehiculo.h">
@@ -239,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarTarjeta.resx">
       <DependentUpon>frmAgregarTarjeta.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarUsuario.resx">
+      <DependentUpon>frmAgregarUsuario.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarVehiculo.resx">
       <DependentUpon>frmAgregarVehiculo.h</DependentUpon>

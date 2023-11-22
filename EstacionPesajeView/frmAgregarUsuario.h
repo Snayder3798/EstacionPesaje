@@ -13,23 +13,14 @@ namespace EstacionPesajeView {
 	using namespace EstacionPesajeController;
 
 	/// <summary>
-	/// Resumen de frmEditarUsuario
+	/// Resumen de frmAgregarUsuario
 	/// </summary>
-	public ref class frmEditarUsuario : public System::Windows::Forms::Form
+	public ref class frmAgregarUsuario : public System::Windows::Forms::Form
 	{
 	public:
-		frmEditarUsuario(void)
+		frmAgregarUsuario(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: agregar código de constructor aquí
-			//
-		}
-
-		frmEditarUsuario(Usuario^ objUsuario)
-		{
-			InitializeComponent();
-			this->objUsuario = objUsuario;
 			//
 			//TODO: agregar código de constructor aquí
 			//
@@ -39,7 +30,7 @@ namespace EstacionPesajeView {
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
 		/// </summary>
-		~frmEditarUsuario()
+		~frmAgregarUsuario()
 		{
 			if (components)
 			{
@@ -50,8 +41,9 @@ namespace EstacionPesajeView {
 	protected:
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::Label^ label5;
+
+
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::Label^ label3;
@@ -66,8 +58,6 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
-
-	private: Usuario^ objUsuario;
 
 	private:
 		/// <summary>
@@ -86,8 +76,6 @@ namespace EstacionPesajeView {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -106,31 +94,29 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(356, 426);
+			this->button1->Location = System::Drawing::Point(320, 414);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(91, 28);
-			this->button1->TabIndex = 14;
+			this->button1->TabIndex = 34;
 			this->button1->Text = L"Cancelar";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &frmEditarUsuario::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &frmAgregarUsuario::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(181, 426);
+			this->button2->Location = System::Drawing::Point(145, 414);
 			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(91, 28);
-			this->button2->TabIndex = 13;
+			this->button2->TabIndex = 33;
 			this->button2->Text = L"Guardar";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &frmEditarUsuario::button2_Click);
+			this->button2->Click += gcnew System::EventHandler(this, &frmAgregarUsuario::button2_Click);
 			// 
 			// groupBox1
 			// 
 			this->groupBox1->Controls->Add(this->comboBox1);
-			this->groupBox1->Controls->Add(this->textBox8);
-			this->groupBox1->Controls->Add(this->label5);
 			this->groupBox1->Controls->Add(this->label4);
 			this->groupBox1->Controls->Add(this->textBox6);
 			this->groupBox1->Controls->Add(this->label3);
@@ -144,12 +130,12 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Controls->Add(this->label8);
-			this->groupBox1->Location = System::Drawing::Point(68, 14);
+			this->groupBox1->Location = System::Drawing::Point(22, 24);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox1->Size = System::Drawing::Size(512, 399);
-			this->groupBox1->TabIndex = 32;
+			this->groupBox1->Size = System::Drawing::Size(512, 365);
+			this->groupBox1->TabIndex = 35;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos del Usuario:";
 			// 
@@ -158,30 +144,10 @@ namespace EstacionPesajeView {
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Jefe", L"Asistente", L"Secretario", L"Programador" });
-			this->comboBox1->Location = System::Drawing::Point(167, 310);
+			this->comboBox1->Location = System::Drawing::Point(167, 312);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(255, 24);
-			this->comboBox1->TabIndex = 28;
-			// 
-			// textBox8
-			// 
-			this->textBox8->Enabled = false;
-			this->textBox8->Location = System::Drawing::Point(167, 354);
-			this->textBox8->Margin = System::Windows::Forms::Padding(4);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(255, 22);
-			this->textBox8->TabIndex = 12;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Enabled = false;
-			this->label5->Location = System::Drawing::Point(20, 359);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(54, 16);
-			this->label5->TabIndex = 27;
-			this->label5->Text = L"Código:";
+			this->comboBox1->TabIndex = 29;
 			// 
 			// label4
 			// 
@@ -307,38 +273,26 @@ namespace EstacionPesajeView {
 			this->label8->TabIndex = 2;
 			this->label8->Text = L"Apellido Paterno:";
 			// 
-			// frmEditarUsuario
+			// frmAgregarUsuario
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(649, 466);
+			this->ClientSize = System::Drawing::Size(575, 462);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->Name = L"frmEditarUsuario";
-			this->Text = L"frmEditarUsuario";
-			this->Load += gcnew System::EventHandler(this, &frmEditarUsuario::frmEditarUsuario_Load);
+			this->Name = L"frmAgregarUsuario";
+			this->Text = L"frmAgregarUsuario";
+			this->Load += gcnew System::EventHandler(this, &frmAgregarUsuario::frmAgregarUsuario_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void frmEditarUsuario_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->textBox1->Text = objUsuario->getNombre();
-		this->textBox2->Text = objUsuario->getApellidoPaterno();
-		this->textBox3->Text = objUsuario->getApellidoMaterno();
-		this->textBox4->Text = objUsuario->getDni();
-		this->textBox5->Text = objUsuario->getNombreUsuario();
-		this->textBox6->Text = objUsuario->getContrasena();
-		this->comboBox1->Text = objUsuario->getCargo();
-		this->textBox8->Text = Convert::ToString(objUsuario->getCodigo());
+	private: System::Void frmAgregarUsuario_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ nombre = this->textBox1->Text;
 		String^ apellidoPaterno = this->textBox2->Text;
@@ -347,13 +301,14 @@ namespace EstacionPesajeView {
 		String^ nombreUsuario = this->textBox5->Text;
 		String^ contrasena = this->textBox6->Text;
 		String^ cargo = this->comboBox1->Text;
-		int codigo = Convert::ToInt32(this->textBox8->Text);
 
 		UsuarioController^ objUsuarioController = gcnew UsuarioController();
-		objUsuarioController->actualizarUsuarioSQL(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, nombreUsuario, contrasena, cargo);
-		MessageBox::Show("El Propietario fue actualizado correctamente");
+		objUsuarioController->AgregarUsuarioSQL(nombre, apellidoPaterno, apellidoMaterno, dni, nombreUsuario, contrasena, cargo);
+		MessageBox::Show("El Propietario del Vehiculo se ha agregado correctamente");
 		this->Close();
 	}
-
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
 };
 }
