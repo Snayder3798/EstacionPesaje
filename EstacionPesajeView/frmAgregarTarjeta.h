@@ -40,9 +40,10 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Button^ button2;
 	protected:
 	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::TextBox^ textBox1;
 
 
-	private: System::Windows::Forms::TextBox^ textBox8;
+
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
 
@@ -67,7 +68,7 @@ namespace EstacionPesajeView {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -88,7 +89,7 @@ namespace EstacionPesajeView {
 			// groupBox1
 			// 
 			this->groupBox1->Controls->Add(this->comboBox1);
-			this->groupBox1->Controls->Add(this->textBox8);
+			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Location = System::Drawing::Point(30, 34);
@@ -111,15 +112,15 @@ namespace EstacionPesajeView {
 			this->comboBox1->Size = System::Drawing::Size(286, 28);
 			this->comboBox1->TabIndex = 24;
 			// 
-			// textBox8
+			// textBox1
 			// 
-			this->textBox8->Location = System::Drawing::Point(215, 56);
-			this->textBox8->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->textBox8->Multiline = true;
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(286, 29);
-			this->textBox8->TabIndex = 5;
-			this->textBox8->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarTarjeta::textBox8_KeyPress);
+			this->textBox1->Location = System::Drawing::Point(215, 56);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(286, 29);
+			this->textBox1->TabIndex = 5;
+			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarTarjeta::textBox1_KeyPress);
 			// 
 			// label6
 			// 
@@ -175,7 +176,7 @@ namespace EstacionPesajeView {
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)  {
-		String^ numeroTarjeta = this->textBox8->Text;
+		String^ numeroTarjeta = this->textBox1->Text;
 		String^ estadoTarjeta = this->comboBox1->Text;
 		TarjetaController^ objTarjetaController = gcnew TarjetaController();
 
@@ -190,20 +191,40 @@ namespace EstacionPesajeView {
 	}
 
 
-	private: System::Void textBox8_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 	
-		// Verifica si el carácter presionado es un numero o borrar
-		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
+		// Verifica si el carácter presionado es un numero, guion o borrar
+		if ((Char::IsNumber(e->KeyChar) || e->KeyChar == '-' || e->KeyChar == 8)) {
 
-			String^ TextoIngresado = textBox8->Text;
+			String^ TextoIngresado = textBox1->Text;
 
-			// Si longitud del texto actual es menor a 9, permite más entrada
-			if (TextoIngresado->Length < 16) {
-				e->Handled = false;
+			// Si longitud del texto actual es menor a 19 o se presiona la tecla borrar, permite más entrada
+			if (TextoIngresado->Length < 19 || e->KeyChar == 8) {
+				// Verifica si se encuentra en la posición 4, 9 o 14
+				if (TextoIngresado->Length == 4 || TextoIngresado->Length == 9 || TextoIngresado->Length == 14) {
+					//Solo permite el guion en la posición 4, 9 y 14
+					if ((e->KeyChar == '-' || e->KeyChar == 8)) {
+						e->Handled = false; //permite la entrada
+					}
+					else {
+						e->Handled = true; //lo borra
+					}
+				}
+				else { // si no se encuentra en la posición 4,9,14
+					if (e->KeyChar == '-') {
+						e->Handled = true; //se borra si se ingresa guion donde no se debe
+					}
+					else {
+						e->Handled = false; //permite la entrada
+					}
+				}
 			}
 			else {
-				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
+				e->Handled = true;  // Tiene una longitud de 19 caracteres, no permite más entrada
 			}
+		}
+		else {
+			e->Handled = true;
 		}
 	}
 };

@@ -241,6 +241,9 @@
     <EmbeddedResource Include="frmBuscarPropietarioVehiculo.resx">
       <DependentUpon>frmBuscarPropietarioVehiculo.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarVehiculo.resx">
+      <DependentUpon>frmBuscarVehiculo.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditarEstacionPesaje.resx">
       <DependentUpon>frmEditarEstacionPesaje.h</DependentUpon>
     </EmbeddedResource>
