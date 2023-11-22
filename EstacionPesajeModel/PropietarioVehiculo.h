@@ -2,6 +2,7 @@
 #include "Persona.h"
 #include "Usuario.h"
 #include "Vehiculo.h"
+
 using namespace System;
 using namespace System::Collections::Generic;
 namespace EstacionPesajeModel {
