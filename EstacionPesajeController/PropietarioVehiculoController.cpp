@@ -5,7 +5,7 @@ using namespace EstacionPesajeController;
 using namespace System::IO; /*Este espacio de nombres sirve para manejar los archivos de texto*/
 
 
-PropietarioVehiculoController::PropietarioVehiculoController() {
+PropietarioVehiculoController::UsuarioController() {
 	this->objConexion = gcnew SqlConnection();
 }
 

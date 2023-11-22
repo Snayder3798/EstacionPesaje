@@ -131,6 +131,7 @@
     <ClCompile Include="frmMantenimientoPersona.cpp" />
     <ClCompile Include="frmMantenimientoPropietarioVehiculo.cpp" />
     <ClCompile Include="frmMantenimientoTarjeta.cpp" />
+    <ClCompile Include="frmMantenimientoUsuario.cpp" />
     <ClCompile Include="frmMantenimientoVehiculo.cpp" />
     <ClCompile Include="frmPanelControlSistema.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
@@ -198,6 +199,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmMantenimientoTarjeta.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmMantenimientoUsuario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmMantenimientoVehiculo.h">
@@ -270,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoTarjeta.resx">
       <DependentUpon>frmMantenimientoTarjeta.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoUsuario.resx">
+      <DependentUpon>frmMantenimientoUsuario.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoVehiculo.resx">
       <DependentUpon>frmMantenimientoVehiculo.h</DependentUpon>
