@@ -46,10 +46,6 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-
-
-
-
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
@@ -62,15 +58,6 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ DNI;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ApellidoPaterno;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nombres;
-
-
-
-
-
-
-
-
-
 
 	private:
 		/// <summary>
@@ -340,7 +327,7 @@ namespace EstacionPesajeView {
 			PropietarioVehiculoController^ objeto = gcnew PropietarioVehiculoController();
 			objeto->eliminarPropietarioSQL(CodigoPropietario);
 
-			MessageBox::Show("La Estacion ha sido eliminado con éxito");
+			MessageBox::Show("El Propietario ha sido eliminado con éxito");
 		}
 		else {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
