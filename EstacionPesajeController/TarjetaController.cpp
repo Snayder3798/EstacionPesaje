@@ -95,6 +95,7 @@ Tarjeta^ TarjetaController::buscarTarjetaxNumero(String^ numeroTarjeta) {
 			return listaTarjetas[i];
 		}
 	}
+
 }
 
 
