@@ -91,9 +91,10 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(140, 216);
+			this->button1->Location = System::Drawing::Point(187, 349);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(100, 28);
 			this->button1->TabIndex = 14;
 			this->button1->Text = L"Guardar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -110,9 +111,11 @@ namespace EstacionPesajeView {
 			this->Propietario->Controls->Add(this->label2);
 			this->Propietario->Controls->Add(this->label4);
 			this->Propietario->Controls->Add(this->label3);
-			this->Propietario->Location = System::Drawing::Point(26, 9);
+			this->Propietario->Location = System::Drawing::Point(35, 11);
+			this->Propietario->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Propietario->Name = L"Propietario";
-			this->Propietario->Size = System::Drawing::Size(384, 192);
+			this->Propietario->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Propietario->Size = System::Drawing::Size(512, 297);
 			this->Propietario->TabIndex = 13;
 			this->Propietario->TabStop = false;
 			this->Propietario->Text = L"Datos del Vehiculo:";
@@ -121,10 +124,9 @@ namespace EstacionPesajeView {
 			// 
 			this->label8->AutoSize = true;
 			this->label8->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label8->Location = System::Drawing::Point(16, 46);
-			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label8->Location = System::Drawing::Point(21, 57);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(93, 13);
+			this->label8->Size = System::Drawing::Size(115, 16);
 			this->label8->TabIndex = 21;
 			this->label8->Text = L"(formato A1B-2C3)";
 			// 
@@ -133,81 +135,88 @@ namespace EstacionPesajeView {
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Automóvil", L"Camioneta", L"Camión", L"Motocicleta" });
-			this->comboBox1->Location = System::Drawing::Point(126, 66);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->comboBox1->Location = System::Drawing::Point(168, 81);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(191, 21);
+			this->comboBox1->Size = System::Drawing::Size(253, 24);
 			this->comboBox1->TabIndex = 23;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(15, 146);
+			this->label7->Location = System::Drawing::Point(20, 180);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(101, 13);
+			this->label7->Size = System::Drawing::Size(125, 16);
 			this->label7->TabIndex = 22;
 			this->label7->Text = L"Cantidad de Multas:";
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(125, 142);
+			this->textBox7->Location = System::Drawing::Point(167, 175);
+			this->textBox7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox7->Multiline = true;
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(192, 20);
+			this->textBox7->Size = System::Drawing::Size(255, 24);
 			this->textBox7->TabIndex = 21;
 			this->textBox7->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarVehiculo::textBox7_KeyPress);
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(125, 105);
+			this->textBox3->Location = System::Drawing::Point(167, 129);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(192, 20);
+			this->textBox3->Size = System::Drawing::Size(255, 24);
 			this->textBox3->TabIndex = 7;
 			this->textBox3->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarVehiculo::textBox3_KeyPress);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(125, 30);
+			this->textBox1->Location = System::Drawing::Point(167, 37);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(192, 20);
+			this->textBox1->Size = System::Drawing::Size(255, 24);
 			this->textBox1->TabIndex = 5;
 			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarVehiculo::textBox1_KeyPress);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(15, 33);
+			this->label2->Location = System::Drawing::Point(20, 41);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(40, 13);
+			this->label2->Size = System::Drawing::Size(48, 16);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Placa: ";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(15, 109);
+			this->label4->Location = System::Drawing::Point(20, 134);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(64, 13);
+			this->label4->Size = System::Drawing::Size(80, 16);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Peso Limite:";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(15, 73);
+			this->label3->Location = System::Drawing::Point(20, 90);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(31, 13);
+			this->label3->Size = System::Drawing::Size(38, 16);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Tipo:";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(250, 216);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
+			this->button2->Location = System::Drawing::Point(333, 349);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 1, 3, 1);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(68, 23);
+			this->button2->Size = System::Drawing::Size(91, 28);
 			this->button2->TabIndex = 20;
 			this->button2->Text = L"Cancelar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -215,13 +224,13 @@ namespace EstacionPesajeView {
 			// 
 			// frmAgregarVehiculo
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(436, 275);
+			this->ClientSize = System::Drawing::Size(581, 398);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Propietario);
-			this->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
+			this->Margin = System::Windows::Forms::Padding(3, 1, 3, 1);
 			this->Name = L"frmAgregarVehiculo";
 			this->Text = L"Agregar Vehículo";
 			this->Propietario->ResumeLayout(false);

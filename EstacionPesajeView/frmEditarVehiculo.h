@@ -74,7 +74,7 @@ namespace EstacionPesajeView {
 
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::TextBox^ textBox7;
-	private: String^ PlacaVehiculoEditar;
+//	private: String^ PlacaVehiculoEditar;
 	private: int CodigoVehiculoEditar;
 	private: System::Windows::Forms::Label^ label9;
 

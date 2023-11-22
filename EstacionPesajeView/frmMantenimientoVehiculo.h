@@ -315,9 +315,8 @@ namespace EstacionPesajeView {
 			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
 			int  codigoVehiculoEliminar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
 
-		  VehiculoController^ objeto = gcnew VehiculoController();
-		//  objeto -> eliminarVehiculoFisico(codigoVehiculoEliminar);
-		  objeto->eliminarVehiculoSQL(codigoVehiculoEliminar); /*SQL*/
+			VehiculoController^ objeto = gcnew VehiculoController();
+			objeto->eliminarVehiculoSQL(codigoVehiculoEliminar); /*SQL*/
 			MessageBox::Show("El Vehiculo ha sido eliminado con éxito");
 		}
 		else {

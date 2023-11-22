@@ -82,6 +82,7 @@ namespace EstacionPesajeView {
 			this->button2->TabIndex = 15;
 			this->button2->Text = L"Seleccionar";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &frmBuscarPersona::button2_Click);
 			// 
 			// dataGridView1
 			// 
@@ -204,5 +205,7 @@ namespace EstacionPesajeView {
 			}
 		}
 	}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

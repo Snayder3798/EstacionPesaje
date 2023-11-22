@@ -14,7 +14,8 @@ namespace EstacionPesajeController {
 
 	public:
 		EstacionController();
-		/*Metodos utiles*/
+		/*
+		//Metodos utiles
 		List <EstacionPesaje^>^ buscarAll();
 		void escribirArchivo(List <EstacionPesaje^>^ listaEstaciones);
 		void eliminarEstacionFisico(String^ ubicacion);
@@ -22,9 +23,9 @@ namespace EstacionPesajeController {
 		List<EstacionPesaje^>^ buscarEstacionPesaje(String^ ubicacion);
 		EstacionPesaje^ buscarEstacionxUbicacion(String^ ubicacion);
 		void actualizarEstacion(EstacionPesaje^ objEstacionPesaje);
-		/*Obtener lista de Ubicaciones para ponerlos en el filtro de Ubicaciones*/
-		List <String^>^ obtenerUbicaciones();
+		List <String^>^ obtenerUbicaciones(); //Obtener lista de Ubicaciones para ponerlos en el filtro de Ubicaciones
 		List <String^>^ getMultas(List <String^>^ listaUbicaciones);
+		*/
 
 		/////////////////////////////////////////////////////
 		/*Metodos propios del manejo de Base de Datos*/
@@ -35,8 +36,10 @@ namespace EstacionPesajeController {
 		void eliminarEstacionSQL(int codigo);
 		List<EstacionPesaje^>^ buscarEstacionxUbicacionSQL(String^ ubicacion);
 		List <EstacionPesaje^>^ buscarAllSQL();
-		EstacionPesaje^ objbuscarEstacionxUbicacionSQL(String^ ubicacion);
-		void actualizarEstacionSQL(String^ ubicacion, double latitud, double longitud, int nroMultas);
+		EstacionPesaje^ objbuscarEstacionxCodigoSQL(int codigo);
+		void actualizarEstacionSQL(int codigo, String^ ubicacion, double latitud, double longitud, int nroMultas);
+		List <String^>^ EstacionController::obtenerUbicacionesSQL();
+		List <String^>^ getMultasSQL(List <String^>^ listaUbicaciones);
 
 	};
 

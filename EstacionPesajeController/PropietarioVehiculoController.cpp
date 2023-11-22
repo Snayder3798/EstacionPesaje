@@ -39,10 +39,10 @@ void PropietarioVehiculoController::eliminarPropietarioSQL(String^ dni) {
 	cerrarConexionBD();
 }
 
-void PropietarioVehiculoController::actualizarPropietarioSQL(String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas) {
+void PropietarioVehiculoController::actualizarPropietarioSQL(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas) {
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "update PropietarioVehiculo set nombre=" + nombre + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno=" + apellidoMaterno + ", dni='" + dni + "', multasAcumuladas=" + multasAcumuladas;
+	objSentencia->CommandText = "update PropietarioVehiculo set nombre=" + nombre + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno=" + apellidoMaterno + ", dni='" + dni + "', multasAcumuladas=" + multasAcumuladas + "where codigo =" + codigo;
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
