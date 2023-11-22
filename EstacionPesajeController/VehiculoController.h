@@ -17,16 +17,16 @@ namespace EstacionPesajeController {
 	public:
 		VehiculoController();
 		/*Metodos utiles*/
-		List <Vehiculo^>^ buscarAll();
-		List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo);
-		List<Vehiculo^>^ buscarVehiculo(String^ placa);
+		//List <Vehiculo^>^ buscarAll();
+		//List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo);
+		//List<Vehiculo^>^ buscarVehiculo(String^ placa);
 		/*void escribirArchivo(List <Vehiculo^>^ listaVehiculos);
 		void eliminarVehiculoFisico(String^ placa);
 		void agregarVehiculo(Vehiculo^ objVehiculo);
 		Vehiculo^ buscarVehiculoxPlaca(String^ placa);
-		void actualizarVehiculo(Vehiculo^ objVehiculo);
-		List <String^>^ getTiposVehiculos();
-		List <String^>^ getMultas(List <String^>^ listaTipoVehiculos);*/
+		void actualizarVehiculo(Vehiculo^ objVehiculo);*/
+		List <String^>^ getTiposVehiculosSQL();
+		List <String^>^ getMultasSQL(List <String^>^ listaTipoVehiculos);
 
 		/////////////////////////////////////////////////////
 		/*Metodos propios del manejo de Base de Datos*/
@@ -34,13 +34,13 @@ namespace EstacionPesajeController {
 		void cerrarConexionBD();
 
 		void AgregarVehiculoSQL(int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas);
-		void eliminarVehiculoSQL(String^ placa);
+		void eliminarVehiculoSQL(int codigo);
 		List<Vehiculo^>^ buscarVehiculosxPlacaSQL(String^ placa);
-		List<Vehiculo^>^ buscarVehiculosxCodigoSQL(int codigo);
+		List<Vehiculo^>^ buscarVehiculosxTipoSQL(String^ tipoVehiculo);
 		List <Vehiculo^>^ buscarAllSQL();
 		Vehiculo^ objbuscarVehiculoxPlacaSQL(String^ placa);
 		Vehiculo^ objbuscarVehiculoxCodigoSQL(int codigo);
-		void actualizarVehiculoSQL(int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas);
+		void actualizarVehiculoSQL(int codigo,int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas);
 	};
 
 }
