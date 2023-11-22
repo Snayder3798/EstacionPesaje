@@ -10,15 +10,11 @@ VehiculoController::VehiculoController() {
 	this->objConexion = gcnew SqlConnection();
 }
 
-List<Vehiculo^>^ VehiculoController::buscarVehiculo(String^ placa) {
-	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
+/*List<Vehiculo^>^ VehiculoController::buscarVehiculo(String^ placa) {
 	List<Vehiculo^>^ listaVehiculosEncontrados = gcnew List<Vehiculo^>();
 	array<String^>^ lineas = File::ReadAllLines("vehiculo.txt");
-
-	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
-	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
+	String^ separadores = ";";
 	for each (String ^ linea in lineas) {
-		/*Voy a separar cada elemento del String por ; con el split*/
 		array<String^>^ datos = linea->Split(separadores->ToCharArray());
 
 		int codigoVehiculo = Convert::ToInt32(datos[0]);
@@ -39,13 +35,10 @@ List<Vehiculo^>^ VehiculoController::buscarVehiculo(String^ placa) {
 }
 
 List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo) {
-	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
 	List<Vehiculo^>^ listaVehiculosEncontrados = gcnew List<Vehiculo^>();
 	array<String^>^ lineas = File::ReadAllLines("vehiculo.txt");
-	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
-	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
+	String^ separadores = ";"; 
 	for each (String^ linea in lineas) {
-		/*Voy a separar cada elemento del String por ; con el split*/
 		array<String^>^ datos = linea->Split(separadores->ToCharArray());
 		int codigoVehiculo = Convert::ToInt32(datos[0]);
 		int pesoSinCargaVehiculo = Convert::ToInt32(datos[1]);
@@ -64,13 +57,10 @@ List <Vehiculo^>^ VehiculoController::buscarxTipoVehiculo(String^ TipoVehiculo) 
 }
 
 List <Vehiculo^>^ VehiculoController::buscarAll() {
-	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
 	List<Vehiculo^>^ listaVehiculosEncontrados = gcnew List<Vehiculo^>();
 	array<String^>^ lineas = File::ReadAllLines("vehiculo.txt");
-	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
-	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
+	String^ separadores = ";";
 	for each (String ^ linea in lineas) {
-		/*Voy a separar cada elemento del String por ; con el split*/
 		array<String^>^ datos = linea->Split(separadores->ToCharArray());
 
 		int codigoVehiculo = Convert::ToInt32(datos[0]);
@@ -97,10 +87,8 @@ void VehiculoController::escribirArchivo(List <Vehiculo^>^ lista) {
 
 		lineasArchivo[i] = objeto->getCodigo() + ";" + objeto->getPesoSinCarga() + ";" + objeto->getPesoConCarga() + ";" + objeto->getPesoActual() + ";" + objeto->getPlaca() + ";" + objeto->getTipoVehiculo() + ";" + objeto->getCantMultas() + ";"+ objeto->getcodigoPropietarioVehiculo() + ";";
 	}
-
 	File::WriteAllLines("vehiculo.txt", lineasArchivo);
 }
-
 void VehiculoController::eliminarVehiculoFisico(String^ placa) {
 	List <Vehiculo^>^ listaVehiculos = buscarAll();
 	for (int i = 0; i < listaVehiculos->Count; i++) {
@@ -111,13 +99,11 @@ void VehiculoController::eliminarVehiculoFisico(String^ placa) {
 	}
 	escribirArchivo(listaVehiculos);
 }
-
 void VehiculoController::agregarVehiculo(Vehiculo^ objVehiculo) {
 	List <Vehiculo^>^ listaVehiculos = buscarAll();
 	listaVehiculos->Add(objVehiculo);
 	escribirArchivo(listaVehiculos);
 }
-
 Vehiculo^ VehiculoController::buscarVehiculoxPlaca(String^ placa) {
 	List <Vehiculo^>^ listaVehiculos = buscarAll();
 	for (int i = 0; i < listaVehiculos->Count; i++) {
@@ -126,7 +112,6 @@ Vehiculo^ VehiculoController::buscarVehiculoxPlaca(String^ placa) {
 		}
 	}
 }
-
 void VehiculoController::actualizarVehiculo(Vehiculo^ objVehiculo) {
 	List <Vehiculo^>^ listaVehiculos = buscarAll();
 	for (int i = 0; listaVehiculos->Count; i++) {
@@ -141,11 +126,9 @@ void VehiculoController::actualizarVehiculo(Vehiculo^ objVehiculo) {
 			listaVehiculos[i]->setcodigoPropietarioVehiculo(objVehiculo->getcodigoPropietarioVehiculo());
 			break;
 		}
-
 	}
 	escribirArchivo(listaVehiculos);
 }
-
 List <String^>^ VehiculoController::getTiposVehiculos() {
 	List <Vehiculo^>^ listaVehiculos = buscarAll();
 	List <String^>^ listaTipoVehiculos = gcnew List <String^>();
@@ -156,7 +139,6 @@ List <String^>^ VehiculoController::getTiposVehiculos() {
 	}
 	return listaTipoVehiculos;
 }
-
 List <String^>^ VehiculoController::getMultas(List <String^>^ listaTipoVehiculos) {
 	
 	List <String^>^ listaMultas = gcnew List <String^>();
@@ -169,7 +151,7 @@ List <String^>^ VehiculoController::getMultas(List <String^>^ listaTipoVehiculos
 		listaMultas->Add(Convert::ToString(cantidad));
 	}
 	return listaMultas;
-}
+}*/
 
 /////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -187,10 +169,10 @@ void  VehiculoController::cerrarConexionBD() {
 }
 
 
-void VehiculoController::AgregarVehiculoSQL(int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo) {
+void VehiculoController::AgregarVehiculoSQL(int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas) {
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "insert into Vehiculo(pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo) values (" + pesoSinCarga + "," + pesoConCarga + "," + pesoActual + ",'" + placa + "','" + tipoVehiculo + "'," + cantMultas + ","+codigoPropietarioVehiculo+")";
+	objSentencia->CommandText = "insert into Vehiculo(pesoLimite, placa, tipoVehiculo, cantMultas) values (" + pesoLimite + "," + placa + "," + tipoVehiculo + ",'" + cantMultas + ")";
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
@@ -220,15 +202,12 @@ List <Vehiculo^>^ VehiculoController::buscarVehiculosxPlacaSQL(String^ placa) {
 	SqlDataReader^ objData = objSentencia->ExecuteReader();
 	while (objData->Read()) {
 		int codigo = safe_cast<int>(objData[0]);
-		int pesoSinCarga = safe_cast<int>(objData[1]);
-		int pesoConCarga = safe_cast<int>(objData[2]);
-		int pesoActual = safe_cast<int>(objData[3]);
-		String^ placa = safe_cast<String^>(objData[4]);
-		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
-		int cantMultas = safe_cast<int>(objData[6]);
-		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
-		listaVehiculo->Add(objVehiculo);
+		int pesoLimite = safe_cast<int>(objData[1]);
+		String^ placa = safe_cast<String^>(objData[2]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
+		int cantMultas = safe_cast<int>(objData[4]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
 	}
 	cerrarConexionBD();
 	return listaVehiculo;
@@ -250,15 +229,13 @@ List <Vehiculo^>^ VehiculoController::buscarVehiculosxCodigoSQL(int codigo) {
 	SqlDataReader^ objData = objSentencia->ExecuteReader();
 	while (objData->Read()) {
 		int codigo = safe_cast<int>(objData[0]);
-		int pesoSinCarga = safe_cast<int>(objData[1]);
-		int pesoConCarga = safe_cast<int>(objData[2]);
-		int pesoActual = safe_cast<int>(objData[3]);
-		String^ placa = safe_cast<String^>(objData[4]);
-		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
-		int cantMultas = safe_cast<int>(objData[6]);
-		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
+		int pesoLimite = safe_cast<int>(objData[1]);
+		String^ placa = safe_cast<String^>(objData[2]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
+		int cantMultas = safe_cast<int>(objData[4]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
 
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
 		listaVehiculo->Add(objVehiculo);
 	}
 	cerrarConexionBD();
@@ -280,15 +257,13 @@ Vehiculo^ VehiculoController::objbuscarVehiculoxPlacaSQL(String^ placa) {
 	SqlDataReader^ objData = objSentencia->ExecuteReader();
 	while (objData->Read()) {
 		int codigo = safe_cast<int>(objData[0]);
-		int pesoSinCarga = safe_cast<int>(objData[1]);
-		int pesoConCarga = safe_cast<int>(objData[2]);
-		int pesoActual = safe_cast<int>(objData[3]);
-		String^ placa = safe_cast<String^>(objData[4]);
-		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
-		int cantMultas = safe_cast<int>(objData[6]);
-		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
+		int pesoLimite = safe_cast<int>(objData[1]);
+		String^ placa = safe_cast<String^>(objData[2]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
+		int cantMultas = safe_cast<int>(objData[4]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
 
-		objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+		objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
 	}
 	cerrarConexionBD();
 	return objVehiculo;
@@ -309,24 +284,22 @@ Vehiculo^ VehiculoController::objbuscarVehiculoxCodigoSQL(int codigo) {
 	SqlDataReader^ objData = objSentencia->ExecuteReader();
 	while (objData->Read()) {
 		int codigo = safe_cast<int>(objData[0]);
-		int pesoSinCarga = safe_cast<int>(objData[1]);
-		int pesoConCarga = safe_cast<int>(objData[2]);
-		int pesoActual = safe_cast<int>(objData[3]);
-		String^ placa = safe_cast<String^>(objData[4]);
-		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
-		int cantMultas = safe_cast<int>(objData[6]);
-		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
+		int pesoLimite = safe_cast<int>(objData[1]);
+		String^ placa = safe_cast<String^>(objData[2]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
+		int cantMultas = safe_cast<int>(objData[4]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
 
-		objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+		objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
 	}
 	cerrarConexionBD();
 	return objVehiculo;
 }
 
-void VehiculoController::actualizarVehiculoSQL(int codigo, int pesoSinCarga, int pesoConCarga, int pesoActual, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietario) {
+void VehiculoController::actualizarVehiculoSQL(int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas) {
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "update Vehiculo set pesoSinCarga=" + pesoSinCarga + ", pesoConCarga=" + pesoConCarga + ", pesoActual=" + pesoActual + ", placa='" + placa + "', tipoVehiculo='" + tipoVehiculo + "', cantMultas=" + cantMultas +", codigoPropietarioVehiculo = " + codigoPropietario + " where codigo =" + codigo;
+	objSentencia->CommandText = "update Vehiculo set pesoLimite=" + pesoLimite + ", placa='" + placa + "', tipoVehiculo='" + tipoVehiculo + "', cantMultas=" + cantMultas;
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
@@ -341,15 +314,13 @@ List <Vehiculo^>^ VehiculoController::buscarAllSQL() {
 	SqlDataReader^ objData = objSentencia->ExecuteReader();
 	while (objData->Read()) {
 		int codigo = safe_cast<int>(objData[0]);
-		int pesoSinCarga = safe_cast<int>(objData[1]);
-		int pesoConCarga = safe_cast<int>(objData[2]);
-		int pesoActual = safe_cast<int>(objData[3]);
-		String^ placa = safe_cast<String^>(objData[4]);
-		String^ tipoVehiculo = safe_cast<String^>(objData[5]);
-		int cantMultas = safe_cast<int>(objData[6]);
-		int codigoPropietarioVehiculo = safe_cast<int>(objData[7]);
+		int pesoLimite = safe_cast<int>(objData[1]);
+		String^ placa = safe_cast<String^>(objData[2]);
+		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
+		int cantMultas = safe_cast<int>(objData[4]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
 
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
 		listaVehiculo->Add(objVehiculo);
 	}
 	cerrarConexionBD();
