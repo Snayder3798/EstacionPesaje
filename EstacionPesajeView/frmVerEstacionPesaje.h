@@ -172,6 +172,7 @@ namespace EstacionPesajeView {
 			// 
 			// textBox8
 			// 
+			this->textBox8->Enabled = false;
 			this->textBox8->Location = System::Drawing::Point(167, 37);
 			this->textBox8->Margin = System::Windows::Forms::Padding(4);
 			this->textBox8->Multiline = true;

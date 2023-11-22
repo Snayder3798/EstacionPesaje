@@ -1,6 +1,7 @@
 #pragma once
 
 #include "frmAgregarPropietarioVehiculo.h"
+#include "frmEditarPropietarioVehiculo.h"
 
 namespace EstacionPesajeView {
 
@@ -83,6 +84,11 @@ namespace EstacionPesajeView {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->multasAcumuladas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->DNI = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ApellidoPaterno = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Nombres = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -90,11 +96,6 @@ namespace EstacionPesajeView {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->multasAcumuladas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->DNI = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ApellidoPaterno = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Nombres = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
@@ -102,17 +103,18 @@ namespace EstacionPesajeView {
 			// button4
 			// 
 			this->button4->Location = System::Drawing::Point(508, 479);
-			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(100, 28);
 			this->button4->TabIndex = 26;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &frmMantenimientoPropietarioVehiculo::button4_Click);
 			// 
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(312, 479);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(100, 28);
 			this->button3->TabIndex = 25;
@@ -123,12 +125,13 @@ namespace EstacionPesajeView {
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(132, 479);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(100, 28);
 			this->button2->TabIndex = 24;
 			this->button2->Text = L"Agregar";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &frmMantenimientoPropietarioVehiculo::button2_Click);
 			// 
 			// dataGridView1
 			// 
@@ -138,11 +141,46 @@ namespace EstacionPesajeView {
 					this->multasAcumuladas, this->DNI, this->ApellidoPaterno, this->Nombres
 			});
 			this->dataGridView1->Location = System::Drawing::Point(32, 255);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(669, 185);
+			this->dataGridView1->Size = System::Drawing::Size(663, 185);
 			this->dataGridView1->TabIndex = 23;
+			// 
+			// Codigo
+			// 
+			this->Codigo->HeaderText = L"Código:";
+			this->Codigo->MinimumWidth = 6;
+			this->Codigo->Name = L"Codigo";
+			this->Codigo->Width = 125;
+			// 
+			// multasAcumuladas
+			// 
+			this->multasAcumuladas->HeaderText = L"Multas Acumuladas";
+			this->multasAcumuladas->MinimumWidth = 6;
+			this->multasAcumuladas->Name = L"multasAcumuladas";
+			this->multasAcumuladas->Width = 125;
+			// 
+			// DNI
+			// 
+			this->DNI->HeaderText = L"DNI";
+			this->DNI->MinimumWidth = 6;
+			this->DNI->Name = L"DNI";
+			this->DNI->Width = 90;
+			// 
+			// ApellidoPaterno
+			// 
+			this->ApellidoPaterno->HeaderText = L"Apellido Paterno";
+			this->ApellidoPaterno->MinimumWidth = 6;
+			this->ApellidoPaterno->Name = L"ApellidoPaterno";
+			this->ApellidoPaterno->Width = 145;
+			// 
+			// Nombres
+			// 
+			this->Nombres->HeaderText = L"Nombre";
+			this->Nombres->MinimumWidth = 6;
+			this->Nombres->Name = L"Nombres";
+			this->Nombres->Width = 125;
 			// 
 			// groupBox1
 			// 
@@ -153,9 +191,9 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Location = System::Drawing::Point(82, 27);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox1->Size = System::Drawing::Size(479, 207);
 			this->groupBox1->TabIndex = 22;
 			this->groupBox1->TabStop = false;
@@ -207,7 +245,7 @@ namespace EstacionPesajeView {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(220, 156);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 28);
 			this->button1->TabIndex = 2;
@@ -219,46 +257,11 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox1->ForeColor = System::Drawing::SystemColors::InfoText;
 			this->textBox1->Location = System::Drawing::Point(156, 100);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(225, 22);
 			this->textBox1->TabIndex = 6;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &frmMantenimientoPropietarioVehiculo::textBox1_TextChanged);
-			// 
-			// Codigo
-			// 
-			this->Codigo->HeaderText = L"Código:";
-			this->Codigo->MinimumWidth = 6;
-			this->Codigo->Name = L"Codigo";
-			this->Codigo->Width = 125;
-			// 
-			// multasAcumuladas
-			// 
-			this->multasAcumuladas->HeaderText = L"Multas Acumuladas";
-			this->multasAcumuladas->MinimumWidth = 6;
-			this->multasAcumuladas->Name = L"multasAcumuladas";
-			this->multasAcumuladas->Width = 125;
-			// 
-			// DNI
-			// 
-			this->DNI->HeaderText = L"DNI";
-			this->DNI->MinimumWidth = 6;
-			this->DNI->Name = L"DNI";
-			this->DNI->Width = 90;
-			// 
-			// ApellidoPaterno
-			// 
-			this->ApellidoPaterno->HeaderText = L"Apellido Paterno";
-			this->ApellidoPaterno->MinimumWidth = 6;
-			this->ApellidoPaterno->Name = L"ApellidoPaterno";
-			this->ApellidoPaterno->Width = 145;
-			// 
-			// Nombres
-			// 
-			this->Nombres->HeaderText = L"Nombre";
-			this->Nombres->MinimumWidth = 6;
-			this->Nombres->Name = L"Nombres";
-			this->Nombres->Width = 125;
 			// 
 			// frmMantenimientoPropietarioVehiculo
 			// 
@@ -273,6 +276,7 @@ namespace EstacionPesajeView {
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmMantenimientoPropietarioVehiculo";
 			this->Text = L"Mantenimiento Propietario Vehiculo";
+			this->Load += gcnew System::EventHandler(this, &frmMantenimientoPropietarioVehiculo::frmMantenimientoPropietarioVehiculo_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -280,9 +284,13 @@ namespace EstacionPesajeView {
 
 		}
 #pragma endregion
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+	private: System::Void frmMantenimientoPropietarioVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
+		PropietarioVehiculoController^ objPropietarioController = gcnew PropietarioVehiculoController();
+		List <PropietarioVehiculo^>^ listaPropietarios = objPropietarioController->buscarAllSQL();
+		mostrarGrilla(listaPropietarios);
 	}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -290,10 +298,10 @@ namespace EstacionPesajeView {
 		PropietarioVehiculoController^ objPersonaController = gcnew PropietarioVehiculoController();
 		List <PropietarioVehiculo^>^ listaPersonas = gcnew List <PropietarioVehiculo^>();
 		if (radioButton1->Checked) {
-	//		listaPersonas = objPersonaController->buscarPropietarioDNI(informacion);
+			listaPersonas = objPersonaController->buscarPropietarioxDniSQL(informacion);
 		}
 		if (radioButton2->Checked) {
-	//		listaPersonas = objPersonaController->buscarPropietarioApellido(informacion);
+			listaPersonas = objPersonaController->buscarPropietarioxApellidoSQL(informacion);
 		}
 		mostrarGrilla(listaPersonas);
 	}
@@ -302,14 +310,50 @@ namespace EstacionPesajeView {
 		this->dataGridView1->Rows->Clear(); /*Elimino toda la informacion del datagrid*/
 		for (int i = 0; i < listaPropietarios->Count; i++) {
 			PropietarioVehiculo^ objPropietario = listaPropietarios[i];
-			array<String^>^ filaGrilla = gcnew array<String^>(4);
-			filaGrilla[0] = Convert::ToString(objPropietario->getMultasAcumuladas());
-			filaGrilla[1] = objPropietario->getDni();
-			filaGrilla[2] = objPropietario->getApellidoPaterno();
-			filaGrilla[3] = objPropietario->getNombre();
+			array<String^>^ filaGrilla = gcnew array<String^>(5);
+			filaGrilla[0] = Convert::ToString(objPropietario->getCodigo());
+			filaGrilla[1] = Convert::ToString(objPropietario->getMultasAcumuladas());
+			filaGrilla[2] = objPropietario->getDni();
+			filaGrilla[3] = objPropietario->getApellidoPaterno();
+			filaGrilla[4] = objPropietario->getNombre();
 			this->dataGridView1->Rows->Add(filaGrilla);
 		}
 	}
+
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		frmAgregarPropietarioVehiculo^ ventanaAgregarPropietario = gcnew frmAgregarPropietarioVehiculo();
+		ventanaAgregarPropietario->ShowDialog();
+	}
+
+
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			int CodigoPropietario = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+			PropietarioVehiculoController^ objeto = gcnew PropietarioVehiculoController();
+			objeto->eliminarPropietarioSQL(CodigoPropietario);
+
+			MessageBox::Show("La Estacion ha sido eliminado con éxito");
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+	}
+
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			int CodigoEstacion = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+			PropietarioVehiculoController^ objEstacionController = gcnew PropietarioVehiculoController();
+			PropietarioVehiculo^ objEstacion = objEstacionController->objbuscarPropietarioxCodigoSQL(CodigoEstacion);
+			frmEditarPropietarioVehiculo^ ventanaEditarPropietario = gcnew frmEditarPropietarioVehiculo(objEstacion);
+			ventanaEditarPropietario->ShowDialog();
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+	}
+
 
 };
 }

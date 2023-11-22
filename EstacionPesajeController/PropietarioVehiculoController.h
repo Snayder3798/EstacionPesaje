@@ -21,11 +21,12 @@ namespace EstacionPesajeController {
 		void cerrarConexionBD();
 
 		void AgregarPropietarioSQL(String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas);
-		void eliminarPropietarioSQL(String^ dni);
+		void eliminarPropietarioSQL(int codigo);
 		void actualizarPropietarioSQL(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas);
 		List<PropietarioVehiculo^>^ buscarPropietarioxDniSQL(String^ dni);
 		List<PropietarioVehiculo^>^ buscarPropietarioxApellidoSQL(String^ apellidoPaterno);
 		List <PropietarioVehiculo^>^ buscarAllSQL();
+		PropietarioVehiculo^ objbuscarPropietarioxCodigoSQL(int codigo);
 		
 	};
 

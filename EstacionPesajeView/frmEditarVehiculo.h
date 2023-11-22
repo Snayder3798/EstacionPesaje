@@ -279,7 +279,6 @@ namespace EstacionPesajeView {
 		}
 #pragma endregion
 	private: System::Void frmEditarVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
-		
 		VehiculoController^ objVehiculoController = gcnew VehiculoController();
 		Vehiculo^ objVehiculo;
 		objVehiculo = objVehiculoController->objbuscarVehiculoxCodigoSQL(this->CodigoVehiculoEditar);	
