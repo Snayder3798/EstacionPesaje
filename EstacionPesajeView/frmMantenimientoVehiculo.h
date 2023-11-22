@@ -267,10 +267,18 @@ namespace EstacionPesajeView {
 #pragma endregion
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+	private: System::Void frmMantenimientoVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
+		VehiculoController^ objVehiculoController = gcnew VehiculoController();
+		List <Vehiculo^>^ listaVehiculos = objVehiculoController->buscarAllSQL();
+		mostrarGrilla(listaVehiculos);
+	}
+
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		frmAgregarVehiculo^ ventanaAgregarVehiculo = gcnew frmAgregarVehiculo();
 		ventanaAgregarVehiculo->ShowDialog();
-
 	}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -286,29 +294,16 @@ namespace EstacionPesajeView {
 		for (int i = 0; i < listaVehiculos->Count; i++) {
 
 			Vehiculo^ objVehiculo = listaVehiculos[i];
-
 			array<String^>^ filaGrilla = gcnew array<String^>(5);
 
 			filaGrilla[0] = Convert::ToString(objVehiculo->getCodigo());
-
 			filaGrilla[1] = objVehiculo->getPlaca();
-
 			filaGrilla[2] = objVehiculo->getTipoVehiculo();
-
 			filaGrilla[3] = Convert::ToString(objVehiculo->getPesoLimite());
-
 			filaGrilla[4] = Convert::ToString(objVehiculo->getCantMultas());
-
 			this->dataGridView1->Rows->Add(filaGrilla);
-
 		}
 	}
-
-
-
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->dataGridView1->SelectedRows->Count > 0) {
@@ -323,7 +318,6 @@ namespace EstacionPesajeView {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 	}
-
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->dataGridView1->SelectedRows->Count > 0) {
@@ -348,12 +342,6 @@ namespace EstacionPesajeView {
 		else {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
-	}
-
-	private: System::Void frmMantenimientoVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
-		VehiculoController^ objVehiculoController = gcnew VehiculoController();
-		List <Vehiculo^>^ listaVehiculos = objVehiculoController->buscarAllSQL();
-		mostrarGrilla(listaVehiculos);
 	}
 
 	private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
