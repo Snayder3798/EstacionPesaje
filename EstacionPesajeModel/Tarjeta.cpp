@@ -5,11 +5,10 @@ Tarjeta::Tarjeta() {
 
 }
 
-Tarjeta::Tarjeta(int codigo, String^ estado, String^ numeroTarjeta, int codigoPropietarioVehiculo) {
+Tarjeta::Tarjeta(int codigo, String^ estado, String^ numeroTarjeta) {
 	this->codigo = codigo;
 	this->estado = estado;
 	this->numeroTarjeta = numeroTarjeta;
-	this->codigoPropietarioVehiculo = codigoPropietarioVehiculo;
 }
 
 int Tarjeta::getCodigo() {
@@ -33,10 +32,4 @@ String^ Tarjeta::getNumeroTarjeta() {
 }
 void Tarjeta::setNumeroTarjeta(String^ numeroTarjeta) {
 	this->numeroTarjeta = numeroTarjeta;
-}
-int Tarjeta::getCodigoPropietarioVehiculo() {
-	return this->codigoPropietarioVehiculo;
-}
-void Tarjeta::serCodigoPropietarioVehiculo(int codigoPropietarioVehiculo) {
-	this->codigoPropietarioVehiculo = codigoPropietarioVehiculo;
 }

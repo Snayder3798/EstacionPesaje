@@ -9,11 +9,10 @@ namespace EstacionPesajeModel {
         int codigo;
         String^ estado;
         String^ numeroTarjeta;
-        int codigoPropietarioVehiculo;
 
     public:
         Tarjeta();
-        Tarjeta(int codigo, String^ estado, String^ numeroTarjeta, int codigoPropietarioVehiculo);
+        Tarjeta(int codigo, String^ estado, String^ numeroTarjeta);
 
         int getCodigo();
         void setCodigo(int codigo);
@@ -23,9 +22,6 @@ namespace EstacionPesajeModel {
 
         String^ getNumeroTarjeta();
         void setNumeroTarjeta(String^ numeroTarjeta);
-
-        int getCodigoPropietarioVehiculo();
-        void serCodigoPropietarioVehiculo(int codigoPropietarioVehiculo);
     };
 
 }
