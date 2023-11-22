@@ -7,26 +7,21 @@ namespace EstacionPesajeModel {
     public ref class Tarjeta {
     private:
         int codigo;
-        String^ estado;
+        bool estado;
         String^ numeroTarjeta;
-        int codigoPropietarioVehiculo;
-
 
     public:
         Tarjeta();
-        Tarjeta(int codigo, String^ estado, String^ numeroTarjeta, int codigoPropietarioVehiculo);
+        Tarjeta(int codigo, bool estado, String^ numeroTarjeta);
 
         int getCodigo();
         void setCodigo(int codigo);
 
-        String^ getEstado();
-        void setEstado(String^ estado);
+        bool getEstado();
+        void setEstado(int estado);
 
         String^ getNumeroTarjeta();
         void setNumeroTarjeta(String^ numeroTarjeta);
-        
-        int getCodigoPropietarioVehiculo();
-        void setCodigoPropietarioVehiculo(int codigoPropietarioVehiculo);
     };
 
 }

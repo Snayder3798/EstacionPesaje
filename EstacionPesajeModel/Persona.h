@@ -31,6 +31,5 @@ namespace EstacionPesajeModel {
 
         String^ getDni();
         void setDni(String^ dni);
-
     };
 }

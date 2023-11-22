@@ -5,17 +5,14 @@ using namespace EstacionPesajeModel;
 PropietarioVehiculo::PropietarioVehiculo() :Persona() {
 
 }
-
-PropietarioVehiculo::PropietarioVehiculo(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas, int multaActual, Vehiculo^ objVehiculo) : Persona(codigo, nombre, apellidoPaterno, apellidoMaterno, dni) {
+PropietarioVehiculo::PropietarioVehiculo(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas, Usuario^ objUsuario) {
 	this->multasAcumuladas = multasAcumuladas;
-	this->multaActual = multaActual;
-	this->objVehiculo = objVehiculo;
+	this->objUsuario = objUsuario;
 }
 
 PropietarioVehiculo::PropietarioVehiculo(int codigo, String^ nombre, String^ apellidoPaterno, String^ apellidoMaterno, String^ dni, int multasAcumuladas) : Persona(codigo, nombre, apellidoPaterno, apellidoMaterno, dni) {
 	this->multasAcumuladas = multasAcumuladas;
 }
-
 
 int PropietarioVehiculo::getMultasAcumuladas() {
 	return this->multasAcumuladas;
@@ -24,9 +21,18 @@ void PropietarioVehiculo::setMultasAcumuladas(int multasAcumuladas) {
 	this->multasAcumuladas = multasAcumuladas;
 }
 
-int PropietarioVehiculo::getMultaActual() {
-	return this->multaActual;
+Usuario^ PropietarioVehiculo::getUsuario() {
+	return this->objUsuario;
 }
-void PropietarioVehiculo::setMultaActual(int multaActual) {
-	this->multaActual = multaActual;
+
+void PropietarioVehiculo::setUsuario(Usuario^ objUsuario) {
+	this->objUsuario = objUsuario;
+}
+
+List<Vehiculo^>^ PropietarioVehiculo::getListaVehiculos() {
+	return this->listaVehiculos;
+}
+
+void PropietarioVehiculo::setListaVehiculos(List<Vehiculo^>^ listaVehiculos) {
+	this->listaVehiculos = listaVehiculos;
 }
