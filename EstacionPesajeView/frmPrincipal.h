@@ -8,6 +8,7 @@
 #include "frmReporteMultasxTipoVehiculo.h"
 #include "frmReporteNroMultasxEstacionPesaje.h"
 #include "frmPanelControlSistema.h"
+#include "frmMantenimientoUsuario.h"
 
 
 namespace EstacionPesajeView {
@@ -47,7 +48,7 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	protected:
 	private: System::Windows::Forms::ToolStripMenuItem^ mantenimientoToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ propietariosToolStripMenuItem;
+
 	private: System::Windows::Forms::ToolStripMenuItem^ vToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ tarjetaToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ estaciónPesajeToolStripMenuItem;
@@ -58,6 +59,7 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::ToolStripMenuItem^ propietarioVehiculoToolStripMenuItem;
 	private: System::Windows::Forms::Label^ Titulo;
 	private: System::Windows::Forms::PictureBox^ pbEstactionPesaje;
+	private: System::Windows::Forms::ToolStripMenuItem^ usuarioToolStripMenuItem;
 
 	private:
 		/// <summary>
@@ -75,18 +77,17 @@ namespace EstacionPesajeView {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmPrincipal::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->mantenimientoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->propietariosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->vToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tarjetaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->estaciónPesajeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());	
+			this->estaciónPesajeToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->propietarioVehiculoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->reportesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->multasXTipoDeVehiculoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->multasRegistradasXEstacionToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->btnSiguiente = (gcnew System::Windows::Forms::Button());
 			this->Titulo = (gcnew System::Windows::Forms::Label());
-			this->propietarioVehiculoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->pbEstactionPesaje = (gcnew System::Windows::Forms::PictureBox());
-      
+			this->usuarioToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbEstactionPesaje))->BeginInit();
 			this->SuspendLayout();
@@ -100,48 +101,48 @@ namespace EstacionPesajeView {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(488, 24);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(651, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// mantenimientoToolStripMenuItem
 			// 
 			this->mantenimientoToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
-				this->propietariosToolStripMenuItem,
-					this->vToolStripMenuItem, this->tarjetaToolStripMenuItem, this->estaciónPesajeToolStripMenuItem, this->propietarioVehiculoToolStripMenuItem
+				this->vToolStripMenuItem,
+					this->tarjetaToolStripMenuItem, this->estaciónPesajeToolStripMenuItem, this->propietarioVehiculoToolStripMenuItem, this->usuarioToolStripMenuItem
 			});
 			this->mantenimientoToolStripMenuItem->Name = L"mantenimientoToolStripMenuItem";
-			this->mantenimientoToolStripMenuItem->Size = System::Drawing::Size(101, 20);
+			this->mantenimientoToolStripMenuItem->Size = System::Drawing::Size(124, 24);
 			this->mantenimientoToolStripMenuItem->Text = L"Mantenimiento";
-			// 
-			// propietariosToolStripMenuItem
-			// 
-			this->propietariosToolStripMenuItem->Name = L"propietariosToolStripMenuItem";
-			this->propietariosToolStripMenuItem->Size = System::Drawing::Size(154, 22);
-			this->propietariosToolStripMenuItem->Text = L"Persona";
-			this->propietariosToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::propietariosToolStripMenuItem_Click);
 			// 
 			// vToolStripMenuItem
 			// 
 			this->vToolStripMenuItem->Name = L"vToolStripMenuItem";
-			this->vToolStripMenuItem->Size = System::Drawing::Size(154, 22);
+			this->vToolStripMenuItem->Size = System::Drawing::Size(226, 26);
 			this->vToolStripMenuItem->Text = L"Vehiculo";
 			this->vToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::vToolStripMenuItem_Click);
 			// 
 			// tarjetaToolStripMenuItem
 			// 
 			this->tarjetaToolStripMenuItem->Name = L"tarjetaToolStripMenuItem";
-			this->tarjetaToolStripMenuItem->Size = System::Drawing::Size(154, 22);
+			this->tarjetaToolStripMenuItem->Size = System::Drawing::Size(226, 26);
 			this->tarjetaToolStripMenuItem->Text = L"Tarjeta";
 			this->tarjetaToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::tarjetaToolStripMenuItem_Click);
 			// 
 			// estaciónPesajeToolStripMenuItem
 			// 
 			this->estaciónPesajeToolStripMenuItem->Name = L"estaciónPesajeToolStripMenuItem";
-			this->estaciónPesajeToolStripMenuItem->Size = System::Drawing::Size(154, 22);
+			this->estaciónPesajeToolStripMenuItem->Size = System::Drawing::Size(226, 26);
 			this->estaciónPesajeToolStripMenuItem->Text = L"Estacion Pesaje";
 			this->estaciónPesajeToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::estaciónPesajeToolStripMenuItem_Click);
+			// 
+			// propietarioVehiculoToolStripMenuItem
+			// 
+			this->propietarioVehiculoToolStripMenuItem->Name = L"propietarioVehiculoToolStripMenuItem";
+			this->propietarioVehiculoToolStripMenuItem->Size = System::Drawing::Size(226, 26);
+			this->propietarioVehiculoToolStripMenuItem->Text = L"Propietario Vehiculo";
+			this->propietarioVehiculoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::propietarioVehiculoToolStripMenuItem_Click);
 			// 
 			// reportesToolStripMenuItem
 			// 
@@ -150,29 +151,29 @@ namespace EstacionPesajeView {
 					this->multasRegistradasXEstacionToolStripMenuItem
 			});
 			this->reportesToolStripMenuItem->Name = L"reportesToolStripMenuItem";
-			this->reportesToolStripMenuItem->Size = System::Drawing::Size(65, 20);
+			this->reportesToolStripMenuItem->Size = System::Drawing::Size(82, 24);
 			this->reportesToolStripMenuItem->Text = L"Reportes";
 			// 
 			// multasXTipoDeVehiculoToolStripMenuItem
 			// 
 			this->multasXTipoDeVehiculoToolStripMenuItem->Name = L"multasXTipoDeVehiculoToolStripMenuItem";
-			this->multasXTipoDeVehiculoToolStripMenuItem->Size = System::Drawing::Size(232, 22);
+			this->multasXTipoDeVehiculoToolStripMenuItem->Size = System::Drawing::Size(291, 26);
 			this->multasXTipoDeVehiculoToolStripMenuItem->Text = L"Multas x Tipo de Vehiculo";
 			this->multasXTipoDeVehiculoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::multasXTipoDeVehiculoToolStripMenuItem_Click);
 			// 
 			// multasRegistradasXEstacionToolStripMenuItem
 			// 
 			this->multasRegistradasXEstacionToolStripMenuItem->Name = L"multasRegistradasXEstacionToolStripMenuItem";
-			this->multasRegistradasXEstacionToolStripMenuItem->Size = System::Drawing::Size(232, 22);
+			this->multasRegistradasXEstacionToolStripMenuItem->Size = System::Drawing::Size(291, 26);
 			this->multasRegistradasXEstacionToolStripMenuItem->Text = L"Multas Registradas x Estacion ";
 			this->multasRegistradasXEstacionToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::multasRegistradasXEstacionToolStripMenuItem_Click);
 			// 
 			// btnSiguiente
 			// 
-			this->btnSiguiente->Location = System::Drawing::Point(195, 208);
-      //this->btnSiguiente->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnSiguiente->Location = System::Drawing::Point(260, 256);
+			this->btnSiguiente->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnSiguiente->Name = L"btnSiguiente";
-			this->btnSiguiente->Size = System::Drawing::Size(79, 23);
+			this->btnSiguiente->Size = System::Drawing::Size(105, 28);
 			this->btnSiguiente->TabIndex = 7;
 			this->btnSiguiente->Text = L"Iniciar";
 			this->btnSiguiente->UseVisualStyleBackColor = true;
@@ -185,44 +186,44 @@ namespace EstacionPesajeView {
 			this->Titulo->Font = (gcnew System::Drawing::Font(L"Times New Roman", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Titulo->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			this->Titulo->Location = System::Drawing::Point(44, 136);
-			this->Titulo->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->Titulo->Location = System::Drawing::Point(59, 167);
+			this->Titulo->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->Titulo->Name = L"Titulo";
-			this->Titulo->Size = System::Drawing::Size(400, 33);
+			this->Titulo->Size = System::Drawing::Size(520, 43);
 			this->Titulo->TabIndex = 9;
 			this->Titulo->Text = L"SISTEMA ESTACION PESAJE";
 			// 
 			// pbEstactionPesaje
 			// 
 			this->pbEstactionPesaje->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbEstactionPesaje.Image")));
-			this->pbEstactionPesaje->Location = System::Drawing::Point(0, 16);
-			this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->pbEstactionPesaje->Location = System::Drawing::Point(0, 20);
+			this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->pbEstactionPesaje->Name = L"pbEstactionPesaje";
-			this->pbEstactionPesaje->Size = System::Drawing::Size(488, 387);
+			this->pbEstactionPesaje->Size = System::Drawing::Size(651, 476);
 			this->pbEstactionPesaje->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pbEstactionPesaje->TabIndex = 3;
 			this->pbEstactionPesaje->TabStop = false;
 			this->pbEstactionPesaje->Click += gcnew System::EventHandler(this, &frmPrincipal::pictureBox1_Click);
 			// 
-			// propietarioVehiculoToolStripMenuItem
+			// usuarioToolStripMenuItem
 			// 
-			this->propietarioVehiculoToolStripMenuItem->Name = L"propietarioVehiculoToolStripMenuItem";
-			this->propietarioVehiculoToolStripMenuItem->Size = System::Drawing::Size(154, 22);
-			this->propietarioVehiculoToolStripMenuItem->Text = L"Propietario Vehiculo";
-			this->propietarioVehiculoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::propietarioVehiculoToolStripMenuItem_Click);
+			this->usuarioToolStripMenuItem->Name = L"usuarioToolStripMenuItem";
+			this->usuarioToolStripMenuItem->Size = System::Drawing::Size(226, 26);
+			this->usuarioToolStripMenuItem->Text = L"Usuario";
+			this->usuarioToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::usuarioToolStripMenuItem_Click);
 			// 
 			// frmPrincipal
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(488, 396);
+			this->ClientSize = System::Drawing::Size(651, 487);
 			this->Controls->Add(this->Titulo);
 			this->Controls->Add(this->btnSiguiente);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->pbEstactionPesaje);
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmPrincipal";
 			this->Text = L"Panel Principal Mantenimiento";
 			this->Load += gcnew System::EventHandler(this, &frmPrincipal::frmPrincipal_Load);
@@ -291,5 +292,9 @@ namespace EstacionPesajeView {
 		ventReporte->Show();
 	}
 
+	private: System::Void usuarioToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		frmMantenimientoUsuario^ ventMantUsuario = gcnew frmMantenimientoUsuario();
+		ventMantUsuario->Show();
+	}
 };
 }

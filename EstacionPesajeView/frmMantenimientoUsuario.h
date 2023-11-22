@@ -1,4 +1,6 @@
 #pragma once
+#include "frmEditarUsuario.h"
+#include "frmAgregarUsuario.h"
 
 namespace EstacionPesajeView {
 
@@ -111,6 +113,7 @@ namespace EstacionPesajeView {
 			this->button3->TabIndex = 30;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &frmMantenimientoUsuario::button3_Click);
 			// 
 			// button2
 			// 
@@ -121,6 +124,7 @@ namespace EstacionPesajeView {
 			this->button2->TabIndex = 29;
 			this->button2->Text = L"Agregar";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &frmMantenimientoUsuario::button2_Click);
 			// 
 			// dataGridView1
 			// 
@@ -330,5 +334,25 @@ namespace EstacionPesajeView {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->dataGridView1->SelectedRows->Count > 0) {
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
+			int CodigoUsuario = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+			UsuarioController^ objUsuarioController = gcnew UsuarioController();
+			Usuario^ objUsuario = objUsuarioController->objbuscarUsuarioxCodigoSQL(CodigoUsuario);
+			frmEditarUsuario^ ventanaEditarUsuario = gcnew frmEditarUsuario(objUsuario);
+			ventanaEditarUsuario->ShowDialog();
+		}
+		else {
+			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+	}
+
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		frmAgregarUsuario^ ventanaAgregarUsuario = gcnew frmAgregarUsuario();
+		ventanaAgregarUsuario->ShowDialog();
+	}
+
+
 };
 }
