@@ -147,7 +147,7 @@ void TarjetaController::actualizarTarjetaSQL(Tarjeta^ objTarjeta) {
 	String^ numeroTarjeta = objTarjeta->getNumeroTarjeta();
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "update Tarjeta set estado='" + estado + "', numeroTarjeta='" + numeroTarjeta + " where codigo=" + codigo;
+	objSentencia->CommandText = "update Tarjeta set estado='" + estado + "', numeroTarjeta='" + numeroTarjeta + "' where codigo=" + codigo;
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
