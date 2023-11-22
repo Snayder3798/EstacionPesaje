@@ -6,7 +6,7 @@ using namespace System::IO; /*Este espacio de nombres sirve para manejar los arc
 
 
 EstacionController::EstacionController() {
-
+	this->objConexion = gcnew SqlConnection();
 }
 
 List<EstacionPesaje^>^ EstacionController::buscarEstacionPesaje(String^ ubicacion) {
