@@ -67,6 +67,11 @@ namespace EstacionPesajeView {
 
 
 
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -84,11 +89,6 @@ namespace EstacionPesajeView {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->multasAcumuladas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->DNI = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ApellidoPaterno = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Nombres = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -96,15 +96,21 @@ namespace EstacionPesajeView {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->multasAcumuladas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->DNI = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ApellidoPaterno = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Nombres = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(381, 389);
+			this->button4->Location = System::Drawing::Point(572, 598);
+			this->button4->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->Size = System::Drawing::Size(112, 35);
 			this->button4->TabIndex = 26;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
@@ -112,9 +118,10 @@ namespace EstacionPesajeView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(234, 389);
+			this->button3->Location = System::Drawing::Point(351, 598);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->Size = System::Drawing::Size(112, 35);
 			this->button3->TabIndex = 25;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
@@ -122,9 +129,10 @@ namespace EstacionPesajeView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(99, 389);
+			this->button2->Location = System::Drawing::Point(148, 598);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(112, 35);
 			this->button2->TabIndex = 24;
 			this->button2->Text = L"Agregar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -137,46 +145,12 @@ namespace EstacionPesajeView {
 				this->Codigo,
 					this->multasAcumuladas, this->DNI, this->ApellidoPaterno, this->Nombres
 			});
-			this->dataGridView1->Location = System::Drawing::Point(24, 207);
+			this->dataGridView1->Location = System::Drawing::Point(36, 318);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(497, 150);
+			this->dataGridView1->Size = System::Drawing::Size(746, 231);
 			this->dataGridView1->TabIndex = 23;
-			// 
-			// Codigo
-			// 
-			this->Codigo->HeaderText = L"Código:";
-			this->Codigo->MinimumWidth = 6;
-			this->Codigo->Name = L"Codigo";
-			this->Codigo->Width = 125;
-			// 
-			// multasAcumuladas
-			// 
-			this->multasAcumuladas->HeaderText = L"Multas Acumuladas";
-			this->multasAcumuladas->MinimumWidth = 6;
-			this->multasAcumuladas->Name = L"multasAcumuladas";
-			this->multasAcumuladas->Width = 125;
-			// 
-			// DNI
-			// 
-			this->DNI->HeaderText = L"DNI";
-			this->DNI->MinimumWidth = 6;
-			this->DNI->Name = L"DNI";
-			this->DNI->Width = 90;
-			// 
-			// ApellidoPaterno
-			// 
-			this->ApellidoPaterno->HeaderText = L"Apellido Paterno";
-			this->ApellidoPaterno->MinimumWidth = 6;
-			this->ApellidoPaterno->Name = L"ApellidoPaterno";
-			this->ApellidoPaterno->Width = 145;
-			// 
-			// Nombres
-			// 
-			this->Nombres->HeaderText = L"Nombre";
-			this->Nombres->MinimumWidth = 6;
-			this->Nombres->Name = L"Nombres";
-			this->Nombres->Width = 125;
 			// 
 			// groupBox1
 			// 
@@ -186,9 +160,11 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->radioButton1);
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Location = System::Drawing::Point(62, 22);
+			this->groupBox1->Location = System::Drawing::Point(93, 34);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(359, 168);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->groupBox1->Size = System::Drawing::Size(538, 258);
 			this->groupBox1->TabIndex = 22;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Criterios de Búsqueda";
@@ -196,30 +172,27 @@ namespace EstacionPesajeView {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(38, 84);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(57, 129);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(65, 13);
+			this->label2->Size = System::Drawing::Size(97, 20);
 			this->label2->TabIndex = 12;
 			this->label2->Text = L"Información:";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(38, 40);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(57, 62);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(32, 13);
+			this->label1->Size = System::Drawing::Size(48, 20);
 			this->label1->TabIndex = 11;
 			this->label1->Text = L"Filtro:";
 			// 
 			// radioButton2
 			// 
 			this->radioButton2->AutoSize = true;
-			this->radioButton2->Location = System::Drawing::Point(190, 37);
-			this->radioButton2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->radioButton2->Location = System::Drawing::Point(285, 57);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(102, 17);
+			this->radioButton2->Size = System::Drawing::Size(150, 24);
 			this->radioButton2->TabIndex = 10;
 			this->radioButton2->TabStop = true;
 			this->radioButton2->Text = L"Apellido Paterno";
@@ -229,10 +202,9 @@ namespace EstacionPesajeView {
 			// 
 			this->radioButton1->AutoSize = true;
 			this->radioButton1->Checked = true;
-			this->radioButton1->Location = System::Drawing::Point(117, 37);
-			this->radioButton1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->radioButton1->Location = System::Drawing::Point(176, 57);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(44, 17);
+			this->radioButton1->Size = System::Drawing::Size(62, 24);
 			this->radioButton1->TabIndex = 9;
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"DNI";
@@ -240,9 +212,10 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(165, 127);
+			this->button1->Location = System::Drawing::Point(248, 195);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(112, 35);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -251,23 +224,63 @@ namespace EstacionPesajeView {
 			// textBox1
 			// 
 			this->textBox1->ForeColor = System::Drawing::SystemColors::InfoText;
-			this->textBox1->Location = System::Drawing::Point(117, 81);
+			this->textBox1->Location = System::Drawing::Point(176, 125);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(170, 20);
+			this->textBox1->Size = System::Drawing::Size(253, 26);
 			this->textBox1->TabIndex = 6;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &frmMantenimientoPropietarioVehiculo::textBox1_TextChanged);
 			// 
+			// Codigo
+			// 
+			this->Codigo->HeaderText = L"Código:";
+			this->Codigo->MinimumWidth = 6;
+			this->Codigo->Name = L"Codigo";
+			this->Codigo->ReadOnly = true;
+			this->Codigo->Width = 125;
+			// 
+			// multasAcumuladas
+			// 
+			this->multasAcumuladas->HeaderText = L"Multas Acumuladas";
+			this->multasAcumuladas->MinimumWidth = 6;
+			this->multasAcumuladas->Name = L"multasAcumuladas";
+			this->multasAcumuladas->ReadOnly = true;
+			this->multasAcumuladas->Width = 125;
+			// 
+			// DNI
+			// 
+			this->DNI->HeaderText = L"DNI";
+			this->DNI->MinimumWidth = 6;
+			this->DNI->Name = L"DNI";
+			this->DNI->ReadOnly = true;
+			this->DNI->Width = 90;
+			// 
+			// ApellidoPaterno
+			// 
+			this->ApellidoPaterno->HeaderText = L"Apellido Paterno";
+			this->ApellidoPaterno->MinimumWidth = 6;
+			this->ApellidoPaterno->Name = L"ApellidoPaterno";
+			this->ApellidoPaterno->ReadOnly = true;
+			this->ApellidoPaterno->Width = 145;
+			// 
+			// Nombres
+			// 
+			this->Nombres->HeaderText = L"Nombre";
+			this->Nombres->MinimumWidth = 6;
+			this->Nombres->Name = L"Nombres";
+			this->Nombres->ReadOnly = true;
+			this->Nombres->Width = 125;
+			// 
 			// frmMantenimientoPropietarioVehiculo
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(548, 430);
+			this->ClientSize = System::Drawing::Size(822, 662);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"frmMantenimientoPropietarioVehiculo";
 			this->Text = L"Mantenimiento Propietario Vehiculo";
 			this->Load += gcnew System::EventHandler(this, &frmMantenimientoPropietarioVehiculo::frmMantenimientoPropietarioVehiculo_Load);
