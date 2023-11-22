@@ -15,6 +15,7 @@ namespace EstacionPesajeModel {
 
         List<RegistroVehiculo^>^ listaRegistroVehiculos;
 
+
     public:
         Vehiculo();
         Vehiculo(int codigo, int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas);

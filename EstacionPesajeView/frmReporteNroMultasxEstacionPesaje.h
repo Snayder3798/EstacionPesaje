@@ -92,8 +92,8 @@ namespace EstacionPesajeView {
 #pragma endregion
 		private: System::Void frmReporteNroMultasxEstacionPesaje_Load(System::Object^ sender, System::EventArgs^ e) {
 			EstacionController^ objVehiculoController = gcnew EstacionController();
-			List <String^>^ listaTiposVehiculos = objVehiculoController->obtenerUbicaciones();
-			List <String^>^ listaMultas = objVehiculoController->getMultas(listaTiposVehiculos);
+			List <String^>^ listaTiposVehiculos = objVehiculoController->obtenerUbicacionesSQL();
+			List <String^>^ listaMultas = objVehiculoController->getMultasSQL(listaTiposVehiculos);
 			
 			//cambia el tipo de gráfico a circular
 			this->chart1->Series["Series1"]->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;

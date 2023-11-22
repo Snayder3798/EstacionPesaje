@@ -95,7 +95,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox1->Enabled = false;
 			this->textBox1->Location = System::Drawing::Point(167, 222);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(255, 24);
@@ -125,7 +125,7 @@ namespace EstacionPesajeView {
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(164, 329);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(100, 28);
 			this->button2->TabIndex = 23;
@@ -146,9 +146,9 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Controls->Add(this->label8);
 			this->groupBox1->Location = System::Drawing::Point(37, 34);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox1->Size = System::Drawing::Size(512, 274);
 			this->groupBox1->TabIndex = 22;
 			this->groupBox1->TabStop = false;
@@ -158,7 +158,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(167, 176);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(255, 24);
@@ -177,9 +177,8 @@ namespace EstacionPesajeView {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Enabled = false;
 			this->textBox6->Location = System::Drawing::Point(167, 130);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox6->Margin = System::Windows::Forms::Padding(4);
 			this->textBox6->Multiline = true;
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(255, 24);
@@ -187,9 +186,8 @@ namespace EstacionPesajeView {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Enabled = false;
 			this->textBox7->Location = System::Drawing::Point(167, 86);
-			this->textBox7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox7->Margin = System::Windows::Forms::Padding(4);
 			this->textBox7->Multiline = true;
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(255, 24);
@@ -199,7 +197,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox8->Enabled = false;
 			this->textBox8->Location = System::Drawing::Point(167, 37);
-			this->textBox8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox8->Margin = System::Windows::Forms::Padding(4);
 			this->textBox8->Multiline = true;
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(255, 24);
@@ -268,10 +266,10 @@ namespace EstacionPesajeView {
 		double latitud = Convert::ToDouble(this->textBox7->Text);
 		double longitud = Convert::ToDouble(this->textBox6->Text);
 		int nroMultas = Convert::ToInt32(this->textBox2->Text);
-		EstacionPesaje^ objEstacionPesaje = gcnew EstacionPesaje(codigoEstacionPesaje, ubicacion, latitud, longitud, nroMultas);
+	//	EstacionPesaje^ objEstacionPesaje = gcnew EstacionPesaje(codigoEstacionPesaje, ubicacion, latitud, longitud, nroMultas);
 
 		EstacionController^ objEstacioncontroller = gcnew EstacionController();
-		objEstacioncontroller->actualizarEstacion(objEstacionPesaje);
+		objEstacioncontroller->actualizarEstacionSQL(codigoEstacionPesaje, ubicacion, latitud, longitud, nroMultas);
 		MessageBox::Show("La Estación fue actualizada correctamente");
 		this->Close();
 	}

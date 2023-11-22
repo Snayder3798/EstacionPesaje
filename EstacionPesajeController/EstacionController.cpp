@@ -9,15 +9,16 @@ EstacionController::EstacionController() {
 	this->objConexion = gcnew SqlConnection();
 }
 
+/*
 List<EstacionPesaje^>^ EstacionController::buscarEstacionPesaje(String^ ubicacion) {
-	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
+	//En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto
 	List<EstacionPesaje^>^ listaEstacionPesajeEncontrados = gcnew List<EstacionPesaje^>();
 	array<String^>^ lineas = File::ReadAllLines("EstacionPesaje.txt");
 
-	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
-	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
+	String^ separadores = ";"; //Aqui defino el caracter por el cual voy a separar la informacion de cada linea
+	//Esta instruccion for each nos permite ir elemento por elemento de un array
 	for each (String ^ lineaCarrera in lineas) {
-		/*Voy a separar cada elemento del String por ; con el split*/
+		//Voy a separar cada elemento del String por ; con el split
 		array<String^>^ datos = lineaCarrera->Split(separadores->ToCharArray());
 
 		int codigoEstacionPesaje = Convert::ToInt32(datos[0]);
@@ -35,14 +36,14 @@ List<EstacionPesaje^>^ EstacionController::buscarEstacionPesaje(String^ ubicacio
 }
 
 List<EstacionPesaje^>^ EstacionController::buscarAll() {
-	/*En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto*/
+	//En esta lista vamos a colocar la información de los proyectos que encontremos en el archivo de texto
 	List<EstacionPesaje^>^ listaEstacionPesajeEncontrados = gcnew List<EstacionPesaje^>();
 	array<String^>^ lineas = File::ReadAllLines("EstacionPesaje.txt");
 
-	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea*/
-	/*Esta instruccion for each nos permite ir elemento por elemento de un array*/
+	String^ separadores = ";"; /*Aqui defino el caracter por el cual voy a separar la informacion de cada linea
+	//Esta instruccion for each nos permite ir elemento por elemento de un array
 	for each (String ^ lineaCarrera in lineas) {
-		/*Voy a separar cada elemento del String por ; con el split*/
+		//Voy a separar cada elemento del String por ; con el split
 		array<String^>^ datos = lineaCarrera->Split(separadores->ToCharArray());
 
 		int codigoEstacionPesaje = Convert::ToInt32(datos[0]);
@@ -97,7 +98,7 @@ void EstacionController::actualizarEstacion(EstacionPesaje^ objEstacionPesaje) {
 	List <EstacionPesaje^>^ listaEstaciones = buscarAll();
 	for (int i = 0; i < listaEstaciones->Count; i++) {
 		if (listaEstaciones[i]->getCodigo() == objEstacionPesaje->getCodigo()) {
-			/*Actualizaremos cada dato*/
+			//Actualizaremos cada dato
 			listaEstaciones[i]->setCodigo(objEstacionPesaje->getCodigo());
 			listaEstaciones[i]->setUbicacion(objEstacionPesaje->getUbicacion());
 			listaEstaciones[i]->setLatitud(objEstacionPesaje->getLatitud());
@@ -113,9 +114,9 @@ List <String^>^ EstacionController::obtenerUbicaciones() {
 	List <EstacionPesaje^>^ listaEstaciones = buscarAll();
 	List<String^>^ listaUbicaciones = gcnew List<String^>();
 	for (int i = 0; i < listaEstaciones->Count; i++) {
-		/*Aqui se busca cada Ubicacion si es que ya se encuentra en la lista de ubicaciones*/
+		//Aqui se busca cada Ubicacion si es que ya se encuentra en la lista de ubicaciones
 		String^ ubicacion = listaEstaciones[i]->getUbicacion();
-		/*Voy a buscarlo en la listaDepartamentos*/
+		//Voy a buscarlo en la listaDepartamentos
 		int existe = 0;
 		for (int j = 0; j < listaUbicaciones->Count; j++) {
 			if (listaUbicaciones[j]->Contains(ubicacion)) {
@@ -141,6 +142,7 @@ List <String^>^ EstacionController::getMultas(List <String^>^ listaUbicaciones) 
 	}
 	return listaMultas;
 }
+*/
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -201,7 +203,7 @@ List<EstacionPesaje^>^ EstacionController::buscarEstacionxUbicacionSQL(String^ u
 	return listaEstacion;
 }
 
-EstacionPesaje^ EstacionController::objbuscarEstacionxUbicacionSQL(String^ ubicacion) {
+EstacionPesaje^ EstacionController::objbuscarEstacionxCodigoSQL(int codigo) {
 	EstacionPesaje^ objEstacion;
 	abrirConexionBD();
 	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
@@ -209,7 +211,7 @@ EstacionPesaje^ EstacionController::objbuscarEstacionxUbicacionSQL(String^ ubica
 	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
 	objSentencia->Connection = this->objConexion;
 	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
-	objSentencia->CommandText = "select * from EstacionPesaje where ubicacion like '%" + ubicacion + "%'";
+	objSentencia->CommandText = "select * from EstacionPesaje where codigo =" + codigo;
 	/*Aqui ejecuto la sentencia en la Base de Datos*/
 	/*Para Select siempre sera ExecuteReader*/
 	/*Para select siempre va a devolver un SqlDataReader*/
@@ -226,10 +228,10 @@ EstacionPesaje^ EstacionController::objbuscarEstacionxUbicacionSQL(String^ ubica
 	return objEstacion;
 }
 
-void EstacionController::actualizarEstacionSQL(String^ ubicacion, double latitud, double longitud, int nroMultas) {
+void EstacionController::actualizarEstacionSQL(int codigo, String^ ubicacion, double latitud, double longitud, int nroMultas) {
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "update EstacionPesaje set ubicacion='" + ubicacion + "', latitud=" + latitud + ", longitud=" + longitud + ", nroMultas=" + nroMultas;
+	objSentencia->CommandText = "update EstacionPesaje set ubicacion='" + ubicacion + "', latitud=" + latitud + ", longitud=" + longitud + ", nroMultas=" + nroMultas + "where codigo = " +codigo;
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
@@ -253,4 +255,37 @@ List <EstacionPesaje^>^ EstacionController::buscarAllSQL() {
 	}
 	cerrarConexionBD();
 	return listaPropietarios;
+}
+
+List <String^>^ EstacionController::obtenerUbicacionesSQL() {
+	List <EstacionPesaje^>^ listaEstaciones = buscarAllSQL();
+	List<String^>^ listaUbicaciones = gcnew List<String^>();
+	for (int i = 0; i < listaEstaciones->Count; i++) {
+		//Aqui se busca cada Ubicacion si es que ya se encuentra en la lista de ubicaciones
+		String^ ubicacion = listaEstaciones[i]->getUbicacion();
+		//Voy a buscarlo en la listaDepartamentos
+		int existe = 0;
+		for (int j = 0; j < listaUbicaciones->Count; j++) {
+			if (listaUbicaciones[j]->Contains(ubicacion)) {
+				existe = 1;
+			}
+		}
+		if (existe == 0) {
+			listaUbicaciones->Add(ubicacion);
+		}
+	}
+	return listaUbicaciones;
+}
+
+List <String^>^ EstacionController::getMultasSQL(List <String^>^ listaUbicaciones) {
+	List <String^>^ listaMultas = gcnew List <String^>();
+	for (int i = 0; i < listaUbicaciones->Count; i++) {
+		List <EstacionPesaje^>^ listaEstacion = buscarEstacionxUbicacionSQL(listaUbicaciones[i]);
+		int cantidad = 0;
+		for (int i = 0; i < listaEstacion->Count; i++) {
+			cantidad = cantidad + listaEstacion[i]->getNroMultas();
+		}
+		listaMultas->Add(Convert::ToString(cantidad));
+	}
+	return listaMultas;
 }

@@ -54,12 +54,16 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Button^ button1;
 
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ubicacion;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Longitud;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Latitud;
+
+
+
 
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Codigo;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ubicacion;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Longitud;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Latitud;
 
 	private:
 		/// <summary>
@@ -78,6 +82,7 @@ namespace EstacionPesajeView {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Ubicacion = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Longitud = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Latitud = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -92,9 +97,10 @@ namespace EstacionPesajeView {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(294, 316);
+			this->button4->Location = System::Drawing::Point(370, 382);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->Size = System::Drawing::Size(100, 28);
 			this->button4->TabIndex = 25;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
@@ -102,9 +108,10 @@ namespace EstacionPesajeView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(176, 316);
+			this->button3->Location = System::Drawing::Point(213, 382);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->Size = System::Drawing::Size(100, 28);
 			this->button3->TabIndex = 24;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
@@ -112,9 +119,10 @@ namespace EstacionPesajeView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(56, 316);
+			this->button2->Location = System::Drawing::Point(53, 382);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(100, 28);
 			this->button2->TabIndex = 23;
 			this->button2->Text = L"Agregar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -123,16 +131,24 @@ namespace EstacionPesajeView {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
-				this->Ubicacion,
-					this->Longitud, this->Latitud
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+				this->Codigo,
+					this->Ubicacion, this->Longitud, this->Latitud
 			});
-			this->dataGridView1->Location = System::Drawing::Point(33, 128);
+			this->dataGridView1->Location = System::Drawing::Point(44, 158);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(454, 157);
+			this->dataGridView1->Size = System::Drawing::Size(583, 193);
 			this->dataGridView1->TabIndex = 22;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmMantenimientoEstacionPesaje::dataGridView1_CellContentClick);
+			// 
+			// Codigo
+			// 
+			this->Codigo->HeaderText = L"Código:";
+			this->Codigo->MinimumWidth = 6;
+			this->Codigo->Name = L"Codigo";
+			this->Codigo->Width = 125;
 			// 
 			// Ubicacion
 			// 
@@ -160,9 +176,11 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->comboBox1);
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(76, 23);
+			this->groupBox1->Location = System::Drawing::Point(90, 23);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(375, 89);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
+			this->groupBox1->Size = System::Drawing::Size(500, 110);
 			this->groupBox1->TabIndex = 21;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Criterios de Búsqueda";
@@ -171,18 +189,19 @@ namespace EstacionPesajeView {
 			// 
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(90, 40);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
+			this->comboBox1->Location = System::Drawing::Point(120, 49);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(162, 21);
+			this->comboBox1->Size = System::Drawing::Size(215, 24);
 			this->comboBox1->Sorted = true;
 			this->comboBox1->TabIndex = 7;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(269, 37);
+			this->button1->Location = System::Drawing::Point(359, 46);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(100, 28);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -191,17 +210,19 @@ namespace EstacionPesajeView {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(22, 42);
+			this->label1->Location = System::Drawing::Point(29, 52);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(58, 13);
+			this->label1->Size = System::Drawing::Size(71, 16);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Ubicación:";
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(412, 316);
+			this->button5->Location = System::Drawing::Point(527, 382);
+			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(75, 23);
+			this->button5->Size = System::Drawing::Size(100, 28);
 			this->button5->TabIndex = 26;
 			this->button5->Text = L"Ver";
 			this->button5->UseVisualStyleBackColor = true;
@@ -209,16 +230,16 @@ namespace EstacionPesajeView {
 			// 
 			// frmMantenimientoEstacionPesaje
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(517, 367);
+			this->ClientSize = System::Drawing::Size(689, 452);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmMantenimientoEstacionPesaje";
 			this->Text = L"Mantenimiento de Estación Pesaje";
 			this->Load += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::frmMantenimientoEstacionPesaje_Load);
@@ -232,6 +253,19 @@ namespace EstacionPesajeView {
 #pragma endregion
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
+
+	private: System::Void frmMantenimientoEstacionPesaje_Load(System::Object^ sender, System::EventArgs^ e) {
+		EstacionController^ objEstacionController = gcnew EstacionController();
+		List <String^>^ listaUbicaciones = objEstacionController->obtenerUbicacionesSQL();
+		this->comboBox1->Items->Clear();
+		this->comboBox1->Items->Add("Todos");
+		for (int i = 0; i < listaUbicaciones->Count; i++) {
+			this->comboBox1->Items->Add(listaUbicaciones[i]);
+		}
+		List <EstacionPesaje^>^ listaEstaciones = objEstacionController->buscarAllSQL();
+		mostrarGrilla(listaEstaciones);
+	}
+
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		frmAgregarEstacionPesaje^ ventanaAgregarEstacionPesaje = gcnew frmAgregarEstacionPesaje();
 		/*ventanaAgregarPropietario->MdiParent = this; */
@@ -242,10 +276,10 @@ namespace EstacionPesajeView {
 		EstacionController^ objEstacionController = gcnew EstacionController();
 		List <EstacionPesaje^>^ listaEstaciones = gcnew List <EstacionPesaje^>();
 		if (ubicacion == "Todos") {
-			listaEstaciones = objEstacionController->buscarAll();
+			listaEstaciones = objEstacionController->buscarAllSQL();
 		}
 		else {
-			listaEstaciones = objEstacionController->buscarEstacionPesaje(ubicacion);
+			listaEstaciones = objEstacionController->buscarEstacionxUbicacionSQL(ubicacion);
 		}
 		mostrarGrilla(listaEstaciones); 
 	}
@@ -254,31 +288,25 @@ namespace EstacionPesajeView {
 		this->dataGridView1->Rows->Clear(); /*Elimino toda la informacion del datagrid*/
 
 		for (int i = 0; i < listaEstaciones->Count; i++) {
-
 			EstacionPesaje^ objEstacion = listaEstaciones[i];
 
-			array<String^>^ filaGrilla = gcnew array<String^>(5);
+			array<String^>^ filaGrilla = gcnew array<String^>(4);
 
-			filaGrilla[0] = objEstacion-> getUbicacion();
-
-			filaGrilla[1] = Convert::ToString(objEstacion->getLatitud());
-
-			filaGrilla[2] = Convert::ToString(objEstacion-> getLongitud());
+			filaGrilla[0] = Convert::ToString(objEstacion->getCodigo());
+			filaGrilla[1] = objEstacion-> getUbicacion();
+			filaGrilla[2] = Convert::ToString(objEstacion->getLatitud());
+			filaGrilla[3] = Convert::ToString(objEstacion-> getLongitud());
 
 			this->dataGridView1->Rows->Add(filaGrilla);
-
 		}
 	} 
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->dataGridView1->SelectedRows->Count > 0) {
-			EstacionController^ objeto;
-
 			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-
-			String^ PersonaEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
-
-			objeto->eliminarEstacionFisico(PersonaEliminar);
+			int CodigoEstacion = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+			EstacionController^ objeto = gcnew EstacionController();
+			objeto->eliminarEstacionSQL(CodigoEstacion);
 
 			MessageBox::Show("La Estacion ha sido eliminado con éxito");
 		}
@@ -290,9 +318,9 @@ namespace EstacionPesajeView {
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->dataGridView1->SelectedRows->Count > 0) {
 			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-			String^ UbicacionEstacionEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			int CodigoEstacion = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
 			EstacionController^ objEstacionController = gcnew EstacionController();
-			EstacionPesaje^ objEstacion = objEstacionController->buscarEstacionxUbicacion(UbicacionEstacionEditar);
+			EstacionPesaje^ objEstacion = objEstacionController->objbuscarEstacionxCodigoSQL(CodigoEstacion);
 			frmEditarEstacionPesaje^ ventanaEditarEstacionPesaje = gcnew frmEditarEstacionPesaje(objEstacion);
 			ventanaEditarEstacionPesaje->ShowDialog();
 		}
@@ -301,24 +329,12 @@ namespace EstacionPesajeView {
 		}
 	}
 
-	private: System::Void frmMantenimientoEstacionPesaje_Load(System::Object^ sender, System::EventArgs^ e) {
-		EstacionController^ objEstacionController = gcnew EstacionController();
-		List <String^>^ listaUbicaciones = objEstacionController->obtenerUbicaciones();
-		this->comboBox1->Items->Clear();
-		this->comboBox1->Items->Add("Todos");
-		for (int i = 0; i < listaUbicaciones->Count; i++) {
-			this->comboBox1->Items->Add(listaUbicaciones[i]);
-		}	
-		List <EstacionPesaje^>^ listaEstaciones = objEstacionController->buscarAll();
-		mostrarGrilla(listaEstaciones);
-	}
-
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->dataGridView1->SelectedRows->Count > 0) {
 			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-			String^ UbicacionEstacionVer = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			int CodigoEstacion = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
 			EstacionController^ objEstacionController = gcnew EstacionController();
-			EstacionPesaje^ objEstacion = objEstacionController->buscarEstacionxUbicacion(UbicacionEstacionVer);
+			EstacionPesaje^ objEstacion = objEstacionController->objbuscarEstacionxCodigoSQL(CodigoEstacion);
 			frmVerEstacionPesaje^ ventanaVerEstacionPesaje = gcnew frmVerEstacionPesaje(objEstacion);
 			ventanaVerEstacionPesaje->ShowDialog();
 		}
