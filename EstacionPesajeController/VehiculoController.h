@@ -33,14 +33,14 @@ namespace EstacionPesajeController {
 		void abrirConexionBD();
 		void cerrarConexionBD();
 
-		void AgregarVehiculoSQL(int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas);
+		void AgregarVehiculoSQL(int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo);
 		void eliminarVehiculoSQL(int codigo);
 		List<Vehiculo^>^ buscarVehiculosxPlacaSQL(String^ placa);
 		List<Vehiculo^>^ buscarVehiculosxTipoSQL(String^ tipoVehiculo);
 		List <Vehiculo^>^ buscarAllSQL();
 		Vehiculo^ objbuscarVehiculoxPlacaSQL(String^ placa);
 		Vehiculo^ objbuscarVehiculoxCodigoSQL(int codigo);
-		void actualizarVehiculoSQL(int codigo,int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas);
+		void actualizarVehiculoSQL(int codigo,int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo);
 	};
 
 }

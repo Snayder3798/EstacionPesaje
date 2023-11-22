@@ -1,4 +1,5 @@
 #pragma once
+#include "frmBuscarPropietarioVehiculo.h"
 
 namespace EstacionPesajeView {
 
@@ -79,6 +80,18 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Label^ label9;
 
 	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::GroupBox^ groupBox2;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::TextBox^ textBox9;
 
 	private:
 		/// <summary>
@@ -108,13 +121,26 @@ namespace EstacionPesajeView {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->Propietario->SuspendLayout();
+			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(247, 262);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->Location = System::Drawing::Point(253, 447);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(68, 23);
 			this->button2->TabIndex = 23;
@@ -124,7 +150,7 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(136, 262);
+			this->button1->Location = System::Drawing::Point(142, 447);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 22;
@@ -179,7 +205,7 @@ namespace EstacionPesajeView {
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Automóvil", L"Camioneta", L"Camión", L"Motocicleta" });
 			this->comboBox1->Location = System::Drawing::Point(125, 104);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(192, 21);
 			this->comboBox1->TabIndex = 26;
@@ -260,33 +286,162 @@ namespace EstacionPesajeView {
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Tipo:";
 			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->button3);
+			this->groupBox2->Controls->Add(this->label5);
+			this->groupBox2->Controls->Add(this->textBox2);
+			this->groupBox2->Controls->Add(this->label6);
+			this->groupBox2->Controls->Add(this->textBox8);
+			this->groupBox2->Controls->Add(this->label8);
+			this->groupBox2->Controls->Add(this->textBox4);
+			this->groupBox2->Controls->Add(this->label11);
+			this->groupBox2->Controls->Add(this->textBox6);
+			this->groupBox2->Controls->Add(this->label12);
+			this->groupBox2->Controls->Add(this->textBox9);
+			this->groupBox2->Location = System::Drawing::Point(19, 250);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Padding = System::Windows::Forms::Padding(2);
+			this->groupBox2->Size = System::Drawing::Size(394, 184);
+			this->groupBox2->TabIndex = 24;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Datos del Propietario";
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(308, 79);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(73, 36);
+			this->button3->TabIndex = 24;
+			this->button3->Text = L"Buscar Propietario:";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &frmEditarVehiculo::button3_Click);
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(38, 28);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(96, 13);
+			this->label5->TabIndex = 9;
+			this->label5->Text = L"Código Propietario:";
+			// 
+			// textBox2
+			// 
+			this->textBox2->Enabled = false;
+			this->textBox2->Location = System::Drawing::Point(143, 26);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(139, 20);
+			this->textBox2->TabIndex = 10;
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(38, 120);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(89, 13);
+			this->label6->TabIndex = 7;
+			this->label6->Text = L"Apellido Materno:";
+			this->label6->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			// 
+			// textBox8
+			// 
+			this->textBox8->Enabled = false;
+			this->textBox8->Location = System::Drawing::Point(143, 118);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(139, 20);
+			this->textBox8->TabIndex = 8;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(38, 59);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(47, 13);
+			this->label8->TabIndex = 0;
+			this->label8->Text = L"Nombre:";
+			// 
+			// textBox4
+			// 
+			this->textBox4->Enabled = false;
+			this->textBox4->Location = System::Drawing::Point(143, 57);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(139, 20);
+			this->textBox4->TabIndex = 1;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(38, 89);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(87, 13);
+			this->label11->TabIndex = 2;
+			this->label11->Text = L"Apellido Paterno:";
+			this->label11->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			// 
+			// textBox6
+			// 
+			this->textBox6->Enabled = false;
+			this->textBox6->Location = System::Drawing::Point(143, 87);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(139, 20);
+			this->textBox6->TabIndex = 3;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(38, 153);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(29, 13);
+			this->label12->TabIndex = 4;
+			this->label12->Text = L"DNI:";
+			// 
+			// textBox9
+			// 
+			this->textBox9->Enabled = false;
+			this->textBox9->Location = System::Drawing::Point(143, 150);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(139, 20);
+			this->textBox9->TabIndex = 5;
+			// 
 			// frmEditarVehiculo
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(436, 301);
+			this->ClientSize = System::Drawing::Size(436, 481);
+			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Propietario);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"frmEditarVehiculo";
 			this->Text = L"Editar Vehiculo";
 			this->Load += gcnew System::EventHandler(this, &frmEditarVehiculo::frmEditarVehiculo_Load);
 			this->Propietario->ResumeLayout(false);
 			this->Propietario->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void frmEditarVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
 		VehiculoController^ objVehiculoController = gcnew VehiculoController();
-		Vehiculo^ objVehiculo;
-		objVehiculo = objVehiculoController->objbuscarVehiculoxCodigoSQL(this->CodigoVehiculoEditar);	
+		PropietarioVehiculoController^ objPropietarioController = gcnew PropietarioVehiculoController();
+		Vehiculo^ objVehiculo = objVehiculoController->objbuscarVehiculoxCodigoSQL(this->CodigoVehiculoEditar);
+		PropietarioVehiculo^ objPropietario = objPropietarioController->objbuscarPropietarioxCodigoSQL(objVehiculo->getCodigoPropietarioVehiculo());
 		this->textBox1->Text = objVehiculo->getPlaca();
 		this->comboBox1->Text = objVehiculo->getTipoVehiculo();
 		this->textBox3->Text = Convert::ToString(objVehiculo->getPesoLimite());	
 		this->textBox7->Text = Convert::ToString(objVehiculo->getCantMultas());
 		this->textBox5->Text = Convert::ToString(objVehiculo->getCodigo());
+		this->textBox2->Text = Convert::ToString(objPropietario->getCodigo());
+		this->textBox4->Text = objPropietario->getNombre();
+		this->textBox6->Text = objPropietario->getApellidoPaterno();
+		this->textBox8->Text = objPropietario->getApellidoMaterno();
+		this->textBox9->Text = objPropietario->getDni();
+
 	}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -295,12 +450,13 @@ namespace EstacionPesajeView {
 		String^ placa = this->textBox1->Text;
 		String^ tipoVehiculo = this->comboBox1->Text;
 		int cantMultas = Convert::ToInt32(this->textBox7->Text);
+		int codigoPropietarioVehiculo = Convert::ToInt32(this->textBox2->Text);
 		
 		//Vehiculo^ objVehiculo = gcnew Vehiculo(codigoVehiculo, pesoSinCarga, pesoConCarga, pesoActual, placa, tipoVehiculo, cantMultas);
 
 		VehiculoController^ objVehiculoController = gcnew VehiculoController();
 		//objVehiculoController->actualizarVehiculo(objVehiculo);
-		objVehiculoController->actualizarVehiculoSQL(codigoVehiculo, pesoLimite, placa, tipoVehiculo, cantMultas);
+		objVehiculoController->actualizarVehiculoSQL(codigoVehiculo, pesoLimite, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
 		MessageBox::Show("El Vehiculo fue actualizado correctamente");
 		this->Close();
 	}
@@ -368,5 +524,15 @@ namespace EstacionPesajeView {
 
 	}
 
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo();
+	frmBuscarPropietarioVehiculo^ ventBuscarPropietario = gcnew frmBuscarPropietarioVehiculo(objPropietario);
+	ventBuscarPropietario->ShowDialog();
+	this->textBox2->Text = Convert::ToString(objPropietario->getCodigo());
+	this->textBox4->Text = objPropietario->getNombre();
+	this->textBox6->Text = objPropietario->getApellidoPaterno();
+	this->textBox8->Text = objPropietario->getApellidoMaterno();
+	this->textBox9->Text = objPropietario->getDni();
+}
 };
 }

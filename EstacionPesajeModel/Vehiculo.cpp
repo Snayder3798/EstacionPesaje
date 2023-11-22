@@ -6,12 +6,13 @@ Vehiculo::Vehiculo() {
 
 }
 
-Vehiculo::Vehiculo(int codigo, int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas) {
+Vehiculo::Vehiculo(int codigo, int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo) {
     this->codigo = codigo;
     this->pesoLimite = pesoLimite;
     this->placa = placa;
     this->tipoVehiculo = tipoVehiculo;
     this->cantMultas = cantMultas;
+    this->codigoPropietarioVehiculo = codigoPropietarioVehiculo;
 }
 
 int Vehiculo::getCodigo() {
@@ -48,7 +49,12 @@ int Vehiculo::getCantMultas() {
 void Vehiculo::setCantMultas(int cantMultas) {
     this->cantMultas = cantMultas;
 }
-
+int Vehiculo::getCodigoPropietarioVehiculo() {
+    return this->codigoPropietarioVehiculo;
+}
+void Vehiculo::setCodigoPropietarioVehiculo(int codigoPropietarioVehiculo) {
+    this->codigoPropietarioVehiculo = codigoPropietarioVehiculo;
+}
 List<RegistroVehiculo^>^ Vehiculo::getListaRegistroVehiculos() {
     return this->listaRegistroVehiculos;
 }

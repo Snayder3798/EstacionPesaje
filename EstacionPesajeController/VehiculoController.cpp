@@ -169,10 +169,10 @@ void  VehiculoController::cerrarConexionBD() {
 }
 
 
-void VehiculoController::AgregarVehiculoSQL(int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas) {
+void VehiculoController::AgregarVehiculoSQL(int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo) {
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "insert into Vehiculo(pesoLimite, placa, tipoVehiculo, cantMultas) values (" + pesoLimite + ",'" + placa + "','" + tipoVehiculo + "','" + cantMultas + "')";
+	objSentencia->CommandText = "insert into Vehiculo(pesoLimite, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo) values (" + pesoLimite + ",'" + placa + "','" + tipoVehiculo + "','" + cantMultas + "',"+ codigoPropietarioVehiculo+")";
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
@@ -206,9 +206,9 @@ List <Vehiculo^>^ VehiculoController::buscarVehiculosxPlacaSQL(String^ placa) {
 		String^ placa = safe_cast<String^>(objData[2]);
 		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
 		int cantMultas = safe_cast<int>(objData[4]);
-		//int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
 
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
 		listaVehiculo->Add(objVehiculo);
 	}
 	cerrarConexionBD();
@@ -235,9 +235,9 @@ List <Vehiculo^>^ VehiculoController::buscarVehiculosxTipoSQL(String^ tipoVehicu
 		String^ placa = safe_cast<String^>(objData[2]);
 		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
 		int cantMultas = safe_cast<int>(objData[4]);
-		//int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
 
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
 		listaVehiculo->Add(objVehiculo);
 	}
 	cerrarConexionBD();
@@ -263,9 +263,9 @@ Vehiculo^ VehiculoController::objbuscarVehiculoxPlacaSQL(String^ placa) {
 		String^ placa = safe_cast<String^>(objData[2]);
 		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
 		int cantMultas = safe_cast<int>(objData[4]);
-		//int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
 
-		objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
+		objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
 	}
 	cerrarConexionBD();
 	return objVehiculo;
@@ -290,18 +290,18 @@ Vehiculo^ VehiculoController::objbuscarVehiculoxCodigoSQL(int codigo) {
 		String^ placa = safe_cast<String^>(objData[2]);
 		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
 		int cantMultas = safe_cast<int>(objData[4]);
-		//int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
 
-		objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
+		objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
 	}
 	cerrarConexionBD();
 	return objVehiculo;
 }
 
-void VehiculoController::actualizarVehiculoSQL(int codigo, int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas) {
+void VehiculoController::actualizarVehiculoSQL(int codigo, int pesoLimite, String^ placa, String^ tipoVehiculo, int cantMultas, int codigoPropietarioVehiculo) {
 	abrirConexionBD();
 	SqlCommand^ objSentencia = gcnew SqlCommand();
-	objSentencia->CommandText = "update Vehiculo set pesoLimite=" + pesoLimite + ", placa='" + placa + "', tipoVehiculo='" + tipoVehiculo + "', cantMultas=" + cantMultas+" where codigo="+codigo;
+	objSentencia->CommandText = "update Vehiculo set pesoLimite=" + pesoLimite + ", placa='" + placa + "', tipoVehiculo='" + tipoVehiculo + "', cantMultas=" + cantMultas+", codigoPropietarioVehiculo="+ codigoPropietarioVehiculo+" where codigo="+codigo;
 	objSentencia->Connection = this->objConexion;
 	objSentencia->ExecuteNonQuery();
 	cerrarConexionBD();
@@ -320,9 +320,9 @@ List <Vehiculo^>^ VehiculoController::buscarAllSQL() {
 		String^ placa = safe_cast<String^>(objData[2]);
 		String^ tipoVehiculo = safe_cast<String^>(objData[3]);
 		int cantMultas = safe_cast<int>(objData[4]);
-		//int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
+		int codigoPropietarioVehiculo = safe_cast<int>(objData[5]);
 
-		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas);
+		Vehiculo^ objVehiculo = gcnew Vehiculo(codigo, pesoLimite, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
 		listaVehiculo->Add(objVehiculo);
 	}
 	cerrarConexionBD();
