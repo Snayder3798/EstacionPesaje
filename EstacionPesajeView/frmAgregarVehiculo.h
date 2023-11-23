@@ -256,9 +256,9 @@ namespace EstacionPesajeView {
 			this->groupBox2->Controls->Add(this->label10);
 			this->groupBox2->Controls->Add(this->textBox6);
 			this->groupBox2->Location = System::Drawing::Point(22, 207);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(2);
 			this->groupBox2->Size = System::Drawing::Size(394, 184);
 			this->groupBox2->TabIndex = 23;
 			this->groupBox2->TabStop = false;

@@ -116,6 +116,7 @@
     <ClCompile Include="EstacionController.cpp" />
     <ClCompile Include="PersonaController.cpp" />
     <ClCompile Include="PropietarioVehiculoController.cpp" />
+    <ClCompile Include="RegistroVehiculoController.cpp" />
     <ClCompile Include="TarjetaController.cpp" />
     <ClCompile Include="UsuarioController.cpp" />
     <ClCompile Include="VehiculoController.cpp" />
@@ -125,6 +126,7 @@
     <ClInclude Include="EstacionController.h" />
     <ClInclude Include="PersonaController.h" />
     <ClInclude Include="PropietarioVehiculoController.h" />
+    <ClInclude Include="RegistroVehiculoController.h" />
     <ClInclude Include="TarjetaController.h" />
     <ClInclude Include="UsuarioController.h" />
     <ClInclude Include="VehiculoController.h" />

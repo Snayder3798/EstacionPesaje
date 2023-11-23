@@ -4,11 +4,12 @@ using namespace EstacionPesajeModel;
 RegistroVehiculo::RegistroVehiculo() {
 
 }
-RegistroVehiculo::RegistroVehiculo(int codigo, int pesoRegistrado, int multaAplicada,String^ fechaHora) {
+RegistroVehiculo::RegistroVehiculo(int codigo, int pesoRegistrado, int multaAplicada,String^ fechaHora, int codigoVehiculo) {
 	this->codigo = codigo;
 	this->pesoRegistrado = pesoRegistrado;
 	this->multaAplicada = multaAplicada;
 	this->fechaHora = fechaHora;
+	this->codigoVehiculo = codigoVehiculo;
 }
 
 int RegistroVehiculo::getCodigo() {
@@ -37,4 +38,11 @@ String^ RegistroVehiculo::getFechaHora() {
 }
 void RegistroVehiculo::setFechaHora(String^ fechaHora) {
 	this->fechaHora = fechaHora;
+}
+
+int RegistroVehiculo::getCodigoVehiculo() {
+	return this->codigoVehiculo;
+}
+void RegistroVehiculo::setCodigoVehiculo(int codigoVehiculo) {
+	this->codigoVehiculo = codigoVehiculo;
 }
