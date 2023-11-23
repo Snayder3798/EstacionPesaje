@@ -212,6 +212,7 @@ namespace EstacionPesajeView {
 		if (objUsuarioIngresado != nullptr) {
 			if (contraIngresada == objUsuarioIngresado->getContrasena()) {
 				if (objUsuarioIngresado->getCargo() == "Programador" || objUsuarioIngresado->getCargo() == "Administrador") {
+					this->Hide();
 					frmPrincipal^ ventanaPrincipal = gcnew frmPrincipal();
 					ventanaPrincipal->ShowDialog();
 				}
