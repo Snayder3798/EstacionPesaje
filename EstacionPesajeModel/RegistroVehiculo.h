@@ -10,10 +10,11 @@ namespace EstacionPesajeModel {
 		int pesoRegistrado;
 		int multaAplicada;
 		String^ fechaHora;
+		int codigoVehiculo;
 
 	public:
 		RegistroVehiculo();
-		RegistroVehiculo(int codigo, int pesoRegistrado, int multaAplicada, String^ fechaHora);
+		RegistroVehiculo(int codigo, int pesoRegistrado, int multaAplicada, String^ fechaHora, int codigoVehiculo);
 
 		int getCodigo();
 		void setCodigo(int codigo);
@@ -26,6 +27,9 @@ namespace EstacionPesajeModel {
 
 		String^ getFechaHora();
 		void setFechaHora(String^ fechaHora);
+
+		int getCodigoVehiculo();
+		void setCodigoVehiculo(int codigoVehiculo);
 
 	};
 

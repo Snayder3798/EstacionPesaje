@@ -63,6 +63,7 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::ToolStripMenuItem^ usuarioToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ vehiculosDePropietarioToolStripMenuItem;
 
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -90,7 +91,7 @@ namespace EstacionPesajeView {
 			this->btnSiguiente = (gcnew System::Windows::Forms::Button());
 			this->Titulo = (gcnew System::Windows::Forms::Label());
 			this->pbEstactionPesaje = (gcnew System::Windows::Forms::PictureBox());
-			this->vehiculosDePropietarioToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+      this->vehiculosDePropietarioToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbEstactionPesaje))->BeginInit();
 			this->SuspendLayout();
@@ -232,7 +233,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->pbEstactionPesaje);
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+      this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"frmPrincipal";
 			this->Text = L"Panel Principal Mantenimiento";
 			this->Load += gcnew System::EventHandler(this, &frmPrincipal::frmPrincipal_Load);
