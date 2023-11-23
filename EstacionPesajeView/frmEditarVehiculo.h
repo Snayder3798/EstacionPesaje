@@ -13,6 +13,7 @@ namespace EstacionPesajeView {
 	using namespace EstacionPesajeController;
 	using namespace System::Collections::Generic;
 	using namespace EstacionPesajeModel;
+	using namespace EstacionPesajeController;
 
 	/// <summary>
 	/// Resumen de frmEditarVehiculo
@@ -457,6 +458,10 @@ namespace EstacionPesajeView {
 		VehiculoController^ objVehiculoController = gcnew VehiculoController();
 		//objVehiculoController->actualizarVehiculo(objVehiculo);
 		objVehiculoController->actualizarVehiculoSQL(codigoVehiculo, pesoLimite, placa, tipoVehiculo, cantMultas, codigoPropietarioVehiculo);
+		
+		PropietarioVehiculoController^ objPropietarioController = gcnew PropietarioVehiculoController();
+		objPropietarioController->ActualizarMultasAcumuladas(codigoPropietarioVehiculo);
+		
 		MessageBox::Show("El Vehiculo fue actualizado correctamente");
 		this->Close();
 	}

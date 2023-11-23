@@ -27,7 +27,7 @@ namespace EstacionPesajeController {
 		List<PropietarioVehiculo^>^ buscarPropietarioxApellidoSQL(String^ apellidoPaterno);
 		List <PropietarioVehiculo^>^ buscarAllSQL();
 		PropietarioVehiculo^ objbuscarPropietarioxCodigoSQL(int codigo);
-		
+		void ActualizarMultasAcumuladas(int codigoPropietario);
 	};
 
 }
