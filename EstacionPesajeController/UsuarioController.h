@@ -27,6 +27,7 @@ namespace EstacionPesajeController {
 		List<Usuario^>^ buscarUsuarioxApellidoSQL(String^ apellidoPaterno);
 		List <Usuario^>^ buscarAllSQL();
 		Usuario^ objbuscarUsuarioxCodigoSQL(int codigo);
+		Usuario^ objbuscarUsuarioxNombreUsuarioSQL(String^ nombreUsuario);
 
 	};
 
