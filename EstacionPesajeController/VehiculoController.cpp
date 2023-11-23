@@ -355,3 +355,11 @@ List <Vehiculo^>^ VehiculoController::buscarAllSQL() {
 	cerrarConexionBD();
 	return listaVehiculo;
 }
+void VehiculoController::actualizarCantMultasVehiculoxCodigoSQL(int codigo, int cantMultas) {
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "update Vehiculo set cantMultas=" + cantMultas + " where codigo=" + codigo;
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
+}

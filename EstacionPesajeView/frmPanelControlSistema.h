@@ -1,6 +1,8 @@
 #pragma once
+#include "frmBuscarEstacionPesaje.h"
 #include <windows.h>
 #include <string.h>
+
 namespace EstacionPesajeView {
 
 	using namespace System;
@@ -23,12 +25,20 @@ namespace EstacionPesajeView {
 		String^ dataRecibida = "";
 		String^ placaRegistrada="";
 		int pesoRegistrado;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
 
 
 		   int contador = 0;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::GroupBox^ groupBox2;
+
+	private: System::Windows::Forms::Label^ label1;
+
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+
+
 		   int contador_2 = 0;
 	public:
 		frmPanelControlSistema(void)
@@ -49,7 +59,16 @@ namespace EstacionPesajeView {
 					MessageBox::Show(ex->ToString());
 				}
 			}
+
 		}
+		//frmPanelControlSistema(EstacionPesaje^ objEstacion)
+		//{
+		//	InitializeComponent();
+		//	this->objEstacion = objEstacion;
+		//	//
+		//	//TODO: agregar código de constructor aquí
+		//	//
+		//}
 
 	protected:
 		/// <summary>
@@ -69,7 +88,6 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Button^ BotonIniciarArduino;
 	private: System::IO::Ports::SerialPort^ serialPort1;
 	private: System::Windows::Forms::Timer^ timer1;
-	private: System::Windows::Forms::TextBox^ textBox1;
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -95,11 +113,14 @@ namespace EstacionPesajeView {
 			this->BotonIniciarArduino = (gcnew System::Windows::Forms::Button());
 			this->serialPort1 = (gcnew System::IO::Ports::SerialPort(this->components));
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
+			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// groupBox1
@@ -147,55 +168,79 @@ namespace EstacionPesajeView {
 			// 
 			this->timer1->Tick += gcnew System::EventHandler(this, &frmPanelControlSistema::timer1_Tick);
 			// 
-			// textBox1
+			// groupBox2
 			// 
-			this->textBox1->Enabled = false;
-			this->textBox1->Location = System::Drawing::Point(231, 103);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
-			this->textBox1->TabIndex = 21;
+			this->groupBox2->Controls->Add(this->textBox2);
+			this->groupBox2->Controls->Add(this->textBox1);
+			this->groupBox2->Controls->Add(this->button1);
+			this->groupBox2->Controls->Add(this->label2);
+			this->groupBox2->Controls->Add(this->label1);
+			this->groupBox2->Location = System::Drawing::Point(14, 115);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(354, 100);
+			this->groupBox2->TabIndex = 21;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Estación seleccionada:";
 			// 
 			// textBox2
 			// 
 			this->textBox2->Enabled = false;
-			this->textBox2->Location = System::Drawing::Point(63, 103);
+			this->textBox2->Location = System::Drawing::Point(105, 57);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 20);
-			this->textBox2->TabIndex = 22;
+			this->textBox2->Size = System::Drawing::Size(123, 20);
+			this->textBox2->TabIndex = 12;
 			// 
-			// textBox3
+			// textBox1
 			// 
-			this->textBox3->Enabled = false;
-			this->textBox3->Location = System::Drawing::Point(130, 165);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 20);
-			this->textBox3->TabIndex = 25;
+			this->textBox1->Enabled = false;
+			this->textBox1->Location = System::Drawing::Point(105, 31);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(123, 20);
+			this->textBox1->TabIndex = 11;
 			// 
-			// label3
+			// button1
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(127, 188);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(87, 13);
-			this->label3->TabIndex = 26;
-			this->label3->Text = L"Mensaje recibido";
+			this->button1->Location = System::Drawing::Point(249, 38);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 35);
+			this->button1->TabIndex = 10;
+			this->button1->Text = L"Buscar Estación";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &frmPanelControlSistema::button1_Click);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(29, 31);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(43, 13);
+			this->label2->TabIndex = 9;
+			this->label2->Text = L"Codigo:";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(29, 60);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(58, 13);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Ubicación:";
 			// 
 			// frmPanelControlSistema
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(393, 263);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->ClientSize = System::Drawing::Size(387, 267);
+			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmPanelControlSistema";
 			this->Text = L"frmPanelControlSistema";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &frmPanelControlSistema::frmPanelControlSistema_FormClosing);
+			this->Load += gcnew System::EventHandler(this, &frmPanelControlSistema::frmPanelControlSistema_Load);
 			this->groupBox1->ResumeLayout(false);
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -254,6 +299,7 @@ namespace EstacionPesajeView {
 	private: String^ SolicitarPlaca_Tarjeta(void) {
 		array<Byte>^ miBuffer = Encoding::ASCII->GetBytes("Escanear_Bluetooth");
 		serialPort1->Write(miBuffer, 0, miBuffer->Length);
+		//Sleep(1000);//Espera un segundo a que se escanee el codigo
 		do {
 			dataRecibida = serialPort1->ReadLine();
 		} while (dataRecibida == "\r");
@@ -276,6 +322,7 @@ namespace EstacionPesajeView {
 		MandarMensajeLCD("Mensaje_1");
 		Sleep(1000);
 		dataRecibida = SolicitarPlaca_Tarjeta();
+		Sleep(1000);
 
 		if (dataRecibida != "No_hay_codigo\r") {
 			//Continuar con el algoritmo total
@@ -326,6 +373,18 @@ namespace EstacionPesajeView {
 					if (dataRecibida != "No_hay_codigo\r") {
 						Tarjeta^ TarjetaRegistrada = objTarjetaController->buscarTarjetaxNumeroSQL(dataRecibida->Remove(dataRecibida->Length - 1));
 						EstadoTargeta = TarjetaRegistrada->getEstado();
+						
+						//actualizamos los datos de la base de datos para que el vehiculo ya no tenga multas
+						int codigo = VehiculoRegistrado->getCodigo();
+						objVehiculoController->actualizarCantMultasVehiculoxCodigoSQL(codigo, 0);
+						//FALTA ACTUALIZAR LA CANTIDAD DE MULTAS DE LA ESTACIÓN Y VER SI LA CANTIDAD DE MULTAS DEL PROPIETARIO VARIÓ SIN NINGUN CAMBIO MIO
+						EstacionController^ objEstacionController = gcnew EstacionController();
+						EstacionPesaje^ EstacionRegistrada = objEstacionController->objbuscarEstacionxCodigoSQL(Convert::ToInt32(this->textBox1->Text));
+						int codigoEstacion = EstacionRegistrada->getCodigo();
+						int nroMultasEstacion = EstacionRegistrada->getNroMultas();
+						
+						objEstacionController->actualizarNroMultasxCodigoSQL(codigoEstacion, nroMultasEstacion+1);
+
 					}
 				} while (EstadoTargeta == "Inactiva");
 				ActivarDesactivarServo(true);
@@ -344,6 +403,16 @@ namespace EstacionPesajeView {
 	//Aquí va lo que se debe hacer cuando la ventana se cierra
 	private: System::Void frmPanelControlSistema_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 		//Puedes detener todo aquí
+	}
+	private: System::Void frmPanelControlSistema_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		EstacionPesaje^ objEstacionPesaje = gcnew EstacionPesaje();
+		frmBuscarEstacionPesaje^ ventBuscarEstacionPesaje = gcnew frmBuscarEstacionPesaje(objEstacionPesaje);
+		ventBuscarEstacionPesaje->ShowDialog();
+
+		this->textBox1->Text = Convert::ToString(objEstacionPesaje->getCodigo());
+		this->textBox2->Text = objEstacionPesaje->getUbicacion();
 	}
 };
 }
