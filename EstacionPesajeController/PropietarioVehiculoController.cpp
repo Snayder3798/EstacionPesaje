@@ -149,3 +149,24 @@ PropietarioVehiculo^ PropietarioVehiculoController::objbuscarPropietarioxCodigoS
 	cerrarConexionBD();
 	return objPropietario;
 }
+void PropietarioVehiculoController::ActualizarMultasAcumuladas(int codigoPropietario) {
+		abrirConexionBD();
+		SqlCommand^ objSentenciaVehiculo = gcnew SqlCommand();
+		objSentenciaVehiculo->Connection = this->objConexion;
+		objSentenciaVehiculo->CommandText = "Select * from Vehiculo where codigoPropietarioVehiculo ="+codigoPropietario;
+		SqlDataReader^ objDataVehiculo = objSentenciaVehiculo->ExecuteReader();
+		int multasAcumuladas = 0;
+		while (objDataVehiculo->Read()) {
+			int multaVehiculo = safe_cast<int>(objDataVehiculo[4]);
+			multasAcumuladas = multasAcumuladas + multaVehiculo;
+		}
+		cerrarConexionBD();
+
+		abrirConexionBD();
+		SqlCommand^ objSentenciaActualizar = gcnew SqlCommand();
+		objSentenciaActualizar->CommandText = "update PropietarioVehiculo set multasAcumuladas ="+multasAcumuladas+" where codigo="+codigoPropietario;
+		objSentenciaActualizar->Connection = this->objConexion;
+		objSentenciaActualizar->ExecuteNonQuery();
+		cerrarConexionBD();
+	
+}

@@ -84,3 +84,6 @@ RegistroVehiculo^ RegistroVehiculoController::objbuscarRegistroxCodigoSQL(int co
 	cerrarConexionBD();
 	return objRegistroVehiculo;
 }
+void ActualizarMultasAcumuladas() {
+
+}
