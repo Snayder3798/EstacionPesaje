@@ -131,6 +131,7 @@
     <ClCompile Include="frmEditarTarjeta.cpp" />
     <ClCompile Include="frmEditarUsuario.cpp" />
     <ClCompile Include="frmEditarVehiculo.cpp" />
+    <ClCompile Include="frmLogIn.cpp" />
     <ClCompile Include="frmMantenimientoEstacionPesaje.cpp" />
     <ClCompile Include="frmMantenimientoPersona.cpp" />
     <ClCompile Include="frmMantenimientoPropietarioVehiculo.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="frmPrincipal.cpp" />
     <ClCompile Include="frmReporteMultasxTipoVehiculo.cpp" />
     <ClCompile Include="frmReporteNroMultasxEstacionPesaje.cpp" />
+    <ClCompile Include="frmReporteVehiculosDePropietario.cpp" />
     <ClCompile Include="frmVerEstacionPesaje.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -206,6 +208,9 @@
     <ClInclude Include="frmEditarVehiculo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmLogIn.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmMantenimientoEstacionPesaje.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -237,6 +242,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmReporteNroMultasxEstacionPesaje.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmReporteVehiculosDePropietario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmVerEstacionPesaje.h">
@@ -295,6 +303,9 @@
     <EmbeddedResource Include="frmEditarVehiculo.resx">
       <DependentUpon>frmEditarVehiculo.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogIn.resx">
+      <DependentUpon>frmLogIn.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoEstacionPesaje.resx">
       <DependentUpon>frmMantenimientoEstacionPesaje.h</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteNroMultasxEstacionPesaje.resx">
       <DependentUpon>frmReporteNroMultasxEstacionPesaje.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteVehiculosDePropietario.resx">
+      <DependentUpon>frmReporteVehiculosDePropietario.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerEstacionPesaje.resx">
       <DependentUpon>frmVerEstacionPesaje.h</DependentUpon>

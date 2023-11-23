@@ -81,13 +81,25 @@
     <ClCompile Include="frmBuscarVehiculo.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
-    <ClCompile Include="frmBuscarPropietarioVehiculo.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="frmEditarUsuario.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmAgregarUsuario.cpp">
+      <Filter>Archivos de encabezado</Filter>
     </ClCompile>
     <ClCompile Include="frmEditarPropietarioVehiculo.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado</Filter>
     </ClCompile>
-    <ClCompile Include="frmEditarUsuario.cpp">
+    <ClCompile Include="frmBuscarPropietarioVehiculo.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmMantenimientoUsuario.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmReporteVehiculosDePropietario.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmLogIn.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
   </ItemGroup>
@@ -162,6 +174,18 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="frmEditarUsuario.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmAgregarUsuario.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmLogIn.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmMantenimientoUsuario.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmReporteVehiculosDePropietario.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

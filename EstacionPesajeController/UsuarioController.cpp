@@ -156,3 +156,31 @@ Usuario^ UsuarioController::objbuscarUsuarioxCodigoSQL(int codigo) {
 	cerrarConexionBD();
 	return objUsuario;
 }
+
+Usuario^ UsuarioController::objbuscarUsuarioxNombreUsuarioSQL(String^ nombreUsuario) {
+	Usuario^ objUsuario;
+	abrirConexionBD();
+	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD*/
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	/*Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD*/
+	objSentencia->Connection = this->objConexion;
+	/*Aqui voy a indicar la sentencia que voy a ejecutar*/
+	objSentencia->CommandText = "select * from Usuario where nombreUsuario ='" + nombreUsuario + "'";
+	/*Aqui ejecuto la sentencia en la Base de Datos*/
+	/*Para Select siempre sera ExecuteReader*/
+	/*Para select siempre va a devolver un SqlDataReader*/
+	SqlDataReader^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		String^ nombre = safe_cast<String^>(objData[1]);
+		String^ apellidoPaterno = safe_cast<String^>(objData[2]);
+		String^ apellidoMaterno = safe_cast<String^>(objData[3]);
+		String^ dni = safe_cast<String^>(objData[4]);
+		String^ nombreUsuario = safe_cast<String^>(objData[5]);
+		String^ contrasena = safe_cast<String^>(objData[6]);
+		String^ cargo = safe_cast<String^>(objData[7]);
+		objUsuario = gcnew Usuario(codigo, nombre, apellidoPaterno, apellidoMaterno, dni, nombreUsuario, contrasena, cargo);
+	}
+	cerrarConexionBD();
+	return objUsuario;
+}
