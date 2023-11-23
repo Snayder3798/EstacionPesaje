@@ -161,7 +161,7 @@ namespace EstacionPesajeView {
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void frmLogIn_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->textBox1->Focus();
+		this->button1->Select();
 	}
 
 	private: System::Void textBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
@@ -216,11 +216,13 @@ namespace EstacionPesajeView {
 					frmPrincipal^ ventanaPrincipal = gcnew frmPrincipal();
 					ventanaPrincipal->ShowDialog();
 				}
-
+			}
+			else {
+				MessageBox::Show("El Usuario o Contraseña ingresado es incorrecto", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			}
 
 		} else {
-			MessageBox::Show("El Usuario o Contraseña ingresado es inválido", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			MessageBox::Show("El Usuario ingresado no existe", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 
 
