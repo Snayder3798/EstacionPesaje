@@ -1,5 +1,5 @@
 #pragma once
-//#include "frmPrincipal.h"
+#include "frmPrincipal.h"
 
 namespace EstacionPesajeView {
 
@@ -161,6 +161,7 @@ namespace EstacionPesajeView {
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void frmLogIn_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->textBox1->Focus();
 	}
 
 	private: System::Void textBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
@@ -208,12 +209,15 @@ namespace EstacionPesajeView {
 		String^ contraIngresada = this->textBox2->Text;
 		UsuarioController^ objUsuarioController = gcnew UsuarioController();
 		Usuario^ objUsuarioIngresado = objUsuarioController->objbuscarUsuarioxNombreUsuarioSQL(nombreUsuarioIngresado);
-		if (contraIngresada == objUsuarioIngresado->getContrasena()) {
-			if (objUsuarioIngresado->getCargo()=="Programador") {
-				/*frmPrincipal^ ventanaPrincipal = gcnew frmPrincipal();
-				ventanaPrincipal->ShowDialog();*/
+		if (objUsuarioIngresado != nullptr) {
+			if (contraIngresada == objUsuarioIngresado->getContrasena()) {
+				if (objUsuarioIngresado->getCargo() == "Programador" || objUsuarioIngresado->getCargo() == "Administrador") {
+					frmPrincipal^ ventanaPrincipal = gcnew frmPrincipal();
+					ventanaPrincipal->ShowDialog();
+				}
 
 			}
+
 		} else {
 			MessageBox::Show("El Usuario o Contraseña ingresado es inválido", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}

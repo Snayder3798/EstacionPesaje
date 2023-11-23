@@ -157,7 +157,7 @@ namespace EstacionPesajeView {
 			// 
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Jefe", L"Asistente", L"Secretario", L"Programador" });
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Administrador", L"Asistente", L"Programador" });
 			this->comboBox1->Location = System::Drawing::Point(167, 310);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(255, 24);
