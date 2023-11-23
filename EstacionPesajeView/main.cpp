@@ -4,7 +4,7 @@ using namespace System;
 using namespace System::Windows::Forms;
 using namespace EstacionPesajeView;
 
-
+[STAThread]
 void main(array <String^>^ args)
 {
 	Application::EnableVisualStyles();
