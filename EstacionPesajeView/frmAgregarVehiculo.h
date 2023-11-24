@@ -407,9 +407,13 @@ namespace EstacionPesajeView {
 		/*SQL*/
 		objVehiculoController->AgregarVehiculoSQL(pesoLimite, placaVehiculo, tipoVehiculo,cantMultas, codigoPropietarioVehiculo);
 		Vehiculo^ objVehiculo = objVehiculoController->objbuscarVehiculoxPlacaSQL(placaVehiculo);
-		MessageBox::Show("Se ha asignado el codigo '" + objVehiculo->getCodigo() + "' al vehiculo y se ha agregado correctamente.");
-		this->Close();
 
+		PropietarioVehiculoController^ objPropietarioController = gcnew PropietarioVehiculoController();
+		objPropietarioController->ActualizarMultasAcumuladas(codigoPropietarioVehiculo);
+
+		MessageBox::Show("Se ha asignado el codigo '" + objVehiculo->getCodigo() + "' al vehiculo y se ha agregado correctamente.");
+
+		this->Close();
 	}
 
 	private: System::Void textBox3_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {

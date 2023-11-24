@@ -27,13 +27,13 @@ namespace EstacionPesajeView {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~frmMantenimientoEstacionPesaje()
 		{
@@ -59,7 +59,7 @@ namespace EstacionPesajeView {
 
 
 	private: System::Windows::Forms::ComboBox^ comboBox1;
-	private: System::Windows::Forms::Button^ button5;
+
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Codigo;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ubicacion;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Longitud;
@@ -71,14 +71,14 @@ namespace EstacionPesajeView {
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -94,14 +94,14 @@ namespace EstacionPesajeView {
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button5 = (gcnew System::Windows::Forms::Button());
+      this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(277, 311);
+      this->button4->Location = System::Drawing::Point(277, 311);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 25;
@@ -111,7 +111,7 @@ namespace EstacionPesajeView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(160, 311);
+      this->button3->Location = System::Drawing::Point(160, 311);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 24;
@@ -121,7 +121,7 @@ namespace EstacionPesajeView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(40, 311);
+      this->button2->Location = System::Drawing::Point(40, 311);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 23;
@@ -139,13 +139,13 @@ namespace EstacionPesajeView {
 			this->dataGridView1->Location = System::Drawing::Point(33, 129);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(437, 157);
+      this->dataGridView1->Size = System::Drawing::Size(437, 157);
 			this->dataGridView1->TabIndex = 22;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &frmMantenimientoEstacionPesaje::dataGridView1_CellContentClick);
 			// 
 			// Codigo
 			// 
-			this->Codigo->HeaderText = L"Código:";
+			this->Codigo->HeaderText = L"CÃ³digo:";
 			this->Codigo->MinimumWidth = 6;
 			this->Codigo->Name = L"Codigo";
 			this->Codigo->ReadOnly = true;
@@ -153,7 +153,7 @@ namespace EstacionPesajeView {
 			// 
 			// Ubicacion
 			// 
-			this->Ubicacion->HeaderText = L"Ubicación:";
+			this->Ubicacion->HeaderText = L"UbicaciÃ³n:";
 			this->Ubicacion->MinimumWidth = 6;
 			this->Ubicacion->Name = L"Ubicacion";
 			this->Ubicacion->ReadOnly = true;
@@ -182,16 +182,16 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->Location = System::Drawing::Point(67, 19);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(375, 90);
+      this->groupBox1->Size = System::Drawing::Size(375, 90);
 			this->groupBox1->TabIndex = 21;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Criterios de Búsqueda";
+			this->groupBox1->Text = L"Criterios de BÃºsqueda";
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(90, 40);
+      this->comboBox1->Location = System::Drawing::Point(90, 40);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(162, 21);
@@ -200,7 +200,7 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(269, 38);
+      this->button1->Location = System::Drawing::Point(269, 38);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 2;
@@ -215,7 +215,7 @@ namespace EstacionPesajeView {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(58, 13);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Ubicación:";
+			this->label1->Text = L"UbicaciÃ³n:";
 			// 
 			// button5
 			// 
@@ -240,7 +240,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->groupBox1);
 			this->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
 			this->Name = L"frmMantenimientoEstacionPesaje";
-			this->Text = L"Mantenimiento de Estación Pesaje";
+			this->Text = L"Mantenimiento de EstaciÃ³n Pesaje";
 			this->Load += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::frmMantenimientoEstacionPesaje_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
@@ -307,7 +307,7 @@ namespace EstacionPesajeView {
 			EstacionController^ objeto = gcnew EstacionController();
 			objeto->eliminarEstacionSQL(CodigoEstacion);
 
-			MessageBox::Show("La Estacion ha sido eliminado con éxito");
+			MessageBox::Show("La Estacion ha sido eliminado con Ã©xito");
 		}
 		else {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -326,20 +326,6 @@ namespace EstacionPesajeView {
 		else {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
-	}
-
-	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->dataGridView1->SelectedRows->Count > 0) {
-			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index; /*Le pongo [0] porque en este caso estamos asumiendo que solo seleccionamos una fila, por ello es la de la posicion 0*/
-			int CodigoEstacion = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
-			EstacionController^ objEstacionController = gcnew EstacionController();
-			EstacionPesaje^ objEstacion = objEstacionController->objbuscarEstacionxCodigoSQL(CodigoEstacion);
-			frmVerEstacionPesaje^ ventanaVerEstacionPesaje = gcnew frmVerEstacionPesaje(objEstacion);
-			ventanaVerEstacionPesaje->ShowDialog();
-		}
-		else {
-			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-		}	
 	}
 };
 }
