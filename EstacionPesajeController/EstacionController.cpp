@@ -289,3 +289,12 @@ List <String^>^ EstacionController::getMultasSQL(List <String^>^ listaUbicacione
 	}
 	return listaMultas;
 }
+
+void EstacionController::actualizarNroMultasxCodigoSQL(int codigo, int nroMultas) {
+	abrirConexionBD();
+	SqlCommand^ objSentencia = gcnew SqlCommand();
+	objSentencia->CommandText = "update EstacionPesaje set nroMultas=" + nroMultas + "where codigo = " + codigo;
+	objSentencia->Connection = this->objConexion;
+	objSentencia->ExecuteNonQuery();
+	cerrarConexionBD();
+}

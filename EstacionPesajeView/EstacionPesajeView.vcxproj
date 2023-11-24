@@ -121,6 +121,7 @@
     <ClCompile Include="frmAgregarTarjeta.cpp" />
     <ClCompile Include="frmAgregarUsuario.cpp" />
     <ClCompile Include="frmAgregarVehiculo.cpp" />
+    <ClCompile Include="frmBuscarEstacionPesaje.cpp" />
     <ClCompile Include="frmBuscarPersona.cpp" />
     <ClCompile Include="frmBuscarPropietarioVehiculo.cpp" />
     <ClCompile Include="frmBuscarVehiculo.cpp" />
@@ -176,6 +177,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmAgregarVehiculo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmBuscarEstacionPesaje.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmBuscarPersona.h">
@@ -272,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarVehiculo.resx">
       <DependentUpon>frmAgregarVehiculo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarEstacionPesaje.resx">
+      <DependentUpon>frmBuscarEstacionPesaje.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarPersona.resx">
       <DependentUpon>frmBuscarPersona.h</DependentUpon>

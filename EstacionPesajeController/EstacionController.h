@@ -40,6 +40,7 @@ namespace EstacionPesajeController {
 		void actualizarEstacionSQL(int codigo, String^ ubicacion, double latitud, double longitud, int nroMultas);
 		List <String^>^ EstacionController::obtenerUbicacionesSQL();
 		List <String^>^ getMultasSQL(List <String^>^ listaUbicaciones);
+		void actualizarNroMultasxCodigoSQL(int codigo, int nroMultas);
 
 	};
 

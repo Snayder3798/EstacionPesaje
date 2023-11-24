@@ -81,6 +81,7 @@ namespace EstacionPesajeView {
 		void InitializeComponent(void)
 		{
 			this->Propietario = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -95,7 +96,6 @@ namespace EstacionPesajeView {
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->Propietario->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
@@ -114,6 +114,15 @@ namespace EstacionPesajeView {
 			this->Propietario->TabIndex = 14;
 			this->Propietario->TabStop = false;
 			this->Propietario->Text = L"Datos del Vehiculo:";
+			// 
+			// textBox2
+			// 
+			this->textBox2->Enabled = false;
+			this->textBox2->Location = System::Drawing::Point(144, 65);
+			this->textBox2->Multiline = true;
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(138, 20);
+			this->textBox2->TabIndex = 26;
 			// 
 			// button1
 			// 
@@ -254,15 +263,6 @@ namespace EstacionPesajeView {
 			this->button3->Text = L"Guardar";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &frmAgregarRegistroVehiculo::button3_Click);
-			// 
-			// textBox2
-			// 
-			this->textBox2->Enabled = false;
-			this->textBox2->Location = System::Drawing::Point(144, 65);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(138, 20);
-			this->textBox2->TabIndex = 26;
 			// 
 			// frmAgregarRegistroVehiculo
 			// 
