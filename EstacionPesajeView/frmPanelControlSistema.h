@@ -498,6 +498,7 @@ namespace EstacionPesajeView {
 					objRegistroVehiculoController->AgregarRegistroSQL(pesoRegistrado, VehiculoRegistrado->getCantMultas(), fechaYHoraActual, VehiculoRegistrado->getCodigo());
 					objEstacionController->actualizarNroMultasxCodigoSQL(EstacionRegistrada->getCodigo(), (EstacionRegistrada->getNroMultas()) + VehiculoRegistrado->getCantMultas());
 					objVehiculoController->actualizarCantMultasVehiculoxCodigoSQL(VehiculoRegistrado->getCodigo(), 0);
+					objPropietarioVehiculoController->ActualizarMultasAcumuladas(VehiculoRegistrado->getCodigoPropietarioVehiculo());
 
 					ActivarDesactivarServo(true);
 					Sleep(1000);
@@ -532,7 +533,7 @@ namespace EstacionPesajeView {
 				objRegistroVehiculoController->AgregarRegistroSQL(pesoRegistrado, VehiculoRegistrado->getCantMultas(), fechaYHoraActual, VehiculoRegistrado->getCodigo());
 				objEstacionController->actualizarNroMultasxCodigoSQL(EstacionRegistrada->getCodigo(), (EstacionRegistrada->getNroMultas()) + VehiculoRegistrado->getCantMultas());
 				objVehiculoController->actualizarCantMultasVehiculoxCodigoSQL(VehiculoRegistrado->getCodigo(), 0);
-				//objPropietarioVehiculoController->ActualizarMultasAcumulas(VehiculoRegistrado->getCodigoPropietarioVehiculo())
+				objPropietarioVehiculoController->ActualizarMultasAcumuladas(VehiculoRegistrado->getCodigoPropietarioVehiculo());
 
 				ActivarDesactivarServo(true);
 				Sleep(1000);

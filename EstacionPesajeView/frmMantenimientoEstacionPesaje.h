@@ -52,7 +52,7 @@ namespace EstacionPesajeView {
 
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Button^ button1;
-
+	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Label^ label1;
 
 
@@ -94,7 +94,7 @@ namespace EstacionPesajeView {
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-      this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
@@ -224,8 +224,7 @@ namespace EstacionPesajeView {
 			this->button5->Size = System::Drawing::Size(75, 23);
 			this->button5->TabIndex = 26;
 			this->button5->Text = L"Ver";
-			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::button5_Click);
+			this->button5->UseVisualStyleBackColor = true;			
 			// 
 			// frmMantenimientoEstacionPesaje
 			// 
