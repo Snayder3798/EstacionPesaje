@@ -215,6 +215,7 @@ namespace EstacionPesajeView {
 					this->Hide();
 					frmPrincipal^ ventanaPrincipal = gcnew frmPrincipal();
 					ventanaPrincipal->ShowDialog();
+					this->Show();
 				}
 			}
 			else {
