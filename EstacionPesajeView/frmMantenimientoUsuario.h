@@ -277,7 +277,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmMantenimientoUsuario";
-			this->Text = L"frmMantenimientoUsuario";
+			this->Text = L"Mantenimiento Usuario";
 			this->Load += gcnew System::EventHandler(this, &frmMantenimientoUsuario::frmMantenimientoUsuario_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);

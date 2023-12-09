@@ -66,24 +66,26 @@ namespace EstacionPesajeView {
 			this->chart1->ChartAreas->Add(chartArea1);
 			legend1->Name = L"Legend1";
 			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(41, 35);
+			this->chart1->Location = System::Drawing::Point(36, 28);
+			this->chart1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->chart1->Name = L"chart1";
 			series1->ChartArea = L"ChartArea1";
 			series1->Legend = L"Legend1";
 			series1->Name = L"Series1";
 			this->chart1->Series->Add(series1);
-			this->chart1->Size = System::Drawing::Size(1192, 512);
+			this->chart1->Size = System::Drawing::Size(1060, 410);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"chart1";
 			// 
 			// frmReporteNroMultasxEstacionPesaje
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1566, 627);
+			this->ClientSize = System::Drawing::Size(1392, 502);
 			this->Controls->Add(this->chart1);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmReporteNroMultasxEstacionPesaje";
-			this->Text = L"frmReporteNroMultasxEstacionPesaje";
+			this->Text = L"Reporte de N° de Multas por Estacion Pesaje";
 			this->Load += gcnew System::EventHandler(this, &frmReporteNroMultasxEstacionPesaje::frmReporteNroMultasxEstacionPesaje_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->ResumeLayout(false);

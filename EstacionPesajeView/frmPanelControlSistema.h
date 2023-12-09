@@ -134,12 +134,12 @@ namespace EstacionPesajeView {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1->SuspendLayout();
@@ -152,9 +152,11 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->comboBox1);
 			this->groupBox1->Controls->Add(this->BotonDetenerArduino);
 			this->groupBox1->Controls->Add(this->BotonIniciarArduino);
-			this->groupBox1->Location = System::Drawing::Point(12, 12);
+			this->groupBox1->Location = System::Drawing::Point(16, 15);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(356, 97);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Size = System::Drawing::Size(475, 119);
 			this->groupBox1->TabIndex = 20;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Vincular arduino:";
@@ -162,17 +164,19 @@ namespace EstacionPesajeView {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(32, 36);
+			this->comboBox1->Location = System::Drawing::Point(43, 44);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(148, 21);
+			this->comboBox1->Size = System::Drawing::Size(196, 24);
 			this->comboBox1->TabIndex = 15;
 			this->comboBox1->Text = L"SELECCIONAR PUERTO";
 			// 
 			// BotonDetenerArduino
 			// 
-			this->BotonDetenerArduino->Location = System::Drawing::Point(276, 31);
+			this->BotonDetenerArduino->Location = System::Drawing::Point(368, 38);
+			this->BotonDetenerArduino->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->BotonDetenerArduino->Name = L"BotonDetenerArduino";
-			this->BotonDetenerArduino->Size = System::Drawing::Size(54, 26);
+			this->BotonDetenerArduino->Size = System::Drawing::Size(72, 32);
 			this->BotonDetenerArduino->TabIndex = 18;
 			this->BotonDetenerArduino->Text = L"Detener";
 			this->BotonDetenerArduino->UseVisualStyleBackColor = true;
@@ -180,9 +184,10 @@ namespace EstacionPesajeView {
 			// 
 			// BotonIniciarArduino
 			// 
-			this->BotonIniciarArduino->Location = System::Drawing::Point(206, 31);
+			this->BotonIniciarArduino->Location = System::Drawing::Point(275, 38);
+			this->BotonIniciarArduino->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->BotonIniciarArduino->Name = L"BotonIniciarArduino";
-			this->BotonIniciarArduino->Size = System::Drawing::Size(54, 26);
+			this->BotonIniciarArduino->Size = System::Drawing::Size(72, 32);
 			this->BotonIniciarArduino->TabIndex = 17;
 			this->BotonIniciarArduino->Text = L"Iniciar";
 			this->BotonIniciarArduino->UseVisualStyleBackColor = true;
@@ -199,9 +204,11 @@ namespace EstacionPesajeView {
 			this->groupBox2->Controls->Add(this->button1);
 			this->groupBox2->Controls->Add(this->label2);
 			this->groupBox2->Controls->Add(this->label1);
-			this->groupBox2->Location = System::Drawing::Point(14, 115);
+			this->groupBox2->Location = System::Drawing::Point(19, 142);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(354, 97);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox2->Size = System::Drawing::Size(472, 119);
 			this->groupBox2->TabIndex = 21;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Estación seleccionada:";
@@ -209,24 +216,27 @@ namespace EstacionPesajeView {
 			// textBox2
 			// 
 			this->textBox2->Enabled = false;
-			this->textBox2->Location = System::Drawing::Point(105, 57);
+			this->textBox2->Location = System::Drawing::Point(140, 70);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(123, 20);
+			this->textBox2->Size = System::Drawing::Size(163, 22);
 			this->textBox2->TabIndex = 12;
 			// 
 			// textBox1
 			// 
 			this->textBox1->Enabled = false;
-			this->textBox1->Location = System::Drawing::Point(105, 31);
+			this->textBox1->Location = System::Drawing::Point(140, 38);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(123, 20);
+			this->textBox1->Size = System::Drawing::Size(163, 22);
 			this->textBox1->TabIndex = 11;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(249, 38);
+			this->button1->Location = System::Drawing::Point(332, 47);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 35);
+			this->button1->Size = System::Drawing::Size(100, 43);
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"Buscar Estación";
 			this->button1->UseVisualStyleBackColor = true;
@@ -235,18 +245,20 @@ namespace EstacionPesajeView {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(29, 31);
+			this->label2->Location = System::Drawing::Point(39, 38);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(43, 13);
+			this->label2->Size = System::Drawing::Size(54, 16);
 			this->label2->TabIndex = 9;
 			this->label2->Text = L"Codigo:";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(29, 60);
+			this->label1->Location = System::Drawing::Point(39, 74);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(58, 13);
+			this->label1->Size = System::Drawing::Size(71, 16);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Ubicación:";
 			// 
@@ -258,93 +270,104 @@ namespace EstacionPesajeView {
 			this->groupBox3->Controls->Add(this->textBox4);
 			this->groupBox3->Controls->Add(this->label3);
 			this->groupBox3->Controls->Add(this->label4);
-			this->groupBox3->Location = System::Drawing::Point(21, 218);
+			this->groupBox3->Location = System::Drawing::Point(28, 268);
+			this->groupBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(354, 121);
+			this->groupBox3->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox3->Size = System::Drawing::Size(472, 149);
 			this->groupBox3->TabIndex = 22;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Vehiculo Registrado:";
 			// 
+			// textBox5
+			// 
+			this->textBox5->Enabled = false;
+			this->textBox5->Location = System::Drawing::Point(167, 102);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(163, 22);
+			this->textBox5->TabIndex = 14;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(39, 106);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(112, 16);
+			this->label5->TabIndex = 13;
+			this->label5->Text = L"Tipo de Vehiculo:";
+			// 
 			// textBox3
 			// 
 			this->textBox3->Enabled = false;
-			this->textBox3->Location = System::Drawing::Point(125, 57);
+			this->textBox3->Location = System::Drawing::Point(167, 70);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(123, 20);
+			this->textBox3->Size = System::Drawing::Size(163, 22);
 			this->textBox3->TabIndex = 12;
 			// 
 			// textBox4
 			// 
 			this->textBox4->Enabled = false;
-			this->textBox4->Location = System::Drawing::Point(125, 31);
+			this->textBox4->Location = System::Drawing::Point(167, 38);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(123, 20);
+			this->textBox4->Size = System::Drawing::Size(163, 22);
 			this->textBox4->TabIndex = 11;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(29, 31);
+			this->label3->Location = System::Drawing::Point(39, 38);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(37, 13);
+			this->label3->Size = System::Drawing::Size(45, 16);
 			this->label3->TabIndex = 9;
 			this->label3->Text = L"Placa:";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(29, 60);
+			this->label4->Location = System::Drawing::Point(39, 74);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(64, 13);
+			this->label4->Size = System::Drawing::Size(80, 16);
 			this->label4->TabIndex = 0;
 			this->label4->Text = L"Peso Limite:";
-			// 
-			// textBox5
-			// 
-			this->textBox5->Enabled = false;
-			this->textBox5->Location = System::Drawing::Point(125, 83);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(123, 20);
-			this->textBox5->TabIndex = 14;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(29, 86);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(90, 13);
-			this->label5->TabIndex = 13;
-			this->label5->Text = L"Tipo de Vehiculo:";
 			// 
 			// textBox8
 			// 
 			this->textBox8->Enabled = false;
-			this->textBox8->Location = System::Drawing::Point(149, 345);
+			this->textBox8->Location = System::Drawing::Point(199, 425);
+			this->textBox8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(123, 20);
+			this->textBox8->Size = System::Drawing::Size(163, 22);
 			this->textBox8->TabIndex = 11;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(52, 348);
+			this->label7->Location = System::Drawing::Point(69, 428);
+			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(88, 13);
+			this->label7->Size = System::Drawing::Size(112, 16);
 			this->label7->TabIndex = 9;
 			this->label7->Text = L"Peso Registrado:";
 			// 
 			// frmPanelControlSistema
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(386, 399);
+			this->ClientSize = System::Drawing::Size(515, 491);
 			this->Controls->Add(this->textBox8);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->groupBox1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"frmPanelControlSistema";
-			this->Text = L"frmPanelControlSistema";
+			this->Text = L"Panel Control Sistema";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &frmPanelControlSistema::frmPanelControlSistema_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &frmPanelControlSistema::frmPanelControlSistema_Load);
 			this->groupBox1->ResumeLayout(false);

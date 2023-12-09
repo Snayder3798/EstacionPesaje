@@ -218,7 +218,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->groupBox1);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"frmVerEstacionPesaje";
-			this->Text = L"Ver Estaction Pensaje";
+			this->Text = L"Ver Estaction Pesaje";
 			this->Load += gcnew System::EventHandler(this, &frmVerEstacionPesaje::frmVerEstacionPesaje_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();

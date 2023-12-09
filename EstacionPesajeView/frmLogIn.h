@@ -217,6 +217,12 @@ namespace EstacionPesajeView {
 					ventanaPrincipal->ShowDialog();
 					this->Show();
 				}
+				else if (objUsuarioIngresado->getCargo() == "Asistente") {
+					this->Hide();
+					frmPrincipal^ ventanaAsistente = gcnew frmPrincipal(objUsuarioIngresado->getCargo());
+					ventanaAsistente->ShowDialog();
+					this->Show();
+				}
 			}
 			else {
 				MessageBox::Show("El Usuario o Contraseña ingresado es incorrecto", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
