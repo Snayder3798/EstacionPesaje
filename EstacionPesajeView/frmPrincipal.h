@@ -322,12 +322,13 @@ namespace EstacionPesajeView {
 		ventanaMantEstacionPesaje->Show();
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+	
 	}
 	private: System::Void btnSiguiente_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->btnSiguiente->Visible = false;
 		this->Titulo->Visible = false;
 		this->pbEstactionPesaje->Visible = false;
+		this->button1->Visible = false;
 		frmPanelControlSistema^ ventanaPanelControl = gcnew frmPanelControlSistema();
 		ventanaPanelControl->MdiParent = this;
 		ventanaPanelControl->Show();
