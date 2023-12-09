@@ -314,7 +314,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->groupBox1);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmEditarUsuario";
-			this->Text = L"frmEditarUsuario";
+			this->Text = L"Editar Usuario";
 			this->Load += gcnew System::EventHandler(this, &frmEditarUsuario::frmEditarUsuario_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();

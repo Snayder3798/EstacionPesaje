@@ -280,7 +280,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmAgregarUsuario";
-			this->Text = L"frmAgregarUsuario";
+			this->Text = L"Agregar Usuario";
 			this->Load += gcnew System::EventHandler(this, &frmAgregarUsuario::frmAgregarUsuario_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -302,7 +302,7 @@ namespace EstacionPesajeView {
 
 		UsuarioController^ objUsuarioController = gcnew UsuarioController();
 		objUsuarioController->AgregarUsuarioSQL(nombre, apellidoPaterno, apellidoMaterno, dni, nombreUsuario, contrasena, cargo);
-		MessageBox::Show("El Propietario del Vehiculo se ha agregado correctamente");
+		MessageBox::Show("El Usuario se ha agregado correctamente");
 		this->Close();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {

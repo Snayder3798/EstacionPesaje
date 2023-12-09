@@ -90,12 +90,12 @@ namespace EstacionPesajeView {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -108,11 +108,11 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->radioButton1);
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Location = System::Drawing::Point(56, 18);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->groupBox1->Location = System::Drawing::Point(50, 14);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->groupBox1->Size = System::Drawing::Size(538, 258);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Size = System::Drawing::Size(478, 206);
 			this->groupBox1->TabIndex = 23;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Criterios de Búsqueda";
@@ -120,27 +120,28 @@ namespace EstacionPesajeView {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(57, 129);
+			this->label2->Location = System::Drawing::Point(51, 103);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(97, 20);
+			this->label2->Size = System::Drawing::Size(79, 16);
 			this->label2->TabIndex = 12;
 			this->label2->Text = L"Información:";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(57, 62);
+			this->label1->Location = System::Drawing::Point(51, 50);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(48, 20);
+			this->label1->Size = System::Drawing::Size(39, 16);
 			this->label1->TabIndex = 11;
 			this->label1->Text = L"Filtro:";
 			// 
 			// radioButton2
 			// 
 			this->radioButton2->AutoSize = true;
-			this->radioButton2->Location = System::Drawing::Point(285, 57);
+			this->radioButton2->Location = System::Drawing::Point(253, 46);
+			this->radioButton2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(150, 24);
+			this->radioButton2->Size = System::Drawing::Size(128, 20);
 			this->radioButton2->TabIndex = 10;
 			this->radioButton2->TabStop = true;
 			this->radioButton2->Text = L"Apellido Paterno";
@@ -150,9 +151,10 @@ namespace EstacionPesajeView {
 			// 
 			this->radioButton1->AutoSize = true;
 			this->radioButton1->Checked = true;
-			this->radioButton1->Location = System::Drawing::Point(176, 57);
+			this->radioButton1->Location = System::Drawing::Point(156, 46);
+			this->radioButton1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(62, 24);
+			this->radioButton1->Size = System::Drawing::Size(51, 20);
 			this->radioButton1->TabIndex = 9;
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"DNI";
@@ -160,10 +162,10 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(248, 195);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->button1->Location = System::Drawing::Point(220, 156);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(112, 35);
+			this->button1->Size = System::Drawing::Size(100, 28);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -172,10 +174,10 @@ namespace EstacionPesajeView {
 			// textBox1
 			// 
 			this->textBox1->ForeColor = System::Drawing::SystemColors::InfoText;
-			this->textBox1->Location = System::Drawing::Point(176, 125);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->textBox1->Location = System::Drawing::Point(156, 100);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(253, 26);
+			this->textBox1->Size = System::Drawing::Size(225, 22);
 			this->textBox1->TabIndex = 6;
 			// 
 			// dataGridView1
@@ -185,34 +187,12 @@ namespace EstacionPesajeView {
 				this->Column1,
 					this->Column2, this->Column3, this->Column4
 			});
-			this->dataGridView1->Location = System::Drawing::Point(22, 288);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->dataGridView1->Location = System::Drawing::Point(20, 230);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 62;
-			this->dataGridView1->Size = System::Drawing::Size(666, 222);
+			this->dataGridView1->Size = System::Drawing::Size(592, 178);
 			this->dataGridView1->TabIndex = 24;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(303, 534);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(112, 35);
-			this->button2->TabIndex = 25;
-			this->button2->Text = L"Seleccionar";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &frmBuscarPropietarioVehiculo::button2_Click);
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(136, 534);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(112, 35);
-			this->button3->TabIndex = 26;
-			this->button3->Text = L"Agregar";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &frmBuscarPropietarioVehiculo::button3_Click);
 			// 
 			// Column1
 			// 
@@ -246,18 +226,40 @@ namespace EstacionPesajeView {
 			this->Column4->ReadOnly = true;
 			this->Column4->Width = 150;
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(269, 427);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(100, 28);
+			this->button2->TabIndex = 25;
+			this->button2->Text = L"Seleccionar";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &frmBuscarPropietarioVehiculo::button2_Click);
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(121, 427);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(100, 28);
+			this->button3->TabIndex = 26;
+			this->button3->Text = L"Agregar";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &frmBuscarPropietarioVehiculo::button3_Click);
+			// 
 			// frmBuscarPropietarioVehiculo
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(716, 588);
+			this->ClientSize = System::Drawing::Size(636, 470);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"frmBuscarPropietarioVehiculo";
-			this->Text = L"frmBuscarPropietarioVehiculo";
+			this->Text = L" Buscar Propietario Vehiculo";
 			this->Load += gcnew System::EventHandler(this, &frmBuscarPropietarioVehiculo::frmBuscarPropietarioVehiculo_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
