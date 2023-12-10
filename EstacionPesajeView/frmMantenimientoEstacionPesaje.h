@@ -73,6 +73,10 @@ namespace EstacionPesajeView {
 
 
 
+
+
+
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
