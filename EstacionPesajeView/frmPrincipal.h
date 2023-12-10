@@ -121,7 +121,7 @@ namespace EstacionPesajeView {
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(651, 30);
+			this->menuStrip1->Size = System::Drawing::Size(665, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -133,7 +133,7 @@ namespace EstacionPesajeView {
 					this->registroVehiculoToolStripMenuItem
 			});
 			this->mantenimientoToolStripMenuItem->Name = L"mantenimientoToolStripMenuItem";
-			this->mantenimientoToolStripMenuItem->Size = System::Drawing::Size(124, 26);
+			this->mantenimientoToolStripMenuItem->Size = System::Drawing::Size(124, 24);
 			this->mantenimientoToolStripMenuItem->Text = L"Mantenimiento";
 			// 
 			// vToolStripMenuItem
@@ -185,7 +185,7 @@ namespace EstacionPesajeView {
 					this->multasRegistradasXEstacionToolStripMenuItem, this->vehiculosDePropietarioToolStripMenuItem
 			});
 			this->reportesToolStripMenuItem->Name = L"reportesToolStripMenuItem";
-			this->reportesToolStripMenuItem->Size = System::Drawing::Size(82, 26);
+			this->reportesToolStripMenuItem->Size = System::Drawing::Size(82, 24);
 			this->reportesToolStripMenuItem->Text = L"Reportes";
 			// 
 			// multasXTipoDeVehiculoToolStripMenuItem
@@ -211,10 +211,17 @@ namespace EstacionPesajeView {
 			// 
 			// btnSiguiente
 			// 
-			this->btnSiguiente->Location = System::Drawing::Point(260, 256);
+			this->btnSiguiente->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSiguiente.BackgroundImage")));
+			this->btnSiguiente->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnSiguiente->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->btnSiguiente->FlatAppearance->BorderSize = 0;
+			this->btnSiguiente->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSiguiente->Font = (gcnew System::Drawing::Font(L"Maiandra GD", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSiguiente->Location = System::Drawing::Point(49, 364);
 			this->btnSiguiente->Margin = System::Windows::Forms::Padding(4);
 			this->btnSiguiente->Name = L"btnSiguiente";
-			this->btnSiguiente->Size = System::Drawing::Size(105, 28);
+			this->btnSiguiente->Size = System::Drawing::Size(155, 56);
 			this->btnSiguiente->TabIndex = 7;
 			this->btnSiguiente->Text = L"Iniciar";
 			this->btnSiguiente->UseVisualStyleBackColor = true;
@@ -223,24 +230,25 @@ namespace EstacionPesajeView {
 			// Titulo
 			// 
 			this->Titulo->AutoSize = true;
-			this->Titulo->BackColor = System::Drawing::Color::PaleTurquoise;
-			this->Titulo->Font = (gcnew System::Drawing::Font(L"Times New Roman", 21.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+			this->Titulo->BackColor = System::Drawing::Color::White;
+			this->Titulo->Font = (gcnew System::Drawing::Font(L"Impact", 28.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Titulo->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			this->Titulo->Location = System::Drawing::Point(59, 167);
+			this->Titulo->Location = System::Drawing::Point(75, 56);
 			this->Titulo->Margin = System::Windows::Forms::Padding(5, 0, 5, 0);
 			this->Titulo->Name = L"Titulo";
-			this->Titulo->Size = System::Drawing::Size(520, 43);
+			this->Titulo->Size = System::Drawing::Size(529, 59);
 			this->Titulo->TabIndex = 9;
 			this->Titulo->Text = L"SISTEMA ESTACION PESAJE";
+			this->Titulo->Click += gcnew System::EventHandler(this, &frmPrincipal::Titulo_Click_1);
 			// 
 			// pbEstactionPesaje
 			// 
 			this->pbEstactionPesaje->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbEstactionPesaje.Image")));
-			this->pbEstactionPesaje->Location = System::Drawing::Point(0, 20);
+			this->pbEstactionPesaje->Location = System::Drawing::Point(0, 25);
 			this->pbEstactionPesaje->Margin = System::Windows::Forms::Padding(5, 6, 5, 6);
 			this->pbEstactionPesaje->Name = L"pbEstactionPesaje";
-			this->pbEstactionPesaje->Size = System::Drawing::Size(651, 476);
+			this->pbEstactionPesaje->Size = System::Drawing::Size(667, 510);
 			this->pbEstactionPesaje->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pbEstactionPesaje->TabIndex = 3;
 			this->pbEstactionPesaje->TabStop = false;
@@ -248,12 +256,19 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(493, 432);
+			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Maiandra GD", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(65, 441);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(127, 28);
+			this->button1->Size = System::Drawing::Size(129, 36);
 			this->button1->TabIndex = 11;
-			this->button1->Text = L"Cerrar Sesión";
+			this->button1->Text = L"Cerrar Sesion";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &frmPrincipal::button1_Click);
 			// 
@@ -261,7 +276,7 @@ namespace EstacionPesajeView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(651, 487);
+			this->ClientSize = System::Drawing::Size(665, 526);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Titulo);
 			this->Controls->Add(this->btnSiguiente);
@@ -366,5 +381,7 @@ namespace EstacionPesajeView {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+private: System::Void Titulo_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
