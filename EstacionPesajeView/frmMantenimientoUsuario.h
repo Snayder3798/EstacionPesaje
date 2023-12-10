@@ -59,6 +59,12 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ApellidoPaterno;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Nombres;
 
+
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -76,12 +82,6 @@ namespace EstacionPesajeView {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->nombreUsuario = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->cargo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->DNI = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->ApellidoPaterno = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Nombres = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -89,6 +89,12 @@ namespace EstacionPesajeView {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->nombreUsuario = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cargo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->DNI = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ApellidoPaterno = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Nombres = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
@@ -139,52 +145,6 @@ namespace EstacionPesajeView {
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(662, 185);
 			this->dataGridView1->TabIndex = 28;
-			// 
-			// Codigo
-			// 
-			this->Codigo->HeaderText = L"Código:";
-			this->Codigo->MinimumWidth = 6;
-			this->Codigo->Name = L"Codigo";
-			this->Codigo->ReadOnly = true;
-			this->Codigo->Width = 125;
-			// 
-			// nombreUsuario
-			// 
-			this->nombreUsuario->HeaderText = L"Usuario:";
-			this->nombreUsuario->MinimumWidth = 6;
-			this->nombreUsuario->Name = L"nombreUsuario";
-			this->nombreUsuario->Width = 125;
-			// 
-			// cargo
-			// 
-			this->cargo->HeaderText = L"Cargo:";
-			this->cargo->MinimumWidth = 6;
-			this->cargo->Name = L"cargo";
-			this->cargo->Width = 125;
-			// 
-			// DNI
-			// 
-			this->DNI->HeaderText = L"DNI";
-			this->DNI->MinimumWidth = 6;
-			this->DNI->Name = L"DNI";
-			this->DNI->ReadOnly = true;
-			this->DNI->Width = 90;
-			// 
-			// ApellidoPaterno
-			// 
-			this->ApellidoPaterno->HeaderText = L"Apellido Paterno";
-			this->ApellidoPaterno->MinimumWidth = 6;
-			this->ApellidoPaterno->Name = L"ApellidoPaterno";
-			this->ApellidoPaterno->ReadOnly = true;
-			this->ApellidoPaterno->Width = 145;
-			// 
-			// Nombres
-			// 
-			this->Nombres->HeaderText = L"Nombre";
-			this->Nombres->MinimumWidth = 6;
-			this->Nombres->Name = L"Nombres";
-			this->Nombres->ReadOnly = true;
-			this->Nombres->Width = 125;
 			// 
 			// groupBox1
 			// 
@@ -265,6 +225,53 @@ namespace EstacionPesajeView {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(225, 22);
 			this->textBox1->TabIndex = 6;
+			// 
+			// Codigo
+			// 
+			this->Codigo->HeaderText = L"Código:";
+			this->Codigo->MinimumWidth = 6;
+			this->Codigo->Name = L"Codigo";
+			this->Codigo->ReadOnly = true;
+			this->Codigo->Visible = false;
+			this->Codigo->Width = 125;
+			// 
+			// nombreUsuario
+			// 
+			this->nombreUsuario->HeaderText = L"Usuario:";
+			this->nombreUsuario->MinimumWidth = 6;
+			this->nombreUsuario->Name = L"nombreUsuario";
+			this->nombreUsuario->Width = 125;
+			// 
+			// cargo
+			// 
+			this->cargo->HeaderText = L"Cargo:";
+			this->cargo->MinimumWidth = 6;
+			this->cargo->Name = L"cargo";
+			this->cargo->Width = 125;
+			// 
+			// DNI
+			// 
+			this->DNI->HeaderText = L"DNI";
+			this->DNI->MinimumWidth = 6;
+			this->DNI->Name = L"DNI";
+			this->DNI->ReadOnly = true;
+			this->DNI->Width = 90;
+			// 
+			// ApellidoPaterno
+			// 
+			this->ApellidoPaterno->HeaderText = L"Apellido Paterno";
+			this->ApellidoPaterno->MinimumWidth = 6;
+			this->ApellidoPaterno->Name = L"ApellidoPaterno";
+			this->ApellidoPaterno->ReadOnly = true;
+			this->ApellidoPaterno->Width = 145;
+			// 
+			// Nombres
+			// 
+			this->Nombres->HeaderText = L"Nombre";
+			this->Nombres->MinimumWidth = 6;
+			this->Nombres->Name = L"Nombres";
+			this->Nombres->ReadOnly = true;
+			this->Nombres->Width = 125;
 			// 
 			// frmMantenimientoUsuario
 			// 
