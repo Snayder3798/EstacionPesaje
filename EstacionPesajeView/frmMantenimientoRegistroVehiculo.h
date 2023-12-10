@@ -157,10 +157,10 @@ namespace EstacionPesajeView {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(437, 345);
+			this->button4->Location = System::Drawing::Point(438, 358);
 			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(100, 53);
+			this->button4->Size = System::Drawing::Size(100, 26);
 			this->button4->TabIndex = 18;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
@@ -168,10 +168,10 @@ namespace EstacionPesajeView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(256, 345);
+			this->button3->Location = System::Drawing::Point(261, 358);
 			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(100, 53);
+			this->button3->Size = System::Drawing::Size(100, 26);
 			this->button3->TabIndex = 17;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
@@ -179,10 +179,10 @@ namespace EstacionPesajeView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(81, 345);
+			this->button2->Location = System::Drawing::Point(81, 358);
 			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 53);
+			this->button2->Size = System::Drawing::Size(100, 26);
 			this->button2->TabIndex = 16;
 			this->button2->Text = L"Agregar";
 			this->button2->UseVisualStyleBackColor = true;
