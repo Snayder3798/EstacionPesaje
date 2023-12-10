@@ -85,6 +85,7 @@ namespace EstacionPesajeView {
 			this->textBox1->BackColor = System::Drawing::SystemColors::Control;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Yu Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->textBox1->ForeColor = System::Drawing::Color::Gray;
 			this->textBox1->Location = System::Drawing::Point(84, 231);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(319, 35);
@@ -99,6 +100,7 @@ namespace EstacionPesajeView {
 			this->textBox2->BackColor = System::Drawing::SystemColors::Control;
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Yu Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->textBox2->ForeColor = System::Drawing::Color::Gray;
 			this->textBox2->Location = System::Drawing::Point(84, 297);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(319, 35);
@@ -160,6 +162,7 @@ namespace EstacionPesajeView {
 	}
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+
 	private: System::Void frmLogIn_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->button1->Select();
 	}
@@ -215,12 +218,14 @@ namespace EstacionPesajeView {
 					this->Hide();
 					frmPrincipal^ ventanaPrincipal = gcnew frmPrincipal();
 					ventanaPrincipal->ShowDialog();
+					this->textBox2->Clear();
 					this->Show();
 				}
 				else if (objUsuarioIngresado->getCargo() == "Asistente") {
 					this->Hide();
 					frmPrincipal^ ventanaAsistente = gcnew frmPrincipal(objUsuarioIngresado->getCargo());
 					ventanaAsistente->ShowDialog();
+					this->textBox2->Clear();
 					this->Show();
 				}
 			}

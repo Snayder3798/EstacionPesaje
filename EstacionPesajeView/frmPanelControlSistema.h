@@ -339,7 +339,7 @@ namespace EstacionPesajeView {
 			// textBox8
 			// 
 			this->textBox8->Enabled = false;
-			this->textBox8->Location = System::Drawing::Point(195, 434);
+			this->textBox8->Location = System::Drawing::Point(186, 438);
 			this->textBox8->Margin = System::Windows::Forms::Padding(4);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(163, 22);
@@ -348,7 +348,7 @@ namespace EstacionPesajeView {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(65, 437);
+			this->label7->Location = System::Drawing::Point(56, 441);
 			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(112, 16);

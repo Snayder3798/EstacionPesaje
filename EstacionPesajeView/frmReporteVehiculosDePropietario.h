@@ -57,12 +57,17 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
+
+
+
+
+	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
-	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 
 
 
@@ -99,12 +104,12 @@ namespace EstacionPesajeView {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -145,7 +150,7 @@ namespace EstacionPesajeView {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(287, 22);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(161, 44);
 			this->button1->TabIndex = 24;
@@ -167,7 +172,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(167, 103);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(184, 22);
 			this->textBox2->TabIndex = 10;
@@ -187,7 +192,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox8->Enabled = false;
 			this->textBox8->Location = System::Drawing::Point(525, 139);
-			this->textBox8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox8->Margin = System::Windows::Forms::Padding(4);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(184, 22);
 			this->textBox8->TabIndex = 8;
@@ -206,7 +211,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox4->Enabled = false;
 			this->textBox4->Location = System::Drawing::Point(525, 97);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(184, 22);
 			this->textBox4->TabIndex = 1;
@@ -226,7 +231,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox5->Enabled = false;
 			this->textBox5->Location = System::Drawing::Point(167, 142);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(184, 22);
 			this->textBox5->TabIndex = 3;
@@ -245,15 +250,15 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox6->Enabled = false;
 			this->textBox6->Location = System::Drawing::Point(167, 174);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox6->Margin = System::Windows::Forms::Padding(4);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(184, 22);
 			this->textBox6->TabIndex = 5;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(196, 437);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Location = System::Drawing::Point(196, 445);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(165, 37);
 			this->button2->TabIndex = 26;
@@ -263,8 +268,8 @@ namespace EstacionPesajeView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(432, 437);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Location = System::Drawing::Point(442, 445);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(101, 37);
 			this->button3->TabIndex = 27;
@@ -279,11 +284,11 @@ namespace EstacionPesajeView {
 				this->Column1,
 					this->Column2, this->Column3, this->Column5, this->Column4
 			});
-			this->dataGridView1->Location = System::Drawing::Point(41, 246);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dataGridView1->Location = System::Drawing::Point(41, 255);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(725, 183);
+			this->dataGridView1->Size = System::Drawing::Size(725, 168);
 			this->dataGridView1->TabIndex = 28;
 			// 
 			// Column1
@@ -291,6 +296,7 @@ namespace EstacionPesajeView {
 			this->Column1->HeaderText = L"Codigo Vehiculo";
 			this->Column1->MinimumWidth = 6;
 			this->Column1->Name = L"Column1";
+			this->Column1->Visible = false;
 			this->Column1->Width = 125;
 			// 
 			// Column2
@@ -325,12 +331,12 @@ namespace EstacionPesajeView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(801, 489);
+			this->ClientSize = System::Drawing::Size(801, 498);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->groupBox2);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"frmReporteVehiculosDePropietario";
 			this->Text = L"Generar reporte de Multas de un Propietario";
 			this->groupBox2->ResumeLayout(false);
