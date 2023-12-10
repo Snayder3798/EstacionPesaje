@@ -109,9 +109,9 @@ namespace EstacionPesajeView {
 			this->Propietario->Controls->Add(this->label2);
 			this->Propietario->Controls->Add(this->label3);
 			this->Propietario->Location = System::Drawing::Point(37, 203);
-			this->Propietario->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Propietario->Margin = System::Windows::Forms::Padding(4);
 			this->Propietario->Name = L"Propietario";
-			this->Propietario->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Propietario->Padding = System::Windows::Forms::Padding(4);
 			this->Propietario->Size = System::Drawing::Size(511, 122);
 			this->Propietario->TabIndex = 14;
 			this->Propietario->TabStop = false;
@@ -121,7 +121,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(192, 80);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(183, 24);
@@ -129,8 +129,8 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(407, 52);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Location = System::Drawing::Point(397, 52);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(97, 44);
 			this->button1->TabIndex = 25;
@@ -152,7 +152,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox1->Enabled = false;
 			this->textBox1->Location = System::Drawing::Point(192, 33);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(183, 24);
@@ -200,7 +200,7 @@ namespace EstacionPesajeView {
 			// 
 			this->dateTimePicker1->CustomFormat = L"dd/MM/yyyy HH:mm:ss";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(240, 119);
+			this->dateTimePicker1->Location = System::Drawing::Point(207, 119);
 			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(184, 22);
@@ -209,7 +209,7 @@ namespace EstacionPesajeView {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(52, 119);
+			this->label6->Location = System::Drawing::Point(29, 122);
 			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(88, 16);
@@ -220,7 +220,7 @@ namespace EstacionPesajeView {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(52, 44);
+			this->label5->Location = System::Drawing::Point(29, 47);
 			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(112, 16);
@@ -229,8 +229,8 @@ namespace EstacionPesajeView {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(240, 44);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox4->Location = System::Drawing::Point(207, 44);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(184, 22);
 			this->textBox4->TabIndex = 1;
@@ -238,7 +238,7 @@ namespace EstacionPesajeView {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(52, 81);
+			this->label9->Location = System::Drawing::Point(29, 84);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(171, 16);
@@ -248,8 +248,8 @@ namespace EstacionPesajeView {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(240, 81);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox5->Location = System::Drawing::Point(207, 81);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(184, 22);
 			this->textBox5->TabIndex = 3;
@@ -268,7 +268,7 @@ namespace EstacionPesajeView {
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(172, 345);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(100, 28);
 			this->button3->TabIndex = 26;
@@ -285,7 +285,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->Propietario);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"frmAgregarRegistroVehiculo";
 			this->Text = L"Agregar Registro Vehiculo";
 			this->Propietario->ResumeLayout(false);

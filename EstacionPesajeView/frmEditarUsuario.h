@@ -106,7 +106,7 @@ namespace EstacionPesajeView {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(356, 426);
+			this->button1->Location = System::Drawing::Point(336, 436);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(91, 28);
@@ -117,7 +117,7 @@ namespace EstacionPesajeView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(181, 426);
+			this->button2->Location = System::Drawing::Point(161, 436);
 			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(91, 28);
@@ -144,7 +144,7 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Controls->Add(this->label8);
-			this->groupBox1->Location = System::Drawing::Point(68, 14);
+			this->groupBox1->Location = System::Drawing::Point(40, 19);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
@@ -308,7 +308,7 @@ namespace EstacionPesajeView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(649, 466);
+			this->ClientSize = System::Drawing::Size(597, 478);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->groupBox1);
