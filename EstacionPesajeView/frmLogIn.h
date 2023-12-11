@@ -73,9 +73,10 @@ namespace EstacionPesajeView {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(119, 23);
+			this->pictureBox1->Location = System::Drawing::Point(134, 29);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(243, 172);
+			this->pictureBox1->Size = System::Drawing::Size(273, 215);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
@@ -86,9 +87,10 @@ namespace EstacionPesajeView {
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Yu Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->ForeColor = System::Drawing::Color::Gray;
-			this->textBox1->Location = System::Drawing::Point(84, 231);
+			this->textBox1->Location = System::Drawing::Point(94, 289);
+			this->textBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(319, 35);
+			this->textBox1->Size = System::Drawing::Size(358, 40);
 			this->textBox1->TabIndex = 1;
 			this->textBox1->Text = L"Ingrese su Usuario";
 			this->textBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
@@ -101,14 +103,16 @@ namespace EstacionPesajeView {
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Yu Gothic", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox2->ForeColor = System::Drawing::Color::Gray;
-			this->textBox2->Location = System::Drawing::Point(84, 297);
+			this->textBox2->Location = System::Drawing::Point(94, 371);
+			this->textBox2->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(319, 35);
+			this->textBox2->Size = System::Drawing::Size(358, 40);
 			this->textBox2->TabIndex = 2;
 			this->textBox2->Text = L"Contraseña";
 			this->textBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &frmLogIn::textBox2_TextChanged);
 			this->textBox2->Enter += gcnew System::EventHandler(this, &frmLogIn::textBox2_Enter);
+			this->textBox2->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmLogIn::textBox2_KeyPress);
 			this->textBox2->Leave += gcnew System::EventHandler(this, &frmLogIn::textBox2_Leave);
 			// 
 			// button1
@@ -117,9 +121,10 @@ namespace EstacionPesajeView {
 			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
 			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->Location = System::Drawing::Point(211, 402);
+			this->button1->Location = System::Drawing::Point(237, 502);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(60, 54);
+			this->button1->Size = System::Drawing::Size(68, 68);
 			this->button1->TabIndex = 3;
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &frmLogIn::button1_Click_1);
@@ -127,9 +132,10 @@ namespace EstacionPesajeView {
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(329, 338);
+			this->checkBox1->Location = System::Drawing::Point(370, 422);
+			this->checkBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(74, 20);
+			this->checkBox1->Size = System::Drawing::Size(89, 24);
 			this->checkBox1->TabIndex = 4;
 			this->checkBox1->Text = L"Mostrar";
 			this->checkBox1->UseVisualStyleBackColor = true;
@@ -137,10 +143,10 @@ namespace EstacionPesajeView {
 			// 
 			// frmLogIn
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(483, 468);
+			this->ClientSize = System::Drawing::Size(543, 585);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox2);
@@ -148,6 +154,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->pictureBox1);
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"frmLogIn";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Iniciar Sesión ";
@@ -240,6 +247,11 @@ namespace EstacionPesajeView {
 
 	}
 
-
+	private: System::Void textBox2_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		//Verifica que se ha presionado la tecla enter (retorno de carro según ascii)
+		if (e->KeyChar == 13) {
+			this->button1->PerformClick();
+		}
+	}
 };
 }
