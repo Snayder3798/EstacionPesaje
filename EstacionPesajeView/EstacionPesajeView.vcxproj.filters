@@ -102,16 +102,16 @@
     <ClCompile Include="frmLogIn.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
-    <ClCompile Include="frmAgregarRegistroVehiculo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="frmEditarRegistroVehiculo.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="frmBuscarEstacionPesaje.cpp">
+      <Filter>Archivos de encabezado</Filter>
     </ClCompile>
     <ClCompile Include="frmMantenimientoRegistroVehiculo.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado</Filter>
     </ClCompile>
-    <ClCompile Include="frmBuscarEstacionPesaje.cpp">
+    <ClCompile Include="frmAgregarRegistroVehiculo.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmEditarRegistroVehiculo.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
   </ItemGroup>

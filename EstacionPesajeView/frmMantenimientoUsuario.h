@@ -398,6 +398,7 @@ namespace EstacionPesajeView {
 	private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		this->textBox1->Clear();
 	}
+
 	private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		this->textBox1->Clear();
 	}

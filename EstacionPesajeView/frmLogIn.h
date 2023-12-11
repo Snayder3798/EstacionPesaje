@@ -125,7 +125,7 @@ namespace EstacionPesajeView {
 			this->button1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(68, 68);
-			this->button1->TabIndex = 3;
+			this->button1->TabIndex = 4;
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &frmLogIn::button1_Click_1);
 			// 
@@ -136,7 +136,7 @@ namespace EstacionPesajeView {
 			this->checkBox1->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(89, 24);
-			this->checkBox1->TabIndex = 4;
+			this->checkBox1->TabIndex = 3;
 			this->checkBox1->Text = L"Mostrar";
 			this->checkBox1->UseVisualStyleBackColor = true;
 			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &frmLogIn::checkBox1_CheckedChanged);

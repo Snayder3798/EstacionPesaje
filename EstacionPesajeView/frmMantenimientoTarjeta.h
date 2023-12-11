@@ -102,10 +102,10 @@ namespace EstacionPesajeView {
 			this->Estado = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
@@ -203,8 +203,18 @@ namespace EstacionPesajeView {
 			this->groupBox1->Size = System::Drawing::Size(586, 192);
 			this->groupBox1->TabIndex = 16;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Criterios de busqueda:";
+			this->groupBox1->Text = L"Criterios de Búsqueda:";
 			this->groupBox1->Enter += gcnew System::EventHandler(this, &frmMantenimientoTarjeta::groupBox1_Enter);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label2->Location = System::Drawing::Point(22, 140);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(237, 20);
+			this->label2->TabIndex = 23;
+			this->label2->Text = L"(formato 1234-1234-1234-1234)";
 			// 
 			// button1
 			// 
@@ -238,16 +248,6 @@ namespace EstacionPesajeView {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"N° de tarjeta:";
 			this->label1->Click += gcnew System::EventHandler(this, &frmMantenimientoTarjeta::label1_Click);
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label2->Location = System::Drawing::Point(22, 140);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(237, 20);
-			this->label2->TabIndex = 23;
-			this->label2->Text = L"(formato 1234-1234-1234-1234)";
 			// 
 			// frmMantenimientoTarjeta
 			// 
