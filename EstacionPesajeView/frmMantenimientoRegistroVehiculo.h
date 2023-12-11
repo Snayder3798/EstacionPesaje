@@ -60,9 +60,24 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Codigo;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -91,6 +106,7 @@ namespace EstacionPesajeView {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -191,9 +207,9 @@ namespace EstacionPesajeView {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
 				this->Codigo,
-					this->Column1, this->Column2, this->Column3
+					this->Column4, this->Column1, this->Column2, this->Column3
 			});
 			this->dataGridView1->Location = System::Drawing::Point(42, 195);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
@@ -210,6 +226,13 @@ namespace EstacionPesajeView {
 			this->Codigo->ReadOnly = true;
 			this->Codigo->Visible = false;
 			this->Codigo->Width = 50;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Placa";
+			this->Column4->MinimumWidth = 8;
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 150;
 			// 
 			// Column1
 			// 
@@ -245,6 +268,7 @@ namespace EstacionPesajeView {
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"frmMantenimientoRegistroVehiculo";
 			this->Text = L"Mantenimiento Registro Vehículo";
+			this->Load += gcnew System::EventHandler(this, &frmMantenimientoRegistroVehiculo::frmMantenimientoRegistroVehiculo_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -275,14 +299,16 @@ namespace EstacionPesajeView {
 		this->dataGridView1->Rows->Clear(); /*Elimino toda la informacion del datagrid*/
 
 		for (int i = 0; i < listaRegistros->Count; i++) {
+			VehiculoController^ objVehiculoController = gcnew VehiculoController();
 
 			RegistroVehiculo^ objRegistroVehiculo = listaRegistros[i];
-			array<String^>^ filaGrilla = gcnew array<String^>(4);
+			array<String^>^ filaGrilla = gcnew array<String^>(5);
 
 			filaGrilla[0] = Convert::ToString(objRegistroVehiculo->getCodigo());
-			filaGrilla[1] = Convert::ToString(objRegistroVehiculo->getPesoRegistrado());
-			filaGrilla[2] = Convert::ToString(objRegistroVehiculo->getMultaAplicada());
-			filaGrilla[3] = objRegistroVehiculo->getFechaHora();
+			filaGrilla[1] = objVehiculoController->objbuscarVehiculoxCodigoSQL(objRegistroVehiculo->getCodigoVehiculo())->getPlaca();
+			filaGrilla[2] = Convert::ToString(objRegistroVehiculo->getPesoRegistrado());
+			filaGrilla[3] = Convert::ToString(objRegistroVehiculo->getMultaAplicada());
+			filaGrilla[4] = objRegistroVehiculo->getFechaHora();
 			this->dataGridView1->Rows->Add(filaGrilla);
 		}
 	}
@@ -353,6 +379,20 @@ namespace EstacionPesajeView {
 		else {
 			e->Handled = true;  // Suprime cualquier otro carácter
 		}
+	}
+	private: System::Void frmMantenimientoRegistroVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
+		//Buscams vehiculo x placa. Hacer ima verificacion de la placa antes de meterla al buscador
+
+		//String^ placa = this->textBox1->Text;
+		//VehiculoController^ objVehiculoController = gcnew VehiculoController();
+		//Vehiculo^ objVehiculosSQL = objVehiculoController->objbuscarVehiculoxPlacaSQL(placa);
+
+		//int codigoVehiculo = objVehiculosSQL->getCodigo();
+
+		RegistroVehiculoController^ objRegistroVehiculoController = gcnew RegistroVehiculoController();
+		List<RegistroVehiculo^>^ listaRegistros = objRegistroVehiculoController->buscarAllSQL();
+
+		mostrarGrilla(listaRegistros);
 	}
 };
 }

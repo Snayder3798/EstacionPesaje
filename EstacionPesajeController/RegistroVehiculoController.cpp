@@ -84,6 +84,32 @@ RegistroVehiculo^ RegistroVehiculoController::objbuscarRegistroxCodigoSQL(int co
 	cerrarConexionBD();
 	return objRegistroVehiculo;
 }
-void ActualizarMultasAcumuladas() {
+//void ActualizarMultasAcumuladas() {
+//
+//}
 
+List<RegistroVehiculo^>^ RegistroVehiculoController::buscarAllSQL() {
+	List<RegistroVehiculo^>^ listaRegistro = gcnew List<RegistroVehiculo^>();
+	abrirConexionBD();
+	/*SqlCommand viene a ser el objeto que utilizare para hacer el query o sentencia para la BD */
+		SqlCommand ^ objSentencia = gcnew SqlCommand();
+	// Aqui estoy indicando que mi sentencia se va a ejecutar en mi conexion de BD /
+		objSentencia->Connection = this->objConexion;
+	// Aqui voy a indicar la sentencia que voy a ejecutar /
+		objSentencia->CommandText = "select * from RegistroVehiculo";
+	// Aqui ejecuto la sentencia en la Base de Datos/
+		//Para Select siempre sera ExecuteReader/
+		//Para select siempre va a devolver un SqlDataReader /
+		SqlDataReader ^ objData = objSentencia->ExecuteReader();
+	while (objData->Read()) {
+		int codigo = safe_cast<int>(objData[0]);
+		int pesoRegistrado = safe_cast<int>(objData[1]);
+		int multaAplicada = safe_cast<int>(objData[2]);
+		String^ fechaHora = safe_cast<String^>(objData[3]);
+		int codigoVehiculo = safe_cast<int>(objData[4]);
+		RegistroVehiculo^ objRegistroVehiculo = gcnew RegistroVehiculo(codigo, pesoRegistrado, multaAplicada, fechaHora, codigoVehiculo);
+		listaRegistro->Add(objRegistroVehiculo);
+	}
+	cerrarConexionBD();
+	return listaRegistro;
 }

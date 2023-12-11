@@ -23,6 +23,7 @@ namespace EstacionPesajeController {
 		void actualizarRegistroSQL(int codigo, int pesoRegistrado, int multaAplicada, String^ fechaHora, int codigoVehiculo);
 		List<RegistroVehiculo^>^ buscarRegistroxCodigoVehiculoSQL(int codigoVehiculo);
 		RegistroVehiculo^ objbuscarRegistroxCodigoSQL(int codigoRegistro);
+		List<RegistroVehiculo^>^ buscarAllSQL();
 	};
 
 
