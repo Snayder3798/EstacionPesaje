@@ -114,12 +114,14 @@ namespace EstacionPesajeView {
 			// 
 			// textBox2
 			// 
+			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(167, 177);
 			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(255, 24);
 			this->textBox2->TabIndex = 9;
+			this->textBox2->Text = L"0";
 			this->textBox2->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarEstacionPesaje::textBox2_KeyPress);
 			// 
 			// label2
@@ -159,6 +161,7 @@ namespace EstacionPesajeView {
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(255, 24);
 			this->textBox8->TabIndex = 5;
+			this->textBox8->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarEstacionPesaje::textBox8_KeyPress);
 			// 
 			// label6
 			// 
@@ -229,7 +232,7 @@ namespace EstacionPesajeView {
 		String^ ubicacionEstacionPesaje = this->textBox8->Text;
 		double latitudEstacionPesaje = Convert::ToDouble(this->textBox7->Text);
 		double longitudEstacionPesaje = Convert::ToDouble(this->textBox6->Text);
-		int nroMultas = Convert::ToInt32(this->textBox2->Text);
+		int nroMultas = 0;
 
 		EstacionController^ objEstacionController = gcnew EstacionController();
 		objEstacionController->AgregarEstacionSQL(ubicacionEstacionPesaje, latitudEstacionPesaje, longitudEstacionPesaje, nroMultas);
@@ -259,5 +262,13 @@ private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
+
+	private: System::Void textBox8_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si la tecla presionada es un número o borrar
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8) {
+			// Si no es un número ni una tecla de control, suprime la tecla presionada
+			e->Handled = true;
+		}
+	}
 };
 }

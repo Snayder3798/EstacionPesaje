@@ -83,7 +83,7 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Label^ label5;
+
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::TextBox^ textBox8;
@@ -93,6 +93,7 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::Label^ label5;
 
 	private:
 		/// <summary>
@@ -123,8 +124,8 @@ namespace EstacionPesajeView {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
@@ -152,7 +153,7 @@ namespace EstacionPesajeView {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(189, 550);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 28);
 			this->button1->TabIndex = 22;
@@ -175,9 +176,9 @@ namespace EstacionPesajeView {
 			this->Propietario->Controls->Add(this->label4);
 			this->Propietario->Controls->Add(this->label3);
 			this->Propietario->Location = System::Drawing::Point(39, 28);
-			this->Propietario->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Propietario->Margin = System::Windows::Forms::Padding(4);
 			this->Propietario->Name = L"Propietario";
-			this->Propietario->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Propietario->Padding = System::Windows::Forms::Padding(4);
 			this->Propietario->Size = System::Drawing::Size(512, 273);
 			this->Propietario->TabIndex = 21;
 			this->Propietario->TabStop = false;
@@ -201,7 +202,7 @@ namespace EstacionPesajeView {
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(54, 16);
 			this->label9->TabIndex = 28;
-			this->label9->Text = L"Código:";
+			this->label9->Text = L"Codigo:";
 			// 
 			// comboBox1
 			// 
@@ -227,17 +228,18 @@ namespace EstacionPesajeView {
 			// textBox7
 			// 
 			this->textBox7->Location = System::Drawing::Point(177, 225);
-			this->textBox7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox7->Margin = System::Windows::Forms::Padding(4);
 			this->textBox7->Multiline = true;
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(255, 24);
 			this->textBox7->TabIndex = 24;
+			this->textBox7->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarVehiculo::textBox7_KeyPress_1);
 			// 
 			// textBox5
 			// 
 			this->textBox5->Enabled = false;
 			this->textBox5->Location = System::Drawing::Point(177, 38);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(255, 22);
 			this->textBox5->TabIndex = 12;
@@ -254,20 +256,22 @@ namespace EstacionPesajeView {
 			// textBox3
 			// 
 			this->textBox3->Location = System::Drawing::Point(177, 177);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(255, 24);
 			this->textBox3->TabIndex = 7;
+			this->textBox3->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarVehiculo::textBox3_KeyPress_1);
 			// 
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(177, 84);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(255, 24);
 			this->textBox1->TabIndex = 5;
+			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarVehiculo::textBox1_KeyPress_1);
 			// 
 			// label2
 			// 
@@ -301,8 +305,8 @@ namespace EstacionPesajeView {
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->Controls->Add(this->button3);
 			this->groupBox2->Controls->Add(this->label5);
+			this->groupBox2->Controls->Add(this->button3);
 			this->groupBox2->Controls->Add(this->textBox2);
 			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Controls->Add(this->textBox8);
@@ -321,10 +325,19 @@ namespace EstacionPesajeView {
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Datos del Propietario";
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(30, 37);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(120, 16);
+			this->label5->TabIndex = 25;
+			this->label5->Text = L"Codigo Propietario";
+			// 
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(397, 95);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(97, 44);
 			this->button3->TabIndex = 24;
@@ -332,21 +345,11 @@ namespace EstacionPesajeView {
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &frmEditarVehiculo::button3_Click);
 			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(34, 34);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(123, 16);
-			this->label5->TabIndex = 9;
-			this->label5->Text = L"Código Propietario:";
-			// 
 			// textBox2
 			// 
 			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(177, 31);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(184, 22);
 			this->textBox2->TabIndex = 10;
@@ -366,7 +369,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox8->Enabled = false;
 			this->textBox8->Location = System::Drawing::Point(177, 144);
-			this->textBox8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox8->Margin = System::Windows::Forms::Padding(4);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(184, 22);
 			this->textBox8->TabIndex = 8;
@@ -385,7 +388,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox4->Enabled = false;
 			this->textBox4->Location = System::Drawing::Point(177, 69);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(184, 22);
 			this->textBox4->TabIndex = 1;
@@ -405,7 +408,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox6->Enabled = false;
 			this->textBox6->Location = System::Drawing::Point(177, 106);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox6->Margin = System::Windows::Forms::Padding(4);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(184, 22);
 			this->textBox6->TabIndex = 3;
@@ -424,7 +427,7 @@ namespace EstacionPesajeView {
 			// 
 			this->textBox9->Enabled = false;
 			this->textBox9->Location = System::Drawing::Point(177, 184);
-			this->textBox9->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox9->Margin = System::Windows::Forms::Padding(4);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(184, 22);
 			this->textBox9->TabIndex = 5;
@@ -552,15 +555,63 @@ namespace EstacionPesajeView {
 
 	}
 
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo();
-	frmBuscarPropietarioVehiculo^ ventBuscarPropietario = gcnew frmBuscarPropietarioVehiculo(objPropietario);
-	ventBuscarPropietario->ShowDialog();
-	this->textBox2->Text = Convert::ToString(objPropietario->getCodigo());
-	this->textBox4->Text = objPropietario->getNombre();
-	this->textBox6->Text = objPropietario->getApellidoPaterno();
-	this->textBox8->Text = objPropietario->getApellidoMaterno();
-	this->textBox9->Text = objPropietario->getDni();
-}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		PropietarioVehiculo^ objPropietario = gcnew PropietarioVehiculo();
+		frmBuscarPropietarioVehiculo^ ventBuscarPropietario = gcnew frmBuscarPropietarioVehiculo(objPropietario);
+		ventBuscarPropietario->ShowDialog();
+		this->textBox2->Text = Convert::ToString(objPropietario->getCodigo());
+		this->textBox4->Text = objPropietario->getNombre();
+		this->textBox6->Text = objPropietario->getApellidoPaterno();
+		this->textBox8->Text = objPropietario->getApellidoMaterno();
+		this->textBox9->Text = objPropietario->getDni();
+	}
+
+	private: System::Void textBox1_KeyPress_1(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si la tecla presionada es un dígito o una letra mayúscula
+		if (Char::IsDigit(e->KeyChar) || (e->KeyChar >= 'A' && e->KeyChar <= 'Z') || e->KeyChar == '-') {
+			// Obtiene el texto actual del TextBox
+			String^ TextoIngresado = textBox1->Text;
+			// Verifica la longitud del texto actual
+			if (TextoIngresado->Length < 7) {
+				// Verifica si se ha ingresado el guion en la posición 3
+				if (TextoIngresado->Length == 3) {
+					// Solo permite el guion en la posición 3
+					e->Handled = true;
+					if (e->KeyChar == '-') {
+						e->Handled = false;
+					}
+				}
+				else {
+					e->Handled = false;  // Permite letras y números en las posiciones 0, 1, 2, 4, 5, 6
+				}
+			}
+			else {
+				e->Handled = true;  // La placa tiene una longitud de 6 caracteres, no permite más entrada
+			}
+		}
+		else if (e->KeyChar == 8) {
+			// Permite la tecla borrar 
+			e->Handled = false;
+		}
+		else {
+			e->Handled = true;  // Suprime cualquier otro carácter
+		}
+	}
+
+	private: System::Void textBox3_KeyPress_1(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si la tecla presionada es un número o borrar
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8) {
+			// Si no es un número ni una tecla de control, suprime la tecla presionada
+			e->Handled = true;
+		}
+	}
+
+	private: System::Void textBox7_KeyPress_1(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si la tecla presionada es un número o borrar
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8) {
+			// Si no es un número ni una tecla de control, suprime la tecla presionada
+			e->Handled = true;
+		}
+	}
 };
 }
