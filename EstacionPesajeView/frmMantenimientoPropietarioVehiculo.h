@@ -390,6 +390,11 @@ namespace EstacionPesajeView {
 				e->Handled = true; //borra la entrada
 			}
 		}
+
+		//Verifica que se ha presionado la tecla enter (retorno de carro según ascii)
+		if (e->KeyChar == 13) {
+			this->button1->PerformClick();
+		}
 	}
 	private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		this->textBox1-> Clear();

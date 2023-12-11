@@ -334,7 +334,11 @@ namespace EstacionPesajeView {
 
 			VehiculoController^ objeto = gcnew VehiculoController();
 			objeto->eliminarVehiculoSQL(codigoVehiculoEliminar); /*SQL*/
-			MessageBox::Show("El Vehiculo ha sido eliminado con éxito");
+			MessageBox::Show("El Vehiculo ha sido eliminado con exito");
+			String^ placa = this->textBox1->Text;
+			VehiculoController^ objVehiculoController = gcnew VehiculoController();
+			List <Vehiculo^>^ listaVehiculosSQL = objVehiculoController->buscarVehiculosxPlacaSQL(placa);
+			mostrarGrilla(listaVehiculosSQL);
 		}
 		else {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -404,6 +408,10 @@ namespace EstacionPesajeView {
 		}
 		else {
 			e->Handled = true;  // Suprime cualquier otro carácter
+		}
+		//Verifica que se ha presionado la tecla enter (retorno de carro según ascii)
+		if (e->KeyChar == 13) {
+			this->button1->PerformClick();
 		}
 	}
 };

@@ -379,6 +379,11 @@ private: System::Void frmMantenimientoTarjeta_Load(System::Object^ sender, Syste
 		else {
 			e->Handled = true;
 		}
+
+		//Verifica que se ha presionado la tecla enter (retorno de carro según ascii)
+		if (e->KeyChar == 13) {
+			this->button1->PerformClick();
+		}
 	}
 };
 }

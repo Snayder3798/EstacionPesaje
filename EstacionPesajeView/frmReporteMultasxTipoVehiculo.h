@@ -71,7 +71,7 @@ namespace EstacionPesajeView {
 			this->chart1->Name = L"chart1";
 			series1->ChartArea = L"ChartArea1";
 			series1->Legend = L"Legend1";
-			series1->Name = L"Series1";
+			series1->Name = L"Cantidad de Multas";
 			this->chart1->Series->Add(series1);
 			this->chart1->Size = System::Drawing::Size(644, 495);
 			this->chart1->TabIndex = 0;
@@ -97,12 +97,11 @@ namespace EstacionPesajeView {
 		List <String^>^ listaTiposVehiculos = objVehiculoController->getTiposVehiculosSQL();
 		List <String^>^ listaMultas = objVehiculoController->getMultasSQL(listaTiposVehiculos);
 		for (int i = 0; i < listaTiposVehiculos->Count; i++) {
-			this->chart1->Series["Series1"]->Points->Add(Convert::ToInt32(listaMultas[i])); // Se necesita un int
-			this->chart1->Series["Series1"]->Points[i]->AxisLabel = listaTiposVehiculos[i]; // este y los sgts se necesitan string
-			this->chart1->Series["Series1"]->Points[i]->LegendText = listaTiposVehiculos[i];
-			this->chart1->Series["Series1"]->Points[i]->Label = listaMultas[i];
+			this->chart1->Series["Cantidad de Multas"]->Points->Add(Convert::ToInt32(listaMultas[i])); // Se necesita un int
+			this->chart1->Series["Cantidad de Multas"]->Points[i]->AxisLabel = listaTiposVehiculos[i]; // este y los sgts se necesitan string
+			this->chart1->Series["Cantidad de Multas"]->Points[i]->LegendText = listaTiposVehiculos[i];
+			this->chart1->Series["Cantidad de Multas"]->Points[i]->Label = listaMultas[i];
 		}
-
 	}
 	};
 }

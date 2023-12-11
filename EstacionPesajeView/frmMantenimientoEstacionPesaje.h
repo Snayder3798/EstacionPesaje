@@ -215,6 +215,7 @@ namespace EstacionPesajeView {
 			this->comboBox1->Size = System::Drawing::Size(241, 28);
 			this->comboBox1->Sorted = true;
 			this->comboBox1->TabIndex = 7;
+			this->comboBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmMantenimientoEstacionPesaje::comboBox1_KeyPress);
 			// 
 			// button1
 			// 
@@ -337,5 +338,11 @@ namespace EstacionPesajeView {
 		}
 	}
 
+private: System::Void comboBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	//Verifica que se ha presionado la tecla enter (retorno de carro según ascii)
+	if (e->KeyChar == 13) {
+		this->button1->PerformClick();
+	}
+}
 };
 }

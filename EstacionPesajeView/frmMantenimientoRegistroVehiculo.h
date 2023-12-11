@@ -295,6 +295,7 @@ namespace EstacionPesajeView {
 		
 		mostrarGrilla(listaRegistros);
 	}
+
 	private: void mostrarGrilla(List<RegistroVehiculo^>^ listaRegistros) {
 		this->dataGridView1->Rows->Clear(); /*Elimino toda la informacion del datagrid*/
 
@@ -324,8 +325,6 @@ namespace EstacionPesajeView {
 		else {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
-
-
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->dataGridView1->SelectedRows->Count > 0) {
@@ -379,15 +378,13 @@ namespace EstacionPesajeView {
 		else {
 			e->Handled = true;  // Suprime cualquier otro carácter
 		}
+
+		//Verifica que se ha presionado la tecla enter (retorno de carro según ascii)
+		if (e->KeyChar == 13) {
+			this->button1->PerformClick();
+		}
 	}
 	private: System::Void frmMantenimientoRegistroVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
-		//Buscams vehiculo x placa. Hacer ima verificacion de la placa antes de meterla al buscador
-
-		//String^ placa = this->textBox1->Text;
-		//VehiculoController^ objVehiculoController = gcnew VehiculoController();
-		//Vehiculo^ objVehiculosSQL = objVehiculoController->objbuscarVehiculoxPlacaSQL(placa);
-
-		//int codigoVehiculo = objVehiculosSQL->getCodigo();
 
 		RegistroVehiculoController^ objRegistroVehiculoController = gcnew RegistroVehiculoController();
 		List<RegistroVehiculo^>^ listaRegistros = objRegistroVehiculoController->buscarAllSQL();
