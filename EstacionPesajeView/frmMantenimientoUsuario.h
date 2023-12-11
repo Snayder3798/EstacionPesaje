@@ -325,9 +325,9 @@ namespace EstacionPesajeView {
 			filaGrilla[0] = Convert::ToString(objUsuario->getCodigo());
 			filaGrilla[1] = objUsuario->getNombreUsuario();
 			filaGrilla[2] = objUsuario->getCargo();
-			filaGrilla[2] = objUsuario->getDni();
-			filaGrilla[3] = objUsuario->getApellidoPaterno();
-			filaGrilla[4] = objUsuario->getNombre();
+			filaGrilla[3] = objUsuario->getDni();
+			filaGrilla[4] = objUsuario->getApellidoPaterno();
+			filaGrilla[5] = objUsuario->getNombre();
 			this->dataGridView1->Rows->Add(filaGrilla);
 		}
 	}
