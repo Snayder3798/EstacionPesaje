@@ -52,7 +52,7 @@ namespace EstacionPesajeView {
 
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button5;
+
 	private: System::Windows::Forms::Label^ label1;
 
 
@@ -63,6 +63,10 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ubicacion;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Longitud;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Latitud;
+
+
+
+
 
 
 
@@ -98,7 +102,6 @@ namespace EstacionPesajeView {
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->Codigo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Ubicacion = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Longitud = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -109,8 +112,8 @@ namespace EstacionPesajeView {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(369, 383);
-			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button4->Location = System::Drawing::Point(466, 385);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(100, 28);
 			this->button4->TabIndex = 25;
@@ -120,8 +123,8 @@ namespace EstacionPesajeView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(213, 383);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Location = System::Drawing::Point(310, 385);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(100, 28);
 			this->button3->TabIndex = 24;
@@ -131,8 +134,8 @@ namespace EstacionPesajeView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(53, 383);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Location = System::Drawing::Point(150, 385);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(100, 28);
 			this->button2->TabIndex = 23;
@@ -148,7 +151,7 @@ namespace EstacionPesajeView {
 					this->Ubicacion, this->Longitud, this->Latitud
 			});
 			this->dataGridView1->Location = System::Drawing::Point(44, 159);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(583, 193);
@@ -161,13 +164,13 @@ namespace EstacionPesajeView {
 			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->label1);
 			this->groupBox1->Location = System::Drawing::Point(89, 23);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox1->Size = System::Drawing::Size(500, 111);
 			this->groupBox1->TabIndex = 21;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Criterios de Búsqueda";
+			this->groupBox1->Text = L"Criterios de Busqueda";
 			// 
 			// comboBox1
 			// 
@@ -183,7 +186,7 @@ namespace EstacionPesajeView {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(359, 47);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 28);
 			this->button1->TabIndex = 2;
@@ -199,17 +202,7 @@ namespace EstacionPesajeView {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(71, 16);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Ubicación:";
-			// 
-			// button5
-			// 
-			this->button5->Location = System::Drawing::Point(527, 383);
-			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(100, 28);
-			this->button5->TabIndex = 26;
-			this->button5->Text = L"Ver";
-			this->button5->UseVisualStyleBackColor = true;
+			this->label1->Text = L"Ubicacion:";
 			// 
 			// Codigo
 			// 
@@ -222,7 +215,7 @@ namespace EstacionPesajeView {
 			// 
 			// Ubicacion
 			// 
-			this->Ubicacion->HeaderText = L"Ubicación:";
+			this->Ubicacion->HeaderText = L"Ubicacion:";
 			this->Ubicacion->MinimumWidth = 6;
 			this->Ubicacion->Name = L"Ubicacion";
 			this->Ubicacion->ReadOnly = true;
@@ -249,7 +242,6 @@ namespace EstacionPesajeView {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(689, 452);
-			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -257,7 +249,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->groupBox1);
 			this->Margin = System::Windows::Forms::Padding(3, 1, 3, 1);
 			this->Name = L"frmMantenimientoEstacionPesaje";
-			this->Text = L"Mantenimiento de Estación Pesaje";
+			this->Text = L"Mantenimiento de Estacion Pesaje";
 			this->Load += gcnew System::EventHandler(this, &frmMantenimientoEstacionPesaje::frmMantenimientoEstacionPesaje_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
@@ -344,5 +336,6 @@ namespace EstacionPesajeView {
 			MessageBox::Show("Por favor, seleccione una fila en la tabla antes de continuar.", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 	}
+
 };
 }

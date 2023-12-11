@@ -211,7 +211,7 @@ namespace EstacionPesajeView {
 			this->groupBox1->Size = System::Drawing::Size(521, 142);
 			this->groupBox1->TabIndex = 11;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Criterios de Búsqueda:";
+			this->groupBox1->Text = L"Criterios de Busqueda:";
 			// 
 			// label8
 			// 
