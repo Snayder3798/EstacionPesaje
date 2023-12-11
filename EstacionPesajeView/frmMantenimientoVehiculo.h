@@ -243,7 +243,6 @@ namespace EstacionPesajeView {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(253, 26);
 			this->textBox1->TabIndex = 6;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &frmMantenimientoVehiculo::textBox1_TextChanged);
 			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmMantenimientoVehiculo::textBox1_KeyPress);
 			// 
 			// label1
@@ -291,8 +290,6 @@ namespace EstacionPesajeView {
 		}
 #pragma endregion
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 
 	private: System::Void frmMantenimientoVehiculo_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -377,16 +374,23 @@ namespace EstacionPesajeView {
 
 			// Verifica la longitud del texto actual
 			if (TextoIngresado->Length < 7) {
-				// Verifica si se ha ingresado el guion en la posición 3
+				// Verifica si se encuentra en la posición 3
 				if (TextoIngresado->Length == 3) {
 					// Solo permite el guion en la posición 3
-					e->Handled = true;
 					if (e->KeyChar == '-') {
 						e->Handled = false;
 					}
+					else{
+						e->Handled = true;
+					}
 				}
-				else {
-					e->Handled = false;  // Permite letras y números en las posiciones 0, 1, 2, 4, 5, 6
+				else {//si no se encuentra en la posicion 3
+					if (e->KeyChar == '-') {
+						e->Handled = true; //se borra si se ingresa guion donde no se debe
+					}
+					else {
+						e->Handled = false; // Permite letras y números en las posiciones 0, 1, 2, 4, 5, 6
+					}
 				}
 			}
 			else {
@@ -402,6 +406,5 @@ namespace EstacionPesajeView {
 			e->Handled = true;  // Suprime cualquier otro carácter
 		}
 	}
-
 };
 }

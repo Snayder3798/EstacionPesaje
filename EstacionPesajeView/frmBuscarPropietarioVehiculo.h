@@ -183,6 +183,7 @@ namespace EstacionPesajeView {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(253, 26);
 			this->textBox1->TabIndex = 6;
+			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmBuscarPropietarioVehiculo::textBox1_KeyPress);
 			// 
 			// dataGridView1
 			// 
@@ -327,6 +328,36 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		frmAgregarPropietarioVehiculo^ ventanaAgregarPropietario = gcnew frmAgregarPropietarioVehiculo();
 		ventanaAgregarPropietario->ShowDialog();
+	}
+	private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		//Este campo es para ingresar numeros de DNI
+		if (this->radioButton1->Checked) {
+			// Verifica si el carácter presionado es un numero o la tecla borrar
+			if ((Char::IsNumber(e->KeyChar) || e->KeyChar == 8)) {
+
+				String^ TextoIngresado = textBox1->Text;
+
+				// Si longitud del texto actual es menor a 8 o se presiona la tecla borrar, permite más entrada
+				if (TextoIngresado->Length < 8 || e->KeyChar == 8) {
+					e->Handled = false; //permite la entrada
+				}
+				else {
+					e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
+				}
+			}
+			else {
+				e->Handled = true;
+			}
+		}
+		else if (this->radioButton2->Checked) {
+			// Verifica si el carácter presionado NO es un numero o la tecla borrar
+			if ((!(Char::IsNumber(e->KeyChar)) || e->KeyChar == 8)) {
+				e->Handled = false; //permite la entrada
+			}
+			else {
+				e->Handled = true; //borra la entrada
+			}
+		}
 	}
 };
 }

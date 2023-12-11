@@ -322,27 +322,21 @@ namespace EstacionPesajeView {
 	}
 
 	private: System::Void textBox5_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si el carácter presionado es un numero o la tecla borrar
+		if ((Char::IsNumber(e->KeyChar) || e->KeyChar == 8)) {
 
-		// Verifica si el carácter presionado es un numero o borrar
-		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
+			String^ TextoIngresado = textBox1->Text;
 
-			String^ TextoIngresado = textBox5->Text;
-
-			// Si longitud del texto actual es menor a 9, permite más entrada
-			if (TextoIngresado->Length < 8) {
-				e->Handled = false;
+			// Si longitud del texto actual es menor a 8 o se presiona la tecla borrar, permite más entrada
+			if (TextoIngresado->Length < 8 || e->KeyChar == 8) {
+				e->Handled = false; //permite la entrada
 			}
 			else {
-				e->Handled = true;
-				if (e->KeyChar == 8) { //distinto a la tecla borrar
-					e->Handled = false;  // Tiene una longitud de 8 caracteres, no permite más entrada
-				}
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
 			}
 		}
-
-		// Verifica si el carácter presionado es distinto a numero o borrar o un espacio en blanco
-		if (!(Char::IsNumber(e->KeyChar) || e->KeyChar == 8) || e->KeyChar == ' ') {
-			e->Handled = true;  //Anula supresión si distinto de numero o espacio
+		else {
+			e->Handled = true;
 		}
 	}
 

@@ -177,6 +177,7 @@ namespace EstacionPesajeView {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(286, 26);
 			this->textBox5->TabIndex = 8;
+			this->textBox5->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmEditarPropietarioVehiculo::textBox5_KeyPress);
 			// 
 			// textBox6
 			// 
@@ -303,6 +304,24 @@ namespace EstacionPesajeView {
 		objPropietarioController->actualizarPropietarioSQL(codigoPropietario, nombre, apellidoPaterno, apellidoMaterno, dni, multasAcumuladas);
 		MessageBox::Show("El Propietario fue actualizado correctamente");
 		this->Close();
+	}
+	private: System::Void textBox5_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si el carácter presionado es un numero o la tecla borrar
+		if ((Char::IsNumber(e->KeyChar) || e->KeyChar == 8)) {
+
+			String^ TextoIngresado = textBox1->Text;
+
+			// Si longitud del texto actual es menor a 8 o se presiona la tecla borrar, permite más entrada
+			if (TextoIngresado->Length < 8 || e->KeyChar == 8) {
+				e->Handled = false; //permite la entrada
+			}
+			else {
+				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
+			}
+		}
+		else {
+			e->Handled = true;
+		}
 	}
 };
 }
