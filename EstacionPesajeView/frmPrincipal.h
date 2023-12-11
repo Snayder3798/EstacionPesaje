@@ -74,8 +74,10 @@ namespace EstacionPesajeView {
 	private: System::Windows::Forms::ToolStripMenuItem^ vehiculosDePropietarioToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ registroVehiculoToolStripMenuItem;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::ToolStripMenuItem^ volverToolStripMenuItem;
 
 	private: String^ CargoIngresado;
+	private: frmPanelControlSistema^ ventanaPanelControl;
 
 	private:
 		/// <summary>
@@ -92,6 +94,7 @@ namespace EstacionPesajeView {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmPrincipal::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->volverToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->mantenimientoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->vToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tarjetaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -114,9 +117,9 @@ namespace EstacionPesajeView {
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->mantenimientoToolStripMenuItem,
-					this->reportesToolStripMenuItem
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->volverToolStripMenuItem,
+					this->mantenimientoToolStripMenuItem, this->reportesToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -124,6 +127,15 @@ namespace EstacionPesajeView {
 			this->menuStrip1->Size = System::Drawing::Size(665, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// volverToolStripMenuItem
+			// 
+			this->volverToolStripMenuItem->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"volverToolStripMenuItem.BackgroundImage")));
+			this->volverToolStripMenuItem->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->volverToolStripMenuItem->Name = L"volverToolStripMenuItem";
+			this->volverToolStripMenuItem->Size = System::Drawing::Size(39, 24);
+			this->volverToolStripMenuItem->Text = L"    ";
+			this->volverToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::volverToolStripMenuItem_Click);
 			// 
 			// mantenimientoToolStripMenuItem
 			// 
@@ -282,6 +294,7 @@ namespace EstacionPesajeView {
 			this->Controls->Add(this->btnSiguiente);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->pbEstactionPesaje);
+			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -297,9 +310,7 @@ namespace EstacionPesajeView {
 #pragma endregion
 
 	private: System::Void frmPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
-		
-		//UsuarioController^ objUsuarioController = gcnew UsuarioController();
-		//String^ cargoIngresado = objUsuarioIngresado->getCargo();
+		this->volverToolStripMenuItem->Visible = false;
 		
 		if (CargoIngresado == "Asistente") {
 			this->reportesToolStripMenuItem->Visible = false;
@@ -344,11 +355,10 @@ namespace EstacionPesajeView {
 		this->Titulo->Visible = false;
 		this->pbEstactionPesaje->Visible = false;
 		this->button1->Visible = false;
-		frmPanelControlSistema^ ventanaPanelControl = gcnew frmPanelControlSistema();
+		ventanaPanelControl = gcnew frmPanelControlSistema();
 		ventanaPanelControl->MdiParent = this;
 		ventanaPanelControl->Show();
-		
-		//this->pbEstacionPesaje->Visible = false;
+		this->volverToolStripMenuItem->Visible = true;
 	}
 	private: System::Void boxOpcionesMantenimiento_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 
@@ -383,5 +393,14 @@ namespace EstacionPesajeView {
 	}
 private: System::Void Titulo_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
+
+	private: System::Void volverToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		ventanaPanelControl->Close();
+		this->btnSiguiente->Visible = true;
+		this->Titulo->Visible = true;
+		this->pbEstactionPesaje->Visible = true;
+		this->button1->Visible = true;
+		this->volverToolStripMenuItem->Visible = false;
+	}
 };
 }
