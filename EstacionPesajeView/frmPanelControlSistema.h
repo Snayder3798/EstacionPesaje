@@ -431,6 +431,10 @@ namespace EstacionPesajeView {
 		array<Byte>^ miBuffer = Encoding::ASCII->GetBytes(" " + Convert::ToString(multaTotal) + "             ");
 		serialPort1->Write(miBuffer, 0, miBuffer->Length);
 	}
+	private: void MandarMultaLCD_2(int multaTotal) {
+		array<Byte>^ miBuffer = Encoding::ASCII->GetBytes(":" + Convert::ToString(multaTotal) + "             ");
+		serialPort1->Write(miBuffer, 0, miBuffer->Length);
+	}
 	//Para el Bluetooth
 	private: String^ SolicitarPlaca_Tarjeta(void) {
 		array<Byte>^ miBuffer = Encoding::ASCII->GetBytes("Escanear_Bluetooth");
@@ -492,7 +496,7 @@ namespace EstacionPesajeView {
 					Sleep(1000);
 				}
 				else {//Propietario con multas pendientes pero sin peso excesivo
-					MandarMultaLCD(multasAcumuladas);
+					MandarMultaLCD_2(multasAcumuladas);
 					Sleep(3000);
 					String^ EstadoTargeta = "Inactiva";
 					do {//Esperando pago de una tarjeta válida (activa)
