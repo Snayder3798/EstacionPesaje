@@ -571,23 +571,32 @@ namespace EstacionPesajeView {
 		if (Char::IsDigit(e->KeyChar) || (e->KeyChar >= 'A' && e->KeyChar <= 'Z') || e->KeyChar == '-') {
 			// Obtiene el texto actual del TextBox
 			String^ TextoIngresado = textBox1->Text;
+
 			// Verifica la longitud del texto actual
 			if (TextoIngresado->Length < 7) {
-				// Verifica si se ha ingresado el guion en la posición 3
+				// Verifica si se encuentra en la posición 3
 				if (TextoIngresado->Length == 3) {
 					// Solo permite el guion en la posición 3
-					e->Handled = true;
 					if (e->KeyChar == '-') {
 						e->Handled = false;
 					}
+					else {
+						e->Handled = true;
+					}
 				}
-				else {
-					e->Handled = false;  // Permite letras y números en las posiciones 0, 1, 2, 4, 5, 6
+				else {//si no se encuentra en la posicion 3
+					if (e->KeyChar == '-') {
+						e->Handled = true; //se borra si se ingresa guion donde no se debe
+					}
+					else {
+						e->Handled = false; // Permite letras y números en las posiciones 0, 1, 2, 4, 5, 6
+					}
 				}
 			}
 			else {
 				e->Handled = true;  // La placa tiene una longitud de 6 caracteres, no permite más entrada
 			}
+
 		}
 		else if (e->KeyChar == 8) {
 			// Permite la tecla borrar 

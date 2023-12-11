@@ -150,6 +150,7 @@ namespace EstacionPesajeView {
 			this->radioButton2->TabStop = true;
 			this->radioButton2->Text = L"Apellido Paterno";
 			this->radioButton2->UseVisualStyleBackColor = true;
+			this->radioButton2->CheckedChanged += gcnew System::EventHandler(this, &frmBuscarPropietarioVehiculo::radioButton2_CheckedChanged);
 			// 
 			// radioButton1
 			// 
@@ -163,6 +164,7 @@ namespace EstacionPesajeView {
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"DNI";
 			this->radioButton1->UseVisualStyleBackColor = true;
+			this->radioButton1->CheckedChanged += gcnew System::EventHandler(this, &frmBuscarPropietarioVehiculo::radioButton1_CheckedChanged);
 			// 
 			// button1
 			// 
@@ -358,6 +360,12 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				e->Handled = true; //borra la entrada
 			}
 		}
+	}
+	private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		this->textBox1->Clear();
+	}
+	private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		this->textBox1->Clear();
 	}
 };
 }

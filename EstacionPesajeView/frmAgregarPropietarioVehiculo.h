@@ -210,6 +210,7 @@ namespace EstacionPesajeView {
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(200, 26);
 			this->textBox3->TabIndex = 5;
+			this->textBox3->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &frmAgregarPropietarioVehiculo::textBox3_KeyPress);
 			// 
 			// button4
 			// 
@@ -269,35 +270,32 @@ namespace EstacionPesajeView {
   }
 
 	private: System::Void textBox4_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		// Verifica si el carácter presionado es un numero o borrar
-		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
-
-			String^ TextoIngresado = textBox1->Text;
-
-			// Si longitud del texto actual es menor a 9, permite más entrada
-			if (TextoIngresado->Length < 9) {
-				e->Handled = false;
-			}
-			else {
-				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
-			}
+		// Verifica si el carácter presionado es un numero o la tecla borrar
+		if ((Char::IsNumber(e->KeyChar) || e->KeyChar == 8)) {
+			e->Handled = false; //permite la entrada
+		}
+		else {
+			e->Handled = true;
 		}
 	}
-	private: System::Void textBox5_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
-		// Verifica si el carácter presionado es un numero o borrar
-		if (Char::IsNumber(e->KeyChar) || e->KeyChar == 8) {
 
-			String^ TextoIngresado = textBox1->Text;
+	private: System::Void textBox3_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Verifica si el carácter presionado es un numero o la tecla borrar
+		if ((Char::IsNumber(e->KeyChar) || e->KeyChar == 8)) {
 
-			// Si longitud del texto actual es menor a 9, permite más entrada
-			if (TextoIngresado->Length < 9) {
-				e->Handled = false;
+			String^ TextoIngresado = textBox3->Text;
+
+			// Si longitud del texto actual es menor a 8 o se presiona la tecla borrar, permite más entrada
+			if (TextoIngresado->Length < 8 || e->KeyChar == 8) {
+				e->Handled = false; //permite la entrada
 			}
 			else {
 				e->Handled = true;  // Tiene una longitud de 8 caracteres, no permite más entrada
 			}
 		}
-
+		else {
+			e->Handled = true;
+		}
 	}
 };
 }
